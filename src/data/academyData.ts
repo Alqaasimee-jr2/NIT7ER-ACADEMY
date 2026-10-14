@@ -37,10 +37,10 @@ export interface LabProject {
 }
 
 export const ACADEMY_METRICS = [
-  { label: 'Project-Based Output', value: '100%', detail: 'Every module concludes with deployed software or published specifications' },
-  { label: 'Core Faculties', value: '4', detail: 'Creative Engineering, Cognitive Systems, Writing, and Computer Education' },
-  { label: 'Incubated Lab Products', value: '6+', detail: 'Proprietary platforms architected and operated directly by our studio' },
-  { label: 'Performance Floor', value: '99+', detail: 'Lighthouse Core Web Vitals target across all production deliverables' },
+  { label: 'Project-Based Output', value: '100%', detail: 'Every track culminates in deployed software, operational systems, or published documentation' },
+  { label: 'Core Faculties', value: '4', detail: 'Creative Engineering, Cognitive Architecture, Structured Prose, and Core Computing' },
+  { label: 'Incubated Lab Systems', value: '6+', detail: 'Active software platforms engineered, deployed, and run by our studio' },
+  { label: 'Production Standard', value: 'Zero Fluff', detail: 'No toy exercises, hypothetical exams, or unfinished tutorial code' },
 ];
 
 export const FACULTIES: Faculty[] = [
@@ -49,14 +49,14 @@ export const FACULTIES: Faculty[] = [
     number: '01',
     title: 'Creative Technology & Software Engineering',
     subtitle: 'Full-Stack Web Systems, Mobile Apps & AI Architectures',
-    tagline: 'Engineering robust, production-grade applications with zero fluff.',
+    tagline: 'Architect and ship resilient, production-grade applications that stand up to real market demands.',
     badge: 'Faculty 01',
     leadAnchor: 'Modern Web, Flutter & Intelligent Systems',
     duration: '16 Weeks Intensive',
     format: 'Cohort Studio & Live Code Reviews',
     diagram: 'creative-tech',
     description:
-      'Master the engineering discipline required to architect scalable, lightning-fast digital products. Move past toy tutorials into production Next.js 16 architectures, reactive state machines, cross-platform Flutter/Dart engineering, and practical AI telemetry integrations.',
+      'Learn the engineering rigor needed to build scalable digital products from a blank terminal. We move beyond toy tutorials into modern Next.js 16 architectures, reactive state engines, cross-platform Flutter/Dart development, and production AI integrations.',
     livingProof: {
       title: 'Clasquera & Production Web Engines',
       description: 'Audio-based lesson accountability platform integrating Flutter recording apps with Gemini Pro verification via Firebase Cloud Functions.',
@@ -96,14 +96,14 @@ export const FACULTIES: Faculty[] = [
     number: '02',
     title: 'Cognitive Performance & Systems Architecture',
     subtitle: 'Flow7 Execution Methodology & Personal Operational Infrastructure',
-    tagline: 'Replace to-do list guilt with ruthless action awareness.',
+    tagline: 'Replace to-do list guilt with quantified daily execution awareness.',
     badge: 'Faculty 02',
     leadAnchor: 'The Flow7 Performance Model',
     duration: '8 Weeks Intensive',
-    format: 'Daily Execution Logs & Weekly Reflection Halaqahs',
+    format: 'Daily Execution Logs & Weekly Systems Debriefs',
     diagram: 'cognitive-systems',
     description:
-      'High-level technical ability is useless without cognitive stamina and ruthless execution habits. This discipline teaches builders how to manage cognitive energy, log reality without self-deception, eliminate friction, and maintain relentless shipping cadences.',
+      'Raw talent is useless without stamina and disciplined execution habits. This discipline trains builders to manage cognitive energy, log reality without self-deception, eliminate operational drag, and maintain a steady shipping cadence.',
     livingProof: {
       title: 'Flow7 Time Awareness Journal',
       description: 'The mobile-first reality tracking and cognitive regulation engine built by NIT7ER to track execution and eliminate friction.',
@@ -143,14 +143,14 @@ export const FACULTIES: Faculty[] = [
     number: '03',
     title: 'Writing & Thought Leadership',
     subtitle: 'Technical Documentation, Product Storytelling & Clear Thinking',
-    tagline: 'Clear writing is the highest form of structured thinking.',
+    tagline: 'Clear writing is the sharpest indicator of structured thinking.',
     badge: 'Faculty 03',
     leadAnchor: 'The Architecture of Precise Prose',
     duration: '10 Weeks Intensive',
     format: 'Weekly Critiques & Published Essays',
     diagram: 'writing',
     description:
-      'Code is only half the battle. Elite creators, founders, and engineers distinguish themselves through crisp, unambiguous writing. Learn to author technical whitepapers, architectural decision records (ADRs), compelling product essays, and high-converting marketing copy.',
+      'Writing is a foundational engineering primitive. The most impactful founders and technologists distinguish themselves through crisp, unambiguous prose. Learn to write technical architecture specifications, clear whitepapers, persuasive case studies, and high-converting product narratives.',
     livingProof: {
       title: 'OAUMods Campus Research Dossier & Technical Specs',
       description: '18 comprehensive research volumes and architectural specifications authoritatively mapping complex spatial systems.',
@@ -190,14 +190,14 @@ export const FACULTIES: Faculty[] = [
     number: '04',
     title: 'Computer Education & Digital Foundations',
     subtitle: 'Core Systems Literacy, Computational Thinking & EdTech Engineering',
-    tagline: 'Demystifying the machine from fundamental silicon to interactive glass.',
+    tagline: 'Understand computing from silicon logic gates to interactive user interfaces.',
     badge: 'Faculty 04',
     leadAnchor: 'Computing from First Principles',
     duration: '12 Weeks Intensive',
     format: 'Laboratory Workshops & Smartboard Experiments',
     diagram: 'computer-education',
     description:
-      'A rigorous grounding in how computing actually works. From binary abstractions, data structures, and computer architecture to building classroom-ready interactive software tailored for smartboards and offline environments.',
+      'A first-principles foundation in how computers actually work. Study binary abstractions, memory architectures, algorithms, and operating system kernels, then engineer tactile educational software built for smartboards and offline environments.',
     livingProof: {
       title: 'Lang Huey Smartboard Engine',
       description: 'Experimental 100% offline interactive French learning software designed for Nigerian smartboards and classrooms (NERDC curriculum).',
@@ -241,7 +241,7 @@ export const LAB_PROJECTS: LabProject[] = [
     category: 'Cognitive Engine',
     tagline: 'Mobile-first time awareness journal & cognitive regulation layer',
     description:
-      'A performance platform for builders and solo creators that tracks daily execution across key life areas, replaces to-do list guilt with action awareness, and generates weekly reflections.',
+      'A focus regulation engine that tracks daily output across essential life domains, replaces task-list anxiety with objective reality logs, and generates structured weekly debriefs.',
     impact: 'Daily execution logging with quantified focus metrics',
     techStack: ['Next.js', 'React', 'Tailwind CSS', 'Vercel Edge', 'LocalStorage Sync'],
     liveUrl: 'https://flow7-two.vercel.app',
@@ -253,7 +253,7 @@ export const LAB_PROJECTS: LabProject[] = [
     category: 'EdTech & AI System',
     tagline: 'Lesson Accountability System for Private Schools',
     description:
-      'A Flutter teacher app that records classroom sessions, dispatches audio to Firebase Cloud Functions for transcription, and analyzes instruction against the approved lesson plan using Gemini Pro.',
+      'A mobile lesson verification platform for schools. Captures classroom audio via Flutter, transcribes and benchmarks instructional delivery against approved schemes of work using Gemini Pro via Firebase Cloud Functions.',
     impact: 'Ensures lesson fidelity and teaching compliance across school wings',
     techStack: ['Flutter', 'Dart', 'Firebase Functions', 'Google Gemini Pro', 'Next.js'],
     githubUrl: 'https://github.com/Alqaasimee-jr2/Clasquera-Landing-page',
@@ -265,7 +265,7 @@ export const LAB_PROJECTS: LabProject[] = [
     category: 'EdTech Engine',
     tagline: '100% Offline French Software for Nigerian Smartboards',
     description:
-      'Interactive, tactile French language educational software tailored for smart classrooms and interactive flat panels, aligned with the NERDC syllabus and optimized for zero-internet reliability.',
+      'Tactile, offline-first French language educational software tailored for classrooms and interactive smartboards, aligned with the NERDC national curriculum.',
     impact: 'Deployed for classroom smartboard interaction in Nigerian schools',
     techStack: ['HTML5 Canvas', 'Vanilla JS', 'Offline PWA', 'Interactive Audio'],
     badge: 'Smartboard System',
@@ -276,7 +276,7 @@ export const LAB_PROJECTS: LabProject[] = [
     category: 'Campus Companion',
     tagline: 'Authoritative Digital Compass & Masterplan Navigator for OAU',
     description:
-      'A comprehensive offline-first companion covering 15 university faculties, GPA simulation, physical clearance pipelines, transit tariffs, and interactive geospatial mapping of Arieh Sharon’s architectural masterplan.',
+      'An authoritative offline-first campus companion spanning 15 faculties, automated GPA projection, clearance workflows, and geospatial navigation across Arieh Sharon’s iconic architectural masterplan.',
     impact: 'Navigational guide and academic utility for thousands of Great Ife students',
     techStack: ['Next.js 16', 'React 19', 'Leaflet GPS', 'Tailwind CSS v4', 'TypeScript'],
     githubUrl: 'https://github.com/Alqaasimee-jr2/OAUMods',
@@ -300,7 +300,7 @@ export const LAB_PROJECTS: LabProject[] = [
     category: 'Developer Tooling',
     tagline: 'Automated Pull Request Code Quality & Safety CLI',
     description:
-      'CLI tool developed during the IBM Bob 2.0 Hackathon (Team junkieBob) providing proactive static code analysis, security pre-checks, and automated PR validation before merge.',
+      'A developer CLI tool built during the IBM Bob 2.0 Hackathon (Team junkieBob) providing proactive static code analysis, security pre-checks, and automated PR validation before merge.',
     impact: 'Prevents broken builds and insecure merges in collaborative software teams',
     techStack: ['Node.js', 'CLI Automation', 'Git Hooks', 'Static Analysis'],
     badge: 'Open Source',
@@ -310,23 +310,23 @@ export const LAB_PROJECTS: LabProject[] = [
 export const ENROLLMENT_STAGES = [
   {
     step: '01',
-    title: 'Profile & Intent Review',
-    desc: 'Submit your background, current projects, and primary faculty of interest through our application portal. We assess curiosity, discipline, and execution intent.',
+    title: 'Diagnostic Intake Review',
+    desc: 'Declare your background, technical focus, and target capstone through our application portal. We evaluate clarity, discipline, and execution intent.',
   },
   {
     step: '02',
-    title: 'Diagnostic Alignment Interview',
-    desc: 'A 20-minute 1-on-1 diagnostic conversation to map your current baseline, identify friction points, and tailor your initial project trajectory.',
+    title: 'Strategy & Baseline Session',
+    desc: 'A focused 1-on-1 diagnostic review with the director to map your operational bottlenecks, audit habits, and calibrate your sprint trajectory.',
   },
   {
     step: '03',
-    title: 'Studio Immersion & Sprint Cadence',
-    desc: 'Join the cohort studio. Work on weekly sprint briefs, engage in code/writing reviews, and log your daily execution using the Flow7 protocol.',
+    title: 'Studio Sprints & Reality Logging',
+    desc: 'Build through structured sprint briefs, participate in rigorous weekly code and prose critiques, and log your output daily using the Flow7 protocol.',
   },
   {
     step: '04',
-    title: 'Capstone Defense & Production Launch',
-    desc: 'Ship your capstone project to a live URL, defend your technical/architectural decisions, and graduate into the NIT7ER alumni network.',
+    title: 'Capstone Defense & Deployment',
+    desc: 'Ship your production system to a live URL, defend your technical architecture before peers, and transition into the NIT7ER alumni network.',
   },
 ];
 

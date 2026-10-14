@@ -107,14 +107,14 @@ export function Flow7Simulator() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E5E5E0] pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="label-mono text-[#C9A84C]">Live Studio Utility</span>
+            <span className="label-mono text-[#C9A84C]">Interactive Focus System</span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] animate-ping"></span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-[#121212] tracking-tight mt-0.5">
-            Flow7 Cognitive Awareness Engine
+            Flow7 Focus &amp; Reality Engine
           </h3>
           <p className="text-xs text-[#71717A] max-w-lg mt-0.5">
-            Experience NIT7ER’s proprietary reality-tracking protocol in real-time. Lock a single objective, execute without self-deception, and log your output telemetry.
+            Test NIT7ER’s proprietary focus-tracking protocol in real time. Lock a single objective, execute without distraction, and log your output telemetry.
           </p>
         </div>
 
@@ -253,7 +253,7 @@ export function Flow7Simulator() {
               className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#C9A84C] hover:text-[#9B7C28] transition-colors"
             >
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>LOG TELEMETRY RECORD MANUAL</span>
+              <span>LOG FOCUS SESSION TELEMETRY</span>
             </button>
             <span className="text-[11px] font-mono text-[#71717A]">
               Flow7 Model v2.4

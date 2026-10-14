@@ -27,12 +27,12 @@ export default function HomePage() {
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#121212] leading-[1.12] tracking-tight">
-              The Institute of Applied Creative Technology &amp; Systems Discipline.
+              The Institute of Applied Creative Technology, Systems &amp; Mind.
             </h1>
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base text-[#71717A] leading-relaxed max-w-2xl font-normal">
-              A high-performance modern academy designed for self-driven builders, creators, and entrepreneurs. We merge full-stack software engineering, the Flow7 cognitive reality-tracking model, structured thought leadership, and foundational computer science.
+              A modern academy for builders, founders, and creators who demand real execution. We unite full-stack software engineering, Flow7 cognitive reality tracking, precise technical prose, and fundamental computer science.
             </p>
 
             {/* Action Buttons */}
@@ -41,7 +41,7 @@ export default function HomePage() {
                 href="/apply"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#121212] hover:bg-[#27272A] text-white font-mono font-bold text-xs sm:text-sm tracking-tight transition-all shadow-xs"
               >
-                <span>APPLY FOR COHORT ENROLLMENT</span>
+                <span>START DIAGNOSTIC INTAKE</span>
                 <ArrowRight className="w-4 h-4 text-[#F5C842]" />
               </Link>
               <Link
@@ -66,15 +66,15 @@ export default function HomePage() {
             <ul className="space-y-3 text-xs text-[#71717A]">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#121212] mt-1.5 shrink-0"></span>
-                <span><strong className="text-[#121212]">Zero Toy Projects:</strong> Every module terminates in live deployed software or published technical specifications.</span>
+                <span><strong className="text-[#121212]">Zero Toy Projects:</strong> Every module terminates in live production software or published architectural specifications.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] mt-1.5 shrink-0"></span>
-                <span><strong className="text-[#121212]">Flow7 Cognitive Telemetry:</strong> Log daily reality without to-do list guilt to conquer cognitive friction.</span>
+                <span><strong className="text-[#121212]">Flow7 Reality Telemetry:</strong> Log daily output without to-do list guilt to conquer cognitive friction.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#9B7C28] mt-1.5 shrink-0"></span>
-                <span><strong className="text-[#121212]">Polymath Competence:</strong> Code, prose, mind, and machine logic synthesized into one builder.</span>
+                <span><strong className="text-[#121212]">The Polymath Advantage:</strong> Code, prose, mind, and machine logic synthesized into one high-leverage builder.</span>
               </li>
             </ul>
 
@@ -131,10 +131,10 @@ export default function HomePage() {
             <span>ADMISSIONS INTAKE ACTIVE</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-            Ready to Build Systems with Ruthless Discipline?
+            Ready to Build Systems That Stand Up to Reality?
           </h2>
           <p className="text-xs sm:text-sm text-[#D1D1CB] leading-relaxed">
-            Applications for the upcoming NIT7ER cohort are open. Select your discipline, complete our diagnostic intake, and work directly with Abdullah Qaasim-Falade.
+            Applications for the upcoming NIT7ER cohort are open. Select your discipline, complete our diagnostic intake, and work directly with Founder Abdullah Qaasim-Falade.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ export default function HomePage() {
           href="/apply"
           className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C9A84C] hover:bg-[#F5C842] text-[#121212] font-mono font-bold text-xs sm:text-sm shadow-xs transition-colors shrink-0"
         >
-          <span>START HYBRID APPLICATION</span>
+          <span>START DIAGNOSTIC INTAKE</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </section>

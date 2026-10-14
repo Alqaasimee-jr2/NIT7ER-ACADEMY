@@ -133,7 +133,7 @@ function ApplicationFormContent() {
           <span className="font-bold text-[#121212]">INTAKE QUEUE // COHORT 2026/2027</span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-black text-[#121212] tracking-tight">
-          NIT7ER Academy Application Portal
+          NIT7ER Academy Diagnostic Intake Portal
         </h1>
         <p className="text-xs sm:text-sm text-[#71717A] max-w-lg mx-auto">
           Complete this diagnostic intake to apply. Applications are reviewed directly by Director Abdullah Qaasim-Falade.
@@ -183,7 +183,7 @@ function ApplicationFormContent() {
               className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#121212] hover:bg-[#27272A] text-white font-mono text-xs sm:text-sm font-bold shadow-xs transition-colors"
             >
               <MessageCircle className="w-4 h-4 text-[#F5C842]" />
-              <span>DISPATCH WHATSAPP CONFIRMATION</span>
+              <span>CONFIRM APPLICATION ON WHATSAPP</span>
             </a>
           </div>
         </div>
@@ -398,7 +398,7 @@ function ApplicationFormContent() {
                 className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#C9A84C] hover:bg-[#F5C842] text-[#121212] text-xs sm:text-sm font-mono font-bold transition-colors disabled:opacity-50"
               >
                 <Send className="w-3.5 h-3.5" />
-                <span>{isSubmitting ? 'REGISTERING...' : 'DISPATCH APPLICATION'}</span>
+                <span>{isSubmitting ? 'REGISTERING...' : 'SUBMIT APPLICATION FOR REVIEW'}</span>
               </button>
             )}
           </div>
