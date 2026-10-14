@@ -1,16 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Compass, ShieldCheck, Flame, Terminal } from 'lucide-react';
+import { ArrowRight, Compass } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
 import { StatCounter } from '@/components/ui/StatCounter';
-import { QuickLaunchpad } from '@/components/ui/QuickLaunchpad';
-import { FacultyTabs } from '@/components/ui/FacultyTabs';
+import { FacultyOverviewGrid } from '@/components/ui/FacultyOverviewGrid';
 import { LabsShowcase } from '@/components/ui/LabsShowcase';
 import { EnrollmentRoadmap } from '@/components/ui/EnrollmentRoadmap';
 import { FounderManifesto } from '@/components/ui/FounderManifesto';
-import { TeamShowcase } from '@/components/ui/TeamShowcase';
-import { Flow7Simulator } from '@/components/interactive/Flow7Simulator';
 
 export default function HomePage() {
   return (
@@ -40,7 +37,7 @@ export default function HomePage() {
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
-              Practical education in software engineering, cognitive execution, technical writing, and computer fundamentals.
+              Practical education in software engineering, cognitive execution, technical writing, and computer fundamentals. Built for builders who ship real production software.
             </p>
 
             {/* Action Buttons with Pure Essence Pill Geometry & Button Press */}
@@ -62,9 +59,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right Column: Studio Cohort Showcase & Standards */}
-          <div className="lg:col-span-5 space-y-4">
-            {/* Visual Cohort Illustration Card */}
+          {/* Right Column: Studio Cohort Showcase */}
+          <div className="lg:col-span-5">
             <div className="curve-soft bg-gradient-to-b from-[#EEF7FC] to-white border border-[#D9E6F0] p-5 shadow-xs relative overflow-hidden group">
               <div className="flex items-center justify-between pb-3 border-b border-[#D9E6F0]/80">
                 <div className="flex items-center gap-2">
@@ -80,7 +76,7 @@ export default function HomePage() {
               </div>
 
               {/* Official Illustration Vector Art */}
-              <div className="relative w-full h-44 sm:h-52 flex items-center justify-center py-2">
+              <div className="relative w-full h-48 sm:h-56 flex items-center justify-center py-2">
                 <Image
                   src="/brand/illustration-team-tight.png"
                   alt="NIT7ER Studio Team and Cohort"
@@ -93,33 +89,8 @@ export default function HomePage() {
 
               <div className="pt-2.5 border-t border-[#D9E6F0]/80 flex items-center justify-between text-[10px] font-mono text-[#64748B]">
                 <span>Systems • Mind • Code</span>
-                <span className="text-[#12345B] font-bold">2026 Cohort</span>
+                <span className="text-[#12345B] font-bold">2026/2027 Cohort</span>
               </div>
-            </div>
-
-            {/* Studio Standards Summary */}
-            <div className="curve-soft bg-[#EEF7FC]/80 border border-[#D9E6F0] p-5 space-y-3 shadow-xs">
-              <div className="flex items-center justify-between border-b border-[#D9E6F0] pb-2">
-                <span className="label-mono text-[#12345B] font-bold text-[11px]">
-                  Institutional Tenets
-                </span>
-                <ShieldCheck className="w-3.5 h-3.5 text-[#1769AA]" />
-              </div>
-
-              <ul className="space-y-2 text-xs text-[#64748B]">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#12345B] shrink-0"></span>
-                  <span><strong className="text-[#12345B]">Production Output:</strong> Ship live software and real technical systems.</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1769AA] shrink-0"></span>
-                  <span><strong className="text-[#12345B]">Focused Execution:</strong> Build deep attention and consistent daily stamina.</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] shrink-0"></span>
-                  <span><strong className="text-[#12345B]">Complete Foundations:</strong> Master software, writing, and computer literacy.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -131,42 +102,27 @@ export default function HomePage() {
       <StatCounter />
 
       {/* ========================================================= */}
-      {/* 3. LIVE INTERACTIVE FLOW7 FOCUS SIMULATOR                 */}
+      {/* 3. THE 4 FOUNDATIONAL FACULTIES OVERVIEW                  */}
       {/* ========================================================= */}
-      <Flow7Simulator />
+      <FacultyOverviewGrid />
 
       {/* ========================================================= */}
-      {/* 4. QUICK-ACTION LAUNCHPAD                                 */}
-      {/* ========================================================= */}
-      <QuickLaunchpad />
-
-      {/* ========================================================= */}
-      {/* 5. THE 4 FOUNDATIONAL FACULTIES & DIAGRAMS                */}
-      {/* ========================================================= */}
-      <FacultyTabs />
-
-      {/* ========================================================= */}
-      {/* 6. INCUBATED LABS & PROOF OF WORK                         */}
+      {/* 4. INCUBATED LABS & PROOF OF WORK                         */}
       {/* ========================================================= */}
       <LabsShowcase limit={3} />
 
       {/* ========================================================= */}
-      {/* 7. 4-STAGE STUDIO TRAJECTORY                              */}
+      {/* 5. 4-STAGE STUDIO TRAJECTORY                              */}
       {/* ========================================================= */}
       <EnrollmentRoadmap />
 
       {/* ========================================================= */}
-      {/* 8. STUDIO DIRECTORS & FACULTY                             */}
-      {/* ========================================================= */}
-      <TeamShowcase />
-
-      {/* ========================================================= */}
-      {/* 9. FOUNDER'S INSTITUTIONAL MANIFESTO                      */}
+      {/* 6. FOUNDER'S INSTITUTIONAL MANIFESTO                      */}
       {/* ========================================================= */}
       <FounderManifesto />
 
       {/* ========================================================= */}
-      {/* 10. ADMISSIONS INTAKE ACTIVE BANNER                       */}
+      {/* 7. ADMISSIONS INTAKE ACTIVE BANNER                        */}
       {/* ========================================================= */}
       <section className="curve-asymmetric bg-gradient-to-r from-[#12345B] via-[#1769AA] to-[#12345B] text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl border border-[#12345B] relative overflow-hidden">
         {/* Subtle Brand Shapes Accent Watermark */}

@@ -2,18 +2,18 @@ import React from 'react';
 
 export function MarqueeTicker() {
   const items = [
-    'SWE-101: Full-Stack Web Systems',
-    'SWE-102: Cross-Platform Mobile Engineering',
-    'SWE-103: Applied AI & Intelligent Systems',
-    'COG-201: Deep Work & Focus Engineering',
-    'COG-202: Personal Operating Systems',
-    'WRT-301: Technical Writing & Architecture Specs',
-    'WRT-302: Essay Craft & Editorial Leadership',
-    'WRT-303: High-Conversion Copywriting',
-    'CMP-401: Computer Fundamentals & OS Mastery',
-    'CMP-402: Modern Productivity Suites',
-    'CMP-403: Cyber Hygiene & Digital Safety',
-    'CMP-404: Computational Thinking & Automation',
+    'CT-101: Full-Stack Systems & Architecture',
+    'CT-102: Interactive Web & Creative Computation',
+    'CT-103: Mobile Engineering & Resilient Offline Apps',
+    'CP-201: Flow State Engineering & Deep Work Protocol',
+    'CP-202: Cognitive Energy Architecture & Stamina',
+    'CP-203: Deliberate Practice & Skill Compounding',
+    'WTL-301: Technical Prose as an Engineering Primitive',
+    'WTL-302: Strategic Writing & Product Narratives',
+    'WTL-303: Rhetoric, Argumentation & Public Discourse',
+    'CE-401: Computing Foundations & Hardware Logic',
+    'CE-402: Internet Literacy, Protocols & Cyber Hygiene',
+    'CE-403: Algorithms, Data Structures & Computational Thinking',
   ];
 
   return (

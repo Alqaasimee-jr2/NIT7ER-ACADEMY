@@ -39,6 +39,8 @@ const nextConfig: NextConfig = {
       { source: '/manifesto', destination: '/about', permanent: true },
       { source: '/inquire', destination: '/contact', permanent: true },
       { source: '/consultation', destination: '/contact', permanent: true },
+      { source: '/simulator', destination: '/flow7', permanent: true },
+      { source: '/focus', destination: '/flow7', permanent: true },
     ];
   },
 };

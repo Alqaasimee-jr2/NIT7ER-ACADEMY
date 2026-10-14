@@ -11,6 +11,7 @@ const requiredRoutes = [
   'src/app/about/page.tsx',
   'src/app/apply/page.tsx',
   'src/app/contact/page.tsx',
+  'src/app/flow7/page.tsx',
   'src/app/not-found.tsx',
   'src/app/api/apply/route.ts',
   'src/app/api/contact/route.ts'

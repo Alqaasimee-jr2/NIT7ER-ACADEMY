@@ -109,6 +109,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/flow7" className="gold-link flex items-center gap-1">
+                  <span>Flow7 Focus Simulator</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="gold-link flex items-center gap-1">
                   <span>Founder Thesis &amp; Story</span>
                 </Link>

@@ -86,6 +86,15 @@ export function LabsShowcase({ limit }: { limit?: number }) {
               </span>
 
               <div className="flex items-center gap-2">
+                {project.id === 'flow7' && (
+                  <Link
+                    href="/flow7"
+                    className="btn-press inline-flex items-center gap-1 px-2.5 py-1 bg-[#EEF7FC] hover:bg-[#12345B] text-[#12345B] hover:text-white border border-[#D9E6F0] rounded-full text-[10px] font-bold font-mono transition-colors"
+                  >
+                    <span>Try Simulator</span>
+                    <ArrowRight className="w-3 h-3 text-[#E6AD3C]" />
+                  </Link>
+                )}
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}

@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight, Search } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
-import { CommandPaletteTrigger } from '@/components/ui/QuickUtils';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,18 +12,18 @@ export function Navbar() {
 
   const navLinks = [
     { label: 'Overview', href: '/' },
-    { label: 'Curriculum & Tracks', href: '/programs' },
-    { label: 'Labs & Incubator', href: '/labs' },
-    { label: 'Philosophy & Story', href: '/about' },
+    { label: 'Curriculum', href: '/programs' },
+    { label: 'Labs', href: '/labs' },
+    { label: 'Philosophy', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 glass-header">
+    <header className="sticky top-0 z-50 glass-header border-b border-[#D9E6F0]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Brand Mark & Title */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <N7BrandMark size="md" variant="gold" className="transition-transform group-hover:scale-105" />
             <div>
               <div className="flex items-center gap-2">
@@ -42,14 +41,14 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1.5 p-1 bg-white/70 border border-[#D9E6F0] rounded-full shadow-xs">
+          <nav className="hidden md:flex items-center gap-1 p-1 bg-white/80 border border-[#D9E6F0] rounded-full shadow-xs">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2 text-xs lg:text-sm font-semibold rounded-full transition-all ${
+                  className={`px-3.5 py-1.5 text-xs lg:text-sm font-semibold rounded-full transition-all ${
                     isActive
                       ? 'bg-[#12345B] text-white font-bold shadow-xs'
                       : 'text-[#64748B] hover:text-[#12345B] hover:bg-[#EEF7FC]'
@@ -62,8 +61,7 @@ export function Navbar() {
           </nav>
 
           {/* Action CTA with Pure Essence Pulse Ring */}
-          <div className="hidden sm:flex items-center gap-2.5">
-            <CommandPaletteTrigger />
+          <div className="hidden md:flex items-center shrink-0">
             <Link
               href="/apply"
               className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs sm:text-sm font-bold tracking-tight rounded-full transition-all shadow-sm border border-[#12345B]"
@@ -74,21 +72,13 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu & Quick Search */}
-          <div className="flex md:hidden items-center gap-1.5">
-            <button
-              type="button"
-              onClick={() => window.dispatchEvent(new CustomEvent('open-command-palette'))}
-              className="p-2 text-[#12345B] hover:bg-[#EEF7FC] rounded-full transition-colors"
-              aria-label="Open search tracks"
-            >
-              <Search className="w-4 h-4 text-[#1769AA]" />
-            </button>
+          {/* Mobile Right Bar: Intake Button + Hamburger */}
+          <div className="flex md:hidden items-center gap-2">
             <Link
               href="/apply"
-              className="px-3 py-1.5 bg-[#12345B] text-white text-xs font-bold rounded-full"
+              className="btn-press px-3.5 py-1.5 bg-[#12345B] text-white text-xs font-bold font-mono rounded-full shadow-xs"
             >
-              Apply
+              Intake
             </Link>
             <button
               type="button"
@@ -104,7 +94,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#D9E6F0] bg-[#FAFCFE]/95 backdrop-blur-md px-4 pt-3 pb-6 space-y-3 shadow-lg">
+        <div className="md:hidden border-b border-[#D9E6F0] bg-[#FAFCFE]/95 backdrop-blur-md px-4 pt-3 pb-6 space-y-4 shadow-lg animate-fadeIn">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -125,7 +115,7 @@ export function Navbar() {
             })}
           </div>
 
-          <div className="pt-3 border-t border-[#D9E6F0]">
+          <div className="pt-3 border-t border-[#D9E6F0] space-y-2">
             <Link
               href="/apply"
               onClick={() => setMobileMenuOpen(false)}
@@ -135,6 +125,9 @@ export function Navbar() {
               <span>Start Diagnostic Intake</span>
               <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
             </Link>
+            <p className="text-center font-mono text-[10px] text-[#64748B]">
+              Direct Inquiries Hotline: +234 707 076 3135
+            </p>
           </div>
         </div>
       )}
