@@ -215,7 +215,7 @@ function ApplicationFormContent() {
               To expedite your profile diagnostic and avoid email spam delays, dispatch your pre-formatted application confirmation directly to Director Abdullah Qaasim-Falade on WhatsApp:
             </p>
             <a
-              href={`https://wa.me/2349019597944?text=${whatsappText}`}
+              href={`https://wa.me/2347070763135?text=${whatsappText}`}
               target="_blank"
               rel="noreferrer"
               className="btn-press inline-flex items-center justify-center gap-2.5 w-full px-5 py-3.5 bg-[#12345B] hover:bg-[#1769AA] text-white font-mono text-xs sm:text-sm font-bold rounded-full shadow-md transition-colors"
