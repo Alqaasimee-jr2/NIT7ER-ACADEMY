@@ -18,12 +18,23 @@ export function Navbar() {
     { label: 'Contact', href: '/contact' },
   ];
 
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false);
+    if (!href.includes('#') && typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 glass-header border-b border-[#D9E6F0]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Brand Mark & Title */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+          <Link
+            href="/"
+            onClick={() => handleNavClick('/')}
+            className="flex items-center gap-3 shrink-0 group"
+          >
             <N7BrandMark size="md" variant="gold" className="transition-transform group-hover:scale-105" />
             <div>
               <div className="flex items-center gap-2">
@@ -48,6 +59,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={() => handleNavClick(link.href)}
                   className={`px-3.5 py-1.5 text-xs lg:text-sm font-semibold rounded-full transition-all ${
                     isActive
                       ? 'bg-[#12345B] text-white font-bold shadow-xs'
@@ -64,6 +76,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center shrink-0">
             <Link
               href="/apply"
+              onClick={() => handleNavClick('/apply')}
               className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs sm:text-sm font-bold tracking-tight rounded-full transition-all shadow-sm border border-[#12345B]"
             >
               <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
@@ -76,6 +89,7 @@ export function Navbar() {
           <div className="flex md:hidden items-center gap-2">
             <Link
               href="/apply"
+              onClick={() => handleNavClick('/apply')}
               className="btn-press px-3.5 py-1.5 bg-[#12345B] text-white text-xs font-bold font-mono rounded-full shadow-xs"
             >
               Intake
@@ -102,7 +116,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
                   className={`px-4 py-2.5 text-sm font-bold rounded-xl transition-colors ${
                     isActive
                       ? 'bg-[#12345B] text-white'
@@ -118,7 +132,7 @@ export function Navbar() {
           <div className="pt-3 border-t border-[#D9E6F0] space-y-2">
             <Link
               href="/apply"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => handleNavClick('/apply')}
               className="btn-press w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#12345B] text-white font-bold text-sm rounded-full shadow-sm"
             >
               <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>

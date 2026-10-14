@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { MarqueeTicker } from '@/components/layout/MarqueeTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { CommandPalette } from '@/components/ui/CommandPalette';
-import { ScrollToTop } from '@/components/ui/QuickUtils';
+import { ScrollToTop, NavigationScrollReset } from '@/components/ui/QuickUtils';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
@@ -82,11 +82,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
         <JsonLd />
       </head>
       <body className="min-h-screen bg-[#FAFCFE] text-[#1F2937] flex flex-col selection:bg-[#EEF7FC] selection:text-[#12345B]">
+        <NavigationScrollReset />
         <Navbar />
         <MarqueeTicker />
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 sm:space-y-16">

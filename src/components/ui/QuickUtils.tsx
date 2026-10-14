@@ -1,7 +1,21 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { ArrowUp, Search, Check, Copy } from 'lucide-react';
+
+export function NavigationScrollReset() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // When navigating to a new path without a hash anchor, scroll to top instantly
+    if (typeof window !== 'undefined' && !window.location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  }, [pathname]);
+
+  return null;
+}
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
