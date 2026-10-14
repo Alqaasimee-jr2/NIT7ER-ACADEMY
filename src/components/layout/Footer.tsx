@@ -119,6 +119,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/contact" className="gold-link flex items-center gap-1">
+                  <span>Contact &amp; Admissions Desk</span>
+                </Link>
+              </li>
+              <li>
                 <a
                   href={FOUNDER_INFO.studioUrl}
                   target="_blank"

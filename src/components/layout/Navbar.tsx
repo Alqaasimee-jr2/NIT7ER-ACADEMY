@@ -15,6 +15,7 @@ export function Navbar() {
     { label: 'Curriculum & Tracks', href: '/programs' },
     { label: 'Labs & Incubator', href: '/labs' },
     { label: 'Philosophy & Story', href: '/about' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (

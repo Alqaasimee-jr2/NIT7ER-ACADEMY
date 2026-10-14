@@ -218,10 +218,12 @@ export default function AboutPage() {
       </section>
 
       {/* The Core Studio Faculty & Practitioners */}
-      <TeamShowcase />
+      <div id="team" className="scroll-mt-24">
+        <TeamShowcase />
+      </div>
 
       {/* The 4 Institutional Tenets */}
-      <section className="space-y-6">
+      <section id="manifesto" className="space-y-6 scroll-mt-24">
         <div className="border-b border-[#D9E6F0] pb-3">
           <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
             Operational Discipline

@@ -177,15 +177,13 @@ export default function ProgramsPage() {
                       {faculty.caseStudy.description}
                     </p>
                     {faculty.caseStudy.link && (
-                      <a
+                      <Link
                         href={faculty.caseStudy.link}
-                        target="_blank"
-                        rel="noreferrer"
                         className="gold-link inline-flex items-center gap-1 text-xs font-mono font-bold text-[#12345B] pt-1"
                       >
-                        <span>INSPECT ARCHITECTURAL CASE STUDY</span>
+                        <span>INSPECT INCUBATED LAB CASE STUDY</span>
                         <ArrowRight className="w-3 h-3 text-[#E6AD3C]" />
-                      </a>
+                      </Link>
                     )}
                   </div>
                 )}

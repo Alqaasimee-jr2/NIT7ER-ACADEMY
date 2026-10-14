@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
@@ -11,6 +10,20 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+  },
+  async redirects() {
+    return [
+      { source: '/academics', destination: '/programs', permanent: true },
+      { source: '/curriculum', destination: '/programs', permanent: true },
+      { source: '/faculties', destination: '/programs', permanent: true },
+      { source: '/admissions', destination: '/apply', permanent: true },
+      { source: '/intake', destination: '/apply', permanent: true },
+      { source: '/team', destination: '/about', permanent: true },
+      { source: '/story', destination: '/about', permanent: true },
+      { source: '/manifesto', destination: '/about', permanent: true },
+      { source: '/inquire', destination: '/contact', permanent: true },
+      { source: '/consultation', destination: '/contact', permanent: true },
+    ];
   },
 };
 

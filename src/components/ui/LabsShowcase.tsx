@@ -36,7 +36,8 @@ export function LabsShowcase({ limit }: { limit?: number }) {
         {projects.map((project, idx) => (
           <div
             key={project.id}
-            className="technical-border curve-soft p-5 sm:p-6 bg-white flex flex-col justify-between space-y-4 border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] hover:shadow-md transition-all"
+            id={project.id}
+            className="technical-border curve-soft p-5 sm:p-6 bg-white flex flex-col justify-between space-y-4 border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] hover:shadow-md transition-all scroll-mt-24"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between font-mono text-[10px]">
@@ -89,9 +90,9 @@ export function LabsShowcase({ limit }: { limit?: number }) {
                   <a
                     href={project.githubUrl}
                     target="_blank"
-                    rel="noreferrer"
-                    className="p-1.5 border border-[#D9E6F0] rounded-full text-[#64748B] hover:text-[#12345B] hover:border-[#12345B] transition-colors"
-                    title="View GitHub Repository"
+                    rel="noopener noreferrer"
+                    className="p-1.5 border border-[#D9E6F0] rounded-full text-[#64748B] hover:text-[#12345B] hover:border-[#12345B] hover:bg-[#EEF7FC] transition-colors"
+                    title="View GitHub Repository (External)"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
                   </a>
@@ -100,12 +101,18 @@ export function LabsShowcase({ limit }: { limit?: number }) {
                   <a
                     href={project.liveUrl}
                     target="_blank"
-                    rel="noreferrer"
-                    className="btn-press inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#12345B] text-white hover:bg-[#1769AA] font-bold text-[11px] rounded-full transition-colors shadow-2xs"
+                    rel="noopener noreferrer"
+                    className="btn-press inline-flex items-center gap-1.5 px-3 py-1 bg-[#12345B] text-white hover:bg-[#1769AA] font-bold text-[11px] rounded-full transition-colors shadow-2xs"
+                    title="Launch Live System (External)"
                   >
                     <span>LIVE</span>
                     <ExternalLink className="w-3 h-3 text-[#E6AD3C]" />
                   </a>
+                )}
+                {!project.githubUrl && !project.liveUrl && (
+                  <span className="text-[10px] font-mono text-[#64748B] bg-[#EEF7FC] px-2 py-0.5 rounded-full border border-[#D9E6F0]">
+                    Archive
+                  </span>
                 )}
               </div>
             </div>

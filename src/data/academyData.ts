@@ -92,12 +92,12 @@ export const FACULTIES: Faculty[] = [
       title: 'Clasquera & Production Web Engines',
       project: 'Clasquera',
       description: 'Audio-based lesson accountability platform integrating Flutter recording apps with Gemini Pro verification via Firebase Cloud Functions.',
-      link: 'https://github.com/Alqaasimee-jr2/Clasquera-Landing-page',
+      link: '/labs#clasquera',
     },
     livingProof: {
       title: 'Clasquera & Production Web Engines',
       description: 'Audio-based lesson accountability platform integrating Flutter recording apps with Gemini Pro verification via Firebase Cloud Functions.',
-      link: 'https://github.com/Alqaasimee-jr2/Clasquera-Landing-page',
+      link: '/labs#clasquera',
     },
     programs: [
       {
@@ -294,12 +294,12 @@ export const FACULTIES: Faculty[] = [
       title: 'Flow7 Time Awareness Journal',
       project: 'Flow7',
       description: 'The mobile-first reality tracking and cognitive regulation engine built by NIT7ER to track execution and eliminate friction.',
-      link: 'https://flow7-two.vercel.app',
+      link: '/labs#flow7',
     },
     livingProof: {
       title: 'Flow7 Time Awareness Journal',
       description: 'The mobile-first reality tracking and cognitive regulation engine built by NIT7ER to track execution and eliminate friction.',
-      link: 'https://flow7-two.vercel.app',
+      link: '/labs#flow7',
     },
     programs: [
       {
@@ -447,12 +447,12 @@ export const FACULTIES: Faculty[] = [
       title: 'OAUMods Campus Research Dossier & Technical Specs',
       project: 'OAUMods Research',
       description: '18 comprehensive research volumes and architectural specifications authoritatively mapping complex spatial systems.',
-      link: 'https://github.com/Alqaasimee-jr2/OAUMods/tree/main/research',
+      link: '/labs#oaumods',
     },
     livingProof: {
       title: 'OAUMods Campus Research Dossier & Technical Specs',
       description: '18 comprehensive research volumes and architectural specifications authoritatively mapping complex spatial systems.',
-      link: 'https://github.com/Alqaasimee-jr2/OAUMods/tree/main/research',
+      link: '/labs#oaumods',
     },
     programs: [
       {
@@ -649,12 +649,12 @@ export const FACULTIES: Faculty[] = [
       title: 'Lang Huey Educational Engine',
       project: 'Lang Huey',
       description: 'Experimental offline educational software engineered to teach foundational curricula in bandwidth-constrained classroom environments.',
-      link: 'https://youtube.com',
+      link: '/labs#lang-huey',
     },
     livingProof: {
       title: 'Lang Huey Educational Engine',
       description: 'Experimental offline educational software engineered to teach foundational curricula in bandwidth-constrained classroom environments.',
-      link: 'https://youtube.com',
+      link: '/labs#lang-huey',
     },
     programs: [
       {
