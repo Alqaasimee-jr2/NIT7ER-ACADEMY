@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Compass, ShieldCheck, Flame, Terminal } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
 import { StatCounter } from '@/components/ui/StatCounter';
@@ -16,9 +17,15 @@ export default function HomePage() {
       {/* ========================================================= */}
       {/* 1. HERO SECTION (OAUMods Architecture + Pure Essence Curves) */}
       {/* ========================================================= */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-12 bg-white shadow-sm space-y-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-8 space-y-5">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-12 bg-white shadow-sm space-y-8 relative overflow-hidden">
+        {/* Subtle Decorative Background Contour */}
+        <div
+          className="absolute -top-10 -right-10 w-96 h-96 opacity-10 pointer-events-none bg-contain bg-no-repeat"
+          style={{ backgroundImage: `url('/brand/contour-blob.png')` }}
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div className="lg:col-span-7 space-y-5">
             {/* Studio Badge with Pure Essence Pulse Ring */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
@@ -54,33 +61,64 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right Column: Studio Metric Overview Box in Pure Essence Soft Curve */}
-          <div className="lg:col-span-4 curve-soft bg-[#EEF7FC]/80 border border-[#D9E6F0] p-6 space-y-4 shadow-xs">
-            <div className="flex items-center justify-between border-b border-[#D9E6F0] pb-2.5">
-              <span className="label-mono text-[#12345B] font-bold">
-                Studio Standards
-              </span>
-              <ShieldCheck className="w-4 h-4 text-[#1769AA]" />
+          {/* Right Column: Studio Cohort Showcase & Standards */}
+          <div className="lg:col-span-5 space-y-4">
+            {/* Visual Cohort Illustration Card */}
+            <div className="curve-soft bg-gradient-to-b from-[#EEF7FC] to-white border border-[#D9E6F0] p-5 shadow-xs relative overflow-hidden group">
+              <div className="flex items-center justify-between pb-3 border-b border-[#D9E6F0]/80">
+                <div className="flex items-center gap-2">
+                  <N7BrandMark size="xs" variant="gold" />
+                  <span className="label-mono text-[#12345B] font-bold text-[10px]">
+                    Lagos Studio Cohort
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#1769AA]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] pulse-ring"></span>
+                  <span>Active Session</span>
+                </div>
+              </div>
+
+              {/* Official Illustration Vector Art */}
+              <div className="relative w-full h-44 sm:h-52 flex items-center justify-center py-2">
+                <Image
+                  src="/brand/illustration-team-tight.png"
+                  alt="NIT7ER Studio Team and Cohort"
+                  width={1191}
+                  height={910}
+                  className="w-full h-full object-contain drop-shadow-xs transition-transform duration-500 group-hover:scale-[1.02]"
+                  priority
+                />
+              </div>
+
+              <div className="pt-2.5 border-t border-[#D9E6F0]/80 flex items-center justify-between text-[10px] font-mono text-[#64748B]">
+                <span>Systems • Mind • Code</span>
+                <span className="text-[#12345B] font-bold">2026 Cohort</span>
+              </div>
             </div>
 
-            <ul className="space-y-3 text-xs text-[#64748B]">
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#12345B] mt-1.5 shrink-0"></span>
-                <span><strong className="text-[#12345B]">Zero Toy Projects:</strong> Every module terminates in live production software or published architectural specifications.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1769AA] mt-1.5 shrink-0"></span>
-                <span><strong className="text-[#12345B]">Flow7 Reality Telemetry:</strong> Log daily output without to-do list guilt to conquer cognitive friction.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] mt-1.5 shrink-0"></span>
-                <span><strong className="text-[#12345B]">The Polymath Advantage:</strong> Code, prose, mind, and machine logic synthesized into one high-leverage builder.</span>
-              </li>
-            </ul>
+            {/* Studio Standards Summary */}
+            <div className="curve-soft bg-[#EEF7FC]/80 border border-[#D9E6F0] p-5 space-y-3 shadow-xs">
+              <div className="flex items-center justify-between border-b border-[#D9E6F0] pb-2">
+                <span className="label-mono text-[#12345B] font-bold text-[11px]">
+                  Institutional Tenets
+                </span>
+                <ShieldCheck className="w-3.5 h-3.5 text-[#1769AA]" />
+              </div>
 
-            <div className="pt-2 border-t border-[#D9E6F0] flex items-center justify-between text-[11px] font-mono text-[#64748B]">
-              <span>HQ: Lagos // Global Cohort</span>
-              <span className="text-[#12345B] font-bold">2026/2027</span>
+              <ul className="space-y-2.5 text-xs text-[#64748B]">
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#12345B] mt-1 shrink-0"></span>
+                  <span><strong className="text-[#12345B]">Zero Toy Projects:</strong> Every module terminates in live production software or published architecture.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1769AA] mt-1 shrink-0"></span>
+                  <span><strong className="text-[#12345B]">Flow7 Reality Telemetry:</strong> Log daily output without to-do list guilt to master cognitive friction.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] mt-1 shrink-0"></span>
+                  <span><strong className="text-[#12345B]">The Polymath Advantage:</strong> Code, prose, mind, and machine logic synthesized into one builder.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -124,8 +162,13 @@ export default function HomePage() {
       {/* ========================================================= */}
       {/* 9. ADMISSIONS INTAKE ACTIVE BANNER                        */}
       {/* ========================================================= */}
-      <section className="curve-asymmetric bg-gradient-to-r from-[#12345B] via-[#1769AA] to-[#12345B] text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl border border-[#12345B]">
-        <div className="space-y-2 max-w-xl">
+      <section className="curve-asymmetric bg-gradient-to-r from-[#12345B] via-[#1769AA] to-[#12345B] text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl border border-[#12345B] relative overflow-hidden">
+        {/* Subtle Brand Shapes Accent Watermark */}
+        <div
+          className="absolute -right-8 -bottom-8 w-60 h-60 opacity-15 pointer-events-none bg-contain bg-no-repeat"
+          style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
+        />
+        <div className="space-y-2 max-w-xl relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-white text-[11px] font-mono font-bold border border-white/20">
             <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
             <span>ADMISSIONS INTAKE ACTIVE</span>

@@ -12,11 +12,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
           {/* Brand & Vision */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <N7BrandMark size="sm" variant="carbon" />
-              <span className="text-lg font-black tracking-tight text-[#12345B]">
-                NIT7ER <span className="label-mono px-2 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">Academy</span>
-              </span>
+            <div className="space-y-2.5">
+              <Link href="/" className="inline-block group">
+                <N7BrandMark type="logo" variant="gold" size="md" className="transition-transform group-hover:scale-105" />
+              </Link>
+              <div>
+                <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0] text-[10px]">
+                  Institute of Applied Creative Technology // Lagos &amp; Global
+                </span>
+              </div>
             </div>
 
             <p className="text-sm text-[#64748B] leading-relaxed max-w-sm">

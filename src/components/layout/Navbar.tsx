@@ -23,7 +23,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Brand Mark & Title */}
           <Link href="/" className="flex items-center gap-3 group">
-            <N7BrandMark size="md" variant="carbon" className="group-hover:border-[#E6AD3C] transition-colors" />
+            <N7BrandMark size="md" variant="gold" className="transition-transform group-hover:scale-105" />
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-base sm:text-lg font-black tracking-tight text-[#12345B]">

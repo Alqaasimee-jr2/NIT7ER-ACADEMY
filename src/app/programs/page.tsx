@@ -35,8 +35,13 @@ export default function ProgramsPage() {
   return (
     <div className="space-y-12 sm:space-y-16">
       {/* Header Banner */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs">
-        <div className="max-w-3xl space-y-3">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+        {/* Subtle Brand Shapes Accent Watermark */}
+        <div
+          className="absolute -right-8 -top-8 w-64 h-64 opacity-10 pointer-events-none bg-contain bg-no-repeat"
+          style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
+        />
+        <div className="max-w-3xl space-y-3 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
             <span className="font-bold text-[#12345B]">ACADEMIC CATALOG // 4 FOUNDATIONAL TRACKS</span>

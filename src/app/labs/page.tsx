@@ -15,8 +15,13 @@ export default function LabsPage() {
   return (
     <div className="space-y-12 sm:space-y-16">
       {/* Page Header */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs">
-        <div className="max-w-3xl space-y-3">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+        {/* Subtle Contour Watermark */}
+        <div
+          className="absolute -right-10 -bottom-10 w-72 h-72 opacity-10 pointer-events-none bg-contain bg-no-repeat"
+          style={{ backgroundImage: `url('/brand/contour-blob.png')` }}
+        />
+        <div className="max-w-3xl space-y-3 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
             <span className="font-bold text-[#12345B]">NIT7ER LABS // STUDIO PRODUCTION INCUBATOR</span>

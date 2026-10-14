@@ -6,10 +6,15 @@ import { N7BrandMark } from '@/components/N7BrandMark';
 
 export function FounderManifesto() {
   return (
-    <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-6 shadow-xs border border-[#D9E6F0]">
-      <div className="flex items-center justify-between border-b border-[#D9E6F0] pb-3">
-        <div className="flex items-center gap-2">
-          <N7BrandMark size="sm" variant="gold" />
+    <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-6 shadow-xs border border-[#D9E6F0] relative overflow-hidden">
+      {/* Subtle Contour Watermark */}
+      <div
+        className="absolute -right-10 -bottom-10 w-72 h-72 opacity-10 pointer-events-none bg-contain bg-no-repeat"
+        style={{ backgroundImage: `url('/brand/contour-blob.png')` }}
+      />
+      <div className="flex items-center justify-between border-b border-[#D9E6F0] pb-3 relative z-10">
+        <div className="flex items-center gap-3">
+          <N7BrandMark size="md" variant="gold" />
           <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
             THE INSTITUTIONAL MANIFESTO
           </span>

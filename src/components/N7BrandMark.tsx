@@ -1,85 +1,77 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface N7BrandMarkProps {
   className?: string;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'gold' | 'carbon' | 'white';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  variant?: 'gold' | 'carbon' | 'white' | 'grey';
+  type?: 'icon' | 'logo';
 }
 
 export function N7BrandMark({
   className = '',
   size = 'md',
-  variant = 'carbon',
+  variant = 'gold',
+  type = 'icon',
 }: N7BrandMarkProps) {
+  if (type === 'logo') {
+    const logoMap = {
+      gold: '/brand/logo-gold-tight.png',
+      carbon: '/brand/logo-black-tight.png',
+      white: '/brand/logo-white-tight.png',
+      grey: '/brand/logo-grey-tight.png',
+    };
+    const sizeMap = {
+      xs: 'w-20',
+      sm: 'w-28',
+      md: 'w-36',
+      lg: 'w-48',
+      xl: 'w-60',
+      '2xl': 'w-72',
+    };
+    return (
+      <div className={`relative inline-block select-none ${sizeMap[size] || sizeMap.md} ${className}`}>
+        <Image
+          src={logoMap[variant] || logoMap.gold}
+          alt="NIT7ER Logo"
+          width={1367}
+          height={322}
+          className="w-full h-auto object-contain"
+          priority
+        />
+      </div>
+    );
+  }
+
+  const iconMap = {
+    gold: '/brand/icon-gold-tight.png',
+    carbon: '/brand/icon-black-tight.png',
+    white: '/brand/icon-white-tight.png',
+    grey: '/brand/icon-grey-tight.png',
+  };
+
   const sizeMap = {
-    sm: 'w-7 h-7',
-    md: 'w-9 h-9',
+    xs: 'w-6 h-6',
+    sm: 'w-8 h-8',
+    md: 'w-10 h-10',
     lg: 'w-12 h-12',
     xl: 'w-16 h-16',
+    '2xl': 'w-24 h-24',
   };
-
-  const colorStyles = {
-    carbon: {
-      bg: 'bg-[#121212]',
-      border: 'border-[#121212]',
-      glyph: '#FFFFFF',
-      accent: '#C9A84C',
-    },
-    gold: {
-      bg: 'bg-[#C9A84C]',
-      border: 'border-[#C9A84C]',
-      glyph: '#121212',
-      accent: '#FFFFFF',
-    },
-    white: {
-      bg: 'bg-white',
-      border: 'border-[#E5E5E0]',
-      glyph: '#121212',
-      accent: '#C9A84C',
-    },
-  };
-
-  const style = colorStyles[variant];
 
   return (
     <div
-      className={`relative inline-flex items-center justify-center rounded-sm ${style.bg} ${style.border} border shadow-xs select-none ${sizeMap[size]} ${className}`}
-      aria-label="NIT7ER Logo"
+      className={`relative inline-flex items-center justify-center select-none overflow-hidden rounded-xl ${sizeMap[size] || sizeMap.md} ${className}`}
+      aria-label="NIT7ER Emblem"
     >
-      {/* Corner Bracket Accent */}
-      <span
-        className="absolute top-0.5 right-0.5 w-1.5 h-1.5 border-t-2 border-r-2"
-        style={{ borderColor: style.accent }}
+      <Image
+        src={iconMap[variant] || iconMap.gold}
+        alt="N7 Monogram"
+        width={1287}
+        height={1293}
+        className="w-full h-full object-contain"
+        priority
       />
-      <span
-        className="absolute bottom-0.5 left-0.5 w-1.5 h-1.5 border-b-2 border-l-2"
-        style={{ borderColor: style.accent }}
-      />
-
-      <svg
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-3/5 h-3/5"
-      >
-        {/* N7 Monogram: Left Stem of N */}
-        <rect x="18" y="22" width="14" height="56" rx="1.5" fill={style.glyph} />
-
-        {/* Diagonal of N */}
-        <path
-          d="M28 24 L 64 74 L 74 74 L 38 24 Z"
-          fill={style.glyph}
-        />
-
-        {/* The 7 Cross & Diagonal */}
-        <path
-          d="M48 24 L 84 24 L 84 34 L 64 34 L 54 58 L 44 54 L 54 34 L 48 34 Z"
-          fill={style.accent}
-        />
-
-        {/* Focal Anchor Dot */}
-        <circle cx="82" cy="74" r="5" fill={style.accent} />
-      </svg>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { FOUNDER_INFO } from '@/data/academyData';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from '@/components/Icons';
 import { N7BrandMark } from '@/components/N7BrandMark';
@@ -93,7 +94,7 @@ export default function AboutPage() {
         {/* Founder Card & Channels */}
         <div className="lg:col-span-5 curve-soft bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-2xl p-6 space-y-5 shadow-xs">
           <div className="flex items-center gap-3">
-            <N7BrandMark size="md" variant="carbon" />
+            <N7BrandMark size="lg" variant="gold" />
             <div>
               <h3 className="text-base font-bold text-[#12345B]">
                 {FOUNDER_INFO.name}
@@ -147,6 +148,52 @@ export default function AboutPage() {
               <MessageCircle className="w-3.5 h-3.5 text-[#E6AD3C]" />
               <span>WhatsApp</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Studio Cohort & Culture Banner */}
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+        {/* Subtle Decorative Background Contour */}
+        <div
+          className="absolute -top-12 -right-12 w-80 h-80 opacity-15 pointer-events-none bg-contain bg-no-repeat"
+          style={{ backgroundImage: `url('/brand/contour-blob.png')` }}
+        />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div className="lg:col-span-6 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
+              <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
+              <span className="font-bold text-[#12345B]">STUDIO CULTURE // COLLECTIVE VELOCITY</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#12345B] tracking-tight">
+              An Apprenticeship Model for the Independent Era.
+            </h2>
+            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+              We do not treat engineering as an isolated solitary exercise or an academic lecture. At NIT7ER Studio, cohorts collaborate around open workstations, review real pull requests, log cognitive focus sessions via Flow7, and defend architecture directly before peers and founders.
+            </p>
+            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-mono text-[#1769AA]">
+              <span className="flex items-center gap-1.5 font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#12345B]"></span>
+                Lagos Studio Workstations
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5 font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C]"></span>
+                Async Global Cohorts
+              </span>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 flex items-center justify-center p-4 bg-[#EEF7FC]/50 rounded-2xl border border-[#D9E6F0]/80">
+            <div className="relative w-full h-56 sm:h-64">
+              <Image
+                src="/brand/illustration-team-tight.png"
+                alt="NIT7ER Studio Team Collaboration"
+                width={1191}
+                height={910}
+                className="w-full h-full object-contain drop-shadow-xs"
+              />
+            </div>
           </div>
         </div>
       </section>
