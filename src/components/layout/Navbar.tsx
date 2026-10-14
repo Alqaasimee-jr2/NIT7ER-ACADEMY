@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
+import { CommandPaletteTrigger } from '@/components/ui/QuickUtils';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -61,7 +62,8 @@ export function Navbar() {
           </nav>
 
           {/* Action CTA with Pure Essence Pulse Ring */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
+            <CommandPaletteTrigger />
             <Link
               href="/apply"
               className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs sm:text-sm font-bold tracking-tight rounded-full transition-all shadow-sm border border-[#12345B]"

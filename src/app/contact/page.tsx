@@ -18,6 +18,7 @@ import {
   Compass,
 } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
+import { CopyableItem } from '@/components/ui/QuickUtils';
 
 function ContactFormContent() {
   const [fullName, setFullName] = useState('');
@@ -146,9 +147,9 @@ function ContactFormContent() {
               <h3 className="text-base font-black text-[#12345B]">
                 WhatsApp Direct Hotline
               </h3>
-              <p className="text-xs font-mono font-bold text-[#1769AA]">
-                {FOUNDER_INFO.phone}
-              </p>
+              <div className="pt-0.5">
+                <CopyableItem text={FOUNDER_INFO.phone} label={FOUNDER_INFO.phone} />
+              </div>
               <p className="text-xs text-[#64748B] leading-relaxed pt-1">
                 Fastest way to verify cohort openings, discuss application prerequisites, or schedule a diagnostic call.
               </p>
@@ -184,9 +185,9 @@ function ContactFormContent() {
               <h3 className="text-base font-black text-[#12345B]">
                 Institutional Email
               </h3>
-              <p className="text-xs font-mono font-bold text-[#1769AA] truncate">
-                {FOUNDER_INFO.email}
-              </p>
+              <div className="pt-0.5">
+                <CopyableItem text={FOUNDER_INFO.email} label={FOUNDER_INFO.email} />
+              </div>
               <p className="text-xs text-[#64748B] leading-relaxed pt-1">
                 For formal corporate inquiries, curriculum proposals, and institutional partnerships.
               </p>

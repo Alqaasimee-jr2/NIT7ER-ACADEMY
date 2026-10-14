@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FACULTIES, Faculty, Program } from '@/data/academyData';
-import { ArrowRight, CheckCircle2, Clock, BookOpen, Award, Sparkles, ChevronRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock, BookOpen, Award, Sparkles, ChevronRight, Calendar } from 'lucide-react';
+import { ProgramSyllabusModal } from '@/components/ui/ProgramSyllabusModal';
 import {
   CreativeTechDiagram,
   CognitiveSystemsDiagram,
@@ -19,6 +20,9 @@ export function FacultyTabs() {
   const [selectedProgramId, setSelectedProgramId] = useState<string>(
     currentFaculty.programs[0]?.id || ''
   );
+
+  // Syllabus modal state
+  const [isSyllabusOpen, setIsSyllabusOpen] = useState<boolean>(false);
 
   // Sync selected program when faculty changes
   const activeProgram: Program =
@@ -231,13 +235,23 @@ export function FacultyTabs() {
                 </p>
               </div>
 
-              <Link
-                href={`/apply?track=${currentFaculty.id}&program=${activeProgram.id}`}
-                className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shrink-0 shadow-sm"
-              >
-                <span>APPLY FOR {activeProgram.code}</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
-              </Link>
+              <div className="flex flex-wrap items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setIsSyllabusOpen(true)}
+                  className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-white border border-[#1769AA] hover:bg-[#EEF7FC] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors shadow-2xs"
+                >
+                  <Calendar className="w-3.5 h-3.5 text-[#1769AA]" />
+                  <span>INSPECT {activeProgram.duration.toUpperCase()} ROADMAP</span>
+                </button>
+                <Link
+                  href={`/apply?track=${currentFaculty.id}&program=${activeProgram.id}`}
+                  className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shadow-sm"
+                >
+                  <span>APPLY FOR {activeProgram.code}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+                </Link>
+              </div>
             </div>
 
             {/* Modules Grid for this Program */}
@@ -330,6 +344,14 @@ export function FacultyTabs() {
           </div>
         </div>
       </div>
+
+      {/* Program Syllabus & Week-by-Week Roadmap Modal */}
+      <ProgramSyllabusModal
+        program={activeProgram}
+        facultyId={currentFaculty.id}
+        isOpen={isSyllabusOpen}
+        onClose={() => setIsSyllabusOpen(false)}
+      />
     </section>
   );
 }

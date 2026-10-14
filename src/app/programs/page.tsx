@@ -21,6 +21,7 @@ import {
   WritingDiagram,
   ComputerEducationDiagram,
 } from '@/components/illustrations/FacultyDiagrams';
+import { ProgramCardAction } from '@/components/ui/ProgramCardAction';
 
 export const metadata: Metadata = {
   title: 'Academic Faculties & 12 Specialized Programs',
@@ -256,13 +257,7 @@ export default function ProgramsPage() {
                       </div>
 
                       <div className="shrink-0 pt-2 sm:pt-0">
-                        <Link
-                          href={`/apply?track=${faculty.id}&program=${program.id}`}
-                          className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shadow-sm"
-                        >
-                          <span>APPLY FOR {program.code}</span>
-                          <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
-                        </Link>
+                        <ProgramCardAction program={program} facultyId={faculty.id} />
                       </div>
                     </div>
 
