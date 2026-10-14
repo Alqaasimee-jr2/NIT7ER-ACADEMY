@@ -39,7 +39,7 @@ export function QuickLaunchpad() {
     {
       index: '04',
       title: 'Computer Education',
-      subtitle: 'First principles, algorithms & smartboards',
+      subtitle: 'Hardware, operating systems, productivity & cyber safety',
       href: '/programs#computer-education',
       icon: Monitor,
       badge: 'FOUNDATIONS',
@@ -47,7 +47,7 @@ export function QuickLaunchpad() {
     {
       index: '05',
       title: 'NIT7ER Labs Showcase',
-      subtitle: 'Live products: Flow7, Clasquera, Lang Huey',
+      subtitle: 'Live products: Flow7, Clasquera, OAUMods',
       href: '/labs',
       icon: Layers,
       badge: 'PORTFOLIO',

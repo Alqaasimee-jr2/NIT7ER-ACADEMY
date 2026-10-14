@@ -12,11 +12,11 @@ export async function POST(request: Request) {
   }
 
   try {
-    const { fullName, email, phone, faculty, experience, goals, portfolioUrl } = body || {};
+    const { fullName, email, phone, faculty, program, experience, goals, portfolioUrl } = body || {};
 
     if (!fullName || !email || !faculty) {
       return NextResponse.json(
-        { error: 'Missing required application fields (Full Name, Email, Track).' },
+        { error: 'Missing required application fields (Full Name, Email, Faculty Track).' },
         { status: 400 }
       );
     }
@@ -31,6 +31,7 @@ export async function POST(request: Request) {
       email,
       phone,
       faculty,
+      program: program || 'Comprehensive Track',
       experience,
       goals,
       portfolioUrl,

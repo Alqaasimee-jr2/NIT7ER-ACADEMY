@@ -28,10 +28,10 @@ export function CreativeTechDiagram({ className = 'w-full h-48' }: { className?:
       <rect x="155" y="20" width="100" height="120" fill="#FFFFFF" stroke="#C9A84C" strokeWidth="1.5" />
       <rect x="160" y="25" width="90" height="16" fill="#C9A84C" />
       <text x="168" y="37" fill="#121212" fontSize="8" fontFamily="monospace" fontWeight="bold">02. AI TELEMETRY</text>
-      <text x="168" y="60" fill="#71717A" fontSize="7" fontFamily="sans-serif">Gemini Pro Multi-modal</text>
-      <text x="168" y="75" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">Speech-to-Text</text>
-      <text x="168" y="90" fill="#71717A" fontSize="7" fontFamily="sans-serif">Firebase Functions</text>
-      <text x="168" y="105" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">Clasquera Verification</text>
+      <text x="168" y="60" fill="#71717A" fontSize="7" fontFamily="sans-serif">Multimodal Inference</text>
+      <text x="168" y="75" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">Vector Embeddings</text>
+      <text x="168" y="90" fill="#71717A" fontSize="7" fontFamily="sans-serif">Function Calling</text>
+      <text x="168" y="105" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">Semantic RAG &amp; Tools</text>
       <text x="168" y="125" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">Output: Validated JSON</text>
 
       {/* Connection 2 */}
@@ -140,42 +140,49 @@ export function ComputerEducationDiagram({ className = 'w-full h-48' }: { classN
       </defs>
       <rect width="400" height="160" fill="url(#grid-ce)" opacity="0.6" />
 
-      {/* Layer 0: Silicon Logic Gates */}
-      <rect x="30" y="45" width="75" height="70" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <text x="40" y="60" fill="#71717A" fontSize="7" fontFamily="monospace">LAYER 0</text>
-      <text x="40" y="75" fill="#121212" fontSize="8" fontFamily="monospace" fontWeight="bold">NAND GATES</text>
-      <text x="40" y="90" fill="#C9A84C" fontSize="7" fontFamily="monospace">01001101</text>
-      <text x="40" y="103" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Transistor Logic</text>
+      {/* Layer 0: Hardware Anatomy & Silicon */}
+      <rect x="15" y="30" width="80" height="100" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
+      <rect x="20" y="35" width="70" height="16" fill="#121212" />
+      <text x="24" y="46" fill="#F5C842" fontSize="7" fontFamily="monospace" fontWeight="bold">01. HARDWARE</text>
+      <text x="22" y="68" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">CPU Architecture</text>
+      <text x="22" y="82" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">RAM &amp; NVMe Bus</text>
+      <text x="22" y="96" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Motherboard I/O</text>
+      <text x="22" y="112" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">Power &amp; Ports</text>
 
-      <line x1="105" y1="80" x2="125" y2="80" stroke="#121212" strokeWidth="1.5" />
+      <line x1="95" y1="80" x2="110" y2="80" stroke="#121212" strokeWidth="1.5" />
 
-      {/* Layer 1: Memory & Registers */}
-      <rect x="125" y="35" width="80" height="90" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <text x="135" y="50" fill="#71717A" fontSize="7" fontFamily="monospace">LAYER 1</text>
-      <text x="135" y="65" fill="#121212" fontSize="8" fontFamily="monospace" fontWeight="bold">REGISTERS</text>
-      <text x="135" y="80" fill="#C9A84C" fontSize="7" fontFamily="monospace">CPU / RAM Bus</text>
-      <text x="135" y="95" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">ALU Execution</text>
-      <text x="135" y="110" fill="#121212" fontSize="6.5" fontFamily="monospace">Clock Cycles</text>
+      {/* Layer 1: Operating System & Filesystems */}
+      <rect x="110" y="25" width="85" height="110" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
+      <rect x="115" y="30" width="75" height="16" fill="#121212" />
+      <text x="120" y="41" fill="#FFFFFF" fontSize="7" fontFamily="monospace" fontWeight="bold">02. OS &amp; SHELL</text>
+      <text x="117" y="64" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Win / macOS / Linux</text>
+      <text x="117" y="78" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">File Hierarchies</text>
+      <text x="117" y="92" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Terminal &amp; Bash</text>
+      <text x="117" y="106" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">Path &amp; Permissions</text>
+      <text x="117" y="122" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">System Health</text>
 
-      <line x1="205" y1="80" x2="225" y2="80" stroke="#121212" strokeWidth="1.5" />
+      <line x1="195" y1="80" x2="210" y2="80" stroke="#121212" strokeWidth="1.5" />
 
-      {/* Layer 2: Operating System */}
-      <rect x="225" y="45" width="75" height="70" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <text x="235" y="60" fill="#71717A" fontSize="7" fontFamily="monospace">LAYER 2</text>
-      <text x="235" y="75" fill="#121212" fontSize="8" fontFamily="monospace" fontWeight="bold">OS KERNEL</text>
-      <text x="235" y="90" fill="#C9A84C" fontSize="7" fontFamily="monospace">Threads &amp; I/O</text>
-      <text x="235" y="103" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Memory Safety</text>
+      {/* Layer 2: Productivity Suites & Cloud */}
+      <rect x="210" y="30" width="85" height="100" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
+      <rect x="215" y="35" width="75" height="16" fill="#121212" />
+      <text x="219" y="46" fill="#FFFFFF" fontSize="7" fontFamily="monospace" fontWeight="bold">03. PRODUCTIVITY</text>
+      <text x="217" y="68" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Word &amp; Docs Style</text>
+      <text x="217" y="82" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">Excel / Pivot Tables</text>
+      <text x="217" y="96" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">PowerPoint Decks</text>
+      <text x="217" y="112" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">Cloud Sync &amp; M365</text>
 
-      <line x1="300" y1="80" x2="320" y2="80" stroke="#C9A84C" strokeWidth="1.5" />
+      <line x1="295" y1="80" x2="310" y2="80" stroke="#C9A84C" strokeWidth="1.5" />
 
-      {/* Layer 3: Interactive Glass / Smartboard */}
-      <rect x="320" y="25" width="60" height="110" fill="#F9F3E5" stroke="#C9A84C" strokeWidth="1.5" />
-      <text x="326" y="42" fill="#9B7C28" fontSize="6.5" fontFamily="monospace" fontWeight="bold">LAYER 3</text>
-      <text x="326" y="58" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">SMART</text>
-      <text x="326" y="68" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">BOARD</text>
-      <text x="326" y="85" fill="#71717A" fontSize="6" fontFamily="sans-serif">Lang Huey</text>
-      <text x="326" y="98" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">Touch UI</text>
-      <text x="326" y="112" fill="#121212" fontSize="6" fontFamily="sans-serif">Offline PWA</text>
+      {/* Layer 3: Security & Cyber Hygiene */}
+      <rect x="310" y="20" width="75" height="120" fill="#F9F3E5" stroke="#C9A84C" strokeWidth="1.5" />
+      <rect x="315" y="25" width="65" height="16" fill="#C9A84C" />
+      <text x="320" y="36" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">04. SECURITY</text>
+      <text x="316" y="58" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Web &amp; DNS Basics</text>
+      <text x="316" y="73" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">Password Vaults</text>
+      <text x="316" y="88" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">2FA &amp; Passkeys</text>
+      <text x="316" y="103" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">Phishing Defense</text>
+      <text x="316" y="122" fill="#9B7C28" fontSize="6.5" fontFamily="monospace">3-2-1 Backups</text>
     </svg>
   );
 }

@@ -32,7 +32,7 @@ export default function LabsPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-normal">
-            Every concept taught in NIT7ER Academy originates from live systems built to solve real-world problems. From AI audio lesson monitors and smartboard engines to cognitive awareness journals and architectural campus navigators.
+            Every concept taught in NIT7ER Academy originates from live systems built to solve real-world problems. From AI audio lesson monitors and offline educational platforms to cognitive awareness journals and campus navigators.
           </p>
         </div>
       </section>

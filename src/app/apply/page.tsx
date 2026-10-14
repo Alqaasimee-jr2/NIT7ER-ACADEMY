@@ -12,15 +12,20 @@ import {
   Send,
   ShieldCheck,
   AlertCircle,
+  Award,
+  Clock,
+  Layers,
 } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
 
 function ApplicationFormContent() {
   const searchParams = useSearchParams();
   const trackParam = searchParams.get('track');
+  const programParam = searchParams.get('program');
 
   const [step, setStep] = useState<number>(1);
   const [faculty, setFaculty] = useState<string>(FACULTIES[0].id);
+  const [programId, setProgramId] = useState<string>(FACULTIES[0].programs[0]?.id || '');
   const [fullName, setFullName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
@@ -37,10 +42,25 @@ function ApplicationFormContent() {
   useEffect(() => {
     if (trackParam && FACULTIES.some((f) => f.id === trackParam)) {
       setFaculty(trackParam);
+      const targetFac = FACULTIES.find((f) => f.id === trackParam);
+      if (programParam && targetFac?.programs.some((p) => p.id === programParam)) {
+        setProgramId(programParam);
+      } else if (targetFac?.programs[0]) {
+        setProgramId(targetFac.programs[0].id);
+      }
     }
-  }, [trackParam]);
+  }, [trackParam, programParam]);
 
   const selectedFacultyObj = FACULTIES.find((f) => f.id === faculty) || FACULTIES[0];
+  const selectedProgramObj =
+    selectedFacultyObj.programs.find((p) => p.id === programId) ||
+    selectedFacultyObj.programs[0];
+
+  const handleFacultySelect = (fId: string) => {
+    setFaculty(fId);
+    const targetFac = FACULTIES.find((f) => f.id === fId) || FACULTIES[0];
+    setProgramId(targetFac.programs[0]?.id || '');
+  };
 
   const handleNext = () => {
     setErrorMsg('');
@@ -77,6 +97,9 @@ function ApplicationFormContent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           faculty: selectedFacultyObj.title,
+          program: selectedProgramObj
+            ? `${selectedProgramObj.code}: ${selectedProgramObj.title}`
+            : 'Comprehensive Faculty Track',
           fullName,
           email,
           phone,
@@ -117,7 +140,8 @@ function ApplicationFormContent() {
     `Hello NIT7ER Academy! I have completed my intake application.\n\n` +
       `• Reference: ${submissionResult?.refCode || 'N/A'}\n` +
       `• Name: ${fullName}\n` +
-      `• Track: ${selectedFacultyObj.title}\n` +
+      `• Faculty: ${selectedFacultyObj.title}\n` +
+      `• Track: ${selectedProgramObj ? `${selectedProgramObj.code} - ${selectedProgramObj.title}` : 'Comprehensive Track'}\n` +
       `• Experience: ${experience}\n` +
       `• Email: ${email}\n` +
       `• Phone: ${phone || 'N/A'}\n\n` +
@@ -137,7 +161,7 @@ function ApplicationFormContent() {
           NIT7ER Academy Diagnostic Intake Portal
         </h1>
         <p className="text-xs sm:text-sm text-[#64748B] max-w-lg mx-auto">
-          Complete this diagnostic intake to apply. Applications are reviewed directly by Director Abdullah Qaasim-Falade.
+          Complete this diagnostic intake to apply for one of our 12 specialized program tracks. Applications are reviewed directly by Director Abdullah Qaasim-Falade.
         </p>
       </div>
 
@@ -156,7 +180,7 @@ function ApplicationFormContent() {
               Application Successfully Queued
             </h2>
             <p className="text-xs sm:text-sm text-[#64748B] max-w-md mx-auto">
-              Your profile has been logged in our studio intake queue. Keep your institutional reference code below:
+              Your candidate profile has been logged in our studio intake queue. Keep your institutional reference code below:
             </p>
           </div>
 
@@ -167,6 +191,19 @@ function ApplicationFormContent() {
             <span className="text-2xl font-mono font-bold tracking-widest text-[#12345B]">
               {submissionResult.refCode}
             </span>
+          </div>
+
+          <div className="p-4 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl text-left max-w-lg mx-auto space-y-2 text-xs font-mono">
+            <span className="label-mono text-[9px] text-[#64748B] block">ENROLLMENT SELECTION</span>
+            <div className="text-[#12345B] font-bold">
+              {selectedFacultyObj.badge}: {selectedFacultyObj.title}
+            </div>
+            <div className="text-[#1769AA]">
+              Track: {selectedProgramObj?.code} — {selectedProgramObj?.title}
+            </div>
+            <div className="text-[#64748B] pt-1">
+              Candidate: {fullName} ({email})
+            </div>
           </div>
 
           <div className="p-6 bg-[#EEF7FC]/60 border border-[#D9E6F0] rounded-2xl text-left max-w-lg mx-auto space-y-3.5 shadow-2xs">
@@ -196,7 +233,7 @@ function ApplicationFormContent() {
             <div className="flex items-center justify-between font-mono text-xs font-bold text-[#64748B]">
               <span>[STEP 0{step} OF 03]</span>
               <span className="text-[#12345B]">
-                {step === 1 && 'CHOOSE ACADEMIC FACULTY'}
+                {step === 1 && 'CHOOSE FACULTY & PROGRAM TRACK'}
                 {step === 2 && 'PERSONAL & CONTACT DETAILS'}
                 {step === 3 && 'EXPERIENCE & CAPSTONE GOAL'}
               </span>
@@ -216,41 +253,106 @@ function ApplicationFormContent() {
             </div>
           )}
 
-          {/* STEP 1: Faculty Selection */}
+          {/* STEP 1: Faculty & Program Selection */}
           {step === 1 && (
-            <div className="space-y-4">
-              <span className="label-mono block text-[#12345B]">
-                01. Select Primary Academic Discipline
-              </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {FACULTIES.map((fac) => {
-                  const isSelected = fac.id === faculty;
-                  return (
-                    <button
-                      type="button"
-                      key={fac.id}
-                      onClick={() => setFaculty(fac.id)}
-                      className={`btn-press p-4 border text-left transition-all space-y-1.5 rounded-2xl ${
-                        isSelected
-                          ? 'border-[#12345B] bg-[#EEF7FC] ring-2 ring-[#12345B] shadow-2xs'
-                          : 'border-[#D9E6F0] bg-white hover:border-[#1769AA]'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between font-mono text-xs">
-                        <span className="font-bold text-[#1769AA]">
-                          FACULTY {fac.number}
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <span className="label-mono block text-[#12345B]">
+                  01. Select Foundational Academic Faculty
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {FACULTIES.map((fac) => {
+                    const isSelected = fac.id === faculty;
+                    return (
+                      <button
+                        type="button"
+                        key={fac.id}
+                        onClick={() => handleFacultySelect(fac.id)}
+                        className={`btn-press p-4 border text-left transition-all space-y-1.5 rounded-2xl ${
+                          isSelected
+                            ? 'border-[#12345B] bg-[#EEF7FC] ring-2 ring-[#12345B] shadow-2xs'
+                            : 'border-[#D9E6F0] bg-white hover:border-[#1769AA]'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between font-mono text-xs">
+                          <span className="font-bold text-[#1769AA]">
+                            FACULTY {fac.number}
+                          </span>
+                          {isSelected && <span className="w-2 h-2 rounded-full bg-[#12345B]"></span>}
+                        </div>
+                        <h4 className="font-bold text-sm text-[#12345B]">
+                          {fac.title}
+                        </h4>
+                        <p className="text-xs text-[#64748B] line-clamp-2">
+                          {fac.subtitle}
+                        </p>
+                        <span className="text-[10px] font-mono text-[#1769AA] block pt-1">
+                          {fac.programs.length} Specialized Tracks
                         </span>
-                        {isSelected && <span className="w-2 h-2 rounded-full bg-[#12345B]"></span>}
-                      </div>
-                      <h4 className="font-bold text-sm text-[#12345B]">
-                        {fac.title}
-                      </h4>
-                      <p className="text-xs text-[#64748B] line-clamp-2">
-                        {fac.subtitle}
-                      </p>
-                    </button>
-                  );
-                })}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Sub-Selection: Specialized Program Track */}
+              <div className="space-y-3 pt-4 border-t border-[#D9E6F0]">
+                <div className="flex items-center justify-between">
+                  <span className="label-mono block text-[#12345B]">
+                    Select Specialized Program Track in Faculty {selectedFacultyObj.number}
+                  </span>
+                  <span className="text-[11px] font-mono text-[#64748B]">
+                    {selectedFacultyObj.programs.length} Options Available
+                  </span>
+                </div>
+
+                <div className="space-y-2.5">
+                  {selectedFacultyObj.programs.map((prog) => {
+                    const isProgSelected = prog.id === programId;
+                    return (
+                      <button
+                        type="button"
+                        key={prog.id}
+                        onClick={() => setProgramId(prog.id)}
+                        className={`btn-press w-full p-4 border text-left rounded-xl transition-all space-y-1.5 ${
+                          isProgSelected
+                            ? 'border-[#1769AA] bg-[#EEF7FC]/70 ring-1 ring-[#1769AA] shadow-2xs'
+                            : 'border-[#D9E6F0] bg-white hover:border-[#1769AA]/50'
+                        }`}
+                      >
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div className="flex items-center gap-2">
+                            <span className="label-mono px-2 py-0.5 bg-[#12345B] text-white rounded text-[9px]">
+                              {prog.code}
+                            </span>
+                            <span className="text-xs sm:text-sm font-bold text-[#12345B]">
+                              {prog.title}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 text-[10px] font-mono text-[#64748B]">
+                            <span>{prog.duration}</span>
+                            <span>•</span>
+                            <span className="px-1.5 py-0.2 bg-white border border-[#D9E6F0] rounded">
+                              {prog.level}
+                            </span>
+                            {isProgSelected && (
+                              <span className="w-2 h-2 rounded-full bg-[#1769AA]"></span>
+                            )}
+                          </div>
+                        </div>
+
+                        <p className="text-xs text-[#64748B]">
+                          {prog.tagline}
+                        </p>
+
+                        <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#1769AA] pt-1">
+                          <Award className="w-3.5 h-3.5 text-[#E6AD3C]" />
+                          <span>Capstone: {prog.capstoneProject.title}</span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}
@@ -313,6 +415,17 @@ function ApplicationFormContent() {
                 03. Diagnostic Alignment &amp; Goals
               </span>
 
+              {/* Selected Track Confirmation */}
+              <div className="p-3.5 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-1 font-mono text-xs">
+                <span className="label-mono text-[9px] text-[#64748B] block">SELECTED TRACK</span>
+                <div className="text-[#12345B] font-bold">
+                  {selectedFacultyObj.badge}: {selectedFacultyObj.title}
+                </div>
+                <div className="text-[#1769AA]">
+                  Track: {selectedProgramObj?.code} — {selectedProgramObj?.title} ({selectedProgramObj?.duration})
+                </div>
+              </div>
+
               <div className="space-y-3 font-mono">
                 <div>
                   <label className="block text-xs font-bold text-[#12345B] mb-1">
@@ -332,20 +445,20 @@ function ApplicationFormContent() {
 
                 <div>
                   <label className="block text-xs font-bold text-[#12345B] mb-1">
-                    INTENDED CAPSTONE DELIVERABLE
+                    INTENDED CAPSTONE DELIVERABLE OR MOTIVATION
                   </label>
                   <textarea
                     rows={3}
                     value={goals}
                     onChange={(e) => setGoals(e.target.value)}
-                    placeholder="Describe the specific software, cognitive routine, or technical document you intend to ship..."
+                    placeholder={`Describe your goals for ${selectedProgramObj ? selectedProgramObj.title : 'this track'}...`}
                     className="w-full px-4 py-2.5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-xl text-xs sm:text-sm text-[#1F2937] focus:outline-none focus:border-[#1769AA]"
                   ></textarea>
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-[#12345B] mb-1">
-                    PORTFOLIO, GITHUB, OR WRITING URL (OPTIONAL)
+                    PORTFOLIO, GITHUB, OR WORK SAMPLE (OPTIONAL)
                   </label>
                   <input
                     type="url"

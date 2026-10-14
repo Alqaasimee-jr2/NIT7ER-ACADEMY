@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FACULTIES, Faculty } from '@/data/academyData';
-import { ArrowRight, CheckCircle2, Clock, BookOpen } from 'lucide-react';
+import { FACULTIES, Faculty, Program } from '@/data/academyData';
+import { ArrowRight, CheckCircle2, Clock, BookOpen, Award, Sparkles, ChevronRight } from 'lucide-react';
 import {
   CreativeTechDiagram,
   CognitiveSystemsDiagram,
@@ -14,6 +14,22 @@ import {
 export function FacultyTabs() {
   const [activeTab, setActiveTab] = useState<string>(FACULTIES[0].id);
   const currentFaculty: Faculty = FACULTIES.find((f) => f.id === activeTab) || FACULTIES[0];
+
+  // Selected program within active faculty
+  const [selectedProgramId, setSelectedProgramId] = useState<string>(
+    currentFaculty.programs[0]?.id || ''
+  );
+
+  // Sync selected program when faculty changes
+  const activeProgram: Program =
+    currentFaculty.programs.find((p) => p.id === selectedProgramId) ||
+    currentFaculty.programs[0];
+
+  const handleFacultyChange = (facultyId: string) => {
+    setActiveTab(facultyId);
+    const targetFac = FACULTIES.find((f) => f.id === facultyId) || FACULTIES[0];
+    setSelectedProgramId(targetFac.programs[0]?.id || '');
+  };
 
   const renderDiagram = (id: string) => {
     switch (id) {
@@ -35,20 +51,20 @@ export function FacultyTabs() {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#D9E6F0] pb-3">
         <div>
           <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
-            Academic Structure
+            Academic Architecture
           </span>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#12345B] tracking-tight mt-1.5">
-            The 4 Foundational Faculties
+            4 Faculties &amp; 12 Specialized Programs
           </h2>
           <p className="text-xs sm:text-sm text-[#64748B] max-w-xl mt-0.5">
-            Select a discipline to examine its architectural blueprint, sprint syllabus, and live studio proof of work.
+            Select a foundational discipline to inspect its architectural blueprint, specialized program syllabi, and capstone requirements.
           </p>
         </div>
         <Link
           href="/programs"
           className="gold-link inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#12345B] shrink-0"
         >
-          <span>VIEW FULL SYLLABUS DOSSIER</span>
+          <span>VIEW FULL CATALOG (12 TRACKS)</span>
           <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
         </Link>
       </div>
@@ -60,7 +76,7 @@ export function FacultyTabs() {
           return (
             <button
               key={fac.id}
-              onClick={() => setActiveTab(fac.id)}
+              onClick={() => handleFacultyChange(fac.id)}
               className={`btn-press shrink-0 px-4 py-3 border text-left transition-all rounded-2xl ${
                 isActive
                   ? 'bg-[#12345B] text-white border-[#12345B] shadow-sm'
@@ -73,20 +89,23 @@ export function FacultyTabs() {
                 </span>
                 {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C]"></span>}
               </div>
-              <span className="block text-xs sm:text-sm font-bold truncate max-w-[200px] mt-0.5">
+              <span className="block text-xs sm:text-sm font-bold truncate max-w-[210px] mt-0.5">
                 {fac.title}
+              </span>
+              <span className="block text-[10px] font-mono mt-0.5 opacity-80">
+                {fac.programs.length} Specialized Tracks
               </span>
             </button>
           );
         })}
       </div>
 
-      {/* Active Faculty Content Card with Pure Essence curve-asymmetric */}
+      {/* Active Faculty Content Card */}
       <div className="technical-border curve-asymmetric p-6 sm:p-8 bg-white space-y-8 shadow-xs border border-[#D9E6F0]">
         {/* Top Header & Architectural Vector Illustration */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b border-[#D9E6F0] pb-8">
           <div className="lg:col-span-7 space-y-3">
-            <div className="flex items-center gap-2.5 text-xs font-mono text-[#64748B]">
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-[#64748B]">
               <span className="px-2.5 py-0.5 bg-[#EEF7FC] border border-[#D9E6F0] text-[#12345B] font-bold rounded-full">
                 {currentFaculty.badge}
               </span>
@@ -112,17 +131,19 @@ export function FacultyTabs() {
               {currentFaculty.description}
             </p>
 
-            <div className="p-3.5 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-1">
-              <span className="label-mono text-[9px] text-[#1769AA] block font-bold">
-                Incubated Proof of Work
-              </span>
-              <h4 className="text-xs font-bold text-[#12345B]">
-                {currentFaculty.livingProof.title}
-              </h4>
-              <p className="text-xs text-[#64748B]">
-                {currentFaculty.livingProof.description}
-              </p>
-            </div>
+            {currentFaculty.caseStudy && (
+              <div className="p-3.5 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-1">
+                <span className="label-mono text-[9px] text-[#1769AA] block font-bold">
+                  Incubated Lab Case Study
+                </span>
+                <h4 className="text-xs font-bold text-[#12345B]">
+                  {currentFaculty.caseStudy.title}
+                </h4>
+                <p className="text-xs text-[#64748B]">
+                  {currentFaculty.caseStudy.description}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Right Column: Architectural Vector Diagram */}
@@ -134,48 +155,157 @@ export function FacultyTabs() {
           </div>
         </div>
 
-        {/* Modules Breakdown */}
+        {/* Specialized Programs Sub-Selector */}
         <div className="space-y-4">
-          <span className="label-mono block text-[#12345B]">
-            Curriculum Sprint Modules
-          </span>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {currentFaculty.modules.map((mod, i) => (
-              <div
-                key={mod.title}
-                className="curve-soft p-4 bg-[#EEF7FC]/40 border border-[#D9E6F0] space-y-2 rounded-xl"
-              >
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-bold text-[#E6AD3C]">
-                    [0{i + 1}]
-                  </span>
-                  <h5 className="font-bold text-xs sm:text-sm text-[#12345B]">
-                    {mod.title}
-                  </h5>
-                </div>
-                <p className="text-xs text-[#64748B] leading-relaxed">
-                  {mod.desc}
-                </p>
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  {mod.topics.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[10px] font-mono px-2 py-0.5 bg-white border border-[#D9E6F0] text-[#12345B] rounded-md shadow-2xs"
-                    >
-                      {t}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span className="label-mono text-[#12345B] block">
+                Specialized Programs Under Faculty {currentFaculty.number}
+              </span>
+              <p className="text-xs text-[#64748B]">
+                Choose a specific track to inspect its sprint syllabus, target outcomes, and verified capstone deliverable:
+              </p>
+            </div>
+            <span className="text-[11px] font-mono text-[#1769AA] font-bold bg-[#EEF7FC] px-2.5 py-1 rounded-full border border-[#D9E6F0] shrink-0">
+              {currentFaculty.programs.length} Tracks Available
+            </span>
+          </div>
+
+          {/* Program Pills */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {currentFaculty.programs.map((prog) => {
+              const isProgActive = prog.id === activeProgram.id;
+              return (
+                <button
+                  key={prog.id}
+                  onClick={() => setSelectedProgramId(prog.id)}
+                  className={`btn-press p-3.5 text-left border rounded-xl transition-all space-y-1.5 ${
+                    isProgActive
+                      ? 'border-[#12345B] bg-[#EEF7FC] ring-2 ring-[#12345B] shadow-2xs'
+                      : 'border-[#D9E6F0] bg-white hover:border-[#1769AA]'
+                  }`}
+                >
+                  <div className="flex items-center justify-between text-xs font-mono">
+                    <span className="font-bold text-[#1769AA]">{prog.code}</span>
+                    <span className="text-[10px] px-2 py-0.5 bg-white border border-[#D9E6F0] text-[#64748B] rounded-full">
+                      {prog.level}
                     </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-[#12345B] line-clamp-1">
+                    {prog.title}
+                  </h4>
+                  <p className="text-[11px] text-[#64748B] line-clamp-2 leading-relaxed">
+                    {prog.tagline}
+                  </p>
+                  <div className="flex items-center justify-between pt-1 text-[10px] font-mono text-[#64748B]">
+                    <span>{prog.duration}</span>
+                    <span className="text-[#1769AA] font-bold flex items-center gap-0.5">
+                      <span>View Track</span>
+                      <ChevronRight className="w-3 h-3" />
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Outcomes & Action */}
+        {/* Selected Program Detailed Breakdown */}
+        {activeProgram && (
+          <div className="p-5 sm:p-6 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#D9E6F0] pb-4">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="label-mono px-2 py-0.5 bg-[#12345B] text-white rounded-md text-[10px]">
+                    {activeProgram.code}
+                  </span>
+                  <span className="text-xs font-mono font-bold text-[#1769AA]">
+                    {activeProgram.duration} • {activeProgram.level}
+                  </span>
+                </div>
+                <h4 className="text-base sm:text-lg font-black text-[#12345B]">
+                  {activeProgram.title}
+                </h4>
+                <p className="text-xs text-[#64748B] max-w-2xl leading-relaxed">
+                  {activeProgram.description}
+                </p>
+              </div>
+
+              <Link
+                href={`/apply?track=${currentFaculty.id}&program=${activeProgram.id}`}
+                className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shrink-0 shadow-sm"
+              >
+                <span>APPLY FOR {activeProgram.code}</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+              </Link>
+            </div>
+
+            {/* Modules Grid for this Program */}
+            <div className="space-y-3">
+              <span className="label-mono text-[10px] text-[#12345B] block">
+                Track Curriculum Modules ({activeProgram.modules.length} Core Modules)
+              </span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                {activeProgram.modules.map((mod, i) => (
+                  <div
+                    key={mod.title}
+                    className="p-3.5 bg-white border border-[#D9E6F0] rounded-xl space-y-2 shadow-2xs"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-xs font-bold text-[#E6AD3C]">
+                        [0{i + 1}]
+                      </span>
+                      <h5 className="font-bold text-xs sm:text-sm text-[#12345B]">
+                        {mod.title}
+                      </h5>
+                    </div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">
+                      {mod.desc}
+                    </p>
+                    <div className="flex flex-wrap gap-1 pt-1">
+                      {mod.topics.map((t) => (
+                        <span
+                          key={t}
+                          className="text-[10px] font-mono px-2 py-0.5 bg-[#EEF7FC] border border-[#D9E6F0] text-[#12345B] rounded-md"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Capstone Project Banner for this Program */}
+            <div className="p-4 bg-[#EEF7FC]/80 border border-[#D9E6F0] rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#1769AA]">
+                  <Award className="w-4 h-4 text-[#E6AD3C]" />
+                  <span>MANDATORY CAPSTONE DELIVERABLE</span>
+                </div>
+                <h5 className="text-xs sm:text-sm font-bold text-[#12345B]">
+                  {activeProgram.capstoneProject.title}
+                </h5>
+                <p className="text-xs text-[#64748B] max-w-xl">
+                  {activeProgram.capstoneProject.description}
+                </p>
+              </div>
+              <div className="p-2.5 bg-white border border-[#D9E6F0] rounded-lg shrink-0 text-right sm:max-w-xs">
+                <span className="label-mono text-[8px] text-[#64748B] block">VERIFICATION ARTIFACT</span>
+                <span className="text-[11px] font-mono font-bold text-[#12345B]">
+                  {activeProgram.capstoneProject.deliverable}
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Bottom Outcomes & Navigation Bar */}
         <div className="pt-4 border-t border-[#D9E6F0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="label-mono text-[9px] text-[#64748B] block">
-              Core Graduate Capability
+              Faculty Institutional Competency
             </span>
             <div className="flex items-center gap-2 text-xs font-medium text-[#12345B]">
               <CheckCircle2 className="w-4 h-4 text-[#1769AA] shrink-0" />
@@ -183,13 +313,21 @@ export function FacultyTabs() {
             </div>
           </div>
 
-          <Link
-            href={`/apply?track=${currentFaculty.id}`}
-            className="btn-press inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs sm:text-sm font-bold font-mono rounded-full transition-colors shrink-0 shadow-sm"
-          >
-            <span>APPLY FOR FACULTY {currentFaculty.number}</span>
-            <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
-          </Link>
+          <div className="flex items-center gap-3 shrink-0">
+            <Link
+              href="/programs"
+              className="px-4 py-2 text-xs font-mono font-bold text-[#12345B] hover:text-[#1769AA] transition-colors"
+            >
+              Full Course Catalog →
+            </Link>
+            <Link
+              href={`/apply?track=${currentFaculty.id}`}
+              className="btn-press inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs sm:text-sm font-bold font-mono rounded-full transition-colors shadow-sm"
+            >
+              <span>APPLY FOR FACULTY {currentFaculty.number}</span>
+              <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
