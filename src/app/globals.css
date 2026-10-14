@@ -1,27 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #FAF9F6;
-  --color-surface: #FFFFFF;
-  --color-surface-muted: #F4F3EE;
+  /* OAUMods Official Color Palette */
+  --color-oau-navy: #12345B;
+  --color-campus-blue: #1769AA;
+  --color-sky-blue: #4FA3D1;
+  --color-pale-blue: #EEF7FC;
+  --color-student-gold: #E6AD3C;
+  --color-warm-white: #FAFCFE;
+  --color-pure-white: #FFFFFF;
+  --color-deep-slate: #1F2937;
+  --color-muted-slate: #64748B;
+  --color-soft-blue-gray: #D9E6F0;
   
-  --color-carbon: #121212;
-  --color-carbon-secondary: #27272A;
-  --color-carbon-muted: #71717A;
-  --color-carbon-subtle: #A1A1AA;
-  
-  --color-border-hairline: #E5E5E0;
-  --color-border-strong: #D1D1CB;
-  
+  /* NIT7ER Signature Accent */
   --color-gold: #C9A84C;
   --color-gold-bright: #F5C842;
-  --color-gold-dark: #9B7C28;
   --color-gold-soft: #F9F3E5;
+
+  /* Pure Essence Organic Radii */
+  --radius-curve-asymmetric: 2rem 0.5rem 2rem 0.5rem;
+  --radius-curve-pill: 3rem 0.5rem 3rem 0.5rem;
 }
 
 :root {
-  --background: #FAF9F6;
-  --foreground: #121212;
+  --background: #FAFCFE;
+  --foreground: #1F2937;
 }
 
 body {
@@ -32,46 +36,178 @@ body {
   overflow-x: clip;
 }
 
-/* Authentic NIT7ER Technical Corner Borders */
+/* ========================================================= */
+/* 1. PURE ESSENCE ORGANIC CURVES & SILHOUETTES             */
+/* ========================================================= */
+.curve-asymmetric {
+  border-radius: 2rem 0.625rem 2rem 0.625rem;
+}
+
+.curve-pill-alt {
+  border-radius: 3rem 0.75rem 3rem 0.75rem;
+}
+
+.curve-soft {
+  border-radius: 1.25rem;
+}
+
+/* ========================================================= */
+/* 2. FROSTED GLASSMORPHISM (Pure Essence signature)        */
+/* ========================================================= */
+.glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 10px 30px -10px rgba(18, 52, 91, 0.05);
+}
+
+.glass-header {
+  background: rgba(250, 252, 254, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(217, 230, 240, 0.85);
+}
+
+.glass-blue {
+  background: rgba(238, 247, 252, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 230, 240, 0.9);
+}
+
+/* ========================================================= */
+/* 3. SHIMMER TEXT & GRADIENTS (Pure Essence + OAUMods Gold)*/
+/* ========================================================= */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #12345B 0%, #1769AA 25%, #E6AD3C 50%, #1769AA 75%, #12345B 100%);
+  background-size: 200% 100%;
+  animation: shimmer 5s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #12345B 0%, #1769AA 60%, #E6AD3C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================================= */
+/* 4. RUNNING MARQUEE TICKER (Pure Essence style)           */
+/* ========================================================= */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ========================================================= */
+/* 5. TACTILE INTERACTIONS (Button press, pulse ring)        */
+/* ========================================================= */
+.btn-press {
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms ease;
+}
+
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: pulse-ring 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  pointer-events: none;
+}
+
+/* ========================================================= */
+/* 6. OAUMODS TECHNICAL CARDS & HAIRLINE BORDERS            */
+/* ========================================================= */
 .technical-border {
-  border: 1px solid var(--color-border-hairline);
+  border: 1px solid #D9E6F0;
   position: relative;
   background-color: #FFFFFF;
 }
 
 .technical-border::before {
   content: "";
-  border-top: 2px solid var(--color-gold);
-  border-left: 2px solid var(--color-gold);
-  width: 6px;
-  height: 6px;
+  border-top: 2px solid #E6AD3C;
+  border-left: 2px solid #E6AD3C;
+  width: 7px;
+  height: 7px;
   position: absolute;
   top: -1px;
   left: -1px;
   pointer-events: none;
+  border-top-left-radius: 4px;
 }
 
 .technical-border::after {
   content: "";
-  border-bottom: 2px solid var(--color-gold);
-  border-right: 2px solid var(--color-gold);
-  width: 6px;
-  height: 6px;
+  border-bottom: 2px solid #1769AA;
+  border-right: 2px solid #1769AA;
+  width: 7px;
+  height: 7px;
   position: absolute;
   bottom: -1px;
   right: -1px;
   pointer-events: none;
+  border-bottom-right-radius: 4px;
 }
 
-/* Subtle Architectural Dot Pattern */
-.dots-background {
-  background-image: radial-gradient(#D1D1CB 0.75px, transparent 0.75px);
-  background-size: 20px 20px;
+.n7-card {
+  background: #FFFFFF;
+  border: 1px solid #D9E6F0;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.n7-card:hover {
+  border-color: #1769AA;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -10px rgba(18, 52, 91, 0.08);
+}
+
+/* Technical Label Mono */
+.label-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #64748B;
 }
 
 /* Gold Link Micro-Interaction */
 .gold-link {
-  color: #121212;
+  color: #12345B;
   text-decoration: none;
   position: relative;
   transition: color 0.2s ease;
@@ -79,7 +215,7 @@ body {
 
 .gold-link::after {
   content: "";
-  background-color: var(--color-gold);
+  background-color: #E6AD3C;
   transform-origin: 100% 100%;
   width: 100%;
   height: 2px;
@@ -91,7 +227,7 @@ body {
 }
 
 .gold-link:hover {
-  color: var(--color-gold-dark);
+  color: #1769AA;
 }
 
 .gold-link:hover::after {
@@ -99,35 +235,10 @@ body {
   transform: scaleX(1);
 }
 
-/* Interactive Card Elevate */
-.n7-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border-hairline);
-  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease, border-color 180ms ease;
-}
-
-.n7-card:hover {
-  border-color: #C9A84C;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -8px rgba(18, 18, 18, 0.06);
-}
-
-/* Technical Label Mono */
-.label-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--color-carbon-muted);
-}
-
-/* Glass Header Panel */
-.glass-header {
-  background: rgba(250, 249, 246, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(229, 229, 224, 0.85);
+/* Subtle Architectural Dot Pattern */
+.dots-background {
+  background-image: radial-gradient(#D9E6F0 0.85px, transparent 0.85px);
+  background-size: 20px 20px;
 }
 
 /* Custom Minimal Scrollbar */
@@ -139,14 +250,14 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(18, 18, 18, 0.18);
+  background: rgba(18, 52, 91, 0.15);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(18, 18, 18, 0.35);
+  background: rgba(18, 52, 91, 0.3);
 }
 
 ::selection {
-  background: #C9A84C;
-  color: #FFFFFF;
+  background: #EEF7FC;
+  color: #12345B;
 }

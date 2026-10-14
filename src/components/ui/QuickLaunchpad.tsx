@@ -64,14 +64,16 @@ export function QuickLaunchpad() {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center justify-between pb-2 border-b border-[#E5E5E0]">
+      <div className="flex items-center justify-between pb-2 border-b border-[#D9E6F0]">
         <div className="flex items-center gap-2">
-          <span className="label-mono text-[#C9A84C]">QUICK ACCESS</span>
-          <span className="text-xs font-bold text-[#121212]">
+          <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
+            QUICK ACCESS
+          </span>
+          <span className="text-xs font-bold text-[#12345B]">
             Studio Core Navigation
           </span>
         </div>
-        <span className="label-mono text-[10px] text-[#71717A]">
+        <span className="label-mono text-[10px] text-[#64748B]">
           Direct Endpoint Launchpad
         </span>
       </div>
@@ -83,30 +85,30 @@ export function QuickLaunchpad() {
             <Link
               key={item.title}
               href={item.href}
-              className="group n7-card p-4 sm:p-5 flex flex-col justify-between"
+              className="group n7-card curve-soft p-4 sm:p-5 flex flex-col justify-between border border-[#D9E6F0] rounded-2xl hover:border-[#1769AA] transition-all hover:shadow-md"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <div className="w-8 h-8 rounded-sm bg-[#FAF9F6] border border-[#E5E5E0] group-hover:border-[#C9A84C] group-hover:bg-[#121212] group-hover:text-[#F5C842] text-[#121212] flex items-center justify-center transition-colors">
+                  <div className="w-9 h-9 rounded-xl bg-[#EEF7FC] border border-[#D9E6F0] group-hover:border-[#12345B] group-hover:bg-[#12345B] group-hover:text-white text-[#12345B] flex items-center justify-center transition-all">
                     <Icon className="w-4 h-4" />
                   </div>
-                  <span className="label-mono text-[9px] text-[#71717A] group-hover:text-[#C9A84C]">
+                  <span className="label-mono text-[9px] px-2 py-0.5 rounded-full bg-[#FAFCFE] text-[#64748B] border border-[#D9E6F0] group-hover:border-[#E6AD3C] group-hover:text-[#12345B] transition-colors">
                     [{item.index} // {item.badge}]
                   </span>
                 </div>
                 <div className="space-y-1">
-                  <h3 className="font-bold text-sm text-[#121212] group-hover:text-[#9B7C28] transition-colors leading-snug">
+                  <h3 className="font-bold text-sm text-[#12345B] group-hover:text-[#1769AA] transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#71717A] line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-[#64748B] line-clamp-2 leading-relaxed">
                     {item.subtitle}
                   </p>
                 </div>
               </div>
 
-              <div className="mt-4 pt-2.5 border-t border-[#E5E5E0] flex items-center justify-between text-xs font-mono font-bold text-[#71717A] group-hover:text-[#121212]">
+              <div className="mt-4 pt-2.5 border-t border-[#D9E6F0] flex items-center justify-between text-xs font-mono font-bold text-[#64748B] group-hover:text-[#12345B]">
                 <span className="text-[11px]">ACCESS SECTOR</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#C9A84C]" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#E6AD3C]" />
               </div>
             </Link>
           );

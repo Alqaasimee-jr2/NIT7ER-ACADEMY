@@ -9,20 +9,20 @@ export function StatCounter() {
       {ACADEMY_METRICS.map((metric, idx) => (
         <div
           key={metric.label}
-          className="technical-border p-4 sm:p-5 bg-white space-y-1.5"
+          className="technical-border curve-soft p-4 sm:p-5 bg-white space-y-1.5 shadow-xs hover:border-[#1769AA] transition-all hover:-translate-y-0.5"
         >
           <div className="flex items-center justify-between">
-            <span className="text-2xl sm:text-3xl lg:text-4xl font-mono font-bold text-[#121212] tracking-tight">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-mono font-black text-[#12345B] tracking-tight">
               {metric.value}
             </span>
-            <span className="label-mono text-[9px] text-[#C9A84C]">
-              [METRIC 0{idx + 1}]
+            <span className="label-mono text-[9px] px-2 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
+              [0{idx + 1}]
             </span>
           </div>
-          <h4 className="text-xs sm:text-sm font-bold text-[#121212] leading-snug">
+          <h4 className="text-xs sm:text-sm font-bold text-[#12345B] leading-snug">
             {metric.label}
           </h4>
-          <p className="text-[11px] sm:text-xs text-[#71717A] leading-relaxed">
+          <p className="text-[11px] sm:text-xs text-[#64748B] leading-relaxed">
             {metric.detail}
           </p>
         </div>

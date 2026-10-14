@@ -9,23 +9,25 @@ export function LabsShowcase({ limit }: { limit?: number }) {
 
   return (
     <section className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#E5E5E0] pb-3">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#D9E6F0] pb-3">
         <div>
-          <span className="label-mono text-[#C9A84C]">Studio Production</span>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#121212] tracking-tight mt-1">
+          <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
+            Studio Production
+          </span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#12345B] tracking-tight mt-1.5">
             Incubated Products &amp; Systems
           </h2>
-          <p className="text-xs sm:text-sm text-[#71717A] max-w-xl mt-0.5">
+          <p className="text-xs sm:text-sm text-[#64748B] max-w-xl mt-0.5">
             Every concept taught in our academy is proven in live commercial software built directly inside NIT7ER Studio.
           </p>
         </div>
         {limit && (
           <Link
             href="/labs"
-            className="gold-link inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#121212] shrink-0"
+            className="gold-link inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#12345B] shrink-0"
           >
             <span>VIEW ALL 6 INCUBATED CASE STUDIES</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#C9A84C]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
           </Link>
         )}
       </div>
@@ -34,40 +36,40 @@ export function LabsShowcase({ limit }: { limit?: number }) {
         {projects.map((project, idx) => (
           <div
             key={project.id}
-            className="technical-border p-5 sm:p-6 bg-white flex flex-col justify-between space-y-4"
+            className="technical-border curve-soft p-5 sm:p-6 bg-white flex flex-col justify-between space-y-4 border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] hover:shadow-md transition-all"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between font-mono text-[10px]">
-                <span className="text-[#C9A84C] font-bold">
+                <span className="px-2 py-0.5 rounded-full bg-[#EEF7FC] text-[#1769AA] font-bold border border-[#D9E6F0]">
                   [{project.badge}]
                 </span>
-                <span className="text-[#71717A]">
+                <span className="text-[#64748B]">
                   0{idx + 1} // {project.category}
                 </span>
               </div>
 
               <div>
-                <h3 className="text-lg font-black text-[#121212] tracking-tight">
+                <h3 className="text-lg font-black text-[#12345B] tracking-tight">
                   {project.title}
                 </h3>
-                <p className="text-xs font-mono text-[#71717A] mt-0.5 italic">
+                <p className="text-xs font-mono text-[#1769AA] mt-0.5 italic">
                   {project.tagline}
                 </p>
               </div>
 
-              <p className="text-xs text-[#71717A] leading-relaxed">
+              <p className="text-xs text-[#64748B] leading-relaxed">
                 {project.description}
               </p>
 
               <div className="space-y-1.5 pt-1">
-                <span className="label-mono text-[9px] text-[#A1A1AA] block">
+                <span className="label-mono text-[9px] text-[#64748B] block">
                   STACK DEPLOYMENT
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[10px] font-mono px-2 py-0.5 bg-[#FAF9F6] text-[#121212] border border-[#E5E5E0]"
+                      className="text-[10px] font-mono px-2 py-0.5 bg-[#EEF7FC]/60 text-[#12345B] border border-[#D9E6F0] rounded-md"
                     >
                       {tech}
                     </span>
@@ -77,8 +79,8 @@ export function LabsShowcase({ limit }: { limit?: number }) {
             </div>
 
             {/* Actions */}
-            <div className="pt-3 border-t border-[#E5E5E0] flex items-center justify-between text-xs font-mono">
-              <span className="text-[10px] text-[#71717A] truncate max-w-[140px]">
+            <div className="pt-3 border-t border-[#D9E6F0] flex items-center justify-between text-xs font-mono">
+              <span className="text-[10px] text-[#64748B] truncate max-w-[140px]">
                 {project.impact}
               </span>
 
@@ -88,7 +90,7 @@ export function LabsShowcase({ limit }: { limit?: number }) {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 border border-[#E5E5E0] text-[#71717A] hover:text-[#121212] hover:border-[#121212] transition-colors"
+                    className="p-1.5 border border-[#D9E6F0] rounded-full text-[#64748B] hover:text-[#12345B] hover:border-[#12345B] transition-colors"
                     title="View GitHub Repository"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
@@ -99,10 +101,10 @@ export function LabsShowcase({ limit }: { limit?: number }) {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 px-3 py-1 bg-[#121212] text-white hover:bg-[#27272A] font-bold text-[11px] transition-colors"
+                    className="btn-press inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#12345B] text-white hover:bg-[#1769AA] font-bold text-[11px] rounded-full transition-colors shadow-2xs"
                   >
                     <span>LIVE</span>
-                    <ExternalLink className="w-3 h-3 text-[#F5C842]" />
+                    <ExternalLink className="w-3 h-3 text-[#E6AD3C]" />
                   </a>
                 )}
               </div>

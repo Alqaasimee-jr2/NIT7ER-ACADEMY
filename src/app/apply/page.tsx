@@ -3,7 +3,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import confetti from 'canvas-confetti';
-import { FACULTIES, FOUNDER_INFO } from '@/data/academyData';
+import { FACULTIES } from '@/data/academyData';
 import {
   CheckCircle2,
   ArrowRight,
@@ -13,7 +13,6 @@ import {
   ShieldCheck,
   AlertCircle,
 } from 'lucide-react';
-import { N7BrandMark } from '@/components/N7BrandMark';
 
 function ApplicationFormContent() {
   const searchParams = useSearchParams();
@@ -121,95 +120,95 @@ function ApplicationFormContent() {
       `• Experience: ${experience}\n` +
       `• Email: ${email}\n` +
       `• Phone: ${phone || 'N/A'}\n\n` +
-      `I would like to verify my application status with the director.`
+      `I would like to verify my application status with Director Abdullah Qaasim-Falade.`
   );
 
   return (
     <div className="max-w-3xl mx-auto space-y-8">
       {/* Header */}
       <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-[#FAF9F6] border border-[#E5E5E0] text-xs font-mono">
-          <span className="w-2 h-2 rounded-full bg-[#C9A84C]"></span>
-          <span className="font-bold text-[#121212]">INTAKE QUEUE // COHORT 2026/2027</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
+          <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
+          <span className="font-bold text-[#12345B]">INTAKE QUEUE // COHORT 2026/2027</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-black text-[#121212] tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-black text-[#12345B] tracking-tight">
           NIT7ER Academy Diagnostic Intake Portal
         </h1>
-        <p className="text-xs sm:text-sm text-[#71717A] max-w-lg mx-auto">
+        <p className="text-xs sm:text-sm text-[#64748B] max-w-lg mx-auto">
           Complete this diagnostic intake to apply. Applications are reviewed directly by Director Abdullah Qaasim-Falade.
         </p>
       </div>
 
       {/* Success State */}
       {submissionResult ? (
-        <div className="technical-border p-6 sm:p-10 bg-white text-center space-y-6">
-          <div className="w-12 h-12 bg-[#121212] text-[#F5C842] flex items-center justify-center mx-auto">
-            <CheckCircle2 className="w-6 h-6" />
+        <div className="technical-border curve-asymmetric p-6 sm:p-10 bg-white text-center space-y-6 border border-[#D9E6F0] shadow-sm">
+          <div className="w-14 h-14 bg-[#12345B] text-[#E6AD3C] rounded-full flex items-center justify-center mx-auto shadow-sm">
+            <CheckCircle2 className="w-7 h-7" />
           </div>
 
           <div className="space-y-1.5">
-            <span className="label-mono text-[#C9A84C] block">
+            <span className="label-mono px-3 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0] inline-block font-bold">
               REGISTRATION LOGGED &amp; VERIFIED
             </span>
-            <h2 className="text-2xl font-black text-[#121212] tracking-tight">
+            <h2 className="text-2xl font-black text-[#12345B] tracking-tight pt-1">
               Application Successfully Queued
             </h2>
-            <p className="text-xs sm:text-sm text-[#71717A] max-w-md mx-auto">
+            <p className="text-xs sm:text-sm text-[#64748B] max-w-md mx-auto">
               Your profile has been logged in our studio intake queue. Keep your institutional reference code below:
             </p>
           </div>
 
-          <div className="p-4 bg-[#FAF9F6] border border-[#E5E5E0] inline-block text-center max-w-xs mx-auto">
-            <span className="label-mono text-[9px] text-[#71717A] block">
+          <div className="p-4 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-2xl inline-block text-center max-w-xs mx-auto shadow-2xs">
+            <span className="label-mono text-[9px] text-[#64748B] block">
               APPLICATION REFERENCE
             </span>
-            <span className="text-xl font-mono font-bold tracking-widest text-[#121212]">
+            <span className="text-2xl font-mono font-bold tracking-widest text-[#12345B]">
               {submissionResult.refCode}
             </span>
           </div>
 
-          <div className="p-5 bg-[#FAF9F6] border border-[#E5E5E0] text-left max-w-lg mx-auto space-y-3">
-            <h4 className="label-mono text-[#121212] flex items-center gap-1.5 font-bold">
-              <MessageCircle className="w-3.5 h-3.5 text-[#C9A84C]" />
+          <div className="p-6 bg-[#EEF7FC]/60 border border-[#D9E6F0] rounded-2xl text-left max-w-lg mx-auto space-y-3.5 shadow-2xs">
+            <h4 className="label-mono text-[#12345B] flex items-center gap-1.5 font-bold">
+              <MessageCircle className="w-4 h-4 text-[#1769AA]" />
               <span>RECOMMENDED: 1-TAP WHATSAPP CONFIRMATION</span>
             </h4>
-            <p className="text-xs text-[#71717A] leading-relaxed">
+            <p className="text-xs text-[#64748B] leading-relaxed">
               To expedite your profile diagnostic and avoid email spam delays, dispatch your pre-formatted application confirmation directly to Director Abdullah Qaasim-Falade on WhatsApp:
             </p>
             <a
               href={`https://wa.me/2349019597944?text=${whatsappText}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#121212] hover:bg-[#27272A] text-white font-mono text-xs sm:text-sm font-bold shadow-xs transition-colors"
+              className="btn-press inline-flex items-center justify-center gap-2.5 w-full px-5 py-3.5 bg-[#12345B] hover:bg-[#1769AA] text-white font-mono text-xs sm:text-sm font-bold rounded-full shadow-md transition-colors"
             >
-              <MessageCircle className="w-4 h-4 text-[#F5C842]" />
+              <MessageCircle className="w-4 h-4 text-[#E6AD3C]" />
               <span>CONFIRM APPLICATION ON WHATSAPP</span>
             </a>
           </div>
         </div>
       ) : (
         /* Multi-Step Form */
-        <div className="technical-border p-6 sm:p-8 bg-white space-y-6">
+        <div className="technical-border curve-asymmetric p-6 sm:p-8 bg-white space-y-6 border border-[#D9E6F0] shadow-sm">
           {/* Progress Indicator */}
           <div className="space-y-2">
-            <div className="flex items-center justify-between font-mono text-xs font-bold text-[#71717A]">
+            <div className="flex items-center justify-between font-mono text-xs font-bold text-[#64748B]">
               <span>[STEP 0{step} OF 03]</span>
-              <span className="text-[#121212]">
+              <span className="text-[#12345B]">
                 {step === 1 && 'CHOOSE ACADEMIC FACULTY'}
                 {step === 2 && 'PERSONAL & CONTACT DETAILS'}
                 {step === 3 && 'EXPERIENCE & CAPSTONE GOAL'}
               </span>
             </div>
-            <div className="w-full bg-[#FAF9F6] border border-[#E5E5E0] h-1.5 overflow-hidden">
+            <div className="w-full bg-[#EEF7FC] border border-[#D9E6F0] h-2 rounded-full overflow-hidden">
               <div
-                className="bg-[#C9A84C] h-full transition-all duration-300"
+                className="bg-gradient-to-r from-[#1769AA] to-[#E6AD3C] h-full rounded-full transition-all duration-300"
                 style={{ width: `${(step / 3) * 100}%` }}
               ></div>
             </div>
           </div>
 
           {errorMsg && (
-            <div className="p-3 bg-red-50 border border-red-200 flex items-center gap-2 text-xs font-mono font-bold text-red-700">
+            <div className="p-3 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2 text-xs font-mono font-bold text-red-700">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -218,7 +217,7 @@ function ApplicationFormContent() {
           {/* STEP 1: Faculty Selection */}
           {step === 1 && (
             <div className="space-y-4">
-              <span className="label-mono block text-[#121212]">
+              <span className="label-mono block text-[#12345B]">
                 01. Select Primary Academic Discipline
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -229,22 +228,22 @@ function ApplicationFormContent() {
                       type="button"
                       key={fac.id}
                       onClick={() => setFaculty(fac.id)}
-                      className={`p-4 border text-left transition-all space-y-1.5 ${
+                      className={`btn-press p-4 border text-left transition-all space-y-1.5 rounded-2xl ${
                         isSelected
-                          ? 'border-[#121212] bg-[#FAF9F6] ring-1 ring-[#121212]'
-                          : 'border-[#E5E5E0] bg-white hover:border-[#121212]'
+                          ? 'border-[#12345B] bg-[#EEF7FC] ring-2 ring-[#12345B] shadow-2xs'
+                          : 'border-[#D9E6F0] bg-white hover:border-[#1769AA]'
                       }`}
                     >
                       <div className="flex items-center justify-between font-mono text-xs">
-                        <span className="font-bold text-[#C9A84C]">
+                        <span className="font-bold text-[#1769AA]">
                           FACULTY {fac.number}
                         </span>
-                        {isSelected && <span className="w-2 h-2 rounded-full bg-[#121212]"></span>}
+                        {isSelected && <span className="w-2 h-2 rounded-full bg-[#12345B]"></span>}
                       </div>
-                      <h4 className="font-bold text-sm text-[#121212]">
+                      <h4 className="font-bold text-sm text-[#12345B]">
                         {fac.title}
                       </h4>
-                      <p className="text-xs text-[#71717A] line-clamp-2">
+                      <p className="text-xs text-[#64748B] line-clamp-2">
                         {fac.subtitle}
                       </p>
                     </button>
@@ -257,12 +256,12 @@ function ApplicationFormContent() {
           {/* STEP 2: Personal Details */}
           {step === 2 && (
             <div className="space-y-4">
-              <span className="label-mono block text-[#121212]">
+              <span className="label-mono block text-[#12345B]">
                 02. Candidate Information
               </span>
               <div className="space-y-3 font-mono">
                 <div>
-                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                  <label className="block text-xs font-bold text-[#12345B] mb-1">
                     FULL LEGAL NAME *
                   </label>
                   <input
@@ -271,12 +270,12 @@ function ApplicationFormContent() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="e.g. Adebayo Ogunlesi"
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
+                    className="w-full px-4 py-2.5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-xl text-xs sm:text-sm text-[#1F2937] focus:outline-none focus:border-[#1769AA] focus:ring-1 focus:ring-[#1769AA]/20"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                  <label className="block text-xs font-bold text-[#12345B] mb-1">
                     EMAIL ADDRESS *
                   </label>
                   <input
@@ -285,12 +284,12 @@ function ApplicationFormContent() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@domain.com"
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
+                    className="w-full px-4 py-2.5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-xl text-xs sm:text-sm text-[#1F2937] focus:outline-none focus:border-[#1769AA] focus:ring-1 focus:ring-[#1769AA]/20"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                  <label className="block text-xs font-bold text-[#12345B] mb-1">
                     WHATSAPP PHONE NUMBER (WITH COUNTRY CODE)
                   </label>
                   <input
@@ -298,7 +297,7 @@ function ApplicationFormContent() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+234 901 234 5678"
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
+                    className="w-full px-4 py-2.5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-xl text-xs sm:text-sm text-[#1F2937] focus:outline-none focus:border-[#1769AA] focus:ring-1 focus:ring-[#1769AA]/20"
                   />
                 </div>
               </div>
@@ -308,19 +307,19 @@ function ApplicationFormContent() {
           {/* STEP 3: Goals & Experience */}
           {step === 3 && (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <span className="label-mono block text-[#121212]">
+              <span className="label-mono block text-[#12345B]">
                 03. Diagnostic Alignment &amp; Goals
               </span>
 
               <div className="space-y-3 font-mono">
                 <div>
-                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                  <label className="block text-xs font-bold text-[#12345B] mb-1">
                     CURRENT EXPERIENCE LEVEL
                   </label>
                   <select
                     value={experience}
                     onChange={(e) => setExperience(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs text-[#121212] focus:outline-none focus:border-[#C9A84C]"
+                    className="w-full px-4 py-2.5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-xl text-xs text-[#1F2937] focus:outline-none focus:border-[#1769AA]"
                   >
                     <option value="Self-Taught Beginner">Self-Taught Beginner (Foundational concepts)</option>
                     <option value="Intermediate Builder">Intermediate Builder (Can ship with guidance)</option>
@@ -330,7 +329,7 @@ function ApplicationFormContent() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                  <label className="block text-xs font-bold text-[#12345B] mb-1">
                     INTENDED CAPSTONE DELIVERABLE
                   </label>
                   <textarea
@@ -338,12 +337,12 @@ function ApplicationFormContent() {
                     value={goals}
                     onChange={(e) => setGoals(e.target.value)}
                     placeholder="Describe the specific software, cognitive routine, or technical document you intend to ship..."
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
+                    className="w-full px-4 py-2.5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-xl text-xs sm:text-sm text-[#1F2937] focus:outline-none focus:border-[#1769AA]"
                   ></textarea>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                  <label className="block text-xs font-bold text-[#12345B] mb-1">
                     PORTFOLIO, GITHUB, OR WRITING URL (OPTIONAL)
                   </label>
                   <input
@@ -351,13 +350,13 @@ function ApplicationFormContent() {
                     value={portfolioUrl}
                     onChange={(e) => setPortfolioUrl(e.target.value)}
                     placeholder="https://github.com/yourhandle or portfolio"
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
+                    className="w-full px-4 py-2.5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-xl text-xs sm:text-sm text-[#1F2937] focus:outline-none focus:border-[#1769AA]"
                   />
                 </div>
               </div>
 
-              <div className="p-3 bg-[#FAF9F6] border border-[#E5E5E0] text-xs text-[#71717A] flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#C9A84C] shrink-0" />
+              <div className="p-3.5 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl text-xs text-[#64748B] flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#1769AA] shrink-0" />
                 <span>
                   By submitting, you commit to NIT7ER Academy’s daily execution standards, reality telemetry, and public capstone defense.
                 </span>
@@ -366,13 +365,13 @@ function ApplicationFormContent() {
           )}
 
           {/* Navigation Controls */}
-          <div className="pt-4 border-t border-[#E5E5E0] flex items-center justify-between">
+          <div className="pt-4 border-t border-[#D9E6F0] flex items-center justify-between">
             {step > 1 ? (
               <button
                 type="button"
                 onClick={handleBack}
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-1.5 px-4 py-2 border border-[#E5E5E0] text-xs font-mono font-bold text-[#71717A] hover:text-[#121212] hover:border-[#121212] transition-colors"
+                className="btn-press inline-flex items-center gap-1.5 px-4 py-2 border border-[#D9E6F0] rounded-full text-xs font-mono font-bold text-[#64748B] hover:text-[#12345B] hover:bg-[#EEF7FC] transition-colors"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>PREVIOUS</span>
@@ -385,17 +384,17 @@ function ApplicationFormContent() {
               <button
                 type="button"
                 onClick={handleNext}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#121212] text-white text-xs sm:text-sm font-mono font-bold hover:bg-[#27272A] transition-colors"
+                className="btn-press inline-flex items-center gap-2 px-6 py-2.5 bg-[#12345B] text-white text-xs sm:text-sm font-mono font-bold rounded-full hover:bg-[#1769AA] transition-colors shadow-sm"
               >
                 <span>CONTINUE</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#F5C842]" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
               </button>
             ) : (
               <button
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#C9A84C] hover:bg-[#F5C842] text-[#121212] text-xs sm:text-sm font-mono font-bold transition-colors disabled:opacity-50"
+                className="btn-press inline-flex items-center gap-2 px-6 py-2.5 bg-[#E6AD3C] hover:bg-[#F5C842] text-[#12345B] text-xs sm:text-sm font-mono font-bold rounded-full transition-colors disabled:opacity-50 shadow-sm"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>{isSubmitting ? 'REGISTERING...' : 'SUBMIT APPLICATION FOR REVIEW'}</span>
@@ -410,7 +409,7 @@ function ApplicationFormContent() {
 
 export default function ApplyPage() {
   return (
-    <Suspense fallback={<div className="text-center py-20 font-mono text-xs text-[#71717A]">LOADING PORTAL...</div>}>
+    <Suspense fallback={<div className="text-center py-20 font-mono text-xs text-[#64748B]">LOADING PORTAL...</div>}>
       <ApplicationFormContent />
     </Suspense>
   );

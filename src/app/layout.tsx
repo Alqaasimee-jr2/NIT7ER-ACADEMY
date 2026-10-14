@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { MarqueeTicker } from '@/components/layout/MarqueeTicker';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -47,8 +48,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen bg-[#FAF9F6] text-[#121212] flex flex-col selection:bg-[#C9A84C] selection:text-white">
+      <body className="min-h-screen bg-[#FAFCFE] text-[#1F2937] flex flex-col selection:bg-[#EEF7FC] selection:text-[#12345B]">
         <Navbar />
+        <MarqueeTicker />
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 sm:space-y-16">
           {children}
         </main>
