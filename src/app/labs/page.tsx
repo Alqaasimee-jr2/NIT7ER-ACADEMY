@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { LAB_PROJECTS } from '@/data/academyData';
 import { GithubIcon } from '@/components/Icons';
 import { ExternalLink, ArrowRight, Code2 } from 'lucide-react';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'NIT7ER Labs & Incubator Showcase',
@@ -13,7 +14,9 @@ export const metadata: Metadata = {
 
 export default function LabsPage() {
   return (
-    <div className="space-y-12 sm:space-y-16">
+    <div className="space-y-8 sm:space-y-12">
+      <Breadcrumbs items={[{ label: 'Labs & Incubator Showcase' }]} />
+
       {/* Page Header */}
       <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         {/* Subtle Contour Watermark */}

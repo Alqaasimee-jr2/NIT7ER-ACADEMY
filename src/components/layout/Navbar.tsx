@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Search } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
 import { CommandPaletteTrigger } from '@/components/ui/QuickUtils';
 
@@ -74,8 +74,16 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
+          {/* Mobile Menu & Quick Search */}
+          <div className="flex md:hidden items-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new CustomEvent('open-command-palette'))}
+              className="p-2 text-[#12345B] hover:bg-[#EEF7FC] rounded-full transition-colors"
+              aria-label="Open search tracks"
+            >
+              <Search className="w-4 h-4 text-[#1769AA]" />
+            </button>
             <Link
               href="/apply"
               className="px-3 py-1.5 bg-[#12345B] text-white text-xs font-bold rounded-full"

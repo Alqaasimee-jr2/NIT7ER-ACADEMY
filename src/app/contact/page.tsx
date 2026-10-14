@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
 import { CopyableItem } from '@/components/ui/QuickUtils';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 function ContactFormContent() {
   const [fullName, setFullName] = useState('');
@@ -92,6 +93,8 @@ function ContactFormContent() {
 
   return (
     <div className="space-y-12 sm:space-y-16">
+      <Breadcrumbs items={[{ label: 'Contact & Admissions Desk' }]} />
+
       {/* Header Banner */}
       <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         <div

@@ -17,6 +17,7 @@ import {
   Layers,
 } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 function ApplicationFormContent() {
   const searchParams = useSearchParams();
@@ -150,6 +151,8 @@ function ApplicationFormContent() {
 
   return (
     <div className="max-w-3xl mx-auto space-y-8">
+      <Breadcrumbs items={[{ label: 'Admissions & Catalog', href: '/programs' }, { label: 'Cohort Application' }]} />
+
       {/* Header */}
       <div className="text-center space-y-3">
         <N7BrandMark size="xl" variant="gold" className="mx-auto" />

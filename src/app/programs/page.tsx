@@ -22,6 +22,8 @@ import {
   ComputerEducationDiagram,
 } from '@/components/illustrations/FacultyDiagrams';
 import { ProgramCardAction } from '@/components/ui/ProgramCardAction';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { StickyFacultyNav } from '@/components/ui/StickyFacultyNav';
 
 export const metadata: Metadata = {
   title: 'Academic Faculties & 12 Specialized Programs',
@@ -63,7 +65,9 @@ export default function ProgramsPage() {
   const totalPrograms = FACULTIES.reduce((acc, f) => acc + f.programs.length, 0);
 
   return (
-    <div className="space-y-12 sm:space-y-16">
+    <div className="space-y-8 sm:space-y-12">
+      <Breadcrumbs items={[{ label: 'Academic Catalog & Tracks' }]} />
+
       {/* Header Banner */}
       <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-5 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         {/* Subtle Brand Shapes Accent Watermark */}
@@ -123,6 +127,9 @@ export default function ProgramsPage() {
           ))}
         </div>
       </section>
+
+      {/* Sticky Faculty Quick Wayfinder */}
+      <StickyFacultyNav />
 
       {/* Deep Dive into Each Faculty */}
       <div className="space-y-16">

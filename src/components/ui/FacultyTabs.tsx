@@ -183,7 +183,7 @@ export function FacultyTabs() {
                 <button
                   key={prog.id}
                   onClick={() => setSelectedProgramId(prog.id)}
-                  className={`btn-press p-3.5 text-left border rounded-xl transition-all space-y-1.5 ${
+                  className={`btn-press p-3.5 text-left border rounded-xl transition-all space-y-1.5 relative ${
                     isProgActive
                       ? 'border-[#12345B] bg-[#EEF7FC] ring-2 ring-[#12345B] shadow-2xs'
                       : 'border-[#D9E6F0] bg-white hover:border-[#1769AA]'
@@ -191,9 +191,16 @@ export function FacultyTabs() {
                 >
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="font-bold text-[#1769AA]">{prog.code}</span>
-                    <span className="text-[10px] px-2 py-0.5 bg-white border border-[#D9E6F0] text-[#64748B] rounded-full">
-                      {prog.level}
-                    </span>
+                    <div className="flex items-center gap-1.5">
+                      {isProgActive && (
+                        <span className="text-[9px] px-2 py-0.5 bg-[#E6AD3C] text-[#12345B] font-bold rounded-full">
+                          SELECTED
+                        </span>
+                      )}
+                      <span className="text-[10px] px-2 py-0.5 bg-white border border-[#D9E6F0] text-[#64748B] rounded-full">
+                        {prog.level}
+                      </span>
+                    </div>
                   </div>
                   <h4 className="text-xs sm:text-sm font-bold text-[#12345B] line-clamp-1">
                     {prog.title}
@@ -203,8 +210,12 @@ export function FacultyTabs() {
                   </p>
                   <div className="flex items-center justify-between pt-1 text-[10px] font-mono text-[#64748B]">
                     <span>{prog.duration}</span>
-                    <span className="text-[#1769AA] font-bold flex items-center gap-0.5">
-                      <span>View Track</span>
+                    <span
+                      className={`font-bold flex items-center gap-0.5 ${
+                        isProgActive ? 'text-[#12345B]' : 'text-[#1769AA]'
+                      }`}
+                    >
+                      <span>{isProgActive ? '[Active Track]' : 'View Track'}</span>
                       <ChevronRight className="w-3 h-3" />
                     </span>
                   </div>

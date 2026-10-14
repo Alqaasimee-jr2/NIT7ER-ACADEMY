@@ -5,6 +5,7 @@ import { FOUNDER_INFO } from '@/data/academyData';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from '@/components/Icons';
 import { N7BrandMark } from '@/components/N7BrandMark';
 import { TeamShowcase } from '@/components/ui/TeamShowcase';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import {
   ShieldCheck,
   Mail,
@@ -44,6 +45,8 @@ export default function AboutPage() {
 
   return (
     <div className="space-y-12 sm:space-y-16">
+      <Breadcrumbs items={[{ label: 'Philosophy & Founder Story' }]} />
+
       {/* Header */}
       <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-6 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         {/* Subtle Background Contour */}
