@@ -28,11 +28,11 @@ export default function LabsPage() {
           </div>
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
-            Proof of Work Over Pedagogical Theory.
+            Incubated Systems &amp; Case Studies
           </h1>
 
           <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-normal">
-            Every concept taught in NIT7ER Academy originates from live systems built to solve real-world problems. From AI audio lesson monitors and offline educational platforms to cognitive awareness journals and campus navigators.
+            Production systems, educational tools, and cognitive applications developed within NIT7ER Studio.
           </p>
         </div>
       </section>

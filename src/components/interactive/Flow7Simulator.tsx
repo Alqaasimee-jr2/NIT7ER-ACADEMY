@@ -116,7 +116,7 @@ export function Flow7Simulator() {
             Flow7 Focus &amp; Reality Engine
           </h3>
           <p className="text-xs text-[#64748B] max-w-lg mt-0.5">
-            Test NIT7ER’s proprietary focus-tracking protocol in real time. Lock a single objective, execute without distraction, and log your output telemetry.
+            Practice sprint tracking: set a target, run a focused session, and log completion friction.
           </p>
         </div>
 

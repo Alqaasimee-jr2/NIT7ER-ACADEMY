@@ -23,22 +23,22 @@ export default function AboutPage() {
     {
       number: '01',
       title: 'Systems Over Memorization',
-      desc: 'True competence is proven when you sit before a blank screen, configure an architecture from scratch, and ship it to real users. Memorizing syntax for arbitrary tests produces fragile engineers.',
+      desc: 'True competence is building and shipping real systems from scratch, not memorizing test syntax.',
     },
     {
       number: '02',
       title: 'The Flow7 Reality Protocol',
-      desc: 'Most people don’t suffer from a lack of talent; they suffer from self-deception about how they use their time. Logging reality without guilt is the foundation of compound mastery.',
+      desc: 'Uncompromising honesty about focus and time use builds sustainable stamina and mastery.',
     },
     {
       number: '03',
       title: 'Prose as an Engineering Primitive',
-      desc: 'If you cannot explain an architectural choice in crisp, unambiguous sentences, you do not truly understand it. Writing is the highest leverage tool a builder possesses.',
+      desc: 'Clear technical writing proves deep conceptual understanding and aligns engineering teams.',
     },
     {
       number: '04',
       title: 'The Polymath Advantage',
-      desc: 'The future does not belong to narrow technicians who only know one framework. It belongs to builders who can write software, articulate value, maintain cognitive stamina, and understand computing systems.',
+      desc: 'Well-rounded builders synthesize software engineering, clear prose, focus stamina, and computing fundamentals.',
     },
   ];
 
@@ -91,15 +91,15 @@ export default function AboutPage() {
           </h2>
 
           <p>
-            I founded <strong>NIT7ER</strong> in Lagos as a creative technology and internal infrastructure studio. Over years of building bespoke software systems, mobile applications, and proprietary products like <strong>Flow7</strong>, <strong>Clasquera</strong>, and <strong>Lang Huey</strong>, a recurring pattern became impossible to ignore:
+            NIT7ER began as a software and creative technology studio in Lagos. Building production web systems, mobile apps, and developer tools made one thing clear:
           </p>
 
-          <div className="p-5 rounded-2xl bg-[#EEF7FC]/70 border-l-4 border-[#1769AA] text-[#1F2937] font-mono text-xs italic leading-relaxed">
-            &ldquo;Conventional universities and coding bootcamps teach isolated technical fragments while completely ignoring the human cognitive engine that produces the work. Students graduate knowing syntax, but with zero stamina for deep work, no ability to communicate with decision-makers, and zero understanding of how systems live in the real world.&rdquo;
+          <div className="p-4 rounded-xl bg-[#EEF7FC]/70 border-l-4 border-[#1769AA] text-[#1F2937] font-mono text-xs italic leading-relaxed">
+            &ldquo;Traditional education focuses on memorizing syntax for exams. We train builders to write production software, sustain deep focus, communicate clearly, and understand computers fundamentally.&rdquo;
           </div>
 
           <p>
-            NIT7ER Academy is the antidote. We built this institution not to grant paper certificates, but to train self-driven builders who can think with clarity, execute with consistency, and ship systems that hold up under commercial pressure.
+            NIT7ER Academy prepares individuals for real-world execution through hands-on studio apprenticeships and rigorous foundational work.
           </p>
 
           <div className="pt-2 flex flex-wrap gap-2 text-xs font-mono font-bold text-[#12345B]">
@@ -188,7 +188,7 @@ export default function AboutPage() {
               An Apprenticeship Model for the Independent Era.
             </h2>
             <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-              We do not treat engineering as an isolated solitary exercise or an academic lecture. At NIT7ER Studio, cohorts collaborate around open workstations, review real pull requests, log cognitive focus sessions via Flow7, and defend architecture directly before peers and founders.
+              Engineering is learned through practice. Cohorts work through production codebases, conduct peer reviews, and critique architectural decisions together.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-mono text-[#1769AA]">
               <span className="flex items-center gap-1.5 font-bold">

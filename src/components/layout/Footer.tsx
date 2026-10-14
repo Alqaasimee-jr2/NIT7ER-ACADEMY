@@ -24,7 +24,7 @@ export function Footer() {
             </div>
 
             <p className="text-sm text-[#64748B] leading-relaxed max-w-sm">
-              The high-performance institute combining full-stack software engineering, Flow7 cognitive systems, structured writing, and fundamental computer education for serious builders.
+              Practical education in software engineering, cognitive focus, technical writing, and computing foundations.
             </p>
 
             <div className="flex items-center gap-2 pt-2">

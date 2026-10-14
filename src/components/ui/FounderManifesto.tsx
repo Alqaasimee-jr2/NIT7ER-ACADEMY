@@ -26,11 +26,11 @@ export function FounderManifesto() {
 
       <div className="max-w-3xl space-y-4">
         <h2 className="text-2xl sm:text-3xl font-black text-[#12345B] tracking-tight leading-tight">
-          Mastery is not academic regurgitation. It is the ruthless discipline of shipping real systems.
+          Mastery is the discipline of shipping real work.
         </h2>
 
-        <div className="p-5 rounded-2xl bg-[#EEF7FC]/70 border-l-4 border-[#1769AA] text-[#1F2937] text-xs sm:text-sm leading-relaxed italic">
-          &ldquo;Most educational institutions teach students to memorize answers for tests that have zero correlation with real market friction. At NIT7ER Academy, we operate as a studio incubator. You write code that runs in production, you log reality without to-do list guilt, you write prose that convinces decision-makers, and you demystify computing from the silicon up.&rdquo;
+        <div className="p-4 rounded-xl bg-[#EEF7FC]/70 border-l-4 border-[#1769AA] text-[#1F2937] text-xs sm:text-sm leading-relaxed italic">
+          &ldquo;We focus on genuine capability. At NIT7ER Academy, you build software that runs in production, sustain deep focus, write clear technical arguments, and master fundamental computing.&rdquo;
         </div>
 
         <div className="pt-4 border-t border-[#D9E6F0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">

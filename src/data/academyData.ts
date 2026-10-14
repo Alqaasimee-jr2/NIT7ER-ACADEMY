@@ -68,10 +68,10 @@ export interface LabProject {
 }
 
 export const ACADEMY_METRICS = [
-  { label: 'Project-Based Output', value: '100%', detail: 'Every track culminates in a deployed software system, operating protocol, or published documentation dossier' },
-  { label: 'Core Faculties', value: '4', detail: 'Creative Engineering, Cognitive Architecture, Professional Prose, and Computer Foundations' },
-  { label: 'Specialized Programs', value: '12', detail: 'Industry-standard curricula with structured sprint modules, hands-on labs, and verified capstones' },
-  { label: 'Production Standard', value: 'Zero Fluff', detail: 'Pure discipline fundamentals and rigorous execution without superficial tutorials or toy exercises' },
+  { label: 'Project-Based Output', value: '100%', detail: 'Every track culminates in a verified capstone deliverable.' },
+  { label: 'Core Faculties', value: '4', detail: 'Software, Cognitive Focus, Writing, and Computer Education.' },
+  { label: 'Specialized Programs', value: '12', detail: 'Comprehensive syllabi with modular sprints and hands-on labs.' },
+  { label: 'Production Standard', value: 'Zero Fluff', detail: 'Hands-on engineering and direct practical competence.' },
 ];
 
 export const FACULTIES: Faculty[] = [
@@ -962,22 +962,22 @@ export const ENROLLMENT_STAGES = [
   {
     step: '01',
     title: 'Diagnostic Intake Review',
-    desc: 'Declare your background, technical focus, and target capstone through our application portal. We evaluate clarity, discipline, and execution intent.',
+    desc: 'Submit your technical background and learning goals for intake evaluation.',
   },
   {
     step: '02',
     title: 'Strategy & Baseline Session',
-    desc: 'A focused 1-on-1 diagnostic review with the director to map your operational bottlenecks, audit habits, and calibrate your sprint trajectory.',
+    desc: 'A 1-on-1 diagnostic review to assess baseline skills and establish your sprint roadmap.',
   },
   {
     step: '03',
     title: 'Studio Sprints & Reality Logging',
-    desc: 'Build through structured sprint briefs, participate in rigorous weekly code and prose critiques, and log your output daily using the Flow7 protocol.',
+    desc: 'Work through structured sprints, weekly feedback reviews, and daily focus tracking.',
   },
   {
     step: '04',
     title: 'Capstone Defense & Deployment',
-    desc: 'Ship your production system to a live URL, defend your technical architecture before peers, and transition into the NIT7ER alumni network.',
+    desc: 'Deploy your final capstone project, present your work, and join the alumni network.',
   },
 ];
 

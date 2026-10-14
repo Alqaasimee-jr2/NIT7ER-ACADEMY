@@ -104,11 +104,11 @@ function ContactFormContent() {
           </div>
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
-            Connect Directly with the Director &amp; Admissions Desk.
+            Admissions Desk &amp; Direct Inquiries
           </h1>
 
           <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-normal">
-            We do not hide behind automated customer service bots or outsourced ticket queues. Inquiries regarding admissions, diagnostic baseline sessions, and curriculum sponsorship are handled directly by Founder Abdullah Qaasim-Falade and the studio leads.
+            Direct communication for prospective candidates, cohort admissions, and curriculum questions.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-mono text-[#64748B]">

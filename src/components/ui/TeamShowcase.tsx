@@ -38,7 +38,7 @@ export function TeamShowcase() {
             The Practitioners Behind the Standard.
           </h2>
           <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-            At NIT7ER Academy, there are no detached professors. You learn directly alongside the active creative directors, visual designers, and UX engineers building for commercial clients and incubations.
+            Learn directly alongside active creative directors, designers, and systems architects.
           </p>
         </div>
 

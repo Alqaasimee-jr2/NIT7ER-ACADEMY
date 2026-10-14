@@ -80,8 +80,8 @@ export default function ProgramsPage() {
             Curriculum Engineered for True Mastery.
           </h1>
 
-          <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-normal">
-            Specialization without integration breeds fragile builders. At NIT7ER Academy, our curriculum is engineered across four pillars: constructing formidable software, mastering self-regulation through quantified awareness, articulating ideas with crisp prose, and understanding computing from its fundamental hardware, operating systems, and productivity suites.
+          <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-normal max-w-2xl">
+            Structured curricula across four foundational disciplines: software engineering, cognitive stamina, technical writing, and computer fundamentals.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-mono text-[#64748B]">

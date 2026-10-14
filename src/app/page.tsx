@@ -39,8 +39,8 @@ export default function HomePage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-2xl font-normal">
-              A modern academy for builders, founders, and creators who demand real execution. We unite full-stack software engineering, Flow7 cognitive reality tracking, precise technical prose, and fundamental computer science.
+            <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
+              Practical education in software engineering, cognitive execution, technical writing, and computer fundamentals.
             </p>
 
             {/* Action Buttons with Pure Essence Pill Geometry & Button Press */}
@@ -106,18 +106,18 @@ export default function HomePage() {
                 <ShieldCheck className="w-3.5 h-3.5 text-[#1769AA]" />
               </div>
 
-              <ul className="space-y-2.5 text-xs text-[#64748B]">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#12345B] mt-1 shrink-0"></span>
-                  <span><strong className="text-[#12345B]">Zero Toy Projects:</strong> Every module terminates in live production software or published architecture.</span>
+              <ul className="space-y-2 text-xs text-[#64748B]">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#12345B] shrink-0"></span>
+                  <span><strong className="text-[#12345B]">Production Output:</strong> Ship live software and real technical systems.</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1769AA] mt-1 shrink-0"></span>
-                  <span><strong className="text-[#12345B]">Flow7 Reality Telemetry:</strong> Log daily output without to-do list guilt to master cognitive friction.</span>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1769AA] shrink-0"></span>
+                  <span><strong className="text-[#12345B]">Focused Execution:</strong> Build deep attention and consistent daily stamina.</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] mt-1 shrink-0"></span>
-                  <span><strong className="text-[#12345B]">The Polymath Advantage:</strong> Code, prose, mind, and machine logic synthesized into one builder.</span>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] shrink-0"></span>
+                  <span><strong className="text-[#12345B]">Complete Foundations:</strong> Master software, writing, and computer literacy.</span>
                 </li>
               </ul>
             </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
             Ready to Build Systems That Stand Up to Reality?
           </h2>
           <p className="text-xs sm:text-sm text-[#EEF7FC] leading-relaxed">
-            Applications for the upcoming NIT7ER cohort are open. Select your discipline, complete our diagnostic intake, and work directly with Founder Abdullah Qaasim-Falade.
+            Applications for the upcoming cohort are open. Select your program and complete the diagnostic intake.
           </p>
         </div>
 

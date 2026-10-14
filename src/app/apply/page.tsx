@@ -158,10 +158,10 @@ function ApplicationFormContent() {
           <span className="font-bold text-[#12345B]">INTAKE QUEUE // COHORT 2026/2027</span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-black text-[#12345B] tracking-tight">
-          NIT7ER Academy Diagnostic Intake Portal
+          Cohort Application &amp; Diagnostic Intake
         </h1>
         <p className="text-xs sm:text-sm text-[#64748B] max-w-lg mx-auto">
-          Complete this diagnostic intake to apply for one of our 12 specialized program tracks. Applications are reviewed directly by Director Abdullah Qaasim-Falade.
+          Apply for one of our 12 specialized program tracks. Select your discipline to begin.
         </p>
       </div>
 

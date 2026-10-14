@@ -18,7 +18,7 @@ export function LabsShowcase({ limit }: { limit?: number }) {
             Incubated Products &amp; Systems
           </h2>
           <p className="text-xs sm:text-sm text-[#64748B] max-w-xl mt-0.5">
-            Every concept taught in our academy is proven in live commercial software built directly inside NIT7ER Studio.
+            Internal products and production systems built directly within NIT7ER Studio.
           </p>
         </div>
         {limit && (
