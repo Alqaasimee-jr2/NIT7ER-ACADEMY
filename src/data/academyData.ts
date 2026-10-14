@@ -5,12 +5,10 @@ export interface Faculty {
   subtitle: string;
   tagline: string;
   badge: string;
-  badgeColor: string;
-  shape: 'hexagon' | 'square' | 'triangle' | 'circle';
-  shapeColor: 'gold' | 'blue' | 'navy' | 'slate' | 'amber' | 'emerald';
   leadAnchor: string;
   duration: string;
   format: string;
+  diagram: 'creative-tech' | 'cognitive-systems' | 'writing' | 'computer-education';
   description: string;
   livingProof: {
     title: string;
@@ -36,16 +34,13 @@ export interface LabProject {
   liveUrl?: string;
   githubUrl?: string;
   badge: 'Live Production' | 'Incubated Lab' | 'Smartboard System' | 'Open Source';
-  badgeColor: string;
-  shape: 'hexagon' | 'square' | 'triangle' | 'circle';
-  shapeColor: 'gold' | 'blue' | 'navy' | 'slate' | 'amber' | 'emerald';
 }
 
 export const ACADEMY_METRICS = [
-  { label: 'Project-Based Output', value: '100%', detail: 'Every module ends with real deployed software or published writing' },
-  { label: 'Core Faculties', value: '4', detail: 'Engineering, Cognitive Systems, Writing, and Computer Education' },
-  { label: 'Incubated Lab Products', value: '6+', detail: 'Proven live platforms designed and deployed internally' },
-  { label: 'Performance Standard', value: '99+', detail: 'Lighthouse Core Web Vitals speed & latency target' },
+  { label: 'Project-Based Output', value: '100%', detail: 'Every module concludes with deployed software or published specifications' },
+  { label: 'Core Faculties', value: '4', detail: 'Creative Engineering, Cognitive Systems, Writing, and Computer Education' },
+  { label: 'Incubated Lab Products', value: '6+', detail: 'Proprietary platforms architected and operated directly by our studio' },
+  { label: 'Performance Floor', value: '99+', detail: 'Lighthouse Core Web Vitals target across all production deliverables' },
 ];
 
 export const FACULTIES: Faculty[] = [
@@ -55,18 +50,16 @@ export const FACULTIES: Faculty[] = [
     title: 'Creative Technology & Software Engineering',
     subtitle: 'Full-Stack Web Systems, Mobile Apps & AI Architectures',
     tagline: 'Engineering robust, production-grade applications with zero fluff.',
-    badge: 'Flagship Faculty',
-    badgeColor: 'bg-blue-100 text-[#12345B] border-blue-200',
-    shape: 'square',
-    shapeColor: 'navy',
+    badge: 'Faculty 01',
     leadAnchor: 'Modern Web, Flutter & Intelligent Systems',
     duration: '16 Weeks Intensive',
     format: 'Cohort Studio & Live Code Reviews',
+    diagram: 'creative-tech',
     description:
-      'Master the art of building scalable, lightning-fast digital products. Move past toy tutorials into production Next.js 16 architectures, reactive state machines, cross-platform Flutter/Dart engineering, and practical AI telemetry integrations.',
+      'Master the engineering discipline required to architect scalable, lightning-fast digital products. Move past toy tutorials into production Next.js 16 architectures, reactive state machines, cross-platform Flutter/Dart engineering, and practical AI telemetry integrations.',
     livingProof: {
       title: 'Clasquera & Production Web Engines',
-      description: 'Audio-based lesson accountability platform integrating Flutter recording apps with Gemini Pro verification via Firebase Functions.',
+      description: 'Audio-based lesson accountability platform integrating Flutter recording apps with Gemini Pro verification via Firebase Cloud Functions.',
       link: 'https://github.com/Alqaasimee-jr2/Clasquera-Landing-page',
     },
     modules: [
@@ -104,13 +97,11 @@ export const FACULTIES: Faculty[] = [
     title: 'Cognitive Performance & Systems Architecture',
     subtitle: 'Flow7 Execution Methodology & Personal Operational Infrastructure',
     tagline: 'Replace to-do list guilt with ruthless action awareness.',
-    badge: 'Founder Discipline',
-    badgeColor: 'bg-amber-100 text-amber-900 border-amber-300',
-    shape: 'hexagon',
-    shapeColor: 'gold',
+    badge: 'Faculty 02',
     leadAnchor: 'The Flow7 Performance Model',
     duration: '8 Weeks Intensive',
     format: 'Daily Execution Logs & Weekly Reflection Halaqahs',
+    diagram: 'cognitive-systems',
     description:
       'High-level technical ability is useless without cognitive stamina and ruthless execution habits. This discipline teaches builders how to manage cognitive energy, log reality without self-deception, eliminate friction, and maintain relentless shipping cadences.',
     livingProof: {
@@ -153,13 +144,11 @@ export const FACULTIES: Faculty[] = [
     title: 'Writing & Thought Leadership',
     subtitle: 'Technical Documentation, Product Storytelling & Clear Thinking',
     tagline: 'Clear writing is the highest form of structured thinking.',
-    badge: 'Intellectual Discipline',
-    badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-300',
-    shape: 'triangle',
-    shapeColor: 'emerald',
+    badge: 'Faculty 03',
     leadAnchor: 'The Architecture of Precise Prose',
     duration: '10 Weeks Intensive',
     format: 'Weekly Critiques & Published Essays',
+    diagram: 'writing',
     description:
       'Code is only half the battle. Elite creators, founders, and engineers distinguish themselves through crisp, unambiguous writing. Learn to author technical whitepapers, architectural decision records (ADRs), compelling product essays, and high-converting marketing copy.',
     livingProof: {
@@ -202,13 +191,11 @@ export const FACULTIES: Faculty[] = [
     title: 'Computer Education & Digital Foundations',
     subtitle: 'Core Systems Literacy, Computational Thinking & EdTech Engineering',
     tagline: 'Demystifying the machine from fundamental silicon to interactive glass.',
-    badge: 'Foundational Faculty',
-    badgeColor: 'bg-purple-100 text-purple-900 border-purple-300',
-    shape: 'circle',
-    shapeColor: 'amber',
+    badge: 'Faculty 04',
     leadAnchor: 'Computing from First Principles',
     duration: '12 Weeks Intensive',
     format: 'Laboratory Workshops & Smartboard Experiments',
+    diagram: 'computer-education',
     description:
       'A rigorous grounding in how computing actually works. From binary abstractions, data structures, and computer architecture to building classroom-ready interactive software tailored for smartboards and offline environments.',
     livingProof: {
@@ -259,9 +246,6 @@ export const LAB_PROJECTS: LabProject[] = [
     techStack: ['Next.js', 'React', 'Tailwind CSS', 'Vercel Edge', 'LocalStorage Sync'],
     liveUrl: 'https://flow7-two.vercel.app',
     badge: 'Live Production',
-    badgeColor: 'bg-amber-100 text-amber-900 border-amber-300',
-    shape: 'hexagon',
-    shapeColor: 'gold',
   },
   {
     id: 'clasquera',
@@ -274,9 +258,6 @@ export const LAB_PROJECTS: LabProject[] = [
     techStack: ['Flutter', 'Dart', 'Firebase Functions', 'Google Gemini Pro', 'Next.js'],
     githubUrl: 'https://github.com/Alqaasimee-jr2/Clasquera-Landing-page',
     badge: 'Incubated Lab',
-    badgeColor: 'bg-blue-100 text-[#12345B] border-blue-200',
-    shape: 'square',
-    shapeColor: 'navy',
   },
   {
     id: 'lang-huey',
@@ -288,9 +269,6 @@ export const LAB_PROJECTS: LabProject[] = [
     impact: 'Deployed for classroom smartboard interaction in Nigerian schools',
     techStack: ['HTML5 Canvas', 'Vanilla JS', 'Offline PWA', 'Interactive Audio'],
     badge: 'Smartboard System',
-    badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-300',
-    shape: 'triangle',
-    shapeColor: 'emerald',
   },
   {
     id: 'oaumods',
@@ -303,9 +281,6 @@ export const LAB_PROJECTS: LabProject[] = [
     techStack: ['Next.js 16', 'React 19', 'Leaflet GPS', 'Tailwind CSS v4', 'TypeScript'],
     githubUrl: 'https://github.com/Alqaasimee-jr2/OAUMods',
     badge: 'Live Production',
-    badgeColor: 'bg-blue-100 text-blue-900 border-blue-300',
-    shape: 'hexagon',
-    shapeColor: 'blue',
   },
   {
     id: 'restaurante',
@@ -318,9 +293,6 @@ export const LAB_PROJECTS: LabProject[] = [
     techStack: ['JavaScript', 'HTML5', 'Modern CSS', 'Vercel Deployment'],
     liveUrl: 'https://restaurante-rose-gamma.vercel.app',
     badge: 'Live Production',
-    badgeColor: 'bg-slate-100 text-slate-800 border-slate-300',
-    shape: 'circle',
-    shapeColor: 'slate',
   },
   {
     id: 'pr-guardian',
@@ -332,9 +304,6 @@ export const LAB_PROJECTS: LabProject[] = [
     impact: 'Prevents broken builds and insecure merges in collaborative software teams',
     techStack: ['Node.js', 'CLI Automation', 'Git Hooks', 'Static Analysis'],
     badge: 'Open Source',
-    badgeColor: 'bg-purple-100 text-purple-900 border-purple-300',
-    shape: 'square',
-    shapeColor: 'amber',
   },
 ];
 

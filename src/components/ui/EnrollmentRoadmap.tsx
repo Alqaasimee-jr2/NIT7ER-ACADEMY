@@ -1,76 +1,58 @@
 import React from 'react';
 import Link from 'next/link';
 import { ENROLLMENT_STAGES } from '@/data/academyData';
-import { GeometricShape } from '@/components/GeometricShapes';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export function EnrollmentRoadmap() {
-  const shapes: ('square' | 'hexagon' | 'triangle' | 'circle')[] = [
-    'square',
-    'hexagon',
-    'triangle',
-    'circle',
-  ];
-  const colors: ('navy' | 'gold' | 'emerald' | 'amber')[] = [
-    'navy',
-    'gold',
-    'emerald',
-    'amber',
-  ];
-
   return (
     <section className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-200 pb-3">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#E5E5E0] pb-3">
         <div>
-          <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 border border-amber-200">
-            Admissions &amp; Progression
-          </span>
-          <h2 className="text-xl sm:text-2xl font-black text-[#12345B] mt-1">
+          <span className="label-mono text-[#C9A84C]">Admission Pipeline</span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#121212] tracking-tight mt-1">
             The 4-Stage Studio Trajectory
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mt-0.5">
-            From initial diagnostic alignment to shipping live software and defending your architectural decisions.
+          <p className="text-xs sm:text-sm text-[#71717A] max-w-xl mt-0.5">
+            From diagnostic intake to deploying live production software and defending your technical architecture.
           </p>
         </div>
         <Link
           href="/apply"
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#12345B] hover:text-[#1769AA] transition-colors"
+          className="gold-link inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#121212]"
         >
-          <span>Begin Application Process</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <span>START DIAGNOSTIC APPLICATION</span>
+          <ArrowRight className="w-3.5 h-3.5 text-[#C9A84C]" />
         </Link>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {ENROLLMENT_STAGES.map((stage, idx) => (
+        {ENROLLMENT_STAGES.map((stage) => (
           <div
             key={stage.step}
-            className="na-card p-5 bg-white border border-slate-200 flex flex-col justify-between space-y-4 relative"
+            className="technical-border p-5 bg-white flex flex-col justify-between space-y-4"
           >
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl sm:text-3xl font-black text-[#12345B] opacity-30">
+              <div className="flex items-center justify-between font-mono">
+                <span className="text-2xl font-bold text-[#121212]">
                   {stage.step}
                 </span>
-                <GeometricShape
-                  type={shapes[idx % shapes.length]}
-                  color={colors[idx % colors.length]}
-                  size="sm"
-                />
+                <span className="label-mono text-[9px] text-[#C9A84C]">
+                  [PHASE // 0{stage.step}]
+                </span>
               </div>
 
-              <h3 className="font-bold text-sm text-[#12345B]">
+              <h3 className="font-bold text-sm text-[#121212] leading-snug">
                 {stage.title}
               </h3>
 
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-[#71717A] leading-relaxed">
                 {stage.desc}
               </p>
             </div>
 
-            <div className="pt-2 border-t border-slate-100 flex items-center gap-1 text-[11px] font-bold text-slate-400">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Phase {stage.step} Deliverable</span>
+            <div className="pt-2 border-t border-[#E5E5E0] flex items-center gap-1.5 font-mono text-[10px] text-[#71717A]">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#C9A84C]" />
+              <span>STAGE GATE VALIDATED</span>
             </div>
           </div>
         ))}

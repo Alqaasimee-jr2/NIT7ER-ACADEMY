@@ -4,17 +4,16 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import confetti from 'canvas-confetti';
 import { FACULTIES, FOUNDER_INFO } from '@/data/academyData';
-import { GeometricShape } from '@/components/GeometricShapes';
 import {
   CheckCircle2,
   ArrowRight,
   ArrowLeft,
   MessageCircle,
-  Sparkles,
   Send,
   ShieldCheck,
   AlertCircle,
 } from 'lucide-react';
+import { N7BrandMark } from '@/components/N7BrandMark';
 
 function ApplicationFormContent() {
   const searchParams = useSearchParams();
@@ -98,7 +97,6 @@ function ApplicationFormContent() {
         refCode: data.refCode,
       });
 
-      // Trigger celebratory confetti
       confetti({
         particleCount: 80,
         spread: 60,
@@ -115,7 +113,6 @@ function ApplicationFormContent() {
     }
   };
 
-  // Pre-formatted WhatsApp backup message
   const whatsappText = encodeURIComponent(
     `Hello NIT7ER Academy! I have completed my intake application.\n\n` +
       `• Reference: ${submissionResult?.refCode || 'N/A'}\n` +
@@ -124,95 +121,95 @@ function ApplicationFormContent() {
       `• Experience: ${experience}\n` +
       `• Email: ${email}\n` +
       `• Phone: ${phone || 'N/A'}\n\n` +
-      `I would like to verify my application status.`
+      `I would like to verify my application status with the director.`
   );
 
   return (
     <div className="max-w-3xl mx-auto space-y-8">
       {/* Header */}
       <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-amber-50 text-[#12345B] text-xs font-black uppercase tracking-wider border border-amber-200 rounded-sm">
-          <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-          <span>Cohort 2026/2027 Admissions</span>
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-[#FAF9F6] border border-[#E5E5E0] text-xs font-mono">
+          <span className="w-2 h-2 rounded-full bg-[#C9A84C]"></span>
+          <span className="font-bold text-[#121212]">INTAKE QUEUE // COHORT 2026/2027</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-black text-[#12345B]">
+        <h1 className="text-2xl sm:text-3xl font-black text-[#121212] tracking-tight">
           NIT7ER Academy Application Portal
         </h1>
-        <p className="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto">
+        <p className="text-xs sm:text-sm text-[#71717A] max-w-lg mx-auto">
           Complete this diagnostic intake to apply. Applications are reviewed directly by Director Abdullah Qaasim-Falade.
         </p>
       </div>
 
       {/* Success State */}
       {submissionResult ? (
-        <div className="na-section p-6 sm:p-10 bg-white border-2 border-emerald-500 text-center space-y-6 shadow-md">
-          <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
-            <CheckCircle2 className="w-8 h-8" />
+        <div className="technical-border p-6 sm:p-10 bg-white text-center space-y-6">
+          <div className="w-12 h-12 bg-[#121212] text-[#F5C842] flex items-center justify-center mx-auto">
+            <CheckCircle2 className="w-6 h-6" />
           </div>
 
-          <div className="space-y-2">
-            <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest block">
-              Registration Confirmed
+          <div className="space-y-1.5">
+            <span className="label-mono text-[#C9A84C] block">
+              REGISTRATION LOGGED &amp; VERIFIED
             </span>
-            <h2 className="text-2xl font-black text-[#12345B]">
-              Application Successfully Logged!
+            <h2 className="text-2xl font-black text-[#121212] tracking-tight">
+              Application Successfully Queued
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
-              Your application has been received and queued for review. Save your institutional reference code below:
+            <p className="text-xs sm:text-sm text-[#71717A] max-w-md mx-auto">
+              Your profile has been logged in our studio intake queue. Keep your institutional reference code below:
             </p>
           </div>
 
-          <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg inline-block text-center max-w-xs mx-auto">
-            <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-widest">
-              Application Reference Code
+          <div className="p-4 bg-[#FAF9F6] border border-[#E5E5E0] inline-block text-center max-w-xs mx-auto">
+            <span className="label-mono text-[9px] text-[#71717A] block">
+              APPLICATION REFERENCE
             </span>
-            <span className="text-xl font-black tracking-widest text-[#12345B]">
+            <span className="text-xl font-mono font-bold tracking-widest text-[#121212]">
               {submissionResult.refCode}
             </span>
           </div>
 
-          <div className="p-4 bg-emerald-50/70 border border-emerald-200 rounded-lg text-left max-w-lg mx-auto space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-wider text-emerald-900 flex items-center gap-1.5">
-              <MessageCircle className="w-4 h-4 text-emerald-600" />
-              <span>Recommended: Instant 1-Tap WhatsApp Backup</span>
+          <div className="p-5 bg-[#FAF9F6] border border-[#E5E5E0] text-left max-w-lg mx-auto space-y-3">
+            <h4 className="label-mono text-[#121212] flex items-center gap-1.5 font-bold">
+              <MessageCircle className="w-3.5 h-3.5 text-[#C9A84C]" />
+              <span>RECOMMENDED: 1-TAP WHATSAPP CONFIRMATION</span>
             </h4>
-            <p className="text-xs text-emerald-800 leading-relaxed">
-              To expedite your profile diagnostic and avoid email spam filters, send your pre-formatted application confirmation directly to the admissions desk on WhatsApp:
+            <p className="text-xs text-[#71717A] leading-relaxed">
+              To expedite your profile diagnostic and avoid email spam delays, dispatch your pre-formatted application confirmation directly to Director Abdullah Qaasim-Falade on WhatsApp:
             </p>
             <a
               href={`https://wa.me/2349019597944?text=${whatsappText}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-xs transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#121212] hover:bg-[#27272A] text-white font-mono text-xs sm:text-sm font-bold shadow-xs transition-colors"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Send 1-Tap WhatsApp Confirmation</span>
+              <MessageCircle className="w-4 h-4 text-[#F5C842]" />
+              <span>DISPATCH WHATSAPP CONFIRMATION</span>
             </a>
           </div>
         </div>
       ) : (
         /* Multi-Step Form */
-        <div className="na-section p-6 sm:p-8 bg-white border border-slate-200 space-y-6 shadow-sm">
-          {/* Progress Bar */}
+        <div className="technical-border p-6 sm:p-8 bg-white space-y-6">
+          {/* Progress Indicator */}
           <div className="space-y-2">
-            <div className="flex items-center justify-between text-xs font-bold text-slate-500">
-              <span>Step {step} of 3</span>
-              <span>
-                {step === 1 && 'Select Academic Faculty'}
-                {step === 2 && 'Personal Information'}
-                {step === 3 && 'Experience & Execution Goals'}
+            <div className="flex items-center justify-between font-mono text-xs font-bold text-[#71717A]">
+              <span>[STEP 0{step} OF 03]</span>
+              <span className="text-[#121212]">
+                {step === 1 && 'CHOOSE ACADEMIC FACULTY'}
+                {step === 2 && 'PERSONAL & CONTACT DETAILS'}
+                {step === 3 && 'EXPERIENCE & CAPSTONE GOAL'}
               </span>
             </div>
-            <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-[#FAF9F6] border border-[#E5E5E0] h-1.5 overflow-hidden">
               <div
-                className="bg-[#12345B] h-full transition-all duration-300"
+                className="bg-[#C9A84C] h-full transition-all duration-300"
                 style={{ width: `${(step / 3) * 100}%` }}
               ></div>
             </div>
           </div>
 
           {errorMsg && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-xs font-bold text-red-700">
+            <div className="p-3 bg-red-50 border border-red-200 flex items-center gap-2 text-xs font-mono font-bold text-red-700">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -221,9 +218,9 @@ function ApplicationFormContent() {
           {/* STEP 1: Faculty Selection */}
           {step === 1 && (
             <div className="space-y-4">
-              <h3 className="text-sm font-black uppercase tracking-wider text-[#12345B]">
-                Choose Your Primary Discipline
-              </h3>
+              <span className="label-mono block text-[#121212]">
+                01. Select Primary Academic Discipline
+              </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {FACULTIES.map((fac) => {
                   const isSelected = fac.id === faculty;
@@ -232,22 +229,22 @@ function ApplicationFormContent() {
                       type="button"
                       key={fac.id}
                       onClick={() => setFaculty(fac.id)}
-                      className={`p-4 rounded-lg border text-left transition-all space-y-2 ${
+                      className={`p-4 border text-left transition-all space-y-1.5 ${
                         isSelected
-                          ? 'border-[#12345B] bg-slate-50/80 ring-2 ring-[#12345B]/10 shadow-xs'
-                          : 'border-slate-200 bg-white hover:border-slate-300'
+                          ? 'border-[#121212] bg-[#FAF9F6] ring-1 ring-[#121212]'
+                          : 'border-[#E5E5E0] bg-white hover:border-[#121212]'
                       }`}
                     >
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-black text-[#12345B]">
-                          Faculty {fac.number}
+                      <div className="flex items-center justify-between font-mono text-xs">
+                        <span className="font-bold text-[#C9A84C]">
+                          FACULTY {fac.number}
                         </span>
-                        <GeometricShape type={fac.shape} color={fac.shapeColor} size="sm" />
+                        {isSelected && <span className="w-2 h-2 rounded-full bg-[#121212]"></span>}
                       </div>
-                      <h4 className="font-bold text-sm text-[#12345B]">
+                      <h4 className="font-bold text-sm text-[#121212]">
                         {fac.title}
                       </h4>
-                      <p className="text-xs text-slate-500 line-clamp-2">
+                      <p className="text-xs text-[#71717A] line-clamp-2">
                         {fac.subtitle}
                       </p>
                     </button>
@@ -257,16 +254,16 @@ function ApplicationFormContent() {
             </div>
           )}
 
-          {/* STEP 2: Personal Profile */}
+          {/* STEP 2: Personal Details */}
           {step === 2 && (
             <div className="space-y-4">
-              <h3 className="text-sm font-black uppercase tracking-wider text-[#12345B]">
-                Personal &amp; Contact Details
-              </h3>
-              <div className="space-y-3">
+              <span className="label-mono block text-[#121212]">
+                02. Candidate Information
+              </span>
+              <div className="space-y-3 font-mono">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Full Legal Name *
+                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                    FULL LEGAL NAME *
                   </label>
                   <input
                     type="text"
@@ -274,13 +271,13 @@ function ApplicationFormContent() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="e.g. Adebayo Ogunlesi"
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#12345B] focus:ring-1 focus:ring-[#12345B]"
+                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Email Address *
+                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                    EMAIL ADDRESS *
                   </label>
                   <input
                     type="email"
@@ -288,44 +285,44 @@ function ApplicationFormContent() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@domain.com"
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#12345B] focus:ring-1 focus:ring-[#12345B]"
+                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    WhatsApp Phone Number (with Country Code)
+                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                    WHATSAPP PHONE NUMBER (WITH COUNTRY CODE)
                   </label>
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+234 901 234 5678"
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#12345B] focus:ring-1 focus:ring-[#12345B]"
+                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
               </div>
             </div>
           )}
 
-          {/* STEP 3: Experience & Goals */}
+          {/* STEP 3: Goals & Experience */}
           {step === 3 && (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <h3 className="text-sm font-black uppercase tracking-wider text-[#12345B]">
-                Diagnostic &amp; Intent Declaration
-              </h3>
+              <span className="label-mono block text-[#121212]">
+                03. Diagnostic Alignment &amp; Goals
+              </span>
 
-              <div className="space-y-3">
+              <div className="space-y-3 font-mono">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Current Experience Level
+                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                    CURRENT EXPERIENCE LEVEL
                   </label>
                   <select
                     value={experience}
                     onChange={(e) => setExperience(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#12345B] bg-white"
+                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs text-[#121212] focus:outline-none focus:border-[#C9A84C]"
                   >
-                    <option value="Self-Taught Beginner">Self-Taught Beginner (Basic Concepts)</option>
+                    <option value="Self-Taught Beginner">Self-Taught Beginner (Foundational concepts)</option>
                     <option value="Intermediate Builder">Intermediate Builder (Can ship with guidance)</option>
                     <option value="Experienced Professional">Experienced Professional (Upskilling &amp; Systems)</option>
                     <option value="Founder / Entrepreneur">Founder / Solo Entrepreneur</option>
@@ -333,52 +330,52 @@ function ApplicationFormContent() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Primary Goal or Intended Capstone Project
+                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                    INTENDED CAPSTONE DELIVERABLE
                   </label>
                   <textarea
                     rows={3}
                     value={goals}
                     onChange={(e) => setGoals(e.target.value)}
-                    placeholder="Describe what specific system, tool, or portfolio piece you want to ship during your cohort..."
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#12345B]"
+                    placeholder="Describe the specific software, cognitive routine, or technical document you intend to ship..."
+                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
                   ></textarea>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Portfolio, GitHub or Writing Sample Link (Optional)
+                  <label className="block text-xs font-bold text-[#121212] mb-1">
+                    PORTFOLIO, GITHUB, OR WRITING URL (OPTIONAL)
                   </label>
                   <input
                     type="url"
                     value={portfolioUrl}
                     onChange={(e) => setPortfolioUrl(e.target.value)}
-                    placeholder="https://github.com/yourhandle or personal website"
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-[#12345B]"
+                    placeholder="https://github.com/yourhandle or portfolio"
+                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-[#E5E5E0] text-xs sm:text-sm text-[#121212] focus:outline-none focus:border-[#C9A84C]"
                   />
                 </div>
               </div>
 
-              <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-600 flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#12345B] shrink-0" />
+              <div className="p-3 bg-[#FAF9F6] border border-[#E5E5E0] text-xs text-[#71717A] flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#C9A84C] shrink-0" />
                 <span>
-                  By submitting, you agree to uphold NIT7ER Academy’s daily execution standards and active project defense.
+                  By submitting, you commit to NIT7ER Academy’s daily execution standards, reality telemetry, and public capstone defense.
                 </span>
               </div>
             </form>
           )}
 
           {/* Navigation Controls */}
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <div className="pt-4 border-t border-[#E5E5E0] flex items-center justify-between">
             {step > 1 ? (
               <button
                 type="button"
                 onClick={handleBack}
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 border border-[#E5E5E0] text-xs font-mono font-bold text-[#71717A] hover:text-[#121212] hover:border-[#121212] transition-colors"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
-                <span>Back</span>
+                <span>PREVIOUS</span>
               </button>
             ) : (
               <div></div>
@@ -388,20 +385,20 @@ function ApplicationFormContent() {
               <button
                 type="button"
                 onClick={handleNext}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#12345B] text-white text-xs sm:text-sm font-bold shadow-xs hover:bg-[#0A1E36] transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#121212] text-white text-xs sm:text-sm font-mono font-bold hover:bg-[#27272A] transition-colors"
               >
-                <span>Continue</span>
-                <ArrowRight className="w-4 h-4 text-amber-400" />
+                <span>CONTINUE</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#F5C842]" />
               </button>
             ) : (
               <button
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-amber-400 text-[#12345B] text-xs sm:text-sm font-black shadow-xs hover:bg-amber-300 transition-colors disabled:opacity-50"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#C9A84C] hover:bg-[#F5C842] text-[#121212] text-xs sm:text-sm font-mono font-bold transition-colors disabled:opacity-50"
               >
-                <Send className="w-4 h-4" />
-                <span>{isSubmitting ? 'Registering Application...' : 'Submit Application'}</span>
+                <Send className="w-3.5 h-3.5" />
+                <span>{isSubmitting ? 'REGISTERING...' : 'DISPATCH APPLICATION'}</span>
               </button>
             )}
           </div>
@@ -413,7 +410,7 @@ function ApplicationFormContent() {
 
 export default function ApplyPage() {
   return (
-    <Suspense fallback={<div className="text-center py-20 text-sm font-bold text-slate-400">Loading Application Portal...</div>}>
+    <Suspense fallback={<div className="text-center py-20 font-mono text-xs text-[#71717A]">LOADING PORTAL...</div>}>
       <ApplicationFormContent />
     </Suspense>
   );

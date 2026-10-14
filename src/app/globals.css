@@ -1,88 +1,136 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #F8FAFC;
+  --color-canvas: #FAF9F6;
   --color-surface: #FFFFFF;
-  --color-surface-subtle: #F1F5F9;
-  --color-border-subtle: #E2E8F0;
-  --color-border-strong: #CBD5E1;
+  --color-surface-muted: #F4F3EE;
   
-  --color-navy: #12345B;
-  --color-navy-dark: #0A1E36;
-  --color-blue: #1769AA;
-  --color-sky: #0284C7;
-  --color-pale-blue: #EEF7FC;
+  --color-carbon: #121212;
+  --color-carbon-secondary: #27272A;
+  --color-carbon-muted: #71717A;
+  --color-carbon-subtle: #A1A1AA;
   
-  --color-amber-gold: #E6AD3C;
-  --color-amber-dark: #B45309;
-  --color-amber-light: #FEF3C7;
+  --color-border-hairline: #E5E5E0;
+  --color-border-strong: #D1D1CB;
   
-  --color-slate-dark: #0F172A;
-  --color-slate-body: #334155;
-  --color-slate-muted: #64748B;
+  --color-gold: #C9A84C;
+  --color-gold-bright: #F5C842;
+  --color-gold-dark: #9B7C28;
+  --color-gold-soft: #F9F3E5;
 }
 
 :root {
-  --background: #F8FAFC;
-  --foreground: #0F172A;
+  --background: #FAF9F6;
+  --foreground: #121212;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
-/* Institutional Card and Section Utilities */
-.na-section {
+/* Authentic NIT7ER Technical Corner Borders */
+.technical-border {
+  border: 1px solid var(--color-border-hairline);
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+.technical-border::before {
+  content: "";
+  border-top: 2px solid var(--color-gold);
+  border-left: 2px solid var(--color-gold);
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  pointer-events: none;
+}
+
+.technical-border::after {
+  content: "";
+  border-bottom: 2px solid var(--color-gold);
+  border-right: 2px solid var(--color-gold);
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  pointer-events: none;
+}
+
+/* Subtle Architectural Dot Pattern */
+.dots-background {
+  background-image: radial-gradient(#D1D1CB 0.75px, transparent 0.75px);
+  background-size: 20px 20px;
+}
+
+/* Gold Link Micro-Interaction */
+.gold-link {
+  color: #121212;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.gold-link::after {
+  content: "";
+  background-color: var(--color-gold);
+  transform-origin: 100% 100%;
+  width: 100%;
+  height: 2px;
+  transition: transform 0.25s ease-out;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+}
+
+.gold-link:hover {
+  color: var(--color-gold-dark);
+}
+
+.gold-link:hover::after {
+  transform-origin: 0 100%;
+  transform: scaleX(1);
+}
+
+/* Interactive Card Elevate */
+.n7-card {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+  border: 1px solid var(--color-border-hairline);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease, border-color 180ms ease;
 }
 
-.na-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 0.875rem;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-}
-
-.na-card:hover {
+.n7-card:hover {
+  border-color: #C9A84C;
   transform: translateY(-2px);
-  border-color: #CBD5E1;
-  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 12px 30px -8px rgba(18, 18, 18, 0.06);
 }
 
-.na-action {
-  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+/* Technical Label Mono */
+.label-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-carbon-muted);
 }
 
-.na-action:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+/* Glass Header Panel */
+.glass-header {
+  background: rgba(250, 249, 246, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 229, 224, 0.85);
 }
 
-.na-action:active {
-  transform: translateY(0);
-}
-
-/* Glass panel */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-/* Selection */
-::selection {
-  background: #FEF3C7;
-  color: #12345B;
-}
-
-/* Custom subtle scrollbars */
+/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -91,9 +139,14 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.35);
+  background: rgba(18, 18, 18, 0.18);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.55);
+  background: rgba(18, 18, 18, 0.35);
+}
+
+::selection {
+  background: #C9A84C;
+  color: #FFFFFF;
 }

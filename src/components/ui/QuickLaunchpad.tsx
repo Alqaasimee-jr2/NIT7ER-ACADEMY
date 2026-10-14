@@ -5,121 +5,108 @@ import {
   BrainCircuit,
   PenTool,
   Monitor,
-  Flame,
+  Layers,
   ArrowRight,
   Send,
-  Layers,
 } from 'lucide-react';
-import { GeometricShape } from '@/components/GeometricShapes';
 
 export function QuickLaunchpad() {
   const launchpadItems = [
     {
+      index: '01',
       title: 'Creative Technology',
-      subtitle: 'Next.js 16, Flutter, AI integrations & APIs',
+      subtitle: 'Next.js 16, Flutter, AI telemetry & edge systems',
       href: '/programs#creative-tech',
       icon: Code2,
-      badge: 'Track 01',
-      badgeColor: 'bg-blue-100 text-[#12345B] border-blue-200',
-      shape: 'square' as const,
-      shapeColor: 'navy' as const,
+      badge: 'FACULTY',
     },
     {
+      index: '02',
       title: 'Cognitive Systems (Flow7)',
       subtitle: 'Reality logging, stamina & focus frameworks',
       href: '/programs#cognitive-performance',
       icon: BrainCircuit,
-      badge: 'Track 02',
-      badgeColor: 'bg-amber-100 text-amber-900 border-amber-300',
-      shape: 'hexagon' as const,
-      shapeColor: 'gold' as const,
+      badge: 'STAMINA',
     },
     {
+      index: '03',
       title: 'Writing & Thought Leadership',
       subtitle: 'Technical specs, architectural prose & copy',
       href: '/programs#writing-thought-leadership',
       icon: PenTool,
-      badge: 'Track 03',
-      badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-300',
-      shape: 'triangle' as const,
-      shapeColor: 'emerald' as const,
+      badge: 'PROSE',
     },
     {
+      index: '04',
       title: 'Computer Education',
       subtitle: 'First principles, algorithms & smartboards',
       href: '/programs#computer-education',
       icon: Monitor,
-      badge: 'Track 04',
-      badgeColor: 'bg-purple-100 text-purple-900 border-purple-300',
-      shape: 'circle' as const,
-      shapeColor: 'amber' as const,
+      badge: 'FOUNDATIONS',
     },
     {
+      index: '05',
       title: 'NIT7ER Labs Showcase',
       subtitle: 'Live products: Flow7, Clasquera, Lang Huey',
       href: '/labs',
       icon: Layers,
-      badge: 'Proof of Work',
-      badgeColor: 'bg-slate-100 text-slate-800 border-slate-300',
-      shape: 'hexagon' as const,
-      shapeColor: 'blue' as const,
+      badge: 'PORTFOLIO',
     },
     {
-      title: 'Cohort Enrollment',
-      subtitle: 'Hybrid application with WhatsApp confirmation',
+      index: '06',
+      title: 'Cohort Application',
+      subtitle: 'Hybrid diagnostic with WhatsApp confirmation',
       href: '/apply',
       icon: Send,
-      badge: 'Admissions Open',
-      badgeColor: 'bg-amber-100 text-amber-900 border-amber-300',
-      shape: 'square' as const,
-      shapeColor: 'gold' as const,
+      badge: 'ADMISSIONS',
     },
   ];
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center justify-between pb-1 border-b border-slate-200">
+      <div className="flex items-center justify-between pb-2 border-b border-[#E5E5E0]">
         <div className="flex items-center gap-2">
-          <Flame className="w-4 h-4 text-amber-500" />
-          <h2 className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#12345B]">
-            Academy Launchpad &amp; Core Tracks
-          </h2>
+          <span className="label-mono text-[#C9A84C]">QUICK ACCESS</span>
+          <span className="text-xs font-bold text-[#121212]">
+            Studio Core Navigation
+          </span>
         </div>
-        <span className="text-xs text-slate-500 font-semibold">Immediate pathway access</span>
+        <span className="label-mono text-[10px] text-[#71717A]">
+          Direct Endpoint Launchpad
+        </span>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         {launchpadItems.map((item) => {
           const Icon = item.icon;
           return (
             <Link
               key={item.title}
               href={item.href}
-              className="group na-card p-3.5 sm:p-5 flex flex-col justify-between hover:border-[#12345B] transition-all"
+              className="group n7-card p-4 sm:p-5 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <div className="w-9 h-9 rounded-lg bg-slate-100 group-hover:bg-[#12345B] group-hover:text-amber-400 text-[#12345B] flex items-center justify-center transition-colors">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <div className="w-8 h-8 rounded-sm bg-[#FAF9F6] border border-[#E5E5E0] group-hover:border-[#C9A84C] group-hover:bg-[#121212] group-hover:text-[#F5C842] text-[#121212] flex items-center justify-center transition-colors">
+                    <Icon className="w-4 h-4" />
                   </div>
-                  <GeometricShape type={item.shape} color={item.shapeColor} size="sm" />
+                  <span className="label-mono text-[9px] text-[#71717A] group-hover:text-[#C9A84C]">
+                    [{item.index} // {item.badge}]
+                  </span>
                 </div>
                 <div className="space-y-1">
-                  <span className={`inline-block text-[10px] font-bold uppercase tracking-wide px-1.5 py-0.5 border rounded-xs ${item.badgeColor}`}>
-                    {item.badge}
-                  </span>
-                  <h3 className="font-bold text-xs sm:text-sm text-[#12345B] group-hover:text-[#1769AA] transition-colors leading-snug">
+                  <h3 className="font-bold text-sm text-[#121212] group-hover:text-[#9B7C28] transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-[11px] sm:text-xs text-slate-600 line-clamp-2">
+                  <p className="text-xs text-[#71717A] line-clamp-2 leading-relaxed">
                     {item.subtitle}
                   </p>
                 </div>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500 group-hover:text-[#12345B]">
-                <span>Explore Track</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              <div className="mt-4 pt-2.5 border-t border-[#E5E5E0] flex items-center justify-between text-xs font-mono font-bold text-[#71717A] group-hover:text-[#121212]">
+                <span className="text-[11px]">ACCESS SECTOR</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#C9A84C]" />
               </div>
             </Link>
           );

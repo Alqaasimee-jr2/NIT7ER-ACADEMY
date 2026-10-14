@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight, Sparkles } from 'lucide-react';
-import { GeometricShape } from '@/components/GeometricShapes';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { N7BrandMark } from '@/components/N7BrandMark';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,35 +13,33 @@ export function Navbar() {
   const navLinks = [
     { label: 'Overview', href: '/' },
     { label: 'Curriculum & Tracks', href: '/programs' },
-    { label: 'Labs & Showcase', href: '/labs' },
+    { label: 'Labs & Incubator', href: '/labs' },
     { label: 'Philosophy & Story', href: '/about' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 glass-panel">
+    <header className="sticky top-0 z-50 glass-header">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo & Institution Branding */}
+          {/* Brand Mark & Title */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#12345B] text-amber-400 flex items-center justify-center border border-[#0A1E36] shadow-xs group-hover:scale-105 transition-transform">
-              <GeometricShape type="hexagon" color="gold" size="md" />
-            </div>
+            <N7BrandMark size="md" variant="carbon" className="group-hover:border-[#C9A84C] transition-colors" />
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-base sm:text-lg font-black tracking-tight text-[#12345B]">
+                <span className="text-base sm:text-lg font-black tracking-tight text-[#121212]">
                   NIT7ER
                 </span>
-                <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider px-1.5 py-0.5 rounded-sm bg-amber-100 text-amber-900 border border-amber-300">
+                <span className="label-mono px-1.5 py-0.5 bg-[#F9F3E5] text-[#9B7C28] border border-[#E5E5E0]">
                   Academy
                 </span>
               </div>
-              <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest hidden sm:block">
-                Creative Tech &amp; Mind Institute
+              <p className="label-mono text-[9px] text-[#71717A] hidden sm:block">
+                Systems • Mind • Code
               </p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -49,10 +47,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-1.5 rounded-md text-xs lg:text-sm font-bold transition-colors ${
+                  className={`px-3.5 py-2 text-xs lg:text-sm font-semibold transition-all ${
                     isActive
-                      ? 'bg-slate-100 text-[#12345B]'
-                      : 'text-slate-600 hover:text-[#12345B] hover:bg-slate-50'
+                      ? 'text-[#121212] font-bold border-b-2 border-[#C9A84C]'
+                      : 'text-[#71717A] hover:text-[#121212] hover:bg-black/5 rounded-xs'
                   }`}
                 >
                   {link.label}
@@ -61,14 +59,14 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* Apply CTA & Quick Links */}
+          {/* Action CTA */}
           <div className="hidden sm:flex items-center gap-3">
             <Link
               href="/apply"
-              className="na-action inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-[#12345B] hover:bg-[#0A1E36] text-white text-xs sm:text-sm font-bold shadow-xs border border-[#12345B] transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#121212] hover:bg-[#27272A] text-white text-xs sm:text-sm font-bold tracking-tight transition-all border border-[#121212] shadow-xs"
             >
-              <span>Apply to Cohort</span>
-              <ArrowRight className="w-4 h-4 text-amber-400" />
+              <span>Apply for Cohort</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#F5C842]" />
             </Link>
           </div>
 
@@ -76,17 +74,17 @@ export function Navbar() {
           <div className="flex md:hidden items-center gap-2">
             <Link
               href="/apply"
-              className="px-3 py-1.5 rounded-md bg-[#12345B] text-white text-xs font-bold"
+              className="px-3 py-1.5 bg-[#121212] text-white text-xs font-bold"
             >
               Apply
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md text-slate-700 hover:text-slate-900 hover:bg-slate-100"
+              className="p-2 text-[#121212] hover:bg-black/5 rounded-xs"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6 text-[#121212]" />}
             </button>
           </div>
         </div>
@@ -94,7 +92,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3 shadow-lg">
+        <div className="md:hidden border-b border-[#E5E5E0] bg-[#FAF9F6] px-4 pt-3 pb-6 space-y-3 shadow-lg">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -103,10 +101,10 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-3 py-2.5 rounded-md text-sm font-bold transition-colors ${
+                  className={`px-3 py-2.5 text-sm font-bold transition-colors ${
                     isActive
-                      ? 'bg-slate-100 text-[#12345B]'
-                      : 'text-slate-700 hover:text-[#12345B] hover:bg-slate-50'
+                      ? 'bg-white text-[#121212] border-l-2 border-[#C9A84C]'
+                      : 'text-[#71717A] hover:text-[#121212]'
                   }`}
                 >
                   {link.label}
@@ -115,14 +113,14 @@ export function Navbar() {
             })}
           </div>
 
-          <div className="pt-2 border-t border-slate-100">
+          <div className="pt-3 border-t border-[#E5E5E0]">
             <Link
               href="/apply"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#12345B] text-white font-bold text-sm shadow-xs"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#121212] text-white font-bold text-sm"
             >
               <span>Apply for Cohort Enrollment</span>
-              <ArrowRight className="w-4 h-4 text-amber-400" />
+              <ArrowRight className="w-4 h-4 text-[#F5C842]" />
             </Link>
           </div>
         </div>
