@@ -342,3 +342,52 @@ export const FOUNDER_INFO = {
   instagram: 'https://instagram.com/nit7er',
   studioUrl: 'https://nit7er.vercel.app',
 };
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  discipline: string;
+  handle: string;
+  quote: string;
+  image: string;
+  url?: string;
+  signature?: string;
+}
+
+export const STUDIO_TEAM: TeamMember[] = [
+  {
+    id: 'abdullah-qaasim',
+    name: 'Abdullah Qaasim-Falade',
+    role: 'Creative Director & Founder',
+    discipline: 'Systems Architecture & Creative Direction',
+    handle: '@abdullah.qaasim',
+    quote: 'Every brand carries a voice. I just make sure it speaks clearly.',
+    image: '/team/team-abdullah-qaasim.png',
+    url: 'https://github.com/Alqaasimee-jr2',
+    signature: 'A.Q.',
+  },
+  {
+    id: 'yaasir-olajumoke',
+    name: 'Yaasir Olajumoke',
+    role: 'Visual Design Lead',
+    discipline: 'Visual Identity, Form & Spatial Aesthetics',
+    handle: '@yaasir.dev',
+    quote: 'I don’t design visuals. I translate emotion into form.',
+    image: '/team/team-yaasir-olajumoke.png',
+    url: 'https://instagram.com/nit7er',
+    signature: 'Bolaji',
+  },
+  {
+    id: 'the-g3neral',
+    name: 'The G3neral (Adeola Olamilekan)',
+    role: 'User Experience Lead',
+    discipline: 'User Ergonomics, Experience & Interaction Mechanics',
+    handle: '@ad3ola_olamil3kan_',
+    quote: 'Design is how a brand feels — not just how it looks.',
+    image: '/team/team-the-g3neral.png',
+    url: 'https://g3neralola.carrd.co',
+    signature: 'G3N',
+  },
+];
+

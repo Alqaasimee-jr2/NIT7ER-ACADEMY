@@ -9,6 +9,7 @@ import { FacultyTabs } from '@/components/ui/FacultyTabs';
 import { LabsShowcase } from '@/components/ui/LabsShowcase';
 import { EnrollmentRoadmap } from '@/components/ui/EnrollmentRoadmap';
 import { FounderManifesto } from '@/components/ui/FounderManifesto';
+import { TeamShowcase } from '@/components/ui/TeamShowcase';
 import { Flow7Simulator } from '@/components/interactive/Flow7Simulator';
 
 export default function HomePage() {
@@ -155,12 +156,17 @@ export default function HomePage() {
       <EnrollmentRoadmap />
 
       {/* ========================================================= */}
-      {/* 8. FOUNDER'S INSTITUTIONAL MANIFESTO                      */}
+      {/* 8. STUDIO DIRECTORS & FACULTY                             */}
+      {/* ========================================================= */}
+      <TeamShowcase />
+
+      {/* ========================================================= */}
+      {/* 9. FOUNDER'S INSTITUTIONAL MANIFESTO                      */}
       {/* ========================================================= */}
       <FounderManifesto />
 
       {/* ========================================================= */}
-      {/* 9. ADMISSIONS INTAKE ACTIVE BANNER                        */}
+      {/* 10. ADMISSIONS INTAKE ACTIVE BANNER                       */}
       {/* ========================================================= */}
       <section className="curve-asymmetric bg-gradient-to-r from-[#12345B] via-[#1769AA] to-[#12345B] text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl border border-[#12345B] relative overflow-hidden">
         {/* Subtle Brand Shapes Accent Watermark */}

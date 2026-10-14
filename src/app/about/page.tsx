@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { FOUNDER_INFO } from '@/data/academyData';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from '@/components/Icons';
 import { N7BrandMark } from '@/components/N7BrandMark';
+import { TeamShowcase } from '@/components/ui/TeamShowcase';
 import {
   ShieldCheck,
   Mail,
@@ -197,6 +198,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* The Core Studio Faculty & Practitioners */}
+      <TeamShowcase />
 
       {/* The 4 Institutional Tenets */}
       <section className="space-y-6">
