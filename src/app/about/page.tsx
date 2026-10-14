@@ -45,8 +45,26 @@ export default function AboutPage() {
   return (
     <div className="space-y-12 sm:space-y-16">
       {/* Header */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs">
-        <div className="max-w-3xl space-y-3">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-6 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+        {/* Subtle Background Contour */}
+        <div
+          className="absolute -top-12 -right-12 w-96 h-96 opacity-10 pointer-events-none bg-contain bg-no-repeat"
+          style={{ backgroundImage: `url('/brand/contour-blob.png')` }}
+        />
+
+        {/* Official Classical Glitch Masthead */}
+        <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-r from-[#FAFCFE] via-[#EEF7FC]/70 to-[#FAFCFE] border border-[#D9E6F0] py-3 sm:py-5 px-4 sm:px-8 flex items-center justify-center">
+          <Image
+            src="/brand/headers/header-glitch-gold-text-tight.png"
+            alt="NIT7ER Classical Glitch Masthead"
+            width={2425}
+            height={1009}
+            className="w-full max-h-40 sm:max-h-56 object-contain"
+            priority
+          />
+        </div>
+
+        <div className="max-w-3xl space-y-3 relative z-10 pt-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
             <span className="font-bold text-[#12345B]">INSTITUTIONAL PHILOSOPHY // FOUNDER THESIS</span>

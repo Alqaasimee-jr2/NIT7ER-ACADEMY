@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   AlertCircle,
 } from 'lucide-react';
+import { N7BrandMark } from '@/components/N7BrandMark';
 
 function ApplicationFormContent() {
   const searchParams = useSearchParams();
@@ -126,7 +127,8 @@ function ApplicationFormContent() {
   return (
     <div className="max-w-3xl mx-auto space-y-8">
       {/* Header */}
-      <div className="text-center space-y-2">
+      <div className="text-center space-y-3">
+        <N7BrandMark size="xl" variant="gold" className="mx-auto" />
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
           <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
           <span className="font-bold text-[#12345B]">INTAKE QUEUE // COHORT 2026/2027</span>
