@@ -5,7 +5,7 @@ import { MarqueeTicker } from '@/components/layout/MarqueeTicker';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { CommandPalette } from '@/components/ui/CommandPalette';
 import { ScrollToTop } from '@/components/ui/QuickUtils';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
