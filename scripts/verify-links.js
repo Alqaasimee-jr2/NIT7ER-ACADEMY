@@ -7,6 +7,8 @@ console.log('--- STARTING FORENSIC LINK & ROUTE VERIFICATION ---');
 const requiredRoutes = [
   'src/app/page.tsx',
   'src/app/programs/page.tsx',
+  'src/app/programs/[facultyId]/page.tsx',
+  'src/app/team/page.tsx',
   'src/app/labs/page.tsx',
   'src/app/about/page.tsx',
   'src/app/apply/page.tsx',

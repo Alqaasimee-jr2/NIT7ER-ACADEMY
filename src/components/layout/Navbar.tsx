@@ -13,6 +13,7 @@ export function Navbar() {
   const navLinks = [
     { label: 'Overview', href: '/' },
     { label: 'Curriculum', href: '/programs' },
+    { label: 'Faculty', href: '/team' },
     { label: 'Labs', href: '/labs' },
     { label: 'Philosophy', href: '/about' },
     { label: 'Contact', href: '/contact' },
@@ -54,7 +55,10 @@ export function Navbar() {
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 p-1 bg-white/80 border border-[#D9E6F0] rounded-full shadow-xs">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                (link.href === '/programs' && pathname.startsWith('/programs')) ||
+                (link.href === '/team' && pathname.startsWith('/team'));
               return (
                 <Link
                   key={link.href}
@@ -111,7 +115,10 @@ export function Navbar() {
         <div className="md:hidden border-b border-[#D9E6F0] bg-[#FAFCFE]/95 backdrop-blur-md px-4 pt-3 pb-6 space-y-4 shadow-lg animate-fadeIn">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                pathname === link.href ||
+                (link.href === '/programs' && pathname.startsWith('/programs')) ||
+                (link.href === '/team' && pathname.startsWith('/team'));
               return (
                 <Link
                   key={link.href}

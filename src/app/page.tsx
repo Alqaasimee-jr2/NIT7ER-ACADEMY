@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { ArrowRight, Compass } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
 import { StatCounter } from '@/components/ui/StatCounter';
-import { FacultyOverviewGrid } from '@/components/ui/FacultyOverviewGrid';
+import { FacultyTabs } from '@/components/ui/FacultyTabs';
 import { LabsShowcase } from '@/components/ui/LabsShowcase';
 import { EnrollmentRoadmap } from '@/components/ui/EnrollmentRoadmap';
 import { FounderManifesto } from '@/components/ui/FounderManifesto';
@@ -102,9 +102,9 @@ export default function HomePage() {
       <StatCounter />
 
       {/* ========================================================= */}
-      {/* 3. THE 4 FOUNDATIONAL FACULTIES OVERVIEW                  */}
+      {/* 3. THE 4 FOUNDATIONAL FACULTIES (INTERACTIVE SWITCHER)    */}
       {/* ========================================================= */}
-      <FacultyOverviewGrid />
+      <FacultyTabs />
 
       {/* ========================================================= */}
       {/* 4. INCUBATED LABS & PROOF OF WORK                         */}

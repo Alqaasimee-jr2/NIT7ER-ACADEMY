@@ -38,8 +38,8 @@ export function FounderManifesto() {
             <h4 className="text-sm font-bold text-[#12345B]">
               {FOUNDER_INFO.name}
             </h4>
-            <p className="label-mono text-[10px] text-[#64748B] mt-0.5">
-              {FOUNDER_INFO.title} // {FOUNDER_INFO.location}
+            <p className="label-mono text-xs text-[#64748B] mt-0.5">
+              {FOUNDER_INFO.title} {'//'} {FOUNDER_INFO.location}
             </p>
           </div>
 

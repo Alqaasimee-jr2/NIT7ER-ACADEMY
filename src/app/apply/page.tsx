@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import confetti from 'canvas-confetti';
 import { FACULTIES } from '@/data/academyData';
@@ -13,8 +13,6 @@ import {
   ShieldCheck,
   AlertCircle,
   Award,
-  Clock,
-  Layers,
 } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -24,9 +22,17 @@ function ApplicationFormContent() {
   const trackParam = searchParams.get('track');
   const programParam = searchParams.get('program');
 
+  const initialFaculty =
+    trackParam && FACULTIES.some((f) => f.id === trackParam) ? trackParam : FACULTIES[0].id;
+  const initialFacObj = FACULTIES.find((f) => f.id === initialFaculty) || FACULTIES[0];
+  const initialProgram =
+    programParam && initialFacObj.programs.some((p) => p.id === programParam)
+      ? programParam
+      : initialFacObj.programs[0]?.id || '';
+
   const [step, setStep] = useState<number>(1);
-  const [faculty, setFaculty] = useState<string>(FACULTIES[0].id);
-  const [programId, setProgramId] = useState<string>(FACULTIES[0].programs[0]?.id || '');
+  const [faculty, setFaculty] = useState<string>(initialFaculty);
+  const [programId, setProgramId] = useState<string>(initialProgram);
   const [fullName, setFullName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
@@ -39,18 +45,6 @@ function ApplicationFormContent() {
     success: boolean;
     refCode: string;
   } | null>(null);
-
-  useEffect(() => {
-    if (trackParam && FACULTIES.some((f) => f.id === trackParam)) {
-      setFaculty(trackParam);
-      const targetFac = FACULTIES.find((f) => f.id === trackParam);
-      if (programParam && targetFac?.programs.some((p) => p.id === programParam)) {
-        setProgramId(programParam);
-      } else if (targetFac?.programs[0]) {
-        setProgramId(targetFac.programs[0].id);
-      }
-    }
-  }, [trackParam, programParam]);
 
   const selectedFacultyObj = FACULTIES.find((f) => f.id === faculty) || FACULTIES[0];
   const selectedProgramObj =
@@ -335,7 +329,7 @@ function ApplicationFormContent() {
                           <div className="flex items-center gap-2 text-[10px] font-mono text-[#64748B]">
                             <span>{prog.duration}</span>
                             <span>•</span>
-                            <span className="px-1.5 py-0.2 bg-white border border-[#D9E6F0] rounded">
+                            <span className="px-1.5 py-0.5 bg-white border border-[#D9E6F0] rounded">
                               {prog.level}
                             </span>
                             {isProgSelected && (

@@ -5,16 +5,8 @@ import { useRouter } from 'next/navigation';
 import { FACULTIES, LAB_PROJECTS } from '@/data/academyData';
 import {
   Search,
-  X,
   ArrowRight,
-  BookOpen,
-  Layers,
-  Send,
-  Mail,
-  Home,
-  Compass,
 } from 'lucide-react';
-import { N7BrandMark } from '@/components/N7BrandMark';
 
 interface SearchItem {
   id: string;
@@ -37,6 +29,7 @@ export function CommandPalette() {
     // Pages
     { id: 'page-home', title: 'Home Overview', category: 'Page', subtitle: 'Main landing and studio overview', href: '/' },
     { id: 'page-programs', title: 'Academic Catalog', category: 'Page', subtitle: 'All 4 faculties and 12 programs', href: '/programs' },
+    { id: 'page-team', title: 'Studio Directors & Faculty', category: 'Page', subtitle: 'Practitioners, directors, and core mentors', href: '/team' },
     { id: 'page-labs', title: 'NIT7ER Labs Showcase', category: 'Page', subtitle: 'Incubated systems and case studies', href: '/labs' },
     { id: 'page-about', title: 'Philosophy & Founder Story', category: 'Page', subtitle: 'Founder story and institutional thesis', href: '/about' },
     { id: 'page-apply', title: 'Cohort Application', category: 'Page', subtitle: 'Diagnostic intake queue', href: '/apply' },
@@ -48,7 +41,7 @@ export function CommandPalette() {
       title: `${fac.badge}: ${fac.title}`,
       category: 'Faculty' as const,
       subtitle: fac.tagline,
-      href: `/programs#${fac.id}`,
+      href: `/programs/${fac.id}`,
       badge: fac.badge,
     })),
 
@@ -59,7 +52,7 @@ export function CommandPalette() {
         title: `${prog.code}: ${prog.title}`,
         category: 'Program' as const,
         subtitle: `${prog.duration} • ${prog.tagline}`,
-        href: `/programs#${fac.id}`,
+        href: `/programs/${fac.id}#${prog.id}`,
         badge: prog.code,
       }))
     ),
@@ -109,16 +102,20 @@ export function CommandPalette() {
 
   useEffect(() => {
     if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 50);
-      setSelectedIndex(0);
       document.body.style.overflow = 'hidden';
+      const timer = setTimeout(() => {
+        inputRef.current?.focus();
+        setSelectedIndex(0);
+      }, 50);
+      return () => {
+        clearTimeout(timer);
+        document.body.style.overflow = '';
+      };
     } else {
       document.body.style.overflow = '';
-      setQuery('');
+      const timer = setTimeout(() => setQuery(''), 0);
+      return () => clearTimeout(timer);
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
   }, [isOpen]);
 
   const handleSelect = (item: SearchItem) => {

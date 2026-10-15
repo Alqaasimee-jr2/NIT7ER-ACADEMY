@@ -20,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
           'Applebot-Extended',
           'CCBot',
         ],
-        allow: ['/', '/programs', '/labs', '/about', '/apply', '/contact'],
+        allow: ['/', '/programs', '/team', '/labs', '/about', '/apply', '/contact', '/flow7'],
         disallow: ['/api/'],
       },
     ],

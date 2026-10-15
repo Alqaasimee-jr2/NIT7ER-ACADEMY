@@ -44,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/team`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -51,12 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Anchor URLs for 4 faculties
+  // Dedicated routes for 4 faculties
   const facultyRoutes: MetadataRoute.Sitemap = FACULTIES.map((fac) => ({
-    url: `${baseUrl}/programs#${fac.id}`,
+    url: `${baseUrl}/programs/${fac.id}`,
     lastModified: currentDate,
     changeFrequency: 'weekly',
-    priority: 0.85,
+    priority: 0.9,
   }));
 
   return [...staticRoutes, ...facultyRoutes];

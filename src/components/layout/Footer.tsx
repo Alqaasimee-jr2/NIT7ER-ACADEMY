@@ -74,22 +74,22 @@ export function Footer() {
             </span>
             <ul className="space-y-2 text-xs sm:text-sm text-[#64748B]">
               <li>
-                <Link href="/programs#creative-tech" className="gold-link">
+                <Link href="/programs/creative-tech" className="gold-link">
                   01. Creative Tech &amp; Software Engineering
                 </Link>
               </li>
               <li>
-                <Link href="/programs#cognitive-performance" className="gold-link">
+                <Link href="/programs/cognitive-performance" className="gold-link">
                   02. Cognitive Performance &amp; Systems (Flow7)
                 </Link>
               </li>
               <li>
-                <Link href="/programs#writing-thought-leadership" className="gold-link">
+                <Link href="/programs/writing-thought-leadership" className="gold-link">
                   03. Writing &amp; Thought Leadership
                 </Link>
               </li>
               <li>
-                <Link href="/programs#computer-education" className="gold-link">
+                <Link href="/programs/computer-education" className="gold-link">
                   04. Computer Education &amp; Digital Foundations
                 </Link>
               </li>
@@ -102,6 +102,12 @@ export function Footer() {
               Incubator &amp; Studio
             </span>
             <ul className="space-y-2 text-xs sm:text-sm text-[#64748B]">
+              <li>
+                <Link href="/team" className="gold-link flex items-center gap-1">
+                  <span>Studio Directors &amp; Faculty</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+                </Link>
+              </li>
               <li>
                 <Link href="/labs" className="gold-link flex items-center gap-1">
                   <span>NIT7ER Labs Showcase</span>

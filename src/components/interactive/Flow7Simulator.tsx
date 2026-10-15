@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Play, Pause, RotateCcw, CheckCircle2 } from 'lucide-react';
 
 interface SessionRecord {
@@ -38,21 +38,37 @@ export function Flow7Simulator() {
     },
   ]);
 
+  const logSession = useCallback(() => {
+    const newRecord: SessionRecord = {
+      id: `session-${Date.now()}`,
+      discipline,
+      goal: goal || 'Deep Work Session',
+      durationMinutes: selectedDuration,
+      friction,
+      timestamp: 'Just now',
+    };
+    setCompletedSessions((prev) => [newRecord, ...prev.slice(0, 3)]);
+  }, [discipline, goal, selectedDuration, friction]);
+
   // Timer loop
   useEffect(() => {
-    let interval: NodeJS.Timeout | null = null;
-    if (isRunning && timeLeft > 0) {
-      interval = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
-      }, 1000);
-    } else if (timeLeft === 0 && isRunning) {
-      setIsRunning(false);
-      logSession();
-    }
+    if (!isRunning) return;
+
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          setIsRunning(false);
+          logSession();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
     return () => {
-      if (interval) clearInterval(interval);
+      clearInterval(interval);
     };
-  }, [isRunning, timeLeft]);
+  }, [isRunning, logSession]);
 
   const handleDurationSelect = (mins: number) => {
     setIsRunning(false);
@@ -67,18 +83,6 @@ export function Flow7Simulator() {
   const resetTimer = () => {
     setIsRunning(false);
     setTimeLeft(selectedDuration * 60);
-  };
-
-  const logSession = () => {
-    const newRecord: SessionRecord = {
-      id: `session-${Date.now()}`,
-      discipline,
-      goal: goal || 'Deep Work Session',
-      durationMinutes: selectedDuration,
-      friction,
-      timestamp: 'Just now',
-    };
-    setCompletedSessions((prev) => [newRecord, ...prev.slice(0, 3)]);
   };
 
   const totalSeconds = selectedDuration * 60;

@@ -1,16 +1,17 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
-import { FOUNDER_INFO } from '@/data/academyData';
-import { GithubIcon, LinkedinIcon, InstagramIcon } from '@/components/Icons';
+import { FOUNDER_INFO, STUDIO_TEAM } from '@/data/academyData';
+import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 import { N7BrandMark } from '@/components/N7BrandMark';
-import { TeamShowcase } from '@/components/ui/TeamShowcase';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import {
   ShieldCheck,
   Mail,
   Phone,
   MessageCircle,
+  ArrowRight,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -220,10 +221,71 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Core Studio Faculty & Practitioners */}
-      <div id="team" className="scroll-mt-24">
-        <TeamShowcase />
-      </div>
+      {/* The Core Studio Faculty & Practitioners (Editorial Teaser) */}
+      <section id="team" className="technical-border curve-asymmetric p-6 sm:p-8 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl shadow-xs scroll-mt-24 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D9E6F0] pb-4">
+          <div className="space-y-1.5 max-w-xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
+              <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
+              <span className="font-bold text-[#12345B]">STUDIO DIRECTORS // CORE FACULTY</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-[#12345B] tracking-tight">
+              The Practitioners Behind the Standard
+            </h2>
+            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+              Our core faculty are active studio practitioners, creative directors, and systems architects shipping production software every day.
+            </p>
+          </div>
+
+          <Link
+            href="/team"
+            className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm shrink-0 self-start sm:self-auto"
+          >
+            <span>MEET OUR DIRECTORS</span>
+            <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+          </Link>
+        </div>
+
+        {/* 3 Core Directors Mini Previews */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {STUDIO_TEAM.map((member) => (
+            <Link
+              key={member.id}
+              href="/team"
+              className="p-4 bg-white border border-[#D9E6F0] rounded-xl flex items-center gap-3.5 shadow-2xs hover:border-[#1769AA] transition-colors group"
+            >
+              <div className="relative w-12 h-12 rounded-full overflow-hidden bg-[#F5F2EB] border border-[#D9E6F0] shrink-0">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={100}
+                  height={100}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <div className="min-w-0">
+                <h4 className="text-xs sm:text-sm font-bold text-[#12345B] group-hover:text-[#1769AA] transition-colors truncate">
+                  {member.name}
+                </h4>
+                <p className="text-xs font-mono text-[#1769AA] truncate">
+                  {member.role}
+                </p>
+                <span className="text-[10px] font-mono text-[#64748B] block truncate">
+                  {member.discipline}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono text-[#64748B] border-t border-[#D9E6F0]">
+          <span>Apprentice directly alongside Abdullah, Yaasir &amp; The G3neral</span>
+          <Link href="/team" className="font-bold text-[#1769AA] hover:text-[#12345B] inline-flex items-center gap-1">
+            <span>View Full Faculty Profiles &amp; Studio Drops</span>
+            <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+          </Link>
+        </div>
+      </section>
 
       {/* The 4 Institutional Tenets */}
       <section id="manifesto" className="space-y-6 scroll-mt-24">

@@ -68,7 +68,7 @@ export function CommandPaletteTrigger() {
     >
       <Search className="w-3.5 h-3.5 text-[#1769AA]" />
       <span className="hidden sm:inline">Search tracks...</span>
-      <kbd className="text-[10px] bg-white px-1.5 py-0.2 rounded border border-[#D9E6F0] text-[#12345B] font-bold">
+      <kbd className="text-[10px] bg-white px-1.5 py-0.5 rounded border border-[#D9E6F0] text-[#12345B] font-bold">
         ⌘K
       </kbd>
     </button>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FACULTIES } from '@/data/academyData';
-import { Cpu, Brain, PenTool, Monitor, ArrowRight, Clock, Layers, Award } from 'lucide-react';
+import { Cpu, Brain, PenTool, Monitor, ArrowRight, Clock, Layers } from 'lucide-react';
 
 export function FacultyOverviewGrid() {
   const getFacultyIcon = (id: string) => {
@@ -105,7 +105,7 @@ export function FacultyOverviewGrid() {
             {/* Footer Action Link */}
             <div className="pt-3 border-t border-[#D9E6F0] flex items-center justify-between">
               <Link
-                href={`/programs#${fac.id}`}
+                href={`/programs/${fac.id}`}
                 className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[#12345B] group-hover:text-[#1769AA] transition-colors"
               >
                 <span>Inspect Syllabi</span>

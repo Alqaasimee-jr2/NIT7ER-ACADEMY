@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FACULTIES, Faculty, Program } from '@/data/academyData';
-import { ArrowRight, CheckCircle2, Clock, BookOpen, Award, Sparkles, ChevronRight, Calendar } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock, BookOpen, Award, ChevronRight, Calendar } from 'lucide-react';
 import { ProgramSyllabusModal } from '@/components/ui/ProgramSyllabusModal';
+import { ProgramModuleDrawer } from '@/components/ui/ProgramModuleDrawer';
 import {
   CreativeTechDiagram,
   CognitiveSystemsDiagram,
@@ -152,8 +153,8 @@ export function FacultyTabs() {
 
           {/* Right Column: Architectural Vector Diagram */}
           <div className="lg:col-span-5 p-4 rounded-2xl bg-[#EEF7FC]/60 border border-[#D9E6F0] flex flex-col justify-center items-center shadow-xs">
-            <span className="label-mono text-[8px] text-[#64748B] self-start mb-2">
-              ARCHITECTURAL PIPELINE SCHEMATIC // 0{currentFaculty.number}
+            <span className="label-mono text-xs text-[#64748B] self-start mb-2">
+              ARCHITECTURAL PIPELINE SCHEMATIC // {currentFaculty.number}
             </span>
             {renderDiagram(currentFaculty.id)}
           </div>
@@ -265,42 +266,13 @@ export function FacultyTabs() {
               </div>
             </div>
 
-            {/* Modules Grid for this Program */}
-            <div className="space-y-3">
-              <span className="label-mono text-[10px] text-[#12345B] block">
-                Track Curriculum Modules ({activeProgram.modules.length} Core Modules)
-              </span>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                {activeProgram.modules.map((mod, i) => (
-                  <div
-                    key={mod.title}
-                    className="p-3.5 bg-white border border-[#D9E6F0] rounded-xl space-y-2 shadow-2xs"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs font-bold text-[#E6AD3C]">
-                        [0{i + 1}]
-                      </span>
-                      <h5 className="font-bold text-xs sm:text-sm text-[#12345B]">
-                        {mod.title}
-                      </h5>
-                    </div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">
-                      {mod.desc}
-                    </p>
-                    <div className="flex flex-wrap gap-1 pt-1">
-                      {mod.topics.map((t) => (
-                        <span
-                          key={t}
-                          className="text-[10px] font-mono px-2 py-0.5 bg-[#EEF7FC] border border-[#D9E6F0] text-[#12345B] rounded-md"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Collapsible Sprint Modules */}
+            <ProgramModuleDrawer
+              key={activeProgram.code}
+              modules={activeProgram.modules}
+              programCode={activeProgram.code}
+              defaultOpen={false}
+            />
 
             {/* Capstone Project Banner for this Program */}
             <div className="p-4 bg-[#EEF7FC]/80 border border-[#D9E6F0] rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -317,8 +289,8 @@ export function FacultyTabs() {
                 </p>
               </div>
               <div className="p-2.5 bg-white border border-[#D9E6F0] rounded-lg shrink-0 text-right sm:max-w-xs">
-                <span className="label-mono text-[8px] text-[#64748B] block">VERIFICATION ARTIFACT</span>
-                <span className="text-[11px] font-mono font-bold text-[#12345B]">
+                <span className="label-mono text-xs text-[#64748B] block">VERIFICATION ARTIFACT</span>
+                <span className="text-xs font-mono font-bold text-[#12345B]">
                   {activeProgram.capstoneProject.deliverable}
                 </span>
               </div>
@@ -329,7 +301,7 @@ export function FacultyTabs() {
         {/* Bottom Outcomes & Navigation Bar */}
         <div className="pt-4 border-t border-[#D9E6F0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1">
-            <span className="label-mono text-[9px] text-[#64748B] block">
+            <span className="label-mono text-xs text-[#64748B] block">
               Faculty Institutional Competency
             </span>
             <div className="flex items-center gap-2 text-xs font-medium text-[#12345B]">
@@ -340,10 +312,10 @@ export function FacultyTabs() {
 
           <div className="flex items-center gap-3 shrink-0">
             <Link
-              href="/programs"
+              href={`/programs/${currentFaculty.id}`}
               className="px-4 py-2 text-xs font-mono font-bold text-[#12345B] hover:text-[#1769AA] transition-colors"
             >
-              Full Course Catalog →
+              Enter Faculty Hub →
             </Link>
             <Link
               href={`/apply?track=${currentFaculty.id}`}

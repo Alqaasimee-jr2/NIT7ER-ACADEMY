@@ -126,7 +126,7 @@ export default function Flow7Page() {
 
         <div className="flex flex-wrap items-center gap-3 shrink-0">
           <Link
-            href="/programs#cognitive-performance"
+            href="/programs/cognitive-performance"
             className="btn-press px-4 py-2.5 bg-white border border-[#1769AA] hover:bg-[#EEF7FC] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors"
           >
             VIEW FACULTY 02 SYLLABI

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { STUDIO_TEAM } from '@/data/academyData';
-import { ArrowUpRight, ChevronLeft, ChevronRight, Sparkles, Layers } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
 const EDITORIAL_SLIDES = [
   { id: 1, src: '/team/team-cover.png', title: 'Meet Our Team', desc: 'Get to know the faces behind NIT7ER' },

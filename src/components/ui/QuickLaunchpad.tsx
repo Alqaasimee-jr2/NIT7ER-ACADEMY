@@ -16,7 +16,7 @@ export function QuickLaunchpad() {
       index: '01',
       title: 'Creative Technology',
       subtitle: 'Next.js 16, Flutter, AI telemetry & edge systems',
-      href: '/programs#creative-tech',
+      href: '/programs/creative-tech',
       icon: Code2,
       badge: 'FACULTY',
     },
@@ -24,7 +24,7 @@ export function QuickLaunchpad() {
       index: '02',
       title: 'Cognitive Systems (Flow7)',
       subtitle: 'Reality logging, stamina & focus frameworks',
-      href: '/programs#cognitive-performance',
+      href: '/programs/cognitive-performance',
       icon: BrainCircuit,
       badge: 'STAMINA',
     },
@@ -32,7 +32,7 @@ export function QuickLaunchpad() {
       index: '03',
       title: 'Writing & Thought Leadership',
       subtitle: 'Technical specs, architectural prose & copy',
-      href: '/programs#writing-thought-leadership',
+      href: '/programs/writing-thought-leadership',
       icon: PenTool,
       badge: 'PROSE',
     },
@@ -40,7 +40,7 @@ export function QuickLaunchpad() {
       index: '04',
       title: 'Computer Education',
       subtitle: 'Hardware, operating systems, productivity & cyber safety',
-      href: '/programs#computer-education',
+      href: '/programs/computer-education',
       icon: Monitor,
       badge: 'FOUNDATIONS',
     },
@@ -92,8 +92,8 @@ export function QuickLaunchpad() {
                   <div className="w-9 h-9 rounded-xl bg-[#EEF7FC] border border-[#D9E6F0] group-hover:border-[#12345B] group-hover:bg-[#12345B] group-hover:text-white text-[#12345B] flex items-center justify-center transition-all">
                     <Icon className="w-4 h-4" />
                   </div>
-                  <span className="label-mono text-[9px] px-2 py-0.5 rounded-full bg-[#FAFCFE] text-[#64748B] border border-[#D9E6F0] group-hover:border-[#E6AD3C] group-hover:text-[#12345B] transition-colors">
-                    [{item.index} // {item.badge}]
+                  <span className="label-mono text-xs px-2 py-0.5 rounded-full bg-[#FAFCFE] text-[#64748B] border border-[#D9E6F0] group-hover:border-[#E6AD3C] group-hover:text-[#12345B] transition-colors">
+                    [{item.index} {'//'} {item.badge}]
                   </span>
                 </div>
                 <div className="space-y-1">

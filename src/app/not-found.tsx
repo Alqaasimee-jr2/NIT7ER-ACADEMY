@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { N7BrandMark } from '@/components/N7BrandMark';
-import { ArrowRight, Compass, Home, BookOpen, Layers, Mail } from 'lucide-react';
+import { ArrowRight, Home, BookOpen, Layers, Mail } from 'lucide-react';
 
 export default function NotFound() {
   return (

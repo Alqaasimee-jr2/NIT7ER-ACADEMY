@@ -5,13 +5,8 @@ import Link from 'next/link';
 import { Program } from '@/data/academyData';
 import {
   X,
-  Clock,
-  Layers,
   Award,
   ArrowRight,
-  CheckCircle2,
-  Calendar,
-  Sparkles,
   Terminal,
 } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
@@ -93,25 +88,25 @@ export function ProgramSyllabusModal({
           {/* Quick Metrics Strip */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="p-3 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-0.5">
-              <span className="label-mono text-[9px] text-[#64748B] block">TRACK DURATION</span>
+              <span className="label-mono text-xs text-[#64748B] block">TRACK DURATION</span>
               <span className="text-xs sm:text-sm font-bold text-[#12345B]">
                 {program.duration}
               </span>
             </div>
             <div className="p-3 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-0.5">
-              <span className="label-mono text-[9px] text-[#64748B] block">WEEKLY WORKLOAD</span>
+              <span className="label-mono text-xs text-[#64748B] block">WEEKLY WORKLOAD</span>
               <span className="text-xs sm:text-sm font-bold text-[#12345B]">
                 {program.weeklyHours || '10–12 Hrs / Wk'}
               </span>
             </div>
             <div className="p-3 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-0.5">
-              <span className="label-mono text-[9px] text-[#64748B] block">PROJECTS BUILT</span>
+              <span className="label-mono text-xs text-[#64748B] block">PROJECTS BUILT</span>
               <span className="text-xs sm:text-sm font-bold text-[#12345B]">
                 {program.totalProjects || '4 Shipped Projects'}
               </span>
             </div>
             <div className="p-3 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-0.5">
-              <span className="label-mono text-[9px] text-[#64748B] block">STUDIO FORMAT</span>
+              <span className="label-mono text-xs text-[#64748B] block">STUDIO FORMAT</span>
               <span className="text-xs sm:text-sm font-bold text-[#12345B] truncate">
                 {program.format}
               </span>
@@ -155,7 +150,7 @@ export function ProgramSyllabusModal({
                           {phase.title}
                         </h4>
                       </div>
-                      <span className="label-mono text-[9px] text-[#64748B]">
+                      <span className="label-mono text-xs text-[#64748B]">
                         PHASE 0{idx + 1}
                       </span>
                     </div>
@@ -168,10 +163,10 @@ export function ProgramSyllabusModal({
                     <div className="p-2.5 bg-white border border-[#D9E6F0] rounded-lg flex items-start gap-2 text-xs">
                       <Terminal className="w-4 h-4 text-[#E6AD3C] shrink-0 mt-0.5" />
                       <div>
-                        <span className="label-mono text-[9px] text-[#12345B] block font-bold">
+                        <span className="label-mono text-xs text-[#12345B] block font-bold">
                           SPRINT PROJECT #{idx + 1}
                         </span>
-                        <span className="text-[#1F2937] font-medium text-[11px] sm:text-xs">
+                        <span className="text-[#1F2937] font-medium text-xs">
                           {phase.sprintProject}
                         </span>
                       </div>
@@ -183,7 +178,7 @@ export function ProgramSyllabusModal({
                         {phase.tools.map((tool) => (
                           <span
                             key={tool}
-                            className="text-[9px] font-mono px-2 py-0.5 bg-[#EEF7FC]/70 border border-[#D9E6F0] text-[#12345B] rounded"
+                            className="text-xs font-mono px-2 py-0.5 bg-[#EEF7FC]/70 border border-[#D9E6F0] text-[#12345B] rounded"
                           >
                             {tool}
                           </span>

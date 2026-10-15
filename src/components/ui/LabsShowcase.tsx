@@ -45,7 +45,7 @@ export function LabsShowcase({ limit }: { limit?: number }) {
                   [{project.badge}]
                 </span>
                 <span className="text-[#64748B]">
-                  0{idx + 1} // {project.category}
+                  0{idx + 1} {'//'} {project.category}
                 </span>
               </div>
 
