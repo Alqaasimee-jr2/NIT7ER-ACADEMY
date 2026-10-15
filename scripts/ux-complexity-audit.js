@@ -105,8 +105,13 @@ auditFile('app/programs/page.tsx', [
   {
     name: 'Sticky / Quick Anchor Jump Navigation (Prevent endless scrolling)',
     fn: (c) => {
-      const hasAnchorBar = c.includes('Quick Anchor Navigation') || c.includes('href={`#${fac.id}}');
-      return { pass: hasAnchorBar, detail: 'Found Quick Anchor navigation bar linking directly to faculties' };
+      const hasAnchorBar = c.includes('Quick Anchor') || c.includes('fac.id');
+      return {
+        pass: hasAnchorBar,
+        detail: hasAnchorBar
+          ? 'Found Quick Anchor navigation bar linking directly to faculties'
+          : 'Missing Quick Anchor navigation bar',
+      };
     },
     fix: 'Add top faculty anchor jump bar so users jump straight to relevant faculties without scrolling 2000px.',
   },

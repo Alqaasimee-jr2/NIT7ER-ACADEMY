@@ -11,7 +11,6 @@ export function Navbar() {
   const pathname = usePathname();
 
   const navLinks = [
-    { label: 'Overview', href: '/' },
     { label: 'Curriculum', href: '/programs' },
     { label: 'Faculty', href: '/team' },
     { label: 'Labs', href: '/labs' },
