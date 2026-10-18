@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from 'next/font/google';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MarqueeTicker } from '@/components/layout/MarqueeTicker';
@@ -8,6 +9,27 @@ import { ScrollToTop, NavigationScrollReset } from '@/components/ui/QuickUtils';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
+
+const fontDisplay = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const fontSans = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const fontMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -82,15 +104,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable}`}
+    >
       <head>
         <JsonLd />
       </head>
-      <body className="min-h-screen bg-[#FAFCFE] text-[#1F2937] flex flex-col selection:bg-[#EEF7FC] selection:text-[#12345B]">
+      <body className="min-h-screen bg-[#FAFCFE] text-[#1F2937] font-sans antialiased flex flex-col selection:bg-[#EEF7FC] selection:text-[#12345B]">
         <NavigationScrollReset />
         <Navbar />
         <MarqueeTicker />
-        <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 sm:space-y-16">
+        <main className="flex-1 max-w-[1360px] w-full mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 py-8 sm:py-12 lg:py-16 space-y-14 sm:space-y-20">
           {children}
         </main>
         <Footer />

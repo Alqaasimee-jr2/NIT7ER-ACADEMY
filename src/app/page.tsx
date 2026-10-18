@@ -16,43 +16,43 @@ export default function HomePage() {
       {/* ========================================================= */}
       {/* 1. HERO SECTION (OAUMods Architecture + Pure Essence Curves) */}
       {/* ========================================================= */}
-      <section className="technical-border curve-asymmetric p-5 sm:p-10 lg:p-12 bg-white shadow-sm space-y-8 relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-14 bg-white shadow-sm space-y-8 relative overflow-hidden">
         {/* Subtle Decorative Background Contour */}
         <div
           className="absolute -top-10 -right-10 w-96 h-96 opacity-10 pointer-events-none bg-contain bg-no-repeat"
           style={{ backgroundImage: `url('/brand/contour-blob.png')` }}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div className="lg:col-span-7 space-y-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+          <div className="lg:col-span-7 space-y-6">
             {/* Studio Badge with Pure Essence Pulse Ring */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[#EEF7FC] border border-[#D5E3EF] rounded-full text-[11px] sm:text-xs font-mono max-w-full">
               <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring shrink-0"></span>
               <span className="font-bold text-[#12345B] truncate">NIT7ER STUDIO // EDUCATIONAL INCUBATOR</span>
             </div>
 
             {/* Main Headline with Shimmer Gradient */}
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#12345B] leading-[1.14] tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] font-extrabold text-[#12345B] leading-[1.12] tracking-tight">
               <span className="shimmer-text">The Institute of Applied Creative Technology, Systems &amp; Mind.</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-xl font-normal">
+            <p className="text-sm sm:text-base lg:text-lg text-[#4A607A] leading-relaxed max-w-2xl font-normal">
               Practical education in software engineering, cognitive execution, technical writing, and computer fundamentals. Built for builders who ship real production software.
             </p>
 
             {/* Action Buttons with Pure Essence Pill Geometry & Button Press */}
-            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5">
               <Link
                 href="/apply"
-                className="btn-press inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-[#12345B] hover:bg-[#1769AA] text-white font-mono font-bold text-xs sm:text-sm tracking-tight rounded-full transition-all shadow-md border border-[#12345B]"
+                className="btn-press inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-[#12345B] hover:bg-[#1769AA] text-white font-mono font-bold text-xs sm:text-sm tracking-tight rounded-full transition-all shadow-md border border-[#12345B]"
               >
                 <span>START DIAGNOSTIC INTAKE</span>
                 <ArrowRight className="w-4 h-4 text-[#E6AD3C] shrink-0" />
               </Link>
               <Link
                 href="/programs"
-                className="btn-press inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-[#D9E6F0] bg-[#EEF7FC]/70 hover:bg-[#EEF7FC] text-[#12345B] font-mono font-bold text-xs sm:text-sm rounded-full transition-colors"
+                className="btn-press inline-flex items-center justify-center gap-2.5 px-6 py-4 border border-[#D5E3EF] bg-[#EEF7FC]/80 hover:bg-[#EEF7FC] text-[#12345B] font-mono font-bold text-xs sm:text-sm rounded-full transition-colors"
               >
                 <Compass className="w-4 h-4 text-[#1769AA] shrink-0" />
                 <span>EXPLORE 4 FACULTIES</span>
@@ -62,22 +62,22 @@ export default function HomePage() {
 
           {/* Right Column: Studio Cohort Showcase */}
           <div className="lg:col-span-5">
-            <div className="curve-soft bg-gradient-to-b from-[#EEF7FC] to-white border border-[#D9E6F0] p-4 sm:p-5 shadow-xs relative overflow-hidden group">
-              <div className="flex items-center justify-between gap-2 pb-3 border-b border-[#D9E6F0]/80">
-                <div className="flex items-center gap-2 min-w-0">
+            <div className="curve-soft bg-gradient-to-b from-[#EEF7FC] to-white border border-[#D5E3EF] p-5 sm:p-6 shadow-xs relative overflow-hidden group">
+              <div className="flex items-center justify-between gap-2 pb-3.5 border-b border-[#D5E3EF]/80">
+                <div className="flex items-center gap-2.5 min-w-0">
                   <N7BrandMark size="xs" variant="gold" className="shrink-0" />
-                  <span className="label-mono text-[#12345B] font-bold text-[10px] truncate">
+                  <span className="label-mono text-[#12345B] font-bold text-[11px] truncate">
                     Lagos Studio Cohort
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#1769AA] shrink-0">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] pulse-ring"></span>
+                <div className="flex items-center gap-1.5 text-[11px] font-mono font-semibold text-[#1769AA] shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
                   <span>Active Session</span>
                 </div>
               </div>
 
               {/* Official Illustration Vector Art */}
-              <div className="relative w-full h-44 sm:h-56 flex items-center justify-center py-2">
+              <div className="relative w-full h-52 sm:h-64 lg:h-72 flex items-center justify-center py-3">
                 <Image
                   src="/brand/illustration-team-tight.png"
                   alt="NIT7ER Studio Team and Cohort"
@@ -88,7 +88,7 @@ export default function HomePage() {
                 />
               </div>
 
-              <div className="pt-2.5 border-t border-[#D9E6F0]/80 flex items-center justify-between gap-2 text-[10px] font-mono text-[#64748B]">
+              <div className="pt-3 border-t border-[#D5E3EF]/80 flex items-center justify-between gap-2 text-xs font-mono text-[#4A607A]">
                 <span>Systems • Mind • Code</span>
                 <span className="text-[#12345B] font-bold">2026/2027 Cohort</span>
               </div>

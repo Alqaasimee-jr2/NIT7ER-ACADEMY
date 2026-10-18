@@ -209,48 +209,50 @@ export default async function ProgramDetailPage({
               </div>
 
               {/* Right Column: Program Telemetry & Admissions Card */}
-              <div className="lg:col-span-5 rounded-2xl bg-[#0D2644]/90 border border-white/15 p-5 sm:p-6 backdrop-blur-md">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+              <div className="lg:col-span-5 rounded-2xl bg-[#0D2644]/90 border border-white/15 p-6 sm:p-7 backdrop-blur-md">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
                   <div>
                     <span className="block font-mono text-[10px] uppercase tracking-widest text-white/60">
                       Cohort Tuition & Access
                     </span>
                     <div className="flex items-baseline gap-2 mt-1">
-                      <span className="font-display text-2xl sm:text-3xl font-bold text-[#E6AD3C]">
+                      <span className="font-display text-2xl sm:text-3xl font-extrabold text-[#E6AD3C]">
                         {tuition.ngn}
                       </span>
                       <span className="font-mono text-xs text-white/70">/ {tuition.usd}</span>
                     </div>
                   </div>
-                  <span className="rounded-lg bg-emerald-500/20 border border-emerald-400/30 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-emerald-300">
+                  <span className="rounded-lg bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-emerald-300 shrink-0">
                     Intake Open
                   </span>
                 </div>
 
-                <dl className="space-y-3 text-xs">
-                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-white/10 pb-2.5">
+                <dl className="space-y-3.5 text-xs sm:text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 border-b border-white/10 pb-3.5">
+                    <div className="rounded-xl bg-white/5 border border-white/10 p-3">
+                      <dt className="font-mono text-[10px] uppercase tracking-widest text-white/60 mb-1">
+                        Weekly Commitment
+                      </dt>
+                      <dd className="font-semibold text-[#7CC4FA] text-xs sm:text-sm">
+                        {program.weeklyHours || '10–12 Hours / Week'}
+                      </dd>
+                    </div>
+                    <div className="rounded-xl bg-white/5 border border-white/10 p-3">
+                      <dt className="font-mono text-[10px] uppercase tracking-widest text-white/60 mb-1">
+                        Required Output
+                      </dt>
+                      <dd className="font-semibold text-[#E6AD3C] text-xs sm:text-sm">
+                        {program.totalProjects || '4 Verified Builds'}
+                      </dd>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-1 border-b border-white/10 pb-3">
                     <dt className="font-mono text-[10px] uppercase tracking-widest text-white/60">
                       Delivery Format
                     </dt>
-                    <dd className="font-semibold text-white sm:text-right">{program.format}</dd>
+                    <dd className="font-semibold text-white leading-snug">{program.format}</dd>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-white/10 pb-2.5">
-                    <dt className="font-mono text-[10px] uppercase tracking-widest text-white/60">
-                      Weekly Commitment
-                    </dt>
-                    <dd className="font-semibold text-[#7CC4FA] sm:text-right">
-                      {program.weeklyHours || '10–12 Hours / Week'}
-                    </dd>
-                  </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-white/10 pb-2.5">
-                    <dt className="font-mono text-[10px] uppercase tracking-widest text-white/60">
-                      Required Output
-                    </dt>
-                    <dd className="font-semibold text-[#E6AD3C] sm:text-right">
-                      {program.totalProjects || '4 Verified Builds'}
-                    </dd>
-                  </div>
-                  <div className="flex flex-col gap-1 border-b border-white/10 pb-2.5">
+                  <div className="flex flex-col gap-1 border-b border-white/10 pb-3">
                     <dt className="font-mono text-[10px] uppercase tracking-widest text-white/60">
                       Prerequisites
                     </dt>

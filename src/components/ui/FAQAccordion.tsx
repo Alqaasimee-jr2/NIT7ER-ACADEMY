@@ -74,18 +74,18 @@ export function FAQAccordion() {
   };
 
   return (
-    <section id="faq" className="scroll-mt-24 space-y-6">
+    <section id="faq" className="scroll-mt-24 space-y-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#D9E6F0] pb-4">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D9E6F0] pb-4">
         <div className="space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
             <HelpCircle className="w-3.5 h-3.5 text-[#1769AA]" />
             <span className="font-bold text-[#12345B]">KNOWLEDGE BASE // FREQUENTLY ASKED QUESTIONS</span>
           </div>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#12345B] tracking-tight">
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#12345B] tracking-tight">
             Clear Answers on Standards, Sprints &amp; Structure.
           </h2>
-          <p className="text-xs sm:text-sm text-[#64748B] max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base text-[#475569] max-w-2xl leading-relaxed">
             Everything you need to know about our studio sprint model, agency connection, Flow7 focus protocol, and capstone defense standards.
           </p>
         </div>
@@ -96,7 +96,7 @@ export function FAQAccordion() {
       </div>
 
       {/* Accordion List */}
-      <div className="space-y-3">
+      <div className="space-y-3.5">
         {faqs.map((faq, idx) => {
           const isOpen = openIndex === idx;
           return (
@@ -112,18 +112,18 @@ export function FAQAccordion() {
                 type="button"
                 onClick={() => toggleItem(idx)}
                 aria-expanded={isOpen}
-                className="w-full btn-press p-4 sm:p-5 flex items-start justify-between text-left gap-4"
+                className="w-full btn-press p-5 sm:p-6 flex items-start justify-between text-left gap-4"
               >
-                <div className="space-y-1">
-                  <span className="label-mono text-[9px] text-[#1769AA] font-bold block">
+                <div className="space-y-1.5">
+                  <span className="label-mono text-[10px] text-[#1769AA] font-bold block">
                     {faq.category}
                   </span>
-                  <h3 className="text-sm sm:text-base font-bold text-[#12345B] leading-snug">
+                  <h3 className="font-display text-base sm:text-lg font-bold text-[#12345B] leading-snug">
                     {faq.question}
                   </h3>
                 </div>
                 <div
-                  className={`p-1.5 rounded-full border transition-all shrink-0 mt-0.5 ${
+                  className={`p-2 rounded-full border transition-all shrink-0 mt-0.5 ${
                     isOpen
                       ? 'bg-[#12345B] text-white border-[#12345B] rotate-180'
                       : 'bg-[#EEF7FC] text-[#1769AA] border-[#D9E6F0]'
@@ -134,8 +134,8 @@ export function FAQAccordion() {
               </button>
 
               {isOpen && (
-                <div className="px-4 sm:px-5 pb-5 pt-1 border-t border-[#D9E6F0]/60 space-y-3.5 animate-fadeIn">
-                  <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-[#D9E6F0]/60 space-y-4 animate-fadeIn">
+                  <p className="text-sm sm:text-base text-[#475569] leading-relaxed max-w-4xl">
                     {faq.answer}
                   </p>
                   {faq.link && (
@@ -144,7 +144,7 @@ export function FAQAccordion() {
                         href={faq.link.href}
                         target={faq.link.href.startsWith('http') ? '_blank' : undefined}
                         rel={faq.link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#1769AA] hover:text-[#12345B] underline underline-offset-4 transition-colors"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs sm:text-sm font-bold text-[#1769AA] hover:text-[#12345B] underline underline-offset-4 transition-colors"
                       >
                         <span>{faq.link.label}</span>
                         {faq.link.href.startsWith('http') ? (

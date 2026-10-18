@@ -165,20 +165,20 @@ function ApplicationFormContent() {
   );
 
   return (
-    <div className="max-w-3xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8 sm:space-y-10">
       <Breadcrumbs items={[{ label: 'Admissions & Catalog', href: '/programs' }, { label: 'Cohort Application' }]} />
 
       {/* Header */}
-      <div className="text-center space-y-3">
+      <div className="text-center space-y-3.5">
         <N7BrandMark size="xl" variant="gold" className="mx-auto" />
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
           <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
           <span className="font-bold text-[#12345B]">INTAKE QUEUE // COHORT 2026/2027</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-black text-[#12345B] tracking-tight">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#12345B] tracking-tight">
           Cohort Application &amp; Diagnostic Intake
         </h1>
-        <p className="text-xs sm:text-sm text-[#64748B] max-w-lg mx-auto">
+        <p className="text-sm sm:text-base text-[#475569] max-w-xl mx-auto">
           Apply for one of our 12 specialized program tracks. Select your discipline to begin.
         </p>
       </div>
@@ -194,16 +194,16 @@ function ApplicationFormContent() {
             <span className="label-mono px-3 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0] inline-block font-bold">
               REGISTRATION LOGGED &amp; VERIFIED
             </span>
-            <h2 className="text-2xl font-black text-[#12345B] tracking-tight pt-1">
+            <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#12345B] tracking-tight pt-1">
               Application Successfully Queued
             </h2>
-            <p className="text-xs sm:text-sm text-[#64748B] max-w-md mx-auto">
+            <p className="text-sm sm:text-base text-[#475569] max-w-md mx-auto">
               Your candidate profile has been logged in our studio intake queue. Keep your institutional reference code below:
             </p>
           </div>
 
           <div className="p-4 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-2xl inline-block text-center max-w-xs mx-auto shadow-2xs">
-            <span className="label-mono text-[9px] text-[#64748B] block">
+            <span className="label-mono text-[10px] text-[#64748B] block">
               APPLICATION REFERENCE
             </span>
             <span className="text-2xl font-mono font-bold tracking-widest text-[#12345B]">
@@ -211,8 +211,8 @@ function ApplicationFormContent() {
             </span>
           </div>
 
-          <div className="p-4 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl text-left max-w-lg mx-auto space-y-2 text-xs font-mono">
-            <span className="label-mono text-[9px] text-[#64748B] block">ENROLLMENT SELECTION</span>
+          <div className="p-5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl text-left max-w-lg mx-auto space-y-2 text-xs sm:text-sm font-mono">
+            <span className="label-mono text-[10px] text-[#64748B] block">ENROLLMENT SELECTION</span>
             <div className="text-[#12345B] font-bold">
               {selectedFacultyObj.badge}: {selectedFacultyObj.title}
             </div>
@@ -229,7 +229,7 @@ function ApplicationFormContent() {
               <MessageCircle className="w-4 h-4 text-[#1769AA]" />
               <span>RECOMMENDED: 1-TAP WHATSAPP CONFIRMATION</span>
             </h4>
-            <p className="text-xs text-[#64748B] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
               To expedite your profile diagnostic and avoid email spam delays, dispatch your pre-formatted application confirmation directly to Director Abdullah Qaasim-Falade on WhatsApp:
             </p>
             <a
@@ -245,10 +245,10 @@ function ApplicationFormContent() {
         </div>
       ) : (
         /* Multi-Step Form */
-        <div className="technical-border curve-asymmetric p-6 sm:p-8 bg-white space-y-6 border border-[#D9E6F0] shadow-sm">
+        <div className="technical-border curve-asymmetric p-6 sm:p-8 lg:p-10 bg-white space-y-8 border border-[#D9E6F0] shadow-sm">
           {/* Progress Indicator */}
-          <div className="space-y-2">
-            <div className="flex flex-wrap items-center justify-between gap-1 font-mono text-xs font-bold text-[#64748B]">
+          <div className="space-y-2.5">
+            <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs sm:text-sm font-bold text-[#64748B]">
               <span>[STEP 0{step} OF 03]</span>
               <span className="text-[#12345B]">
                 {step === 1 && 'CHOOSE FACULTY & PROGRAM TRACK'}
@@ -256,7 +256,7 @@ function ApplicationFormContent() {
                 {step === 3 && 'EXPERIENCE & CAPSTONE GOAL'}
               </span>
             </div>
-            <div className="w-full bg-[#EEF7FC] border border-[#D9E6F0] h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-[#EEF7FC] border border-[#D9E6F0] h-2.5 rounded-full overflow-hidden">
               <div
                 className="bg-gradient-to-r from-[#1769AA] to-[#E6AD3C] h-full rounded-full transition-all duration-300"
                 style={{ width: `${(step / 3) * 100}%` }}
@@ -265,7 +265,7 @@ function ApplicationFormContent() {
           </div>
 
           {errorMsg && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2 text-xs font-mono font-bold text-red-700">
+            <div className="p-3.5 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2 text-xs sm:text-sm font-mono font-bold text-red-700">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -273,12 +273,12 @@ function ApplicationFormContent() {
 
           {/* STEP 1: Faculty & Program Selection */}
           {step === 1 && (
-            <div className="space-y-6">
-              <div className="space-y-3">
+            <div className="space-y-8">
+              <div className="space-y-4">
                 <span className="label-mono block text-[#12345B]">
                   01. Select Foundational Academic Faculty
                 </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {FACULTIES.map((fac) => {
                     const isSelected = fac.id === faculty;
                     return (
@@ -286,7 +286,7 @@ function ApplicationFormContent() {
                         type="button"
                         key={fac.id}
                         onClick={() => handleFacultySelect(fac.id)}
-                        className={`btn-press p-4 border text-left transition-all space-y-1.5 rounded-2xl ${
+                        className={`btn-press p-5 border text-left transition-all space-y-2 rounded-2xl ${
                           isSelected
                             ? 'border-[#12345B] bg-[#EEF7FC] ring-2 ring-[#12345B] shadow-2xs'
                             : 'border-[#D9E6F0] bg-white hover:border-[#1769AA]'
@@ -296,15 +296,15 @@ function ApplicationFormContent() {
                           <span className="font-bold text-[#1769AA]">
                             FACULTY {fac.number}
                           </span>
-                          {isSelected && <span className="w-2 h-2 rounded-full bg-[#12345B]"></span>}
+                          {isSelected && <span className="w-2.5 h-2.5 rounded-full bg-[#12345B]"></span>}
                         </div>
-                        <h4 className="font-bold text-sm text-[#12345B]">
+                        <h4 className="font-display font-bold text-base text-[#12345B] leading-snug">
                           {fac.title}
                         </h4>
-                        <p className="text-xs text-[#64748B] line-clamp-2">
+                        <p className="text-xs sm:text-sm text-[#475569] line-clamp-2 leading-relaxed">
                           {fac.subtitle}
                         </p>
-                        <span className="text-[10px] font-mono text-[#1769AA] block pt-1">
+                        <span className="text-xs font-mono font-semibold text-[#1769AA] block pt-1">
                           {fac.programs.length} Specialized Tracks
                         </span>
                       </button>
@@ -314,7 +314,7 @@ function ApplicationFormContent() {
               </div>
 
               {/* Sub-Selection: Specialized Program Track */}
-              <div className="space-y-3 pt-4 border-t border-[#D9E6F0]">
+              <div className="space-y-4 pt-5 border-t border-[#D9E6F0]">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="label-mono block text-[#12345B]">
                     Select Specialized Program Track in Faculty {selectedFacultyObj.number}
@@ -322,15 +322,15 @@ function ApplicationFormContent() {
                   {selectedProgramObj && (
                     <Link
                       href={`/programs/${selectedFacultyObj.id}/${selectedProgramObj.id}`}
-                      className="text-[11px] font-mono font-bold text-[#1769AA] hover:text-[#12345B] inline-flex items-center gap-1"
+                      className="text-xs font-mono font-bold text-[#1769AA] hover:text-[#12345B] inline-flex items-center gap-1"
                     >
                       <span>Inspect {selectedProgramObj.code} Syllabus</span>
-                      <ArrowRight className="w-3 h-3 text-[#E6AD3C]" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
                     </Link>
                   )}
                 </div>
 
-                <div className="space-y-2.5">
+                <div className="space-y-3">
                   {selectedFacultyObj.programs.map((prog) => {
                     const isProgSelected = prog.id === programId;
                     return (
@@ -338,38 +338,38 @@ function ApplicationFormContent() {
                         type="button"
                         key={prog.id}
                         onClick={() => setProgramId(prog.id)}
-                        className={`btn-press w-full p-4 border text-left rounded-xl transition-all space-y-1.5 ${
+                        className={`btn-press w-full p-5 border text-left rounded-2xl transition-all space-y-2 ${
                           isProgSelected
                             ? 'border-[#1769AA] bg-[#EEF7FC]/70 ring-1 ring-[#1769AA] shadow-2xs'
                             : 'border-[#D9E6F0] bg-white hover:border-[#1769AA]/50'
                         }`}
                       >
                         <div className="flex flex-wrap items-center justify-between gap-2">
-                          <div className="flex items-center gap-2">
-                            <span className="label-mono px-2 py-0.5 bg-[#12345B] text-white rounded text-[9px]">
+                          <div className="flex items-center gap-2.5">
+                            <span className="label-mono px-2.5 py-0.5 bg-[#12345B] text-white rounded-md text-[10px]">
                               {prog.code}
                             </span>
-                            <span className="text-xs sm:text-sm font-bold text-[#12345B]">
+                            <span className="font-display text-sm sm:text-base font-bold text-[#12345B]">
                               {prog.title}
                             </span>
                           </div>
-                          <div className="flex items-center gap-2 text-[10px] font-mono text-[#64748B]">
+                          <div className="flex items-center gap-2 text-xs font-mono text-[#64748B]">
                             <span>{prog.duration}</span>
                             <span>•</span>
-                            <span className="px-1.5 py-0.5 bg-white border border-[#D9E6F0] rounded">
+                            <span className="px-2 py-0.5 bg-white border border-[#D9E6F0] rounded-md">
                               {prog.level}
                             </span>
                             {isProgSelected && (
-                              <span className="w-2 h-2 rounded-full bg-[#1769AA]"></span>
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#1769AA]"></span>
                             )}
                           </div>
                         </div>
 
-                        <p className="text-xs text-[#64748B]">
+                        <p className="text-xs sm:text-sm text-[#475569]">
                           {prog.tagline}
                         </p>
 
-                        <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#1769AA] pt-1">
+                        <div className="flex items-center gap-1.5 text-xs font-mono font-medium text-[#1769AA] pt-1">
                           <Award className="w-3.5 h-3.5 text-[#E6AD3C] shrink-0" />
                           <span>Capstone: {prog.capstoneProject.title}</span>
                         </div>

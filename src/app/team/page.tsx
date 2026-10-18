@@ -17,34 +17,34 @@ export default function TeamPage() {
       <Breadcrumbs items={[{ label: 'Studio Directors & Core Faculty' }]} />
 
       {/* Header Banner */}
-      <section className="technical-border curve-asymmetric p-5 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-12 bg-white space-y-5 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         <div
           className="absolute -right-8 -top-8 w-64 h-64 opacity-10 pointer-events-none bg-contain bg-no-repeat"
           style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
         />
 
-        <div className="max-w-3xl space-y-3 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+        <div className="max-w-3xl space-y-3.5 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[11px] sm:text-xs font-mono max-w-full">
             <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring shrink-0"></span>
             <span className="font-bold text-[#12345B] truncate">STUDIO FACULTY // CORE DIRECTORS</span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#12345B] tracking-tight leading-[1.12]">
             The Practitioners Behind the Standard.
           </h1>
 
-          <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-[#475569] leading-relaxed font-normal">
             At NIT7ER Academy, faculty are not textbook instructors. They are active creative technologists, visual leads, and systems architects shipping commercial software every day.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs font-mono text-[#64748B]">
-            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
+          <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-mono text-[#64748B]">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
               [100% ACTIVE PRACTITIONERS]
             </span>
-            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
               [DIRECT APPRENTICESHIP MODEL]
             </span>
-            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] font-bold">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] font-bold">
               [DAILY STUDIO CRITIQUES]
             </span>
           </div>
@@ -55,46 +55,46 @@ export default function TeamPage() {
       <TeamShowcase />
 
       {/* Apprenticeship Pedagogy Banner */}
-      <section className="technical-border curve-asymmetric p-5 sm:p-8 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-6 shadow-xs">
-        <div className="space-y-2 border-b border-[#D9E6F0] pb-3">
+      <section className="technical-border curve-asymmetric p-6 sm:p-8 lg:p-10 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-6 shadow-xs">
+        <div className="space-y-2 border-b border-[#D9E6F0] pb-4">
           <span className="label-mono text-xs text-[#1769AA] font-bold block">
             THE STUDIO DIFFERENCE
           </span>
-          <h3 className="text-xl font-black text-[#12345B]">
+          <h3 className="font-display text-xl sm:text-2xl font-extrabold text-[#12345B]">
             How Direct Studio Apprenticeship Works
           </h3>
-          <p className="text-xs sm:text-sm text-[#64748B]">
+          <p className="text-sm sm:text-base text-[#475569]">
             Traditional courses assign generic sandbox homework. In NIT7ER Academy, you apprentice directly alongside our studio directors:
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-4 bg-white border border-[#D9E6F0] rounded-xl space-y-2 shadow-2xs">
-            <div className="flex items-center gap-2 font-mono text-xs text-[#1769AA] font-bold">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="p-5 sm:p-6 bg-white border border-[#D9E6F0] rounded-2xl space-y-2.5 shadow-2xs">
+            <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-[#1769AA] font-bold">
               <Code className="w-4 h-4 text-[#1769AA]" />
               <span>Production Codebases</span>
             </div>
-            <p className="text-xs text-[#64748B] leading-relaxed">
+            <p className="text-sm text-[#475569] leading-relaxed">
               Read and contribute to real systems like Clasquera, Flow7, and OAUMods with strict TypeScript architectures and CI/CD pipelines.
             </p>
           </div>
 
-          <div className="p-4 bg-white border border-[#D9E6F0] rounded-xl space-y-2 shadow-2xs">
-            <div className="flex items-center gap-2 font-mono text-xs text-[#1769AA] font-bold">
+          <div className="p-5 sm:p-6 bg-white border border-[#D9E6F0] rounded-2xl space-y-2.5 shadow-2xs">
+            <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-[#1769AA] font-bold">
               <Users className="w-4 h-4 text-[#1769AA]" />
               <span>Live Architectural Reviews</span>
             </div>
-            <p className="text-xs text-[#64748B] leading-relaxed">
+            <p className="text-sm text-[#475569] leading-relaxed">
               Receive direct line-by-line feedback on schema design, UI token consistency, and focus stamina metrics.
             </p>
           </div>
 
-          <div className="p-4 bg-white border border-[#D9E6F0] rounded-xl space-y-2 shadow-2xs">
-            <div className="flex items-center gap-2 font-mono text-xs text-[#1769AA] font-bold">
+          <div className="p-5 sm:p-6 bg-white border border-[#D9E6F0] rounded-2xl space-y-2.5 shadow-2xs">
+            <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-[#1769AA] font-bold">
               <Award className="w-4 h-4 text-[#E6AD3C]" />
               <span>Audited Capstone Defense</span>
             </div>
-            <p className="text-xs text-[#64748B] leading-relaxed">
+            <p className="text-sm text-[#475569] leading-relaxed">
               Before graduating, defend your live deliverable before our core faculty panel with zero fluff and proven market readiness.
             </p>
           </div>

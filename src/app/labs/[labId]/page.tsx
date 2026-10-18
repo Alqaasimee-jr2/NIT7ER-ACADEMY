@@ -140,8 +140,8 @@ export default async function LabCaseStudyPage({
               </div>
 
               {/* Right Column: Telemetry & Stack Card */}
-              <div className="lg:col-span-5 rounded-2xl bg-[#0D2644]/90 border border-white/15 p-5 sm:p-6 backdrop-blur-md">
-                <span className="block font-mono text-[10px] uppercase tracking-widest text-[#E6AD3C] mb-4">
+              <div className="lg:col-span-5 rounded-2xl bg-[#0D2644]/90 border border-white/15 p-6 sm:p-7 backdrop-blur-md">
+                <span className="block font-mono text-[11px] font-bold uppercase tracking-widest text-[#E6AD3C] mb-4">
                   // SYSTEM TELEMETRY & VERIFICATION
                 </span>
 
@@ -150,12 +150,12 @@ export default async function LabCaseStudyPage({
                     {project.metrics.map((m) => (
                       <div
                         key={m.label}
-                        className="rounded-xl bg-white/5 border border-white/10 p-3"
+                        className="rounded-xl bg-white/5 border border-white/10 p-3.5 flex flex-col justify-between"
                       >
-                        <span className="block font-display text-lg font-bold text-white">
+                        <span className="block font-display text-lg xl:text-xl font-extrabold text-white leading-tight">
                           {m.value}
                         </span>
-                        <span className="block font-mono text-[10px] uppercase tracking-wider text-white/60 mt-0.5">
+                        <span className="block font-mono text-[10px] uppercase tracking-wider text-white/65 mt-1 leading-snug">
                           {m.label}
                         </span>
                       </div>
@@ -183,7 +183,7 @@ export default async function LabCaseStudyPage({
                   <span className="block font-mono text-[10px] uppercase tracking-widest text-white/60 mb-1">
                     Verified Commercial Impact
                   </span>
-                  <p className="text-xs sm:text-sm font-medium text-[#7CC4FA]">
+                  <p className="text-sm font-medium text-[#7CC4FA] leading-relaxed">
                     {project.impact}
                   </p>
                 </div>

@@ -87,7 +87,7 @@ export function TeamShowcase() {
               <article
                 key={member.id}
                 id={member.id}
-                className="technical-border curve-soft p-5 bg-white border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] hover:shadow-md transition-all flex flex-col justify-between group scroll-mt-28"
+                className="technical-border curve-soft p-6 bg-white border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] hover:shadow-md transition-all flex flex-col justify-between group scroll-mt-28"
               >
                 <div className="space-y-4">
                   {/* 1:1 Editorial Artwork Frame */}
@@ -99,7 +99,7 @@ export function TeamShowcase() {
                       height={1080}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-mono text-[10px] font-bold">
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/65 backdrop-blur-md text-white font-mono text-[11px] font-bold">
                       {member.handle}
                     </div>
                   </div>
@@ -107,32 +107,32 @@ export function TeamShowcase() {
                   {/* Member Metadata */}
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <span className="label-mono px-2 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0] text-[10px] font-bold">
+                      <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0] text-[10px] font-bold">
                         {member.role}
                       </span>
                       {member.signature && (
-                        <span className="text-[11px] font-serif italic text-[#64748B]">
+                        <span className="text-xs font-serif italic text-[#64748B]">
                           Sig: {member.signature}
                         </span>
                       )}
                     </div>
-                    <h3 className="text-lg font-black text-[#12345B] tracking-tight">
+                    <h3 className="font-display text-xl font-extrabold text-[#12345B] tracking-tight">
                       {member.name}
                     </h3>
-                    <p className="text-xs font-mono text-[#64748B]">
+                    <p className="text-xs sm:text-sm font-mono text-[#64748B]">
                       {member.discipline}
                     </p>
                   </div>
 
                   {/* Personal Manifesto Quote */}
-                  <div className="p-3.5 rounded-xl bg-[#EEF7FC]/70 border-l-2 border-[#1769AA] text-xs text-[#1F2937] italic leading-relaxed">
+                  <div className="p-4 rounded-xl bg-[#EEF7FC]/70 border-l-3 border-[#1769AA] text-xs sm:text-sm text-[#1F2937] italic leading-relaxed">
                     &ldquo;{member.quote}&rdquo;
                   </div>
 
                   {/* Led Faculties Links */}
                   {ledFaculties.length > 0 && (
-                    <div className="space-y-1.5 pt-1">
-                      <span className="label-mono text-[9px] text-[#64748B] block">
+                    <div className="space-y-2 pt-1">
+                      <span className="label-mono text-[10px] text-[#64748B] block">
                         DIRECTED FACULTIES
                       </span>
                       <div className="flex flex-wrap gap-1.5">
@@ -140,7 +140,7 @@ export function TeamShowcase() {
                           <Link
                             key={f.id}
                             href={`/programs/${f.id}`}
-                            className="text-[10px] font-mono font-bold px-2.5 py-1 bg-[#EEF7FC] text-[#12345B] hover:text-[#1769AA] hover:border-[#1769AA] border border-[#D9E6F0] rounded-full transition-colors"
+                            className="text-[11px] font-mono font-bold px-3 py-1 bg-[#EEF7FC] text-[#12345B] hover:text-[#1769AA] hover:border-[#1769AA] border border-[#D9E6F0] rounded-full transition-colors"
                           >
                             {f.badge}: {f.title.split('&')[0].trim()} →
                           </Link>
@@ -152,7 +152,7 @@ export function TeamShowcase() {
 
                 {/* Action Link */}
                 {member.url && (
-                  <div className="pt-4 mt-4 border-t border-[#D9E6F0] flex items-center justify-between text-xs font-mono">
+                  <div className="pt-4 mt-5 border-t border-[#D9E6F0] flex items-center justify-between text-xs font-mono">
                     <span className="text-[#64748B]">Directory Verified</span>
                     <a
                       href={member.url}

@@ -93,33 +93,33 @@ function ContactFormContent() {
       <Breadcrumbs items={[{ label: 'Contact & Admissions Desk' }]} />
 
       {/* Header Banner */}
-      <section className="technical-border curve-asymmetric p-5 sm:p-8 bg-white space-y-3.5 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-12 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         <div
           className="absolute -right-8 -top-8 w-64 h-64 opacity-10 pointer-events-none bg-contain bg-no-repeat"
           style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
         />
-        <div className="max-w-3xl space-y-2 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+        <div className="max-w-3xl space-y-3 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[11px] sm:text-xs font-mono max-w-full">
             <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring shrink-0"></span>
             <span className="font-bold text-[#12345B] truncate">COMMUNICATIONS DESK // DIRECT CONSULTATIONS</span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#12345B] tracking-tight leading-[1.12]">
             Admissions Desk &amp; Direct Inquiries
           </h1>
 
-          <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-[#475569] leading-relaxed font-normal max-w-2xl">
             Direct communication for prospective candidates, cohort admissions, and curriculum questions.
           </p>
 
-          <div className="pt-1 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs font-mono text-[#64748B]">
-            <span className="px-2.5 py-0.5 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
+          <div className="pt-1 flex flex-wrap items-center gap-2.5 text-xs font-mono text-[#64748B]">
+            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
               [HOTLINE: +234 707 076 3135]
             </span>
-            <span className="px-2.5 py-0.5 rounded-full bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] font-bold">
+            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] font-bold">
               [&lt;24H RESPONSE SLA]
             </span>
-            <span className="px-2.5 py-0.5 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
+            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
               [LAGOS HUB // ASYNC GLOBAL]
             </span>
           </div>
@@ -131,27 +131,27 @@ function ContactFormContent() {
         {/* Left Column (5 cols): Channels, Studio Hub, SLA & Fast-Tracks */}
         <div className="lg:col-span-5 space-y-5">
           {/* Primary Channel: WhatsApp Hotline */}
-          <div className="technical-border curve-soft p-5 bg-white border border-[#D9E6F0] rounded-2xl space-y-3.5 shadow-xs hover:border-[#1769AA] transition-all">
+          <div className="technical-border curve-soft p-6 bg-white border border-[#D9E6F0] rounded-2xl space-y-4 shadow-xs hover:border-[#1769AA] transition-all">
             <div className="flex items-center justify-between font-mono text-xs">
               <span className="px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0] font-bold">
                 PRIMARY CHANNEL
               </span>
-              <span className="flex items-center gap-1 text-[#1769AA]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] pulse-ring"></span>
+              <span className="flex items-center gap-1.5 text-[#1769AA] font-medium">
+                <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
                 <span>Instant Messaging</span>
               </span>
             </div>
 
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#12345B] text-[#E6AD3C] flex items-center justify-center shrink-0 shadow-xs">
+            <div className="flex items-start gap-3.5">
+              <div className="w-11 h-11 rounded-xl bg-[#12345B] text-[#E6AD3C] flex items-center justify-center shrink-0 shadow-xs">
                 <MessageCircle className="w-5 h-5" />
               </div>
               <div className="space-y-1 min-w-0">
-                <h3 className="text-sm sm:text-base font-black text-[#12345B]">
+                <h3 className="font-display text-base sm:text-lg font-extrabold text-[#12345B]">
                   WhatsApp Direct Hotline
                 </h3>
                 <CopyableItem text={FOUNDER_INFO.phone} label={FOUNDER_INFO.phone} />
-                <p className="text-xs text-[#64748B] leading-relaxed pt-0.5">
+                <p className="text-sm text-[#475569] leading-relaxed pt-0.5">
                   Fastest way to verify cohort openings, discuss prerequisites, or schedule a diagnostic call.
                 </p>
               </div>
@@ -161,9 +161,9 @@ function ContactFormContent() {
               href={FOUNDER_INFO.whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn-press inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-2xs"
+              className="btn-press inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs sm:text-sm font-mono font-bold rounded-full transition-colors shadow-2xs"
             >
-              <MessageCircle className="w-3.5 h-3.5 text-[#E6AD3C]" />
+              <MessageCircle className="w-4 h-4 text-[#E6AD3C]" />
               <span>OPEN WHATSAPP CHAT</span>
             </a>
           </div>
@@ -171,22 +171,22 @@ function ContactFormContent() {
           {/* Email & Physical Studio Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
             {/* Email Card */}
-            <div className="technical-border curve-soft p-4 bg-white border border-[#D9E6F0] rounded-xl space-y-2.5 shadow-xs">
+            <div className="technical-border curve-soft p-5 bg-white border border-[#D9E6F0] rounded-2xl space-y-3 shadow-xs">
               <div className="flex items-center justify-between font-mono text-xs">
-                <span className="px-2 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded font-bold">
+                <span className="px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-md font-bold">
                   OFFICIAL DESK
                 </span>
                 <span className="text-[#64748B]">&lt;24H SLA</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-[#EEF7FC] text-[#12345B]">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-[#EEF7FC] text-[#12345B] shrink-0">
                   <Mail className="w-4 h-4 text-[#1769AA]" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-xs font-bold text-[#12345B]">Institutional Email</h4>
+                  <h4 className="font-display text-sm font-bold text-[#12345B]">Institutional Email</h4>
                   <a
                     href={`mailto:${FOUNDER_INFO.email}`}
-                    className="text-xs font-mono text-[#1769AA] hover:underline truncate block"
+                    className="text-xs sm:text-sm font-mono text-[#1769AA] hover:underline break-all block"
                   >
                     {FOUNDER_INFO.email}
                   </a>
@@ -195,20 +195,20 @@ function ContactFormContent() {
             </div>
 
             {/* Studio Headquarters */}
-            <div className="technical-border curve-soft p-4 bg-white border border-[#D9E6F0] rounded-xl space-y-2.5 shadow-xs">
+            <div className="technical-border curve-soft p-5 bg-white border border-[#D9E6F0] rounded-2xl space-y-3 shadow-xs">
               <div className="flex items-center justify-between font-mono text-xs">
-                <span className="px-2 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded font-bold">
+                <span className="px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-md font-bold">
                   PHYSICAL HUB
                 </span>
                 <span className="text-[#64748B]">Lagos, Nigeria</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-[#EEF7FC] text-[#12345B]">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-[#EEF7FC] text-[#12345B] shrink-0">
                   <MapPin className="w-4 h-4 text-[#1769AA]" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-[#12345B]">Studio Headquarters</h4>
-                  <p className="text-xs font-mono text-[#1769AA]">
+                  <h4 className="font-display text-sm font-bold text-[#12345B]">Studio Headquarters</h4>
+                  <p className="text-xs sm:text-sm font-mono text-[#1769AA]">
                     {FOUNDER_INFO.location}
                   </p>
                 </div>
@@ -217,12 +217,12 @@ function ContactFormContent() {
           </div>
 
           {/* SLA Expectation Card */}
-          <div className="p-4 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-2 text-xs text-[#64748B]">
-            <div className="flex items-center gap-2 text-[#12345B] font-bold font-mono">
+          <div className="p-5 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-2xl space-y-2.5 text-sm text-[#475569]">
+            <div className="flex items-center gap-2 text-[#12345B] font-bold font-mono text-xs sm:text-sm">
               <Clock className="w-4 h-4 text-[#1769AA]" />
               <span>Response SLA &amp; Direct Transmission</span>
             </div>
-            <ul className="space-y-1 list-disc list-inside">
+            <ul className="space-y-1.5 list-disc list-inside text-xs sm:text-sm">
               <li>Inquiries evaluated within 12–24 hours</li>
               <li>Strategic consultations: 45-min diagnostic video call</li>
               <li>Direct review by Director Abdullah Qaasim-Falade</li>
@@ -230,34 +230,34 @@ function ContactFormContent() {
           </div>
 
           {/* Direct Link to Intake */}
-          <div className="p-4 bg-[#FAFCFE] border border-[#D9E6F0] rounded-xl space-y-2">
+          <div className="p-5 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-2">
             <span className="label-mono text-xs text-[#64748B] block font-bold">
               READY FOR FORMAL ADMISSION?
             </span>
-            <p className="text-xs text-[#64748B]">
+            <p className="text-sm text-[#475569]">
               Skip general inquiries and complete the diagnostic intake questionnaire:
             </p>
             <Link
               href="/apply"
-              className="gold-link inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#12345B] pt-0.5"
+              className="gold-link inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-bold text-[#12345B] pt-1"
             >
               <span>OPEN INTAKE PORTAL</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+              <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
             </Link>
           </div>
         </div>
 
         {/* Right Column (7 cols): Interactive Inquiry Form (Visible Above the Fold) */}
         <div className="lg:col-span-7">
-          <section className="technical-border curve-asymmetric p-6 sm:p-8 bg-white border border-[#D9E6F0] rounded-2xl shadow-xs space-y-5">
-            <div className="space-y-1 border-b border-[#D9E6F0] pb-3">
-              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0] text-xs font-mono font-bold">
+          <section className="technical-border curve-asymmetric p-6 sm:p-8 lg:p-10 bg-white border border-[#D9E6F0] rounded-2xl shadow-xs space-y-6">
+            <div className="space-y-1.5 border-b border-[#D9E6F0] pb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0] text-xs font-mono font-bold">
                 DIRECT INQUIRY DISPATCH
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-[#12345B] tracking-tight">
+              <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#12345B] tracking-tight pt-1">
                 Submit an Inquiry Brief
               </h2>
-              <p className="text-xs sm:text-sm text-[#64748B]">
+              <p className="text-sm sm:text-base text-[#475569]">
                 Fill out the brief below. Your inquiry is audited directly by our core faculty directors.
               </p>
             </div>

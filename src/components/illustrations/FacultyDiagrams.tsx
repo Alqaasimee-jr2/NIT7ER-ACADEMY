@@ -2,187 +2,213 @@ import React from 'react';
 
 export function CreativeTechDiagram({ className = 'w-full h-48' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* Background Grid */}
+    <svg
+      viewBox="0 0 420 175"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
+      className={className}
+    >
       <defs>
         <pattern id="grid-ct" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E5E5E0" strokeWidth="0.75" />
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#CFE0EE" strokeWidth="0.75" />
         </pattern>
       </defs>
-      <rect width="400" height="160" fill="url(#grid-ct)" opacity="0.6" />
+      <rect width="420" height="175" rx="10" fill="url(#grid-ct)" opacity="0.75" />
 
       {/* Layer 1: Edge Ingestion */}
-      <rect x="20" y="30" width="90" height="100" fill="#FFFFFF" stroke="#121212" strokeWidth="1.5" />
-      <rect x="25" y="35" width="80" height="16" fill="#121212" />
-      <text x="32" y="47" fill="#F5C842" fontSize="8" fontFamily="monospace" fontWeight="bold">01. EDGE / API</text>
-      <text x="30" y="70" fill="#71717A" fontSize="7" fontFamily="sans-serif">Next.js 16 Server</text>
-      <text x="30" y="85" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">Turbopack SSR</text>
-      <text x="30" y="100" fill="#71717A" fontSize="7" fontFamily="sans-serif">Streaming RSC</text>
-      <text x="30" y="115" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">Latency: &lt;40ms</text>
+      <rect x="14" y="24" width="108" height="126" rx="8" fill="#FFFFFF" stroke="#12345B" strokeWidth="1.5" />
+      <rect x="20" y="30" width="96" height="20" rx="4" fill="#12345B" />
+      <text x="27" y="43" fill="#E6AD3C" fontSize="8.5" fontFamily="monospace" fontWeight="700">01. EDGE / API</text>
+      <text x="24" y="68" fill="#4A607A" fontSize="8.5" fontFamily="sans-serif">Next.js 16 App</text>
+      <text x="24" y="86" fill="#12345B" fontSize="9" fontFamily="monospace" fontWeight="700">Turbopack SSR</text>
+      <text x="24" y="104" fill="#4A607A" fontSize="8.5" fontFamily="sans-serif">Streaming RSC</text>
+      <rect x="22" y="118" width="92" height="20" rx="4" fill="#EEF7FC" />
+      <text x="28" y="131" fill="#1769AA" fontSize="8" fontFamily="monospace" fontWeight="700">Latency: &lt;40ms</text>
 
       {/* Connection 1 */}
-      <line x1="110" y1="80" x2="150" y2="80" stroke="#C9A84C" strokeWidth="1.5" strokeDasharray="3 3" />
-      <polygon points="150,77 156,80 150,83" fill="#C9A84C" />
+      <line x1="122" y1="87" x2="152" y2="87" stroke="#1769AA" strokeWidth="2" strokeDasharray="3 3" />
+      <polygon points="150,83 157,87 150,91" fill="#1769AA" />
 
       {/* Layer 2: Core Processing & AI Intelligence */}
-      <rect x="155" y="20" width="100" height="120" fill="#FFFFFF" stroke="#C9A84C" strokeWidth="1.5" />
-      <rect x="160" y="25" width="90" height="16" fill="#C9A84C" />
-      <text x="168" y="37" fill="#121212" fontSize="8" fontFamily="monospace" fontWeight="bold">02. AI TELEMETRY</text>
-      <text x="168" y="60" fill="#71717A" fontSize="7" fontFamily="sans-serif">Multimodal Inference</text>
-      <text x="168" y="75" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">Vector Embeddings</text>
-      <text x="168" y="90" fill="#71717A" fontSize="7" fontFamily="sans-serif">Function Calling</text>
-      <text x="168" y="105" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">Semantic RAG &amp; Tools</text>
-      <text x="168" y="125" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">Output: Validated JSON</text>
+      <rect x="157" y="16" width="114" height="142" rx="8" fill="#FFFFFF" stroke="#1769AA" strokeWidth="1.75" />
+      <rect x="163" y="22" width="102" height="20" rx="4" fill="#E6AD3C" />
+      <text x="170" y="35" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">02. AI TELEMETRY</text>
+      <text x="167" y="59" fill="#4A607A" fontSize="8.5" fontFamily="sans-serif">Multimodal LLM</text>
+      <text x="167" y="77" fill="#12345B" fontSize="9" fontFamily="monospace" fontWeight="700">Vector Search</text>
+      <text x="167" y="95" fill="#4A607A" fontSize="8.5" fontFamily="sans-serif">Tool Execution</text>
+      <text x="167" y="113" fill="#12345B" fontSize="9" fontFamily="monospace" fontWeight="700">Semantic RAG</text>
+      <rect x="165" y="126" width="98" height="20" rx="4" fill="#12345B" />
+      <text x="171" y="139" fill="#E6AD3C" fontSize="8" fontFamily="monospace" fontWeight="700">Typed JSON I/O</text>
 
       {/* Connection 2 */}
-      <line x1="255" y1="80" x2="290" y2="80" stroke="#C9A84C" strokeWidth="1.5" strokeDasharray="3 3" />
-      <polygon points="290,77 296,80 290,83" fill="#C9A84C" />
+      <line x1="271" y1="87" x2="300" y2="87" stroke="#1769AA" strokeWidth="2" strokeDasharray="3 3" />
+      <polygon points="298,83 305,87 298,91" fill="#1769AA" />
 
       {/* Layer 3: Reactive Clients */}
-      <rect x="295" y="30" width="85" height="100" fill="#FFFFFF" stroke="#121212" strokeWidth="1.5" />
-      <rect x="300" y="35" width="75" height="16" fill="#121212" />
-      <text x="307" y="47" fill="#FFFFFF" fontSize="8" fontFamily="monospace" fontWeight="bold">03. CLIENTS</text>
-      <text x="306" y="70" fill="#71717A" fontSize="7" fontFamily="sans-serif">React 19 Canvas</text>
-      <text x="306" y="85" fill="#121212" fontSize="7.5" fontFamily="monospace" fontWeight="bold">Flutter Mobile</text>
-      <text x="306" y="100" fill="#71717A" fontSize="7" fontFamily="sans-serif">Offline Cache</text>
-      <text x="306" y="115" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">60 FPS Native</text>
+      <rect x="305" y="24" width="101" height="126" rx="8" fill="#FFFFFF" stroke="#12345B" strokeWidth="1.5" />
+      <rect x="311" y="30" width="89" height="20" rx="4" fill="#1769AA" />
+      <text x="319" y="43" fill="#FFFFFF" fontSize="8.5" fontFamily="monospace" fontWeight="700">03. CLIENTS</text>
+      <text x="315" y="68" fill="#4A607A" fontSize="8.5" fontFamily="sans-serif">React 19 Web</text>
+      <text x="315" y="86" fill="#12345B" fontSize="9" fontFamily="monospace" fontWeight="700">Flutter Mobile</text>
+      <text x="315" y="104" fill="#4A607A" fontSize="8.5" fontFamily="sans-serif">Offline Sync</text>
+      <rect x="313" y="118" width="85" height="20" rx="4" fill="#EEF7FC" />
+      <text x="320" y="131" fill="#12345B" fontSize="8" fontFamily="monospace" fontWeight="700">60 FPS Native</text>
     </svg>
   );
 }
 
 export function CognitiveSystemsDiagram({ className = 'w-full h-48' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <svg
+      viewBox="0 0 420 175"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
+      className={className}
+    >
       <defs>
         <pattern id="grid-cs" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E5E5E0" strokeWidth="0.75" />
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#CFE0EE" strokeWidth="0.75" />
         </pattern>
       </defs>
-      <rect width="400" height="160" fill="url(#grid-cs)" opacity="0.6" />
+      <rect width="420" height="175" rx="10" fill="url(#grid-cs)" opacity="0.75" />
 
       {/* Central Flow7 Cycle */}
-      <circle cx="200" cy="80" r="55" stroke="#E5E5E0" strokeWidth="2" />
-      <circle cx="200" cy="80" r="55" stroke="#C9A84C" strokeWidth="2" strokeDasharray="30 15" />
+      <circle cx="210" cy="87" r="56" stroke="#D5E3EF" strokeWidth="2.5" />
+      <circle cx="210" cy="87" r="56" stroke="#1769AA" strokeWidth="2.5" strokeDasharray="28 14" />
 
       {/* Center Core */}
-      <circle cx="200" cy="80" r="28" fill="#121212" />
-      <text x="183" y="78" fill="#F5C842" fontSize="8.5" fontFamily="monospace" fontWeight="bold">FLOW7</text>
-      <text x="178" y="88" fill="#D1D1CB" fontSize="6.5" fontFamily="monospace">STAMINA OS</text>
+      <circle cx="210" cy="87" r="32" fill="#12345B" />
+      <text x="210" y="84" textAnchor="middle" fill="#E6AD3C" fontSize="10" fontFamily="monospace" fontWeight="700">FLOW7</text>
+      <text x="210" y="96" textAnchor="middle" fill="#FFFFFF" fontSize="7.5" fontFamily="monospace">STAMINA OS</text>
 
       {/* Node 1: Top (Intention) */}
-      <rect x="155" y="10" width="90" height="26" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <text x="165" y="24" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">01. INVIOLABLE GOAL</text>
-      <text x="165" y="32" fill="#71717A" fontSize="6" fontFamily="sans-serif">Single-threaded focus</text>
+      <rect x="148" y="8" width="124" height="32" rx="6" fill="#FFFFFF" stroke="#12345B" strokeWidth="1.5" />
+      <text x="210" y="22" textAnchor="middle" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">01. INVIOLABLE GOAL</text>
+      <text x="210" y="33" textAnchor="middle" fill="#4A607A" fontSize="7.5" fontFamily="sans-serif">Single-threaded focus</text>
 
       {/* Node 2: Right (Execution Block) */}
-      <rect x="270" y="65" width="95" height="30" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <text x="278" y="79" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">02. DEEP SPRINT (90M)</text>
-      <text x="278" y="89" fill="#C9A84C" fontSize="6" fontFamily="sans-serif">Friction firewalls active</text>
+      <rect x="282" y="69" width="126" height="36" rx="6" fill="#FFFFFF" stroke="#1769AA" strokeWidth="1.5" />
+      <text x="345" y="85" textAnchor="middle" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">02. DEEP SPRINT (90M)</text>
+      <text x="345" y="97" textAnchor="middle" fill="#1769AA" fontSize="7.5" fontFamily="sans-serif" fontWeight="600">Friction firewall active</text>
 
       {/* Node 3: Bottom (Reality Telemetry) */}
-      <rect x="155" y="125" width="90" height="26" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <text x="164" y="138" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">03. REALITY AUDIT</text>
-      <text x="164" y="146" fill="#71717A" fontSize="6" fontFamily="sans-serif">Zero self-deception</text>
+      <rect x="148" y="135" width="124" height="32" rx="6" fill="#FFFFFF" stroke="#12345B" strokeWidth="1.5" />
+      <text x="210" y="149" textAnchor="middle" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">03. REALITY AUDIT</text>
+      <text x="210" y="160" textAnchor="middle" fill="#4A607A" fontSize="7.5" fontFamily="sans-serif">Zero self-deception</text>
 
       {/* Node 4: Left (Course Correction) */}
-      <rect x="35" y="65" width="95" height="30" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <text x="43" y="79" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">04. WEEKLY RETRO</text>
-      <text x="43" y="89" fill="#71717A" fontSize="6" fontFamily="sans-serif">Compounding velocity</text>
+      <rect x="12" y="69" width="126" height="36" rx="6" fill="#FFFFFF" stroke="#12345B" strokeWidth="1.5" />
+      <text x="75" y="85" textAnchor="middle" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">04. WEEKLY RETRO</text>
+      <text x="75" y="97" textAnchor="middle" fill="#4A607A" fontSize="7.5" fontFamily="sans-serif">Compounding velocity</text>
     </svg>
   );
 }
 
 export function WritingDiagram({ className = 'w-full h-48' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <svg
+      viewBox="0 0 420 175"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
+      className={className}
+    >
       <defs>
         <pattern id="grid-wr" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E5E5E0" strokeWidth="0.75" />
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#CFE0EE" strokeWidth="0.75" />
         </pattern>
       </defs>
-      <rect width="400" height="160" fill="url(#grid-wr)" opacity="0.6" />
+      <rect width="420" height="175" rx="10" fill="url(#grid-wr)" opacity="0.75" />
 
       {/* Spec Sheet Layout */}
-      <rect x="40" y="18" width="320" height="124" fill="#FFFFFF" stroke="#121212" strokeWidth="1.5" />
-      
-      {/* Document Header Bar */}
-      <rect x="40" y="18" width="320" height="24" fill="#FAF9F6" stroke="#E5E5E0" strokeWidth="1" />
-      <circle cx="55" cy="30" r="3" fill="#C9A84C" />
-      <circle cx="65" cy="30" r="3" fill="#D1D1CB" />
-      <text x="80" y="34" fill="#121212" fontSize="8" fontFamily="monospace" fontWeight="bold">TECHNICAL SPECIFICATION // N7-ADR-004</text>
+      <rect x="28" y="16" width="364" height="142" rx="8" fill="#FFFFFF" stroke="#12345B" strokeWidth="1.5" />
 
-      {/* Visual Hierarchy Columns */}
-      <line x1="60" y1="56" x2="220" y2="56" stroke="#121212" strokeWidth="2.5" />
-      <line x1="60" y1="68" x2="340" y2="68" stroke="#71717A" strokeWidth="1" />
-      <line x1="60" y1="78" x2="320" y2="78" stroke="#71717A" strokeWidth="1" />
-      <line x1="60" y1="88" x2="280" y2="88" stroke="#71717A" strokeWidth="1" />
+      {/* Document Header Bar */}
+      <rect x="28" y="16" width="364" height="28" rx="8" fill="#12345B" />
+      <circle cx="46" cy="30" r="3.5" fill="#E6AD3C" />
+      <circle cx="58" cy="30" r="3.5" fill="#4FA3D1" />
+      <text x="74" y="33" fill="#FFFFFF" fontSize="8.5" fontFamily="monospace" fontWeight="700">TECHNICAL SPECIFICATION // N7-ADR-004</text>
+
+      {/* Visual Hierarchy Lines */}
+      <rect x="48" y="56" width="180" height="6" rx="3" fill="#12345B" />
+      <rect x="48" y="70" width="310" height="4" rx="2" fill="#94A3B8" />
+      <rect x="48" y="80" width="290" height="4" rx="2" fill="#94A3B8" />
+      <rect x="48" y="90" width="240" height="4" rx="2" fill="#94A3B8" />
 
       {/* Callout box */}
-      <rect x="60" y="98" width="160" height="30" fill="#F9F3E5" stroke="#C9A84C" strokeWidth="1" />
-      <text x="68" y="110" fill="#9B7C28" fontSize="7" fontFamily="monospace" fontWeight="bold">ARCHITECTURAL DECISION</text>
-      <text x="68" y="122" fill="#121212" fontSize="7" fontFamily="sans-serif">Clarity precedes code execution.</text>
+      <rect x="48" y="106" width="184" height="38" rx="6" fill="#EEF7FC" stroke="#1769AA" strokeWidth="1.25" />
+      <text x="58" y="121" fill="#1769AA" fontSize="8" fontFamily="monospace" fontWeight="700">ARCHITECTURAL DECISION</text>
+      <text x="58" y="135" fill="#12345B" fontSize="8.5" fontFamily="sans-serif" fontWeight="600">Clarity precedes code execution.</text>
 
       {/* Annotation Marker */}
-      <rect x="250" y="98" width="110" height="30" fill="#FFFFFF" stroke="#121212" strokeWidth="1" />
-      <text x="258" y="110" fill="#121212" fontSize="7" fontFamily="monospace">PROSE METRICS</text>
-      <text x="258" y="122" fill="#C9A84C" fontSize="7" fontFamily="monospace" fontWeight="bold">Flesch-Kincaid: 72 (Crisp)</text>
+      <rect x="244" y="106" width="128" height="38" rx="6" fill="#FAFCFE" stroke="#12345B" strokeWidth="1.25" />
+      <text x="254" y="121" fill="#4A607A" fontSize="8" fontFamily="monospace" fontWeight="700">PROSE TELEMETRY</text>
+      <text x="254" y="135" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">Clarity: 98% Crisp</text>
     </svg>
   );
 }
 
 export function ComputerEducationDiagram({ className = 'w-full h-48' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <svg
+      viewBox="0 0 420 175"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
+      className={className}
+    >
       <defs>
         <pattern id="grid-ce" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E5E5E0" strokeWidth="0.75" />
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#CFE0EE" strokeWidth="0.75" />
         </pattern>
       </defs>
-      <rect width="400" height="160" fill="url(#grid-ce)" opacity="0.6" />
+      <rect width="420" height="175" rx="10" fill="url(#grid-ce)" opacity="0.75" />
 
-      {/* Layer 0: Hardware Anatomy & Silicon */}
-      <rect x="15" y="30" width="80" height="100" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <rect x="20" y="35" width="70" height="16" fill="#121212" />
-      <text x="24" y="46" fill="#F5C842" fontSize="7" fontFamily="monospace" fontWeight="bold">01. HARDWARE</text>
-      <text x="22" y="68" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">CPU Architecture</text>
-      <text x="22" y="82" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">RAM &amp; NVMe Bus</text>
-      <text x="22" y="96" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Motherboard I/O</text>
-      <text x="22" y="112" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">Power &amp; Ports</text>
+      {/* Layer 1: Hardware */}
+      <rect x="10" y="24" width="90" height="126" rx="7" fill="#FFFFFF" stroke="#12345B" strokeWidth="1.5" />
+      <rect x="15" y="29" width="80" height="20" rx="4" fill="#12345B" />
+      <text x="21" y="42" fill="#E6AD3C" fontSize="8" fontFamily="monospace" fontWeight="700">01. HARDWARE</text>
+      <text x="18" y="68" fill="#4A607A" fontSize="8" fontFamily="sans-serif">CPU &amp; Cores</text>
+      <text x="18" y="86" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">RAM &amp; NVMe</text>
+      <text x="18" y="104" fill="#4A607A" fontSize="8" fontFamily="sans-serif">System I/O</text>
+      <text x="18" y="126" fill="#1769AA" fontSize="8" fontFamily="monospace" fontWeight="700">Diagnostics</text>
 
-      <line x1="95" y1="80" x2="110" y2="80" stroke="#121212" strokeWidth="1.5" />
+      <line x1="100" y1="87" x2="112" y2="87" stroke="#1769AA" strokeWidth="2" />
 
-      {/* Layer 1: Operating System & Filesystems */}
-      <rect x="110" y="25" width="85" height="110" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <rect x="115" y="30" width="75" height="16" fill="#121212" />
-      <text x="120" y="41" fill="#FFFFFF" fontSize="7" fontFamily="monospace" fontWeight="bold">02. OS &amp; SHELL</text>
-      <text x="117" y="64" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Win / macOS / Linux</text>
-      <text x="117" y="78" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">File Hierarchies</text>
-      <text x="117" y="92" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Terminal &amp; Bash</text>
-      <text x="117" y="106" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">Path &amp; Permissions</text>
-      <text x="117" y="122" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">System Health</text>
+      {/* Layer 2: OS & Shell */}
+      <rect x="112" y="20" width="94" height="134" rx="7" fill="#FFFFFF" stroke="#1769AA" strokeWidth="1.5" />
+      <rect x="117" y="25" width="84" height="20" rx="4" fill="#1769AA" />
+      <text x="123" y="38" fill="#FFFFFF" fontSize="8" fontFamily="monospace" fontWeight="700">02. OS &amp; SHELL</text>
+      <text x="120" y="64" fill="#4A607A" fontSize="8" fontFamily="sans-serif">Win / Linux</text>
+      <text x="120" y="82" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">File Trees</text>
+      <text x="120" y="100" fill="#4A607A" fontSize="8" fontFamily="sans-serif">CLI &amp; Bash</text>
+      <text x="120" y="118" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">Permissions</text>
+      <text x="120" y="138" fill="#1769AA" fontSize="8" fontFamily="monospace" fontWeight="700">OS Mastery</text>
 
-      <line x1="195" y1="80" x2="210" y2="80" stroke="#121212" strokeWidth="1.5" />
+      <line x1="206" y1="87" x2="218" y2="87" stroke="#1769AA" strokeWidth="2" />
 
-      {/* Layer 2: Productivity Suites & Cloud */}
-      <rect x="210" y="30" width="85" height="100" fill="#FFFFFF" stroke="#121212" strokeWidth="1.2" />
-      <rect x="215" y="35" width="75" height="16" fill="#121212" />
-      <text x="219" y="46" fill="#FFFFFF" fontSize="7" fontFamily="monospace" fontWeight="bold">03. PRODUCTIVITY</text>
-      <text x="217" y="68" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Word &amp; Docs Style</text>
-      <text x="217" y="82" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">Excel / Pivot Tables</text>
-      <text x="217" y="96" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">PowerPoint Decks</text>
-      <text x="217" y="112" fill="#C9A84C" fontSize="6.5" fontFamily="monospace">Cloud Sync &amp; M365</text>
+      {/* Layer 3: Productivity */}
+      <rect x="218" y="24" width="92" height="126" rx="7" fill="#FFFFFF" stroke="#12345B" strokeWidth="1.5" />
+      <rect x="223" y="29" width="82" height="20" rx="4" fill="#12345B" />
+      <text x="228" y="42" fill="#FFFFFF" fontSize="8" fontFamily="monospace" fontWeight="700">03. WORKFLOW</text>
+      <text x="226" y="68" fill="#4A607A" fontSize="8" fontFamily="sans-serif">Docs &amp; Specs</text>
+      <text x="226" y="86" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">Spreadsheets</text>
+      <text x="226" y="104" fill="#4A607A" fontSize="8" fontFamily="sans-serif">Slide Decks</text>
+      <text x="226" y="126" fill="#1769AA" fontSize="8" fontFamily="monospace" fontWeight="700">Cloud Sync</text>
 
-      <line x1="295" y1="80" x2="310" y2="80" stroke="#C9A84C" strokeWidth="1.5" />
+      <line x1="310" y1="87" x2="322" y2="87" stroke="#E6AD3C" strokeWidth="2" />
 
-      {/* Layer 3: Security & Cyber Hygiene */}
-      <rect x="310" y="20" width="75" height="120" fill="#F9F3E5" stroke="#C9A84C" strokeWidth="1.5" />
-      <rect x="315" y="25" width="65" height="16" fill="#C9A84C" />
-      <text x="320" y="36" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">04. SECURITY</text>
-      <text x="316" y="58" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">Web &amp; DNS Basics</text>
-      <text x="316" y="73" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">Password Vaults</text>
-      <text x="316" y="88" fill="#71717A" fontSize="6.5" fontFamily="sans-serif">2FA &amp; Passkeys</text>
-      <text x="316" y="103" fill="#121212" fontSize="7" fontFamily="monospace" fontWeight="bold">Phishing Defense</text>
-      <text x="316" y="122" fill="#9B7C28" fontSize="6.5" fontFamily="monospace">3-2-1 Backups</text>
+      {/* Layer 4: Security */}
+      <rect x="322" y="20" width="88" height="134" rx="7" fill="#EEF7FC" stroke="#1769AA" strokeWidth="1.5" />
+      <rect x="327" y="25" width="78" height="20" rx="4" fill="#E6AD3C" />
+      <text x="333" y="38" fill="#12345B" fontSize="8" fontFamily="monospace" fontWeight="700">04. SECURITY</text>
+      <text x="330" y="64" fill="#4A607A" fontSize="8" fontFamily="sans-serif">DNS &amp; HTTPS</text>
+      <text x="330" y="82" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">Vaults &amp; 2FA</text>
+      <text x="330" y="100" fill="#4A607A" fontSize="8" fontFamily="sans-serif">Zero Phishing</text>
+      <text x="330" y="118" fill="#12345B" fontSize="8.5" fontFamily="monospace" fontWeight="700">3-2-1 Backups</text>
+      <text x="330" y="138" fill="#1769AA" fontSize="8" fontFamily="monospace" fontWeight="700">Cyber Hygiene</text>
     </svg>
   );
 }

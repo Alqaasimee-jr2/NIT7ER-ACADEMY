@@ -7,8 +7,8 @@ import { MessageCircle, ArrowUpRight } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#D9E6F0] bg-white pt-14 pb-12 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <footer className="border-t border-[#D9E6F0] bg-white pt-16 pb-12 mt-20">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
           {/* Brand & Vision */}
           <div className="md:col-span-5 space-y-4">

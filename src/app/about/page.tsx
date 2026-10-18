@@ -68,29 +68,29 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="max-w-3xl space-y-3 relative z-10 pt-1">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+        <div className="max-w-3xl space-y-3.5 relative z-10 pt-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[11px] sm:text-xs font-mono max-w-full">
             <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring shrink-0"></span>
             <span className="font-bold text-[#12345B] truncate">INSTITUTIONAL PHILOSOPHY // FOUNDER THESIS</span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#12345B] tracking-tight leading-[1.12]">
             Why We Built NIT7ER Academy.
           </h1>
 
-          <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-[#475569] leading-relaxed font-normal">
             A manifesto on engineering rigor, cognitive self-regulation, and modern polymathic competence by founder Abdullah Qaasim-Falade.
           </p>
         </div>
       </section>
 
       {/* Founder Story Section */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white grid grid-cols-1 lg:grid-cols-12 gap-8 items-start border border-[#D9E6F0] shadow-xs">
-        <div className="lg:col-span-7 space-y-4 text-xs sm:text-sm text-[#64748B] leading-relaxed">
-          <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-12 bg-white grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start border border-[#D9E6F0] shadow-xs">
+        <div className="lg:col-span-7 space-y-5 text-sm sm:text-base text-[#475569] leading-relaxed">
+          <span className="label-mono px-3 py-1 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
             Founder Biography &amp; Genesis
           </span>
-          <h2 className="text-2xl font-black text-[#12345B] tracking-tight pt-1">
+          <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#12345B] tracking-tight pt-1">
             From Lagos Studio to Educational Incubator
           </h2>
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
             NIT7ER began as a software and creative technology studio in Lagos. Building production web systems, mobile apps, and developer tools made one thing clear:
           </p>
 
-          <div className="p-4 rounded-xl bg-[#EEF7FC]/70 border-l-4 border-[#1769AA] text-[#1F2937] font-mono text-xs italic leading-relaxed">
+          <div className="p-5 rounded-2xl bg-[#EEF7FC]/70 border-l-4 border-[#1769AA] text-[#1F2937] font-mono text-xs sm:text-sm italic leading-relaxed">
             &ldquo;Traditional education focuses on memorizing syntax for exams. We train builders to write production software, sustain deep focus, communicate clearly, and understand computers fundamentally.&rdquo;
           </div>
 
@@ -107,66 +107,66 @@ export default function AboutPage() {
           </p>
 
           <div className="pt-2 flex flex-wrap gap-2 text-xs font-mono font-bold text-[#12345B]">
-            <span className="px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full">Creative Technologist</span>
-            <span className="px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full">Systems Architect</span>
-            <span className="px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full">Founder, Flow7</span>
-            <span className="px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full">Lagos, Nigeria</span>
+            <span className="px-3.5 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full">Creative Technologist</span>
+            <span className="px-3.5 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full">Systems Architect</span>
+            <span className="px-3.5 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full">Founder, Flow7</span>
+            <span className="px-3.5 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full">Lagos, Nigeria</span>
           </div>
         </div>
 
         {/* Founder Card & Channels */}
-        <div className="lg:col-span-5 curve-soft bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-2xl p-6 space-y-5 shadow-xs">
-          <div className="flex items-center gap-3">
+        <div className="lg:col-span-5 curve-soft bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-2xl p-6 sm:p-7 space-y-5 shadow-xs">
+          <div className="flex items-center gap-3.5">
             <N7BrandMark size="lg" variant="gold" />
             <div>
-              <h3 className="text-base font-bold text-[#12345B]">
+              <h3 className="font-display text-lg font-extrabold text-[#12345B]">
                 {FOUNDER_INFO.name}
               </h3>
-              <p className="label-mono text-[9px] text-[#64748B]">
+              <p className="label-mono text-[10px] text-[#64748B] mt-0.5">
                 {FOUNDER_INFO.title}
               </p>
             </div>
           </div>
 
-          <div className="space-y-2.5 text-xs text-[#64748B] border-t border-[#D9E6F0] pt-4 font-mono">
-            <div className="flex items-center gap-2">
-              <Mail className="w-3.5 h-3.5 text-[#1769AA]" />
-              <a href={`mailto:${FOUNDER_INFO.email}`} className="hover:underline text-[#12345B]">
+          <div className="space-y-3 text-xs sm:text-sm text-[#475569] border-t border-[#D9E6F0] pt-4 font-mono">
+            <div className="flex items-center gap-2.5">
+              <Mail className="w-4 h-4 text-[#1769AA] shrink-0" />
+              <a href={`mailto:${FOUNDER_INFO.email}`} className="hover:underline text-[#12345B] break-all">
                 {FOUNDER_INFO.email}
               </a>
             </div>
-            <div className="flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5 text-[#1769AA]" />
+            <div className="flex items-center gap-2.5">
+              <Phone className="w-4 h-4 text-[#1769AA] shrink-0" />
               <a href={`tel:${FOUNDER_INFO.phone}`} className="hover:underline text-[#12345B]">
                 {FOUNDER_INFO.phone}
               </a>
             </div>
           </div>
 
-          <div className="pt-2 border-t border-[#D9E6F0] flex flex-wrap items-center gap-2">
+          <div className="pt-3 border-t border-[#D9E6F0] flex flex-wrap items-center gap-2">
             <a
               href={FOUNDER_INFO.github}
               target="_blank"
               rel="noreferrer"
-              className="btn-press px-3 py-1.5 bg-white border border-[#D9E6F0] rounded-full text-xs font-mono font-bold text-[#12345B] hover:border-[#12345B] transition-colors flex items-center gap-1.5 shadow-2xs"
+              className="btn-press px-3.5 py-2 bg-white border border-[#D9E6F0] rounded-full text-xs font-mono font-bold text-[#12345B] hover:border-[#12345B] transition-colors flex items-center gap-1.5 shadow-2xs"
             >
-              <GithubIcon className="w-3 h-3" />
+              <GithubIcon className="w-3.5 h-3.5" />
               <span>GitHub</span>
             </a>
             <a
               href={FOUNDER_INFO.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="btn-press px-3 py-1.5 bg-white border border-[#D9E6F0] rounded-full text-xs font-mono font-bold text-[#12345B] hover:border-[#12345B] transition-colors flex items-center gap-1.5 shadow-2xs"
+              className="btn-press px-3.5 py-2 bg-white border border-[#D9E6F0] rounded-full text-xs font-mono font-bold text-[#12345B] hover:border-[#12345B] transition-colors flex items-center gap-1.5 shadow-2xs"
             >
-              <LinkedinIcon className="w-3 h-3" />
+              <LinkedinIcon className="w-3.5 h-3.5" />
               <span>LinkedIn</span>
             </a>
             <a
               href={FOUNDER_INFO.whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn-press px-3.5 py-1.5 bg-[#12345B] text-white text-xs font-mono font-bold rounded-full hover:bg-[#1769AA] transition-colors flex items-center gap-1.5 sm:ml-auto shadow-sm"
+              className="btn-press px-4 py-2 bg-[#12345B] text-white text-xs font-mono font-bold rounded-full hover:bg-[#1769AA] transition-colors flex items-center gap-1.5 sm:ml-auto shadow-sm"
             >
               <MessageCircle className="w-3.5 h-3.5 text-[#E6AD3C]" />
               <span>WhatsApp</span>
@@ -176,39 +176,39 @@ export default function AboutPage() {
       </section>
 
       {/* Visual Studio Cohort & Culture Banner */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-12 bg-white border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         {/* Subtle Decorative Background Contour */}
         <div
           className="absolute -top-12 -right-12 w-80 h-80 opacity-15 pointer-events-none bg-contain bg-no-repeat"
           style={{ backgroundImage: `url('/brand/contour-blob.png')` }}
         />
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
           <div className="lg:col-span-6 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
               <span className="font-bold text-[#12345B]">STUDIO CULTURE // COLLECTIVE VELOCITY</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#12345B] tracking-tight">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#12345B] tracking-tight leading-tight">
               An Apprenticeship Model for the Independent Era.
             </h2>
-            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
               Engineering is learned through practice. Cohorts work through production codebases, conduct peer reviews, and critique architectural decisions together.
             </p>
-            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-mono text-[#1769AA]">
+            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs sm:text-sm font-mono text-[#1769AA]">
               <span className="flex items-center gap-1.5 font-bold">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#12345B]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#12345B]"></span>
                 Lagos Studio Workstations
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5 font-bold">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#E6AD3C]"></span>
                 Async Global Cohorts
               </span>
             </div>
           </div>
 
-          <div className="lg:col-span-6 flex items-center justify-center p-4 bg-[#EEF7FC]/50 rounded-2xl border border-[#D9E6F0]/80">
-            <div className="relative w-full h-56 sm:h-64">
+          <div className="lg:col-span-6 flex items-center justify-center p-5 bg-[#EEF7FC]/50 rounded-2xl border border-[#D9E6F0]/80">
+            <div className="relative w-full h-60 sm:h-72">
               <Image
                 src="/brand/illustration-team-tight.png"
                 alt="NIT7ER Studio Team Collaboration"
@@ -222,39 +222,39 @@ export default function AboutPage() {
       </section>
 
       {/* The Core Studio Faculty & Practitioners (Editorial Teaser) */}
-      <section id="team" className="technical-border curve-asymmetric p-6 sm:p-8 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl shadow-xs scroll-mt-24 space-y-6">
+      <section id="team" className="technical-border curve-asymmetric p-6 sm:p-8 lg:p-10 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl shadow-xs scroll-mt-24 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D9E6F0] pb-4">
-          <div className="space-y-1.5 max-w-xl">
+          <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
               <span className="font-bold text-[#12345B]">STUDIO DIRECTORS // CORE FACULTY</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-[#12345B] tracking-tight">
+            <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#12345B] tracking-tight">
               The Practitioners Behind the Standard
             </h2>
-            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
               Our core faculty are active studio practitioners, creative directors, and systems architects shipping production software every day.
             </p>
           </div>
 
           <Link
             href="/team"
-            className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm shrink-0 self-start sm:self-auto"
+            className="btn-press inline-flex items-center gap-2 px-5 py-3 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm shrink-0 self-start sm:self-auto"
           >
             <span>MEET OUR DIRECTORS</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+            <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
           </Link>
         </div>
 
         {/* 3 Core Directors Mini Previews */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {STUDIO_TEAM.map((member) => (
             <Link
               key={member.id}
               href={`/team#${member.id}`}
-              className="p-4 bg-white border border-[#D9E6F0] rounded-xl flex items-center gap-3.5 shadow-2xs hover:border-[#1769AA] transition-colors group"
+              className="p-5 bg-white border border-[#D9E6F0] rounded-2xl flex items-center gap-4 shadow-2xs hover:border-[#1769AA] transition-colors group"
             >
-              <div className="relative w-12 h-12 rounded-full overflow-hidden bg-[#F5F2EB] border border-[#D9E6F0] shrink-0">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden bg-[#F5F2EB] border border-[#D9E6F0] shrink-0">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -263,14 +263,14 @@ export default function AboutPage() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                 />
               </div>
-              <div className="min-w-0">
-                <h4 className="text-xs sm:text-sm font-bold text-[#12345B] group-hover:text-[#1769AA] transition-colors truncate">
+              <div className="min-w-0 space-y-0.5">
+                <h4 className="font-display text-sm sm:text-base font-bold text-[#12345B] group-hover:text-[#1769AA] transition-colors">
                   {member.name}
                 </h4>
-                <p className="text-xs font-mono text-[#1769AA] truncate">
+                <p className="text-xs font-mono font-semibold text-[#1769AA]">
                   {member.role}
                 </p>
-                <span className="text-[10px] font-mono text-[#64748B] block truncate">
+                <span className="text-xs font-mono text-[#64748B] block">
                   {member.discipline}
                 </span>
               </div>
@@ -278,42 +278,42 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono text-[#64748B] border-t border-[#D9E6F0]">
+        <div className="pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs sm:text-sm font-mono text-[#64748B] border-t border-[#D9E6F0]">
           <span>Apprentice directly alongside Abdullah, Yaasir &amp; The G3neral</span>
-          <Link href="/team" className="font-bold text-[#1769AA] hover:text-[#12345B] inline-flex items-center gap-1">
+          <Link href="/team" className="font-bold text-[#1769AA] hover:text-[#12345B] inline-flex items-center gap-1.5">
             <span>View Full Faculty Profiles &amp; Studio Drops</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+            <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
           </Link>
         </div>
       </section>
 
       {/* The 4 Institutional Tenets */}
       <section id="manifesto" className="space-y-6 scroll-mt-24">
-        <div className="border-b border-[#D9E6F0] pb-3">
-          <span className="label-mono px-2.5 py-0.5 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
+        <div className="border-b border-[#D9E6F0] pb-4">
+          <span className="label-mono px-3 py-1 bg-[#EEF7FC] text-[#1769AA] rounded-full border border-[#D9E6F0]">
             Operational Discipline
           </span>
-          <h2 className="text-xl sm:text-2xl font-black text-[#12345B] tracking-tight mt-1.5">
+          <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#12345B] tracking-tight mt-2">
             Our 4 Operational Tenets
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {coreTenets.map((tenet) => (
             <div
               key={tenet.number}
-              className="technical-border curve-soft p-6 bg-white space-y-2.5 border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] hover:-translate-y-0.5 transition-all"
+              className="technical-border curve-soft p-6 sm:p-7 bg-white space-y-3 border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] hover:-translate-y-0.5 transition-all"
             >
               <div className="flex items-center justify-between font-mono">
-                <span className="text-xl font-bold text-[#1769AA]">
+                <span className="font-display text-2xl font-extrabold text-[#1769AA]">
                   [{tenet.number}]
                 </span>
-                <ShieldCheck className="w-4 h-4 text-[#12345B]" />
+                <ShieldCheck className="w-5 h-5 text-[#12345B]" />
               </div>
-              <h3 className="font-bold text-base text-[#12345B]">
+              <h3 className="font-display font-bold text-lg text-[#12345B]">
                 {tenet.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
                 {tenet.desc}
               </p>
             </div>

@@ -32,13 +32,13 @@ export default function ProgramsPage() {
   const renderDiagram = (id: string) => {
     switch (id) {
       case 'creative-tech':
-        return <CreativeTechDiagram className="w-full h-36 sm:h-40" />;
+        return <CreativeTechDiagram className="w-full h-44 sm:h-52" />;
       case 'cognitive-performance':
-        return <CognitiveSystemsDiagram className="w-full h-36 sm:h-40" />;
+        return <CognitiveSystemsDiagram className="w-full h-44 sm:h-52" />;
       case 'writing-thought-leadership':
-        return <WritingDiagram className="w-full h-36 sm:h-40" />;
+        return <WritingDiagram className="w-full h-44 sm:h-52" />;
       case 'computer-education':
-        return <ComputerEducationDiagram className="w-full h-36 sm:h-40" />;
+        return <ComputerEducationDiagram className="w-full h-44 sm:h-52" />;
       default:
         return null;
     }
@@ -62,102 +62,102 @@ export default function ProgramsPage() {
   const totalPrograms = FACULTIES.reduce((acc, f) => acc + f.programs.length, 0);
 
   return (
-    <div className="space-y-10 sm:space-y-14">
+    <div className="space-y-12 sm:space-y-16">
       <Breadcrumbs items={[{ label: 'Curriculum & Academic Catalog' }]} />
 
       {/* 1. Header Banner & Wayfinder Intro */}
-      <section className="technical-border curve-asymmetric p-5 sm:p-10 bg-white space-y-6 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-12 bg-white space-y-8 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         <div
           className="absolute -right-8 -top-8 w-64 h-64 opacity-10 pointer-events-none bg-contain bg-no-repeat"
           style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
         />
-        <div className="max-w-3xl space-y-3.5 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+        <div className="max-w-3xl space-y-4 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[11px] sm:text-xs font-mono max-w-full">
             <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring shrink-0"></span>
             <span className="font-bold text-[#12345B] truncate">ACADEMIC CATALOG // 4 FACULTIES • 12 TRACKS</span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#12345B] tracking-tight leading-[1.12]">
             Curriculum Engineered for True Mastery.
           </h1>
 
-          <p className="text-sm sm:text-base text-[#64748B] leading-relaxed font-normal max-w-2xl">
+          <p className="text-base sm:text-lg text-[#475569] leading-relaxed font-normal max-w-2xl">
             Choose a faculty below to explore its focused syllabus, sprint modules, and capstone deliverable specifications.
           </p>
 
-          <div className="pt-1 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs font-mono text-[#64748B]">
-            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
+          <div className="pt-1 flex flex-wrap items-center gap-2.5 text-xs font-mono text-[#64748B]">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
               [4 FOUNDATIONAL FACULTIES]
             </span>
-            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
               [{totalPrograms} SPECIALIZED TRACKS]
             </span>
-            <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] font-bold">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] font-bold">
               [100% VERIFIED CAPSTONE DEFENSE]
             </span>
           </div>
         </div>
 
         {/* Quick Anchor Grid */}
-        <div className="pt-4 border-t border-[#D9E6F0] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 relative z-10">
+        <div className="pt-6 border-t border-[#D9E6F0] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
           {FACULTIES.map((fac) => (
             <a
               key={fac.id}
               href={`#${fac.id}`}
-              className="btn-press flex items-center justify-between p-3.5 bg-[#FAFCFE] hover:bg-[#EEF7FC] border border-[#D9E6F0] rounded-xl text-left transition-colors group"
+              className="btn-press flex items-start justify-between p-4 sm:p-5 bg-[#FAFCFE] hover:bg-[#EEF7FC] border border-[#D9E6F0] hover:border-[#1769AA] rounded-2xl text-left transition-all group"
             >
-              <div className="space-y-1 min-w-0 pr-2">
-                <div className="flex items-center gap-1.5 font-mono text-xs text-[#1769AA] font-bold">
+              <div className="space-y-1.5 min-w-0 pr-2">
+                <div className="flex items-center gap-2 font-mono text-xs text-[#1769AA] font-bold">
                   {getFacultyIcon(fac.id)}
                   <span>FACULTY {fac.number}</span>
                 </div>
-                <h4 className="text-xs font-bold text-[#12345B] truncate group-hover:text-[#1769AA]">
+                <h4 className="font-display text-sm sm:text-base font-bold text-[#12345B] leading-snug group-hover:text-[#1769AA]">
                   {fac.title}
                 </h4>
                 <span className="text-xs font-mono text-[#64748B] block">
                   {fac.programs.length} Specialized Tracks
                 </span>
               </div>
-              <ArrowRight className="w-4 h-4 text-[#E6AD3C] shrink-0 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#E6AD3C] shrink-0 mt-1 group-hover:translate-x-1 transition-transform" />
             </a>
           ))}
         </div>
       </section>
 
       {/* 2. The 4 Scannable Faculty Cards */}
-      <section className="space-y-6 sm:space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#D9E6F0] pb-3">
+      <section className="space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#D9E6F0] pb-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
               <span className="font-bold text-[#12345B]">DISCIPLINE OVERVIEW</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-[#12345B] tracking-tight mt-1.5">
+            <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#12345B] tracking-tight mt-2">
               Explore Our 4 Academic Faculties
             </h2>
           </div>
-          <span className="text-xs font-mono text-[#64748B]">
+          <span className="text-xs sm:text-sm font-mono text-[#64748B]">
             Click any faculty or track to inspect detailed syllabi &amp; sprint modules
           </span>
         </div>
 
         <StickyFacultyNav />
 
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-8">
           {FACULTIES.map((faculty) => (
             <article
               key={faculty.id}
               id={faculty.id}
-              className="technical-border curve-asymmetric p-5 sm:p-8 bg-white border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] transition-all scroll-mt-36 space-y-6"
+              className="technical-border curve-asymmetric p-6 sm:p-8 lg:p-10 bg-white border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] transition-all scroll-mt-36 space-y-6"
             >
               {/* Card Header & Schematic */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                <div className="lg:col-span-8 space-y-3">
-                  <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-[#64748B]">
-                    <span className="text-xl font-black text-[#12345B]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+                <div className="lg:col-span-7 space-y-3.5">
+                  <div className="flex flex-wrap items-center gap-2.5 font-mono text-xs text-[#64748B]">
+                    <span className="font-display text-2xl font-extrabold text-[#12345B]">
                       {faculty.number}
                     </span>
-                    <span className="px-2.5 py-0.5 bg-[#EEF7FC] border border-[#D9E6F0] text-[#12345B] font-bold rounded-full">
+                    <span className="px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] text-[#12345B] font-bold rounded-full">
                       {faculty.badge}
                     </span>
                     <span className="flex items-center gap-1">
@@ -174,23 +174,23 @@ export default function ProgramsPage() {
                     href={`/programs/${faculty.id}`}
                     className="inline-block hover:text-[#1769AA] transition-colors"
                   >
-                    <h3 className="text-xl sm:text-2xl font-black text-[#12345B] hover:text-[#1769AA] tracking-tight transition-colors">
+                    <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#12345B] hover:text-[#1769AA] tracking-tight transition-colors">
                       {faculty.title}
                     </h3>
                   </Link>
 
-                  <p className="text-xs sm:text-sm font-mono text-[#1769AA] font-semibold italic">
+                  <p className="text-sm sm:text-base font-mono text-[#1769AA] font-semibold italic">
                     &ldquo;{faculty.tagline}&rdquo;
                   </p>
 
-                  <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#475569] leading-relaxed">
                     {faculty.description}
                   </p>
                 </div>
 
                 {/* Right Schematic Preview */}
-                <div className="lg:col-span-4 p-4 rounded-xl bg-[#EEF7FC]/60 border border-[#D9E6F0] flex flex-col justify-center items-center shadow-2xs">
-                  <span className="label-mono text-xs text-[#64748B] self-start mb-1 font-bold">
+                <div className="lg:col-span-5 p-5 rounded-2xl bg-[#EEF7FC]/60 border border-[#D9E6F0] flex flex-col justify-center items-center shadow-2xs">
+                  <span className="label-mono text-xs text-[#64748B] self-start mb-2 font-bold">
                     SCHEMATIC // {faculty.number}
                   </span>
                   {renderDiagram(faculty.id)}
@@ -198,59 +198,61 @@ export default function ProgramsPage() {
               </div>
 
               {/* Program Tracks Pill Grid */}
-              <div className="pt-2 border-t border-[#D9E6F0] space-y-3">
+              <div className="pt-4 border-t border-[#D9E6F0] space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
                   <span className="font-bold text-[#12345B]">
                     INCLUDED TRACKS ({faculty.programs.length} SPECIALIZED SYLLABI):
                   </span>
-                  <span className="text-[#1769AA]">Culminates in Capstone Deliverable</span>
+                  <span className="text-[#1769AA] font-semibold">Culminates in Capstone Deliverable</span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {faculty.programs.map((prog) => (
                     <Link
                       key={prog.id}
                       id={prog.id}
                       href={`/programs/${faculty.id}/${prog.id}`}
-                      className="btn-press p-3.5 bg-[#FAFCFE] hover:bg-[#EEF7FC] border border-[#D9E6F0] hover:border-[#1769AA] rounded-xl space-y-1.5 transition-all block group/track scroll-mt-28"
+                      className="btn-press p-4 sm:p-5 bg-[#FAFCFE] hover:bg-[#EEF7FC] border border-[#D9E6F0] hover:border-[#1769AA] rounded-2xl space-y-2 transition-all flex flex-col justify-between group/track scroll-mt-28"
                     >
-                      <div className="flex items-center justify-between font-mono text-xs">
-                        <span className="font-bold text-[#1769AA] group-hover/track:text-[#12345B] transition-colors">
-                          {prog.code}
-                        </span>
-                        <span className="px-2 py-0.5 bg-white border border-[#D9E6F0] text-[#64748B] rounded text-xs">
-                          {prog.level}
-                        </span>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between font-mono text-xs">
+                          <span className="font-bold text-[#1769AA] group-hover/track:text-[#12345B] transition-colors">
+                            {prog.code}
+                          </span>
+                          <span className="px-2.5 py-0.5 bg-white border border-[#D9E6F0] text-[#64748B] rounded-md text-[11px] font-medium">
+                            {prog.level}
+                          </span>
+                        </div>
+                        <h5 className="font-display text-sm sm:text-base font-bold text-[#12345B] group-hover/track:text-[#1769AA] transition-colors leading-snug">
+                          {prog.title}
+                        </h5>
+                        <p className="text-xs sm:text-sm text-[#475569] leading-relaxed line-clamp-2">
+                          {prog.tagline}
+                        </p>
                       </div>
-                      <h5 className="text-xs font-bold text-[#12345B] group-hover/track:text-[#1769AA] transition-colors line-clamp-1">
-                        {prog.title}
-                      </h5>
-                      <p className="text-xs text-[#64748B] line-clamp-1">
-                        {prog.tagline}
-                      </p>
                     </Link>
                   ))}
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 border-t border-[#D9E6F0] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div className="text-xs font-mono text-[#64748B]">
+              <div className="pt-4 border-t border-[#D9E6F0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="text-xs sm:text-sm font-mono text-[#64748B]">
                   Lead Focus: <span className="text-[#12345B] font-bold">{faculty.leadAnchor}</span>
                 </div>
 
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <Link
                     href={`/programs/${faculty.id}`}
-                    className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm"
+                    className="btn-press inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm"
                   >
                     <span>ENTER FACULTY HUB</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+                    <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
                   </Link>
 
                   <Link
                     href={`/apply?track=${faculty.id}`}
-                    className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-[#EEF7FC] hover:bg-[#D9E6F0] text-[#12345B] text-xs font-mono font-bold rounded-full transition-colors"
+                    className="btn-press inline-flex items-center justify-center gap-1.5 px-5 py-3 bg-[#EEF7FC] hover:bg-[#D9E6F0] text-[#12345B] text-xs font-mono font-bold rounded-full transition-colors"
                   >
                     <span>APPLY FOR FACULTY {faculty.number}</span>
                   </Link>
