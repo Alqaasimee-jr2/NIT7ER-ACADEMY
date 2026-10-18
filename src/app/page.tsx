@@ -8,6 +8,7 @@ import { FacultyTabs } from '@/components/ui/FacultyTabs';
 import { LabsShowcase } from '@/components/ui/LabsShowcase';
 import { EnrollmentRoadmap } from '@/components/ui/EnrollmentRoadmap';
 import { FounderManifesto } from '@/components/ui/FounderManifesto';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
 
 export default function HomePage() {
   return (
@@ -122,7 +123,12 @@ export default function HomePage() {
       <FounderManifesto />
 
       {/* ========================================================= */}
-      {/* 7. ADMISSIONS INTAKE ACTIVE BANNER                        */}
+      {/* 7. KNOWLEDGE BASE & COMPARATIVE TRUST FAQ                 */}
+      {/* ========================================================= */}
+      <FAQAccordion />
+
+      {/* ========================================================= */}
+      {/* 8. ADMISSIONS INTAKE ACTIVE BANNER                        */}
       {/* ========================================================= */}
       <section className="curve-asymmetric bg-gradient-to-r from-[#12345B] via-[#1769AA] to-[#12345B] text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl border border-[#12345B] relative overflow-hidden">
         {/* Subtle Brand Shapes Accent Watermark */}

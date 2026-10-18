@@ -19,6 +19,7 @@ import {
   ComputerEducationDiagram,
 } from '@/components/illustrations/FacultyDiagrams';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'Academic Catalog // 4 Disciplines & 12 Specialized Tracks',
@@ -310,7 +311,10 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* 4. Diagnostic Intake & Admissions CTA */}
+      {/* 4. Comparative Trust & FAQ Knowledge Base */}
+      <FAQAccordion />
+
+      {/* 5. Diagnostic Intake & Admissions CTA */}
       <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-gradient-to-r from-[#12345B] via-[#1769AA] to-[#12345B] text-white space-y-4 rounded-2xl shadow-md border border-[#12345B]">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-xl">
