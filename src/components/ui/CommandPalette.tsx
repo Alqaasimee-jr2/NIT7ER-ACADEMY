@@ -1,233 +1,166 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
-import { FACULTIES, LAB_PROJECTS } from '@/data/academyData';
-import {
-  Search,
-  ArrowRight,
-} from 'lucide-react';
-
-interface SearchItem {
-  id: string;
-  title: string;
-  category: 'Program' | 'Faculty' | 'Lab' | 'Page';
-  subtitle: string;
-  href: string;
-  badge?: string;
-}
+import { FACULTIES, LAB_PROJECTS, STUDIO_TEAM } from '@/data/academyData';
 
 export function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const router = useRouter();
-  const inputRef = useRef<HTMLInputElement>(null);
 
-  // Compile all search items
-  const allItems: SearchItem[] = [
-    // Pages
-    { id: 'page-home', title: 'Home Overview', category: 'Page', subtitle: 'Main landing and studio overview', href: '/' },
-    { id: 'page-programs', title: 'Academic Catalog', category: 'Page', subtitle: 'All 4 faculties and 12 programs', href: '/programs' },
-    { id: 'page-team', title: 'Studio Directors & Faculty', category: 'Page', subtitle: 'Practitioners, directors, and core mentors', href: '/team' },
-    { id: 'page-labs', title: 'NIT7ER Labs Showcase', category: 'Page', subtitle: 'Incubated systems and case studies', href: '/labs' },
-    { id: 'page-about', title: 'Philosophy & Founder Story', category: 'Page', subtitle: 'Founder story and institutional thesis', href: '/about' },
-    { id: 'page-apply', title: 'Cohort Application', category: 'Page', subtitle: 'Diagnostic intake queue', href: '/apply' },
-    { id: 'page-contact', title: 'Contact & Admissions Desk', category: 'Page', subtitle: 'Direct lines and WhatsApp inquiry', href: '/contact' },
-
-    // Faculties
-    ...FACULTIES.map((fac) => ({
-      id: `faculty-${fac.id}`,
-      title: `${fac.badge}: ${fac.title}`,
-      category: 'Faculty' as const,
-      subtitle: fac.tagline,
-      href: `/programs/${fac.id}`,
-      badge: fac.badge,
-    })),
-
-    // Programs
-    ...FACULTIES.flatMap((fac) =>
-      fac.programs.map((prog) => ({
-        id: `prog-${prog.id}`,
-        title: `${prog.code}: ${prog.title}`,
-        category: 'Program' as const,
-        subtitle: `${prog.duration} • ${prog.tagline}`,
-        href: `/programs/${fac.id}#${prog.id}`,
-        badge: prog.code,
-      }))
-    ),
-
-    // Labs
-    ...LAB_PROJECTS.map((lab) => ({
-      id: `lab-${lab.id}`,
-      title: lab.title,
-      category: 'Lab' as const,
-      subtitle: `${lab.category} — ${lab.tagline}`,
-      href: `/labs#${lab.id}`,
-      badge: lab.badge,
-    })),
-  ];
-
-  const filteredItems = query.trim()
-    ? allItems.filter(
-        (item) =>
-          item.title.toLowerCase().includes(query.toLowerCase()) ||
-          item.subtitle.toLowerCase().includes(query.toLowerCase()) ||
-          item.category.toLowerCase().includes(query.toLowerCase()) ||
-          (item.badge && item.badge.toLowerCase().includes(query.toLowerCase()))
-      )
-    : allItems.slice(0, 8); // Default top 8 items
-
-  // Keyboard shortcut listener
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         setIsOpen((prev) => !prev);
-      } else if (e.key === 'Escape' && isOpen) {
-        e.preventDefault();
+      }
+      if (e.key === 'Escape') {
         setIsOpen(false);
       }
     };
 
-    const handleCustomTrigger = () => setIsOpen(true);
-    window.addEventListener('open-command-palette', handleCustomTrigger);
+    const handleCustomOpen = () => setIsOpen(true);
+
     window.addEventListener('keydown', handleKeyDown);
-
+    window.addEventListener('open-command-palette', handleCustomOpen);
     return () => {
-      window.removeEventListener('open-command-palette', handleCustomTrigger);
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('open-command-palette', handleCustomOpen);
     };
-  }, [isOpen]);
+  }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      const timer = setTimeout(() => {
-        inputRef.current?.focus();
-        setSelectedIndex(0);
-      }, 50);
-      return () => {
-        clearTimeout(timer);
-        document.body.style.overflow = '';
-      };
-    } else {
-      document.body.style.overflow = '';
-      const timer = setTimeout(() => setQuery(''), 0);
-      return () => clearTimeout(timer);
-    }
-  }, [isOpen]);
+  const allItems = useMemo(() => {
+    const pages = [
+      { id: 'page-home', title: 'Academy Home', category: 'Page', href: '/', sub: 'Main Institutional Overview' },
+      { id: 'page-programs', title: 'Faculties & Programs', category: 'Page', href: '/programs', sub: '4 Core Faculties & 12 Specialized Tracks' },
+      { id: 'page-labs', title: 'Incubated Studio Labs', category: 'Page', href: '/labs', sub: 'Production Proof & Deployed Systems' },
+      { id: 'page-flow7', title: 'Flow7 Focus Simulator', category: 'Interactive Lab', href: '/flow7', sub: '90-Minute Ultradian Rhythm & Reality Logging Engine' },
+      { id: 'page-team', title: 'Leadership & Faculty Directors', category: 'Page', href: '/team', sub: 'Meet the Architects Behind NIT7ER' },
+      { id: 'page-about', title: 'Philosophy & Manifesto', category: 'Page', href: '/about', sub: 'Competence Over Credentials' },
+      { id: 'page-contact', title: 'Direct Studio Channel', category: 'Page', href: '/contact', sub: 'Inquiries, Partnerships & Corporate Training' },
+      { id: 'page-apply', title: 'Start Cohort Intake', category: 'Admissions', href: '/apply', sub: 'Diagnostic Application Portal' },
+    ];
 
-  const handleSelect = (item: SearchItem) => {
-    setIsOpen(false);
-    router.push(item.href);
-  };
+    const faculties = FACULTIES.map((f) => ({
+      id: `fac-${f.id}`,
+      title: `${f.badge}: ${f.title}`,
+      category: 'Faculty',
+      href: `/programs/${f.id}`,
+      sub: f.subtitle,
+    }));
 
-  const handleInputKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      setSelectedIndex((prev) => (prev + 1) % filteredItems.length);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      setSelectedIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
-    } else if (e.key === 'Enter' && filteredItems[selectedIndex]) {
-      e.preventDefault();
-      handleSelect(filteredItems[selectedIndex]);
-    }
-  };
+    const programs = FACULTIES.flatMap((f) =>
+      f.programs.map((p) => ({
+        id: `prog-${p.id}`,
+        title: `${p.code}: ${p.title}`,
+        category: 'Program',
+        href: `/programs/${f.id}/${p.id}`,
+        sub: `${f.badge} • ${p.duration} • ${p.level}`,
+      }))
+    );
+
+    const labs = LAB_PROJECTS.map((l) => ({
+      id: `lab-${l.id}`,
+      title: l.title,
+      category: 'Studio Lab',
+      href: `/labs/${l.id}`,
+      sub: `${l.category} • ${l.tagline}`,
+    }));
+
+    const directors = STUDIO_TEAM.map((m) => ({
+      id: `team-${m.id}`,
+      title: m.name,
+      category: 'Leadership',
+      href: `/team#${m.id}`,
+      sub: `${m.role} • ${m.discipline}`,
+    }));
+
+    return [...pages, ...faculties, ...programs, ...labs, ...directors];
+  }, []);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return allItems.slice(0, 10);
+    return allItems.filter(
+      (item) =>
+        item.title.toLowerCase().includes(q) ||
+        item.sub.toLowerCase().includes(q) ||
+        item.category.toLowerCase().includes(q)
+    );
+  }, [query, allItems]);
 
   if (!isOpen) return null;
 
+  const handleSelect = (href: string) => {
+    setIsOpen(false);
+    setQuery('');
+    router.push(href);
+  };
+
   return (
     <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Quick Navigator Command Palette"
-      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-150"
+      className="fixed inset-0 z-100 flex items-start justify-center bg-[#12345B]/60 backdrop-blur-xs pt-12 sm:pt-20 px-3 sm:px-4"
       onClick={() => setIsOpen(false)}
     >
       <div
-        className="technical-border curve-asymmetric relative w-full max-w-xl bg-white border border-[#D9E6F0] rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+        className="w-full max-w-xl rounded-2xl border border-[#12345B]/15 bg-white shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Search Bar Input */}
-        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-[#D9E6F0] bg-[#FAFCFE]">
-          <Search className="w-4 h-4 text-[#1769AA] shrink-0" />
+        {/* Search Input */}
+        <div className="flex items-center border-b border-[#12345B]/10 px-3.5 sm:px-4 py-3.5 gap-2">
+          <svg className="h-5 w-5 text-[#1769AA] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
           <input
-            ref={inputRef}
             type="text"
+            autoFocus
             value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setSelectedIndex(0);
-            }}
-            onKeyDown={handleInputKeyDown}
-            placeholder="Search programs, faculties, labs, or topics (e.g. 101, Flutter, Focus)..."
-            className="flex-1 bg-transparent border-none text-xs sm:text-sm text-[#12345B] placeholder:text-[#94A3B8] focus:outline-none font-medium"
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search programs (SWE-101), faculties, labs, or pages..."
+            className="w-full text-sm text-[#12345B] placeholder-[#4A607A]/60 focus:outline-none bg-transparent"
           />
-          <span className="label-mono text-[9px] px-2 py-0.5 bg-[#EEF7FC] border border-[#D9E6F0] text-[#64748B] rounded">
-            ESC to close
-          </span>
+          <button
+            type="button"
+            onClick={() => setIsOpen(false)}
+            className="rounded-md bg-[#EEF7FC] px-2 py-1 font-mono text-[10px] font-bold text-[#4A607A] hover:text-[#12345B] shrink-0"
+          >
+            ESC
+          </button>
         </div>
 
-        {/* Results List */}
-        <div className="max-h-80 overflow-y-auto p-2 space-y-1">
-          {filteredItems.length === 0 ? (
-            <div className="p-8 text-center text-xs text-[#64748B]">
-              No matching programs or resources found for &ldquo;{query}&rdquo;.
+        {/* Results */}
+        <div className="max-h-[65vh] sm:max-h-96 overflow-y-auto p-2 divide-y divide-[#12345B]/5">
+          {filtered.length === 0 ? (
+            <div className="py-10 text-center text-sm text-[#4A607A]">
+              No matching programs, labs, or pages found for &ldquo;{query}&rdquo;.
             </div>
           ) : (
-            filteredItems.map((item, idx) => {
-              const isSelected = idx === selectedIndex;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleSelect(item)}
-                  onMouseEnter={() => setSelectedIndex(idx)}
-                  className={`w-full text-left p-2.5 rounded-xl flex items-center justify-between gap-3 transition-colors ${
-                    isSelected
-                      ? 'bg-[#12345B] text-white'
-                      : 'hover:bg-[#EEF7FC] text-[#12345B]'
-                  }`}
-                >
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`text-[9px] font-mono px-1.5 py-0.5 rounded font-bold ${
-                          isSelected
-                            ? 'bg-white/20 text-[#E6AD3C]'
-                            : 'bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0]'
-                        }`}
-                      >
-                        {item.category.toUpperCase()}
-                      </span>
-                      <h4 className="text-xs sm:text-sm font-bold truncate">
-                        {item.title}
-                      </h4>
-                    </div>
-                    <p
-                      className={`text-[11px] truncate mt-0.5 ${
-                        isSelected ? 'text-[#D9E6F0]' : 'text-[#64748B]'
-                      }`}
-                    >
-                      {item.subtitle}
-                    </p>
+            filtered.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => handleSelect(item.href)}
+                className="w-full flex items-center justify-between gap-3 rounded-xl px-3.5 py-3 text-left hover:bg-[#EEF7FC] transition-colors group"
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="font-display text-sm font-bold text-[#12345B] group-hover:text-[#1769AA] transition-colors truncate">
+                    {item.title}
                   </div>
-                  <ArrowRight
-                    className={`w-3.5 h-3.5 shrink-0 ${
-                      isSelected ? 'text-[#E6AD3C]' : 'text-[#94A3B8]'
-                    }`}
-                  />
-                </button>
-              );
-            })
+                  <div className="text-xs text-[#4A607A] line-clamp-1 mt-0.5">{item.sub}</div>
+                </div>
+                <span className="shrink-0 rounded-full bg-[#12345B]/5 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-[#1769AA]">
+                  {item.category}
+                </span>
+              </button>
+            ))
           )}
         </div>
 
-        {/* Footer shortcuts */}
-        <div className="px-4 py-2 bg-[#FAFCFE] border-t border-[#D9E6F0] flex items-center justify-between text-[10px] font-mono text-[#64748B]">
-          <span>↑↓ to navigate • ↵ to select</span>
-          <span className="text-[#1769AA] font-bold">NIT7ER Studio Navigator</span>
+        {/* Footer Hint */}
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#12345B]/10 bg-[#FAFCFE] px-4 py-2.5 text-[11px] text-[#4A607A]">
+          <span>Click any item to navigate directly</span>
+          <span className="font-mono">⌘K / Ctrl+K</span>
         </div>
       </div>
     </div>

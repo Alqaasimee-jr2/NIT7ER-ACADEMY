@@ -230,9 +230,9 @@ export function ProgramSyllabusModal({
             <p className="text-xs text-[#EEF7FC] leading-relaxed">
               {program.capstoneProject.description}
             </p>
-            <div className="pt-2 border-t border-white/20 flex items-center justify-between text-[11px] font-mono">
-              <span className="text-[#E6AD3C] font-bold">Verification Artifact:</span>
-              <span className="text-white truncate max-w-xs sm:max-w-md">
+            <div className="pt-2 border-t border-white/20 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[11px] font-mono">
+              <span className="text-[#E6AD3C] font-bold shrink-0">Verification Artifact:</span>
+              <span className="text-white sm:text-right">
                 {program.capstoneProject.deliverable}
               </span>
             </div>
@@ -244,19 +244,31 @@ export function ProgramSyllabusModal({
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-xs font-mono font-bold text-[#64748B] hover:text-[#12345B] transition-colors"
+            className="px-4 py-2 text-xs font-mono font-bold text-[#64748B] hover:text-[#12345B] transition-colors self-start sm:self-auto"
           >
             ← Close Roadmap
           </button>
 
-          <Link
-            href={`/apply?track=${facultyId || 'creative-tech'}&program=${program.id}`}
-            onClick={onClose}
-            className="btn-press inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shadow-sm"
-          >
-            <span>APPLY FOR {program.code} INTAKE</span>
-            <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
-          </Link>
+          <div className="flex flex-wrap items-center gap-2.5">
+            {facultyId && (
+              <Link
+                href={`/programs/${facultyId}/${program.id}`}
+                onClick={onClose}
+                className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-[#EEF7FC] hover:bg-[#D9E6F0] text-[#12345B] text-xs font-bold font-mono rounded-full border border-[#D9E6F0] transition-colors"
+              >
+                <span>FULL SYLLABUS PAGE</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#1769AA]" />
+              </Link>
+            )}
+            <Link
+              href={`/apply?track=${facultyId || 'creative-tech'}&program=${program.id}`}
+              onClick={onClose}
+              className="btn-press inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shadow-sm"
+            >
+              <span>APPLY FOR {program.code} INTAKE</span>
+              <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

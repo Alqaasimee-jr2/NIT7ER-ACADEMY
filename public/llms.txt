@@ -14,18 +14,38 @@ NIT7ER Academy is the educational and apprenticeship division of NIT7ER Studio (
 - Core Methodology: Studio Sprints, Flow7 Reality Protocol, Verified Capstone Architecture Defense, Direct Agency Apprenticeship Pipeline
 
 ## Foundational Disciplines & Faculties
-1. Faculty 01: Creative Technology & Software Engineering (Code: CT)
+1. Faculty 01: Creative Technology & Software Engineering (`/programs/creative-tech`)
    - Focus: Web infrastructure, mobile engineering, applied AI integration, and production systems.
-   - Tracks: Full-Stack Web & Distributed Systems (CT-FULLSTACK), Cross-Platform Mobile Engineering (CT-FLUTTER), Applied AI Integration & Intelligent Systems (CT-AI-INTEGRATION).
-2. Faculty 02: Systems Architecture & Cognitive Performance (Code: CP)
+   - Tracks:
+     - SWE-101: Full-Stack Web Engineering (`/programs/creative-tech/full-stack-web`)
+     - SWE-102: Mobile App Engineering (`/programs/creative-tech/mobile-app-engineering`)
+     - SWE-103: Applied AI & Intelligent Systems (`/programs/creative-tech/applied-ai-systems`)
+2. Faculty 02: Systems Architecture & Cognitive Performance (`/programs/cognitive-performance`)
    - Focus: Focus stamina, cognitive mechanics, mental clarity, and systematic problem solving.
-   - Tracks: Deep Work & Attention Engineering (Flow7) (CP-FLOW7), Personal Knowledge Systems & PKM Architecture (CP-PKM), Systems Thinking & Algorithmic Problem Solving (CP-SYSTEMS-THINKING).
-3. Faculty 03: Professional Writing & Thought Leadership (Code: WTL)
+   - Tracks:
+     - COG-201: Deep Work & Attention Engineering (Flow7) (`/programs/cognitive-performance/deep-work-attention`)
+     - COG-202: Personal Operating Systems & Execution (`/programs/cognitive-performance/personal-operating-systems`)
+3. Faculty 03: Professional Writing & Thought Leadership (`/programs/writing-thought-leadership`)
    - Focus: Systems documentation, engineering manifestos, intellectual clarity, and brand prose.
-   - Tracks: Technical Writing & Systems Documentation (WTL-TECH-WRITING), Essays, Manifestos & Intellectual Property (WTL-MANIFESTO), Narrative Design & Brand Prose Architecture (WTL-NARRATIVE).
-4. Faculty 04: Computer Foundations & Applied Literacy (Code: CE)
-   - Focus: Computing first-principles, UNIX terminal ergonomics, hardware networks, and digital efficiency.
-   - Tracks: Operating Systems, Terminal & UNIX Ergonomics (CE-UNIX-TERMINAL), Hardware Architecture & Network Fundamentals (CE-HARDWARE-NETWORKS), Everyday Digital Productivity & Tooling Mastery (CE-DIGITAL-MASTERY).
+   - Tracks:
+     - WRT-301: Technical Writing & Documentation (`/programs/writing-thought-leadership/technical-writing-architecture`)
+     - WRT-302: Essay Craft & Thought Leadership (`/programs/writing-thought-leadership/essay-craft-thought-leadership`)
+     - WRT-303: Copywriting & Clear Communication (`/programs/writing-thought-leadership/high-conversion-copywriting`)
+4. Faculty 04: Computer Foundations & Applied Literacy (`/programs/computer-education`)
+   - Focus: Computing first-principles, OS fundamentals, cloud collaboration, cyber hygiene, and automation.
+   - Tracks:
+     - CMP-401: Computer Fundamentals & OS Mastery (`/programs/computer-education/computer-fundamentals-os`)
+     - CMP-402: Productivity Suites & Cloud Collaboration (`/programs/computer-education/productivity-suites-cloud`)
+     - CMP-403: Internet Literacy, AI Tools & Cyber Hygiene (`/programs/computer-education/internet-literacy-cyber-hygiene`)
+     - CMP-404: Computational Thinking & Everyday Automation (`/programs/computer-education/computational-thinking-automation`)
+
+## Incubated Studio Labs & Case Studies (`/labs`)
+- Flow7 (`/labs/flow7`): https://flow7-two.vercel.app (Interactive Simulator: `/flow7`)
+- Clasquera (`/labs/clasquera`): https://clasquera.vercel.app
+- Lang Huey (`/labs/lang-huey`): https://lang-huey.vercel.app
+- OAUMods (`/labs/oaumods`): https://oaumods.vercel.app
+- Restaurante (`/labs/restaurante`): https://restaurante-rose-gamma.vercel.app
+- PR-Guardian (`/labs/pr-guardian`): https://github.com/Alqaasimee-jr2
 
 ## Pedagogical Architecture: The 4-Phase System
 1. Phase 01: Systems Foundations & Diagnostic (Core mental models and environmental setup)
@@ -34,7 +54,7 @@ NIT7ER Academy is the educational and apprenticeship division of NIT7ER Studio (
 4. Phase 04: Capstone Defense & Deployment (Public architecture defense, production deployment, studio alumni induction)
 
 ## Admissions & Sprints
-- Admissions Model: 3-step diagnostic intake, rolling cohort admissions, merit-screened.
+- Admissions Model: 3-step diagnostic intake (`/apply`), rolling cohort admissions, merit-screened.
 - Credential Awarded: Verified Capstone Architecture Defense.
 - Direct Contact / WhatsApp Admissions Hotline: +234 707 076 3135 (https://wa.me/2347070763135)
 - Email: qaasimkids6@gmail.com

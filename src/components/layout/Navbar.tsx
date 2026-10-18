@@ -3,165 +3,231 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight } from 'lucide-react';
 import { N7BrandMark } from '@/components/N7BrandMark';
+import { FACULTIES, FOUNDER_INFO } from '@/data/academyData';
+
+const NAV_LINKS = [
+  { href: '/programs', label: 'Faculties' },
+  { href: '/labs', label: 'Studio Labs' },
+  { href: '/flow7', label: 'Flow7 Simulator' },
+  { href: '/team', label: 'Leadership' },
+  { href: '/about', label: 'Philosophy' },
+  { href: '/contact', label: 'Contact' },
+];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const navLinks = [
-    { label: 'Curriculum', href: '/programs' },
-    { label: 'Faculty', href: '/team' },
-    { label: 'Labs', href: '/labs' },
-    { label: 'Philosophy', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-  ];
-
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href?: string) => {
     setMobileMenuOpen(false);
-    if (!href.includes('#') && typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && (!href || !href.includes('#'))) {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
   };
 
+  const openSearchPalette = () => {
+    setMobileMenuOpen(false);
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('open-command-palette'));
+    }
+  };
+
   return (
-    <header className="sticky top-0 z-50 glass-header border-b border-[#D9E6F0]/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Brand Mark & Title */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            <Link
-              href="/"
-              onClick={() => handleNavClick('/')}
-              className="flex items-center gap-3 shrink-0 group"
-            >
-              <N7BrandMark size="md" variant="gold" className="transition-transform group-hover:scale-105" />
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-base sm:text-lg font-black tracking-tight text-[#12345B]">
-                    NIT7ER
-                  </span>
-                  <span className="label-mono px-2 py-0.5 bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] rounded-full text-[10px]">
-                    Academy
-                  </span>
-                </div>
-                <p className="label-mono text-[9px] text-[#64748B] hidden sm:block">
-                  Systems • Mind • Code
-                </p>
-              </div>
-            </Link>
-
-            <a
-              href="https://nit7er.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FAFCFE] hover:bg-[#EEF7FC] border border-[#D9E6F0] text-[10px] font-mono text-[#1769AA] hover:text-[#12345B] transition-colors"
-              title="A division of NIT7ER Studio Commercial Agency"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#1769AA]"></span>
-              <span>STUDIO DIVISION ↗</span>
-            </a>
+    <header className="sticky top-0 z-50 w-full bg-[#FAFCFE]/95 backdrop-blur-md border-b border-[#12345B]/10 transition-all">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8 gap-2">
+        {/* Brand Identity */}
+        <Link
+          href="/"
+          onClick={() => handleNavClick('/')}
+          className="group flex items-center gap-2.5 sm:gap-3 focus:outline-none shrink-0"
+        >
+          <N7BrandMark size="md" variant="gold" className="transition-transform group-hover:scale-105" />
+          <div className="flex flex-col">
+            <span className="font-display text-sm sm:text-base font-bold tracking-tight text-[#12345B] leading-none">
+              NIT7ER <span className="text-[#1769AA] font-semibold">ACADEMY</span>
+            </span>
+            <span className="font-mono text-[9px] sm:text-[10px] tracking-widest text-[#4A607A] uppercase mt-0.5">
+              CREATIVE TECH &amp; SYSTEMS
+            </span>
           </div>
+        </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 p-1 bg-white/80 border border-[#D9E6F0] rounded-full shadow-xs">
-            {navLinks.map((link) => {
-              const isActive =
-                pathname === link.href ||
-                (link.href === '/programs' && pathname.startsWith('/programs')) ||
-                (link.href === '/team' && pathname.startsWith('/team'));
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className={`px-3.5 py-1.5 text-xs lg:text-sm font-semibold rounded-full transition-all ${
-                    isActive
-                      ? 'bg-[#12345B] text-white font-bold shadow-xs'
-                      : 'text-[#64748B] hover:text-[#12345B] hover:bg-[#EEF7FC]'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
+        {/* Desktop Navigation */}
+        <nav aria-label="Main Navigation" className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+          {NAV_LINKS.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== '/' && pathname?.startsWith(`${link.href}/`));
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => handleNavClick(link.href)}
+                aria-current={isActive ? 'page' : undefined}
+                className={`px-3 xl:px-3.5 py-2 rounded-full text-xs xl:text-sm font-medium transition-all whitespace-nowrap ${
+                  isActive
+                    ? 'bg-[#EEF7FC] text-[#1769AA] font-semibold shadow-2xs'
+                    : 'text-[#4A607A] hover:text-[#12345B] hover:bg-[#12345B]/5'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
 
-          {/* Action CTA with Pure Essence Pulse Ring */}
-          <div className="hidden md:flex items-center shrink-0">
-            <Link
-              href="/apply"
-              onClick={() => handleNavClick('/apply')}
-              className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs sm:text-sm font-bold tracking-tight rounded-full transition-all shadow-sm border border-[#12345B]"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
-              <span>Start Intake</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
-            </Link>
-          </div>
+        {/* Desktop Actions */}
+        <div className="hidden lg:flex items-center gap-2.5 shrink-0">
+          <button
+            type="button"
+            onClick={openSearchPalette}
+            aria-label="Search curriculum and pages (Ctrl+K)"
+            className="inline-flex items-center gap-2 rounded-full border border-[#12345B]/15 bg-white px-3 py-2 text-xs font-medium text-[#4A607A] hover:border-[#1769AA] hover:text-[#12345B] transition-all shadow-2xs cursor-pointer"
+          >
+            <svg className="h-3.5 w-3.5 text-[#1769AA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 10.5a7.5 7.5 0 0013.15 6.15z" />
+            </svg>
+            <span className="hidden xl:inline">Search</span>
+            <kbd className="rounded bg-[#EEF7FC] px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#12345B]">
+              ⌘K
+            </kbd>
+          </button>
 
-          {/* Mobile Right Bar: Intake Button + Hamburger */}
-          <div className="flex md:hidden items-center gap-2">
-            <Link
-              href="/apply"
-              onClick={() => handleNavClick('/apply')}
-              className="btn-press px-3.5 py-1.5 bg-[#12345B] text-white text-xs font-bold font-mono rounded-full shadow-xs"
-            >
-              Intake
-            </Link>
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#12345B] hover:bg-[#EEF7FC] rounded-full transition-colors"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6 text-[#12345B]" />}
-            </button>
-          </div>
+          <a
+            href={FOUNDER_INFO.studioUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden xl:inline-flex items-center gap-1.5 font-mono text-xs font-medium text-[#4A607A] hover:text-[#1769AA] transition-colors px-2 py-1.5"
+          >
+            <span>STUDIO</span>
+            <span className="text-[10px]">↗</span>
+          </a>
+
+          <Link
+            href="/apply"
+            onClick={() => handleNavClick('/apply')}
+            className="inline-flex items-center justify-center rounded-full bg-[#12345B] px-5 py-2.5 text-xs font-semibold tracking-wider text-white uppercase shadow-sm hover:bg-[#1769AA] transition-all whitespace-nowrap"
+          >
+            Start Intake
+          </Link>
+        </div>
+
+        {/* Mobile & Tablet Controls (<1024px) */}
+        <div className="flex lg:hidden items-center gap-2">
+          <button
+            type="button"
+            onClick={openSearchPalette}
+            aria-label="Open curriculum search"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#12345B]/15 bg-white text-[#12345B] hover:bg-[#EEF7FC] transition-colors"
+          >
+            <svg className="h-4 w-4 text-[#1769AA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 10.5a7.5 7.5 0 0013.15 6.15z" />
+            </svg>
+          </button>
+
+          <Link
+            href="/apply"
+            onClick={() => handleNavClick('/apply')}
+            className="hidden sm:inline-flex items-center justify-center rounded-full bg-[#12345B] px-4 py-2 text-xs font-semibold tracking-wider text-white uppercase shadow-sm hover:bg-[#1769AA] transition-all"
+          >
+            Apply
+          </Link>
+
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation-drawer"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#12345B]/15 text-[#12345B] hover:bg-[#EEF7FC] transition-colors"
+          >
+            <span className="sr-only">Toggle Menu</span>
+            {mobileMenuOpen ? (
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile & Tablet Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#D9E6F0] bg-[#FAFCFE]/95 backdrop-blur-md px-4 pt-3 pb-6 space-y-4 shadow-lg animate-fadeIn">
-          <div className="flex flex-col space-y-1">
-            {navLinks.map((link) => {
+        <div
+          id="mobile-navigation-drawer"
+          className="lg:hidden border-b border-[#12345B]/10 bg-[#FAFCFE] px-4 sm:px-6 py-5 shadow-xl max-h-[calc(100vh-4.5rem)] overflow-y-auto"
+        >
+          <nav aria-label="Mobile Navigation" className="flex flex-col space-y-1.5">
+            {NAV_LINKS.map((link) => {
               const isActive =
                 pathname === link.href ||
-                (link.href === '/programs' && pathname.startsWith('/programs')) ||
-                (link.href === '/team' && pathname.startsWith('/team'));
+                (link.href !== '/' && pathname?.startsWith(`${link.href}/`));
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className={`px-4 py-2.5 text-sm font-bold rounded-xl transition-colors ${
+                  aria-current={isActive ? 'page' : undefined}
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
                     isActive
-                      ? 'bg-[#12345B] text-white'
-                      : 'text-[#64748B] hover:text-[#12345B] hover:bg-[#EEF7FC]'
+                      ? 'bg-[#EEF7FC] text-[#1769AA] font-semibold'
+                      : 'text-[#12345B] hover:bg-[#12345B]/5'
                   }`}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  <span className="font-mono text-xs text-[#1769AA]">→</span>
                 </Link>
               );
             })}
-          </div>
 
-          <div className="pt-3 border-t border-[#D9E6F0] space-y-2">
-            <Link
-              href="/apply"
-              onClick={() => handleNavClick('/apply')}
-              className="btn-press w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#12345B] text-white font-bold text-sm rounded-full shadow-sm"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
-              <span>Start Diagnostic Intake</span>
-              <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
-            </Link>
-            <p className="text-center font-mono text-[10px] text-[#64748B]">
-              Direct Inquiries Hotline: +234 707 076 3135
-            </p>
-          </div>
+            {/* Direct Faculty Quick-Jump inside Mobile Menu */}
+            <div className="pt-3 mt-2 border-t border-[#12345B]/10">
+              <span className="block px-4 mb-2 font-mono text-[10px] font-bold uppercase tracking-widest text-[#4A607A]">
+                Direct Faculty Hubs
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                {FACULTIES.map((faculty) => (
+                  <Link
+                    key={faculty.id}
+                    href={`/programs/${faculty.id}`}
+                    onClick={() => handleNavClick(`/programs/${faculty.id}`)}
+                    className="rounded-xl border border-[#12345B]/10 bg-white px-3.5 py-2.5 text-xs font-semibold text-[#12345B] hover:border-[#1769AA] hover:text-[#1769AA] transition-colors flex items-center justify-between"
+                  >
+                    <span className="truncate pr-2">
+                      <span className="font-mono text-[10px] text-[#1769AA] mr-1.5">{faculty.number}.</span>
+                      {faculty.title}
+                    </span>
+                    <span className="font-mono text-[10px] text-[#4A607A] shrink-0">→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-4 mt-2 border-t border-[#12345B]/10 flex flex-col sm:flex-row gap-2.5">
+              <Link
+                href="/apply"
+                onClick={() => handleNavClick('/apply')}
+                className="flex-1 flex items-center justify-center rounded-xl bg-[#12345B] py-3.5 px-4 text-xs font-bold tracking-wider text-white uppercase hover:bg-[#1769AA] transition-colors"
+              >
+                Start Intake Application →
+              </Link>
+              <a
+                href={FOUNDER_INFO.studioUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-1.5 rounded-xl border border-[#12345B]/15 bg-white py-3.5 px-4 font-mono text-xs font-bold uppercase tracking-wider text-[#12345B] hover:border-[#1769AA] hover:text-[#1769AA] transition-colors"
+              >
+                <span>NIT7ER Studio Division</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </nav>
         </div>
       )}
     </header>

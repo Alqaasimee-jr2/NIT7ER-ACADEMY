@@ -167,9 +167,14 @@ export default function ProgramsPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black text-[#12345B] tracking-tight">
-                    {faculty.title}
-                  </h3>
+                  <Link
+                    href={`/programs/${faculty.id}`}
+                    className="inline-block hover:text-[#1769AA] transition-colors"
+                  >
+                    <h3 className="text-xl sm:text-2xl font-black text-[#12345B] hover:text-[#1769AA] tracking-tight transition-colors">
+                      {faculty.title}
+                    </h3>
+                  </Link>
 
                   <p className="text-xs sm:text-sm font-mono text-[#1769AA] font-semibold italic">
                     &ldquo;{faculty.tagline}&rdquo;
@@ -191,7 +196,7 @@ export default function ProgramsPage() {
 
               {/* Program Tracks Pill Grid */}
               <div className="pt-2 border-t border-[#D9E6F0] space-y-3">
-                <div className="flex items-center justify-between text-xs font-mono">
+                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
                   <span className="font-bold text-[#12345B]">
                     INCLUDED TRACKS ({faculty.programs.length} SPECIALIZED SYLLABI):
                   </span>
@@ -203,7 +208,7 @@ export default function ProgramsPage() {
                     <Link
                       key={prog.id}
                       id={prog.id}
-                      href={`/programs/${faculty.id}#${prog.id}`}
+                      href={`/programs/${faculty.id}/${prog.id}`}
                       className="btn-press p-3.5 bg-[#FAFCFE] hover:bg-[#EEF7FC] border border-[#D9E6F0] hover:border-[#1769AA] rounded-xl space-y-1.5 transition-all block group/track scroll-mt-28"
                     >
                       <div className="flex items-center justify-between font-mono text-xs">
@@ -231,7 +236,7 @@ export default function ProgramsPage() {
                   Lead Focus: <span className="text-[#12345B] font-bold">{faculty.leadAnchor}</span>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2.5">
                   <Link
                     href={`/programs/${faculty.id}`}
                     className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm"

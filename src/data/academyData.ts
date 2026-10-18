@@ -76,6 +76,12 @@ export interface LabProject {
   techStack: string[];
   liveUrl?: string;
   githubUrl?: string;
+  simulatorUrl?: string;
+  facultyId?: string;
+  programId?: string;
+  problem?: string;
+  architecture?: string;
+  metrics?: { label: string; value: string }[];
   badge: 'Live Production' | 'Incubated Lab' | 'Smartboard System' | 'Open Source';
 }
 
@@ -104,12 +110,12 @@ export const FACULTIES: Faculty[] = [
       title: 'Clasquera & Production Web Engines',
       project: 'Clasquera',
       description: 'Audio-based lesson accountability platform integrating Flutter recording apps with Gemini Pro verification via Firebase Cloud Functions.',
-      link: '/labs#clasquera',
+      link: '/labs/clasquera',
     },
     livingProof: {
       title: 'Clasquera & Production Web Engines',
       description: 'Audio-based lesson accountability platform integrating Flutter recording apps with Gemini Pro verification via Firebase Cloud Functions.',
-      link: '/labs#clasquera',
+      link: '/labs/clasquera',
     },
     programs: [
       {
@@ -473,12 +479,12 @@ export const FACULTIES: Faculty[] = [
       title: 'Flow7 Time Awareness Journal',
       project: 'Flow7',
       description: 'The mobile-first reality tracking and cognitive regulation engine built by NIT7ER to track execution and eliminate friction.',
-      link: '/labs#flow7',
+      link: '/labs/flow7',
     },
     livingProof: {
       title: 'Flow7 Time Awareness Journal',
       description: 'The mobile-first reality tracking and cognitive regulation engine built by NIT7ER to track execution and eliminate friction.',
-      link: '/labs#flow7',
+      link: '/labs/flow7',
     },
     programs: [
       {
@@ -730,12 +736,12 @@ export const FACULTIES: Faculty[] = [
       title: 'OAUMods Campus Research Dossier & Technical Specs',
       project: 'OAUMods Research',
       description: '18 comprehensive research volumes and architectural specifications authoritatively mapping complex spatial systems.',
-      link: '/labs#oaumods',
+      link: '/labs/oaumods',
     },
     livingProof: {
       title: 'OAUMods Campus Research Dossier & Technical Specs',
       description: '18 comprehensive research volumes and architectural specifications authoritatively mapping complex spatial systems.',
-      link: '/labs#oaumods',
+      link: '/labs/oaumods',
     },
     programs: [
       {
@@ -1088,12 +1094,12 @@ export const FACULTIES: Faculty[] = [
       title: 'Lang Huey Educational Engine',
       project: 'Lang Huey',
       description: 'Experimental offline educational software engineered to teach foundational curricula in bandwidth-constrained classroom environments.',
-      link: '/labs#lang-huey',
+      link: '/labs/lang-huey',
     },
     livingProof: {
       title: 'Lang Huey Educational Engine',
       description: 'Experimental offline educational software engineered to teach foundational curricula in bandwidth-constrained classroom environments.',
-      link: '/labs#lang-huey',
+      link: '/labs/lang-huey',
     },
     programs: [
       {
@@ -1543,6 +1549,19 @@ export const LAB_PROJECTS: LabProject[] = [
     impact: 'Daily execution logging with quantified focus metrics',
     techStack: ['Next.js', 'React', 'Tailwind CSS', 'Vercel Edge', 'LocalStorage Sync'],
     liveUrl: 'https://flow7-two.vercel.app',
+    githubUrl: 'https://github.com/Alqaasimee-jr2/Flow7-Landing-Page',
+    simulatorUrl: '/flow7',
+    facultyId: 'cognitive-performance',
+    programId: 'deep-work-attention',
+    problem:
+      'Traditional productivity tools induce to-do list guilt by measuring aspirational intentions rather than actual time allocation and cognitive energy states.',
+    architecture:
+      'Built as a zero-latency, offline-capable state engine with ultradian 90-minute focus sprint telemetry, domain allocation balances, and automated weekly operational retrospectives.',
+    metrics: [
+      { label: 'Focus Sprint Cadence', value: '90 Min' },
+      { label: 'Core Life Domains', value: '7 Pillars' },
+      { label: 'Sync Latency', value: '<10ms Local' },
+    ],
     badge: 'Live Production',
   },
   {
@@ -1554,7 +1573,19 @@ export const LAB_PROJECTS: LabProject[] = [
       'A mobile lesson verification platform for schools. Captures classroom audio via Flutter, transcribes and benchmarks instructional delivery against approved schemes of work using Gemini Pro via Firebase Cloud Functions.',
     impact: 'Ensures lesson fidelity and teaching compliance across school wings',
     techStack: ['Flutter', 'Dart', 'Firebase Functions', 'Google Gemini Pro', 'Next.js'],
+    liveUrl: 'https://clasquera.vercel.app',
     githubUrl: 'https://github.com/Alqaasimee-jr2/Clasquera-Landing-page',
+    facultyId: 'creative-tech',
+    programId: 'applied-ai-systems',
+    problem:
+      'School proprietors lack objective visibility into classroom instructional quality, relying on manual paper lesson notes rather than verifiable classroom delivery.',
+    architecture:
+      'Cross-platform Flutter teacher app records classroom audio offline, syncs to Firebase Cloud Functions, transcribes West African accented speech, and runs deterministic Gemini Pro rubric evaluations against approved schemes of work.',
+    metrics: [
+      { label: 'Transcription Accuracy', value: '90%+' },
+      { label: 'Offline Audio Cache', value: '100% Resilient' },
+      { label: 'Pilot Regions', value: 'Lagos & Osun' },
+    ],
     badge: 'Incubated Lab',
   },
   {
@@ -1563,9 +1594,22 @@ export const LAB_PROJECTS: LabProject[] = [
     category: 'EdTech Engine',
     tagline: '100% Offline Educational Software for Resource-Constrained Environments',
     description:
-      'Tactile, offline-first educational software tailored for classrooms in bandwidth-constrained environments, demonstrating resilient offline caching and interactive audio.',
-    impact: 'Deployed for classroom interaction in Nigerian schools',
-    techStack: ['HTML5 Canvas', 'Vanilla JS', 'Offline PWA', 'Interactive Audio'],
+      'Tactile, offline-first educational software tailored for classroom smartboards in bandwidth-constrained environments, demonstrating resilient offline caching, native-grade audio phonics, and NERDC curriculum alignment.',
+    impact: 'Deployed for live classroom smartboard instruction at Precious Muslims Sprout, Lagos',
+    techStack: ['Next.js', 'HTML5 Canvas', 'Offline PWA', 'Interactive Audio', 'Smartboard UI'],
+    liveUrl: 'https://lang-huey.vercel.app',
+    githubUrl: 'https://github.com/Alqaasimee-jr2',
+    facultyId: 'computer-education',
+    programId: 'computational-thinking-automation',
+    problem:
+      'Private schools invest in interactive smartboards (WOWBII, ZGT, MAXHUB) but face unreliable internet and specialist language teacher shortages.',
+    architecture:
+      'Standalone offline-first smartboard engine engineered for Windows and Android interactive flat panels with 0 KB runtime data dependency, dual-speed (1.0x / 0.8x) phonics synthesis, and 13-week NERDC term modules.',
+    metrics: [
+      { label: 'Runtime Data Needed', value: '0 KB (Offline)' },
+      { label: 'Structured Lessons', value: '13 / Term' },
+      { label: 'Panel Support', value: 'Android & Win' },
+    ],
     badge: 'Smartboard System',
   },
   {
@@ -1577,7 +1621,19 @@ export const LAB_PROJECTS: LabProject[] = [
       'An authoritative offline-first campus companion spanning 15 faculties, automated GPA projection, clearance workflows, and geospatial navigation across Arieh Sharon’s iconic architectural masterplan.',
     impact: 'Navigational guide and academic utility for thousands of Great Ife students',
     techStack: ['Next.js 16', 'React 19', 'Leaflet GPS', 'Tailwind CSS v4', 'TypeScript'],
+    liveUrl: 'https://oaumods.vercel.app',
     githubUrl: 'https://github.com/Alqaasimee-jr2/OAUMods',
+    facultyId: 'writing-thought-leadership',
+    programId: 'technical-writing-architecture',
+    problem:
+      'Incoming university freshmen navigate fragmented registration procedures, unmapped campus landmarks, and complex CGPA grading rules over spotty mobile connections.',
+    architecture:
+      'Engineered from 18 research volumes into a zero-bloat offline-capable progressive web platform featuring interactive Leaflet geospatial routing, 5.0 CGPA projection engines, and verified departmental clearance checklists.',
+    metrics: [
+      { label: 'Research Volumes', value: '18 Dossiers' },
+      { label: 'Faculties Mapped', value: '15 Faculties' },
+      { label: 'Offline Capability', value: '100% PWA' },
+    ],
     badge: 'Live Production',
   },
   {
@@ -1590,6 +1646,18 @@ export const LAB_PROJECTS: LabProject[] = [
     impact: 'Proof of high-speed commercial client acquisition interfaces',
     techStack: ['JavaScript', 'HTML5', 'Modern CSS', 'Vercel Deployment'],
     liveUrl: 'https://restaurante-rose-gamma.vercel.app',
+    githubUrl: 'https://github.com/Alqaasimee-jr2/Restaurante',
+    facultyId: 'creative-tech',
+    programId: 'full-stack-web',
+    problem:
+      'Hospitality brands lose high-intent diners to slow, unintuitive mobile menus and high-friction reservation forms.',
+    architecture:
+      'Lightweight, zero-bloat frontend architecture optimized for instant mobile rendering, tactile menu category filtering, and high-conversion reservation capture.',
+    metrics: [
+      { label: 'First Contentful Paint', value: '<0.8s' },
+      { label: 'Mobile Ergonomics', value: '100% Fluid' },
+      { label: 'Deployment', value: 'Vercel Edge' },
+    ],
     badge: 'Live Production',
   },
   {
@@ -1601,6 +1669,18 @@ export const LAB_PROJECTS: LabProject[] = [
       'A developer CLI tool built during the IBM Bob 2.0 Hackathon (Team junkieBob) providing proactive static code analysis, security pre-checks, and automated PR validation before merge.',
     impact: 'Prevents broken builds and insecure merges in collaborative software teams',
     techStack: ['Node.js', 'CLI Automation', 'Git Hooks', 'Static Analysis'],
+    githubUrl: 'https://github.com/Alqaasimee-jr2/ibm-coding-challenge',
+    facultyId: 'creative-tech',
+    programId: 'full-stack-web',
+    problem:
+      'Fast-moving engineering teams frequently merge pull requests containing leaked secrets, unvalidated schema changes, or subtle lint regressions.',
+    architecture:
+      'Pre-push and CI command-line guardian that inspects git diffs, runs static AST security checks, validates environment parity, and blocks unsafe merges before code review.',
+    metrics: [
+      { label: 'Hackathon Origin', value: 'IBM Bob 2.0' },
+      { label: 'Execution Mode', value: 'Git Hook CLI' },
+      { label: 'Audit Target', value: 'Pre-Merge AST' },
+    ],
     badge: 'Open Source',
   },
 ];
@@ -1636,7 +1716,7 @@ export const FOUNDER_INFO = {
   phone: '+2347070763135',
   whatsappUrl: 'https://wa.me/2347070763135?text=Hello%20NIT7ER%20Academy%2C%20I%20am%20interested%20in%20applying%20for%20a%20cohort.',
   github: 'https://github.com/Alqaasimee-jr2',
-  linkedin: 'http://linkedin.com/in/abdullahqaasimf001',
+  linkedin: 'https://www.linkedin.com/in/abdullahqaasimf001',
   instagram: 'https://instagram.com/nit7er',
   studioUrl: 'https://nit7er.vercel.app',
 };

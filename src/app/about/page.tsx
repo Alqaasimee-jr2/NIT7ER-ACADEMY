@@ -143,7 +143,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="pt-2 border-t border-[#D9E6F0] flex items-center gap-2">
+          <div className="pt-2 border-t border-[#D9E6F0] flex flex-wrap items-center gap-2">
             <a
               href={FOUNDER_INFO.github}
               target="_blank"
@@ -166,7 +166,7 @@ export default function AboutPage() {
               href={FOUNDER_INFO.whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn-press px-3.5 py-1.5 bg-[#12345B] text-white text-xs font-mono font-bold rounded-full hover:bg-[#1769AA] transition-colors flex items-center gap-1.5 ml-auto shadow-sm"
+              className="btn-press px-3.5 py-1.5 bg-[#12345B] text-white text-xs font-mono font-bold rounded-full hover:bg-[#1769AA] transition-colors flex items-center gap-1.5 sm:ml-auto shadow-sm"
             >
               <MessageCircle className="w-3.5 h-3.5 text-[#E6AD3C]" />
               <span>WhatsApp</span>
@@ -251,7 +251,7 @@ export default function AboutPage() {
           {STUDIO_TEAM.map((member) => (
             <Link
               key={member.id}
-              href="/team"
+              href={`/team#${member.id}`}
               className="p-4 bg-white border border-[#D9E6F0] rounded-xl flex items-center gap-3.5 shadow-2xs hover:border-[#1769AA] transition-colors group"
             >
               <div className="relative w-12 h-12 rounded-full overflow-hidden bg-[#F5F2EB] border border-[#D9E6F0] shrink-0">

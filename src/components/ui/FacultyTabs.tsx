@@ -137,17 +137,25 @@ export function FacultyTabs() {
             </p>
 
             {currentFaculty.caseStudy && (
-              <div className="p-3.5 bg-[#EEF7FC]/70 border border-[#D9E6F0] rounded-xl space-y-1">
-                <span className="label-mono text-[9px] text-[#1769AA] block font-bold">
-                  Incubated Lab Case Study
-                </span>
-                <h4 className="text-xs font-bold text-[#12345B]">
+              <Link
+                href={currentFaculty.caseStudy.link || '/labs'}
+                className="group block p-3.5 bg-[#EEF7FC]/70 hover:bg-[#EEF7FC] border border-[#D9E6F0] hover:border-[#1769AA] rounded-xl space-y-1 transition-all"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="label-mono text-[9px] text-[#1769AA] block font-bold">
+                    Incubated Lab Case Study
+                  </span>
+                  <span className="font-mono text-[10px] font-bold text-[#12345B] group-hover:text-[#1769AA] transition-colors">
+                    Inspect Lab →
+                  </span>
+                </div>
+                <h4 className="text-xs font-bold text-[#12345B] group-hover:text-[#1769AA] transition-colors">
                   {currentFaculty.caseStudy.title}
                 </h4>
                 <p className="text-xs text-[#64748B]">
                   {currentFaculty.caseStudy.description}
                 </p>
-              </div>
+              </Link>
             )}
           </div>
 
@@ -171,7 +179,7 @@ export function FacultyTabs() {
                 Choose a specific track to inspect its sprint syllabus, target outcomes, and verified capstone deliverable:
               </p>
             </div>
-            <span className="text-[11px] font-mono text-[#1769AA] font-bold bg-[#EEF7FC] px-2.5 py-1 rounded-full border border-[#D9E6F0] shrink-0">
+            <span className="text-[11px] font-mono text-[#1769AA] font-bold bg-[#EEF7FC] px-2.5 py-1 rounded-full border border-[#D9E6F0] shrink-0 self-start sm:self-auto">
               {currentFaculty.programs.length} Tracks Available
             </span>
           </div>
@@ -228,19 +236,30 @@ export function FacultyTabs() {
 
         {/* Selected Program Detailed Breakdown */}
         {activeProgram && (
-          <div className="p-5 sm:p-6 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#D9E6F0] pb-4">
+          <div className="p-4 sm:p-6 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-5">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#D9E6F0] pb-4">
               <div className="space-y-1">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="label-mono px-2 py-0.5 bg-[#12345B] text-white rounded-md text-[10px]">
                     {activeProgram.code}
                   </span>
                   <span className="text-xs font-mono font-bold text-[#1769AA]">
                     {activeProgram.duration} • {activeProgram.level}
                   </span>
+                  <Link
+                    href={`/programs/${currentFaculty.id}/${activeProgram.id}`}
+                    className="font-mono text-[11px] font-bold text-[#12345B] underline decoration-[#E6AD3C] underline-offset-4 hover:text-[#1769AA] transition-colors"
+                  >
+                    Open Full Track Page →
+                  </Link>
                 </div>
                 <h4 className="text-base sm:text-lg font-black text-[#12345B]">
-                  {activeProgram.title}
+                  <Link
+                    href={`/programs/${currentFaculty.id}/${activeProgram.id}`}
+                    className="hover:text-[#1769AA] transition-colors"
+                  >
+                    {activeProgram.title}
+                  </Link>
                 </h4>
                 <p className="text-xs text-[#64748B] max-w-2xl leading-relaxed">
                   {activeProgram.description}
@@ -256,6 +275,13 @@ export function FacultyTabs() {
                   <Calendar className="w-3.5 h-3.5 text-[#1769AA]" />
                   <span>INSPECT {activeProgram.duration.toUpperCase()} ROADMAP</span>
                 </button>
+                <Link
+                  href={`/programs/${currentFaculty.id}/${activeProgram.id}`}
+                  className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-[#EEF7FC] border border-[#D9E6F0] hover:border-[#1769AA] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors"
+                >
+                  <span>FULL SYLLABUS</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#1769AA]" />
+                </Link>
                 <Link
                   href={`/apply?track=${currentFaculty.id}&program=${activeProgram.id}`}
                   className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shadow-sm"
@@ -278,7 +304,7 @@ export function FacultyTabs() {
             <div className="p-4 bg-[#EEF7FC]/80 border border-[#D9E6F0] rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-[#1769AA]">
-                  <Award className="w-4 h-4 text-[#E6AD3C]" />
+                  <Award className="w-4 h-4 text-[#E6AD3C] shrink-0" />
                   <span>MANDATORY CAPSTONE DELIVERABLE</span>
                 </div>
                 <h5 className="text-xs sm:text-sm font-bold text-[#12345B]">
@@ -288,9 +314,9 @@ export function FacultyTabs() {
                   {activeProgram.capstoneProject.description}
                 </p>
               </div>
-              <div className="p-2.5 bg-white border border-[#D9E6F0] rounded-lg shrink-0 text-right sm:max-w-xs">
-                <span className="label-mono text-xs text-[#64748B] block">VERIFICATION ARTIFACT</span>
-                <span className="text-xs font-mono font-bold text-[#12345B]">
+              <div className="p-3 bg-white border border-[#D9E6F0] rounded-lg shrink-0 text-left sm:text-right sm:max-w-xs">
+                <span className="label-mono text-[10px] text-[#64748B] block mb-0.5">VERIFICATION ARTIFACT</span>
+                <span className="text-xs font-mono font-bold text-[#12345B] leading-snug block">
                   {activeProgram.capstoneProject.deliverable}
                 </span>
               </div>
@@ -304,13 +330,13 @@ export function FacultyTabs() {
             <span className="label-mono text-xs text-[#64748B] block">
               Faculty Institutional Competency
             </span>
-            <div className="flex items-center gap-2 text-xs font-medium text-[#12345B]">
-              <CheckCircle2 className="w-4 h-4 text-[#1769AA] shrink-0" />
+            <div className="flex items-start sm:items-center gap-2 text-xs font-medium text-[#12345B]">
+              <CheckCircle2 className="w-4 h-4 text-[#1769AA] shrink-0 mt-0.5 sm:mt-0" />
               <span>{currentFaculty.outcomes[0]}</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
               href={`/programs/${currentFaculty.id}`}
               className="px-4 py-2 text-xs font-mono font-bold text-[#12345B] hover:text-[#1769AA] transition-colors"

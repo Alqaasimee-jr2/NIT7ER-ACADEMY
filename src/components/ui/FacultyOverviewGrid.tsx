@@ -65,13 +65,18 @@ export function FacultyOverviewGrid() {
 
               {/* Title & Icon */}
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-xl bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] shrink-0 group-hover:scale-105 transition-transform">
+                <Link
+                  href={`/programs/${fac.id}`}
+                  className="p-2 rounded-xl bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] shrink-0 group-hover:scale-105 transition-transform"
+                >
                   {getFacultyIcon(fac.id)}
-                </div>
+                </Link>
                 <div>
-                  <h3 className="text-base font-black text-[#12345B] group-hover:text-[#1769AA] transition-colors leading-snug">
-                    {fac.title}
-                  </h3>
+                  <Link href={`/programs/${fac.id}`}>
+                    <h3 className="text-base font-black text-[#12345B] hover:text-[#1769AA] transition-colors leading-snug">
+                      {fac.title}
+                    </h3>
+                  </Link>
                   <span className="text-[11px] font-mono text-[#1769AA] font-semibold block mt-0.5">
                     {fac.programs.length} Specialized Tracks
                   </span>
@@ -90,12 +95,16 @@ export function FacultyOverviewGrid() {
                 </span>
                 <ul className="space-y-1 text-xs text-[#12345B]">
                   {fac.programs.map((prog) => (
-                    <li
-                      key={prog.id}
-                      className="flex items-center justify-between text-[11px] font-mono py-0.5"
-                    >
-                      <span className="font-bold text-[#1769AA]">{prog.code}</span>
-                      <span className="truncate max-w-[170px] text-[#475569]">{prog.title}</span>
+                    <li key={prog.id}>
+                      <Link
+                        href={`/programs/${fac.id}/${prog.id}`}
+                        className="flex items-center justify-between gap-2 text-[11px] font-mono py-1 px-1.5 -mx-1.5 rounded-md hover:bg-[#EEF7FC] transition-colors group/prog"
+                      >
+                        <span className="font-bold text-[#1769AA] shrink-0">{prog.code}</span>
+                        <span className="truncate text-[#475569] group-hover/prog:text-[#12345B] transition-colors">
+                          {prog.title}
+                        </span>
+                      </Link>
                     </li>
                   ))}
                 </ul>

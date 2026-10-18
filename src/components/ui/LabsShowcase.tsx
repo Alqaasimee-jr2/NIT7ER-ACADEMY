@@ -40,7 +40,7 @@ export function LabsShowcase({ limit }: { limit?: number }) {
             className="technical-border curve-soft p-5 sm:p-6 bg-white flex flex-col justify-between space-y-4 border border-[#D9E6F0] rounded-2xl shadow-xs hover:border-[#1769AA] hover:shadow-md transition-all scroll-mt-24"
           >
             <div className="space-y-3">
-              <div className="flex items-center justify-between font-mono text-[10px]">
+              <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-[10px]">
                 <span className="px-2 py-0.5 rounded-full bg-[#EEF7FC] text-[#1769AA] font-bold border border-[#D9E6F0]">
                   [{project.badge}]
                 </span>
@@ -51,7 +51,12 @@ export function LabsShowcase({ limit }: { limit?: number }) {
 
               <div>
                 <h3 className="text-lg font-black text-[#12345B] tracking-tight">
-                  {project.title}
+                  <Link
+                    href={`/labs/${project.id}`}
+                    className="hover:text-[#1769AA] transition-colors"
+                  >
+                    {project.title}
+                  </Link>
                 </h3>
                 <p className="text-xs font-mono text-[#1769AA] mt-0.5 italic">
                   {project.tagline}
@@ -79,50 +84,56 @@ export function LabsShowcase({ limit }: { limit?: number }) {
               </div>
             </div>
 
-            {/* Actions */}
-            <div className="pt-3 border-t border-[#D9E6F0] flex items-center justify-between text-xs font-mono">
-              <span className="text-[10px] text-[#64748B] truncate max-w-[140px]">
-                {project.impact}
-              </span>
+            {/* Impact & Actions */}
+            <div className="pt-3 border-t border-[#D9E6F0] space-y-3">
+              <p className="text-[11px] font-mono text-[#64748B] leading-snug">
+                <strong className="text-[#12345B]">Impact:</strong> {project.impact}
+              </p>
 
-              <div className="flex items-center gap-2">
-                {project.id === 'flow7' && (
-                  <Link
-                    href="/flow7"
-                    className="btn-press inline-flex items-center gap-1 px-2.5 py-1 bg-[#EEF7FC] hover:bg-[#12345B] text-[#12345B] hover:text-white border border-[#D9E6F0] rounded-full text-[10px] font-bold font-mono transition-colors"
-                  >
-                    <span>Try Simulator</span>
-                    <ArrowRight className="w-3 h-3 text-[#E6AD3C]" />
-                  </Link>
-                )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1.5 border border-[#D9E6F0] rounded-full text-[#64748B] hover:text-[#12345B] hover:border-[#12345B] hover:bg-[#EEF7FC] transition-colors"
-                    title="View GitHub Repository (External)"
-                  >
-                    <GithubIcon className="w-3.5 h-3.5" />
-                  </a>
-                )}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-press inline-flex items-center gap-1.5 px-3 py-1 bg-[#12345B] text-white hover:bg-[#1769AA] font-bold text-[11px] rounded-full transition-colors shadow-2xs"
-                    title="Launch Live System (External)"
-                  >
-                    <span>LIVE</span>
-                    <ExternalLink className="w-3 h-3 text-[#E6AD3C]" />
-                  </a>
-                )}
-                {!project.githubUrl && !project.liveUrl && (
-                  <span className="text-[10px] font-mono text-[#64748B] bg-[#EEF7FC] px-2 py-0.5 rounded-full border border-[#D9E6F0]">
-                    Archive
-                  </span>
-                )}
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                <Link
+                  href={`/labs/${project.id}`}
+                  className="inline-flex items-center gap-1 font-bold text-[#12345B] hover:text-[#1769AA] transition-colors text-[11px]"
+                >
+                  <span>Case Study</span>
+                  <ArrowRight className="w-3 h-3 text-[#1769AA]" />
+                </Link>
+
+                <div className="flex flex-wrap items-center gap-1.5">
+                  {project.simulatorUrl && (
+                    <Link
+                      href={project.simulatorUrl}
+                      className="btn-press inline-flex items-center gap-1 px-2.5 py-1 bg-[#EEF7FC] hover:bg-[#12345B] text-[#12345B] hover:text-white border border-[#D9E6F0] rounded-full text-[10px] font-bold font-mono transition-colors"
+                    >
+                      <span>Simulator</span>
+                      <ArrowRight className="w-3 h-3 text-[#E6AD3C]" />
+                    </Link>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 border border-[#D9E6F0] rounded-full text-[#64748B] hover:text-[#12345B] hover:border-[#12345B] hover:bg-[#EEF7FC] transition-colors"
+                      title={`View ${project.title} GitHub Repository`}
+                      aria-label={`View ${project.title} GitHub Repository`}
+                    >
+                      <GithubIcon className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-press inline-flex items-center gap-1.5 px-3 py-1 bg-[#12345B] text-white hover:bg-[#1769AA] font-bold text-[11px] rounded-full transition-colors shadow-2xs"
+                      title={`Launch ${project.title} Live System`}
+                    >
+                      <span>LIVE</span>
+                      <ExternalLink className="w-3 h-3 text-[#E6AD3C]" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>

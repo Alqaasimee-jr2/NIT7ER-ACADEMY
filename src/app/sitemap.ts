@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { FACULTIES } from '@/data/academyData';
+import { FACULTIES, LAB_PROJECTS } from '@/data/academyData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nit7er-academy.vercel.app';
@@ -65,5 +65,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...facultyRoutes];
+  // Dedicated routes for all 12 specialized programs
+  const programRoutes: MetadataRoute.Sitemap = FACULTIES.flatMap((fac) =>
+    fac.programs.map((prog) => ({
+      url: `${baseUrl}/programs/${fac.id}/${prog.id}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    }))
+  );
+
+  // Dedicated routes for all 6 studio lab case studies
+  const labRoutes: MetadataRoute.Sitemap = LAB_PROJECTS.map((lab) => ({
+    url: `${baseUrl}/labs/${lab.id}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...facultyRoutes, ...programRoutes, ...labRoutes];
 }

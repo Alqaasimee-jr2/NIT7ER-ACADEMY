@@ -180,9 +180,9 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
               ARCHITECTURAL PIPELINE SCHEMATIC // {faculty.number}
             </span>
             {renderDiagram(faculty.id)}
-            <div className="w-full mt-3 pt-3 border-t border-[#D9E6F0] flex items-center justify-between text-xs font-mono text-[#64748B]">
+            <div className="w-full mt-3 pt-3 border-t border-[#D9E6F0] flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-[#64748B]">
               <span>Lead Anchor:</span>
-              <span className="font-bold text-[#12345B] truncate max-w-[220px]">
+              <span className="font-bold text-[#12345B] text-right">
                 {faculty.leadAnchor}
               </span>
             </div>
@@ -200,7 +200,7 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
             </span>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2.5">
             <Link
               href={`/apply?track=${faculty.id}`}
               className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm"
@@ -278,10 +278,10 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
             <div
               key={program.id}
               id={program.id}
-              className="technical-border curve-asymmetric p-6 sm:p-8 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-6 shadow-xs hover:border-[#1769AA]/50 transition-all scroll-mt-24"
+              className="technical-border curve-asymmetric p-5 sm:p-8 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-6 shadow-xs hover:border-[#1769AA]/50 transition-all scroll-mt-24"
             >
               {/* Program Top Header */}
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-[#D9E6F0] pb-4">
+              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 border-b border-[#D9E6F0] pb-4">
                 <div className="space-y-2 max-w-3xl">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="px-2.5 py-0.5 bg-[#12345B] text-white rounded-md text-xs font-mono font-bold">
@@ -300,7 +300,12 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-black text-[#12345B] tracking-tight">
-                    {program.title}
+                    <Link
+                      href={`/programs/${faculty.id}/${program.id}`}
+                      className="hover:text-[#1769AA] transition-colors"
+                    >
+                      {program.title}
+                    </Link>
                   </h3>
 
                   <p className="text-xs sm:text-sm font-mono text-[#1769AA] italic font-semibold">
@@ -318,15 +323,23 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
                 </div>
 
                 {/* Header Action Buttons */}
-                <div className="shrink-0 flex flex-wrap items-center gap-2 pt-2 sm:pt-0">
+                <div className="shrink-0 flex flex-wrap items-center gap-2 pt-2 lg:pt-0">
                   <button
                     type="button"
                     onClick={() => setActiveModalProgramId(program.id)}
                     className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-white border border-[#1769AA] hover:bg-[#EEF7FC] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors shadow-2xs"
                   >
                     <Calendar className="w-3.5 h-3.5 text-[#1769AA]" />
-                    <span>INSPECT FULL ROADMAP</span>
+                    <span>QUICK ROADMAP</span>
                   </button>
+
+                  <Link
+                    href={`/programs/${faculty.id}/${program.id}`}
+                    className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-[#EEF7FC] border border-[#D9E6F0] hover:border-[#1769AA] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors"
+                  >
+                    <span>FULL SYLLABUS PAGE</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#1769AA]" />
+                  </Link>
 
                   <Link
                     href={`/apply?track=${faculty.id}&program=${program.id}`}

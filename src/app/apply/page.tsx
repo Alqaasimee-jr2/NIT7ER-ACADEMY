@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import confetti from 'canvas-confetti';
 import { FACULTIES } from '@/data/academyData';
 import {
@@ -33,6 +34,26 @@ function ApplicationFormContent() {
   const [step, setStep] = useState<number>(1);
   const [faculty, setFaculty] = useState<string>(initialFaculty);
   const [programId, setProgramId] = useState<string>(initialProgram);
+
+  useEffect(() => {
+    if (trackParam && FACULTIES.some((f) => f.id === trackParam)) {
+      setFaculty(trackParam);
+      const targetFac = FACULTIES.find((f) => f.id === trackParam) || FACULTIES[0];
+      if (programParam && targetFac.programs.some((p) => p.id === programParam)) {
+        setProgramId(programParam);
+      } else {
+        setProgramId(targetFac.programs[0]?.id || '');
+      }
+    } else if (programParam) {
+      const matchedFac = FACULTIES.find((f) =>
+        f.programs.some((p) => p.id === programParam)
+      );
+      if (matchedFac) {
+        setFaculty(matchedFac.id);
+        setProgramId(programParam);
+      }
+    }
+  }, [trackParam, programParam]);
   const [fullName, setFullName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
@@ -227,7 +248,7 @@ function ApplicationFormContent() {
         <div className="technical-border curve-asymmetric p-6 sm:p-8 bg-white space-y-6 border border-[#D9E6F0] shadow-sm">
           {/* Progress Indicator */}
           <div className="space-y-2">
-            <div className="flex items-center justify-between font-mono text-xs font-bold text-[#64748B]">
+            <div className="flex flex-wrap items-center justify-between gap-1 font-mono text-xs font-bold text-[#64748B]">
               <span>[STEP 0{step} OF 03]</span>
               <span className="text-[#12345B]">
                 {step === 1 && 'CHOOSE FACULTY & PROGRAM TRACK'}
@@ -294,13 +315,19 @@ function ApplicationFormContent() {
 
               {/* Sub-Selection: Specialized Program Track */}
               <div className="space-y-3 pt-4 border-t border-[#D9E6F0]">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="label-mono block text-[#12345B]">
                     Select Specialized Program Track in Faculty {selectedFacultyObj.number}
                   </span>
-                  <span className="text-[11px] font-mono text-[#64748B]">
-                    {selectedFacultyObj.programs.length} Options Available
-                  </span>
+                  {selectedProgramObj && (
+                    <Link
+                      href={`/programs/${selectedFacultyObj.id}/${selectedProgramObj.id}`}
+                      className="text-[11px] font-mono font-bold text-[#1769AA] hover:text-[#12345B] inline-flex items-center gap-1"
+                    >
+                      <span>Inspect {selectedProgramObj.code} Syllabus</span>
+                      <ArrowRight className="w-3 h-3 text-[#E6AD3C]" />
+                    </Link>
+                  )}
                 </div>
 
                 <div className="space-y-2.5">
@@ -343,7 +370,7 @@ function ApplicationFormContent() {
                         </p>
 
                         <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#1769AA] pt-1">
-                          <Award className="w-3.5 h-3.5 text-[#E6AD3C]" />
+                          <Award className="w-3.5 h-3.5 text-[#E6AD3C] shrink-0" />
                           <span>Capstone: {prog.capstoneProject.title}</span>
                         </div>
                       </button>
@@ -477,7 +504,7 @@ function ApplicationFormContent() {
           )}
 
           {/* Navigation Controls */}
-          <div className="pt-4 border-t border-[#D9E6F0] flex items-center justify-between">
+          <div className="pt-4 border-t border-[#D9E6F0] flex flex-wrap items-center justify-between gap-3">
             {step > 1 ? (
               <button
                 type="button"
@@ -496,7 +523,7 @@ function ApplicationFormContent() {
               <button
                 type="button"
                 onClick={handleNext}
-                className="btn-press inline-flex items-center gap-2 px-6 py-2.5 bg-[#12345B] text-white text-xs sm:text-sm font-mono font-bold rounded-full hover:bg-[#1769AA] transition-colors shadow-sm"
+                className="btn-press inline-flex items-center gap-2 px-6 py-2.5 bg-[#12345B] text-white text-xs sm:text-sm font-mono font-bold rounded-full hover:bg-[#1769AA] transition-colors shadow-sm ml-auto"
               >
                 <span>CONTINUE</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
@@ -506,10 +533,10 @@ function ApplicationFormContent() {
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="btn-press inline-flex items-center gap-2 px-6 py-2.5 bg-[#E6AD3C] hover:bg-[#F5C842] text-[#12345B] text-xs sm:text-sm font-mono font-bold rounded-full transition-colors disabled:opacity-50 shadow-sm"
+                className="btn-press inline-flex items-center gap-2 px-6 py-2.5 bg-[#E6AD3C] hover:bg-[#F5C842] text-[#12345B] text-xs sm:text-sm font-mono font-bold rounded-full transition-colors disabled:opacity-50 shadow-sm ml-auto"
               >
-                <Send className="w-3.5 h-3.5" />
-                <span>{isSubmitting ? 'REGISTERING...' : 'SUBMIT APPLICATION FOR REVIEW'}</span>
+                <Send className="w-3.5 h-3.5 shrink-0" />
+                <span>{isSubmitting ? 'REGISTERING...' : 'SUBMIT APPLICATION'}</span>
               </button>
             )}
           </div>

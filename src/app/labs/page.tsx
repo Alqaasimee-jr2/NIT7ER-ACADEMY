@@ -59,9 +59,14 @@ export default function LabsPage() {
               </div>
 
               <div>
-                <h2 className="text-xl font-black text-[#12345B] tracking-tight">
-                  {project.title}
-                </h2>
+                <Link
+                  href={`/labs/${project.id}`}
+                  className="hover:text-[#1769AA] transition-colors inline-block"
+                >
+                  <h2 className="text-xl font-black text-[#12345B] hover:text-[#1769AA] tracking-tight transition-colors">
+                    {project.title}
+                  </h2>
+                </Link>
                 <p className="text-xs font-mono text-[#1769AA] italic mt-0.5">
                   {project.tagline}
                 </p>
@@ -90,12 +95,27 @@ export default function LabsPage() {
 
             <div className="pt-4 border-t border-[#D9E6F0] space-y-3">
               <div className="text-[11px] font-mono text-[#64748B] flex items-center gap-1.5">
-                <Code2 className="w-3.5 h-3.5 text-[#1769AA]" />
+                <Code2 className="w-3.5 h-3.5 text-[#1769AA] shrink-0" />
                 <span>{project.impact}</span>
               </div>
 
-              <div className="flex items-center justify-between pt-1">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <Link
+                    href={`/labs/${project.id}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono font-bold text-[#12345B] hover:border-[#1769AA] hover:text-[#1769AA] transition-colors"
+                  >
+                    <span>CASE STUDY</span>
+                    <ArrowRight className="w-3 h-3 text-[#1769AA]" />
+                  </Link>
+                  {project.simulatorUrl && (
+                    <Link
+                      href={project.simulatorUrl}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#E6AD3C]/20 border border-[#E6AD3C] rounded-full text-xs font-mono font-bold text-[#12345B] hover:bg-[#E6AD3C]/30 transition-colors"
+                    >
+                      <span>SIMULATOR</span>
+                    </Link>
+                  )}
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
@@ -105,7 +125,7 @@ export default function LabsPage() {
                       title="Open source code repository"
                     >
                       <GithubIcon className="w-3.5 h-3.5" />
-                      <span>CODE REPO ↗</span>
+                      <span>REPO ↗</span>
                     </a>
                   )}
                   {project.liveUrl && (
@@ -120,16 +140,17 @@ export default function LabsPage() {
                       <ExternalLink className="w-3 h-3 text-[#E6AD3C]" />
                     </a>
                   )}
-                  {!project.githubUrl && !project.liveUrl && (
-                    <span className="text-[10px] font-mono text-[#64748B] bg-[#EEF7FC] px-2.5 py-1 rounded-full border border-[#D9E6F0]">
-                      Internal Lab Archive
-                    </span>
-                  )}
                 </div>
 
                 <Link
-                  href="/apply"
-                  className="gold-link text-xs font-mono font-bold text-[#12345B] flex items-center gap-1"
+                  href={
+                    project.facultyId && project.programId
+                      ? `/apply?track=${project.facultyId}&program=${project.programId}`
+                      : project.facultyId
+                      ? `/apply?track=${project.facultyId}`
+                      : '/apply'
+                  }
+                  className="gold-link text-xs font-mono font-bold text-[#12345B] flex items-center gap-1 shrink-0"
                 >
                   <span>BUILD THIS</span>
                   <ArrowRight className="w-3 h-3 text-[#E6AD3C]" />
