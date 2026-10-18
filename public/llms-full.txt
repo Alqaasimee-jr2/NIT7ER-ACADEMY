@@ -1,0 +1,774 @@
+# NIT7ER Academy — Complete Institutional & Academic Syllabus Specification
+
+Canonical URL: https://nit7er-academy.vercel.app
+Parent Agency: NIT7ER Studio (https://nit7er.vercel.app)
+Location: Lagos, Nigeria
+Director & Founder: Abdullah Qaasim-Falade (qaasimkids6@gmail.com)
+Hotline: +2347070763135
+
+================================================================================
+INSTITUTIONAL OVERVIEW & PHILOSOPHY
+================================================================================
+NIT7ER Academy operates on an unyielding standard:
+1. Systems Over Memorization: True engineering competence is architecting and shipping real commercial systems, not completing toy tutorials.
+2. The Flow7 Reality Protocol: Uncompromising tracking and accountability of deep attention, focus stamina, and daily operational hours.
+3. Prose as an Engineering Primitive: Clear technical writing proves deep conceptual understanding; every engineer must master architectural documentation.
+4. The Agency Apprenticeship Pipeline: Top performing graduates transition directly to client engineering sprints at NIT7ER Studio.
+
+================================================================================
+STUDIO DIRECTORS & CORE FACULTY
+================================================================================
+
+- Name: Abdullah Qaasim-Falade
+  Role: Creative Director & Founder
+  Discipline: Systems Architecture & Creative Direction
+  Portfolio/Handle: @abdullah.qaasim (https://github.com/Alqaasimee-jr2)
+  Statement: "Every brand carries a voice. I just make sure it speaks clearly."
+
+- Name: Yaasir Olajumoke
+  Role: Visual Design Lead
+  Discipline: Visual Identity, Form & Spatial Aesthetics
+  Portfolio/Handle: @yaasir.dev (https://instagram.com/nit7er)
+  Statement: "I don’t design visuals. I translate emotion into form."
+
+- Name: The G3neral (Adeola Olamilekan)
+  Role: User Experience Lead
+  Discipline: User Ergonomics, Experience & Interaction Mechanics
+  Portfolio/Handle: @ad3ola_olamil3kan_ (https://g3neralola.carrd.co)
+  Statement: "Design is how a brand feels — not just how it looks."
+
+================================================================================
+ACADEMIC CATALOG: 4 FACULTIES & 12 SPECIALIZED PROGRAMS
+================================================================================
+
+################################################################################
+FACULTY 01: CREATIVE TECHNOLOGY & SOFTWARE ENGINEERING
+################################################################################
+Subtitle: Full-Stack Web Systems, Mobile Apps & Applied AI Architecture
+Tagline: Architect and ship resilient, production-grade applications that stand up to real market demands.
+Description: Learn the engineering rigor needed to build scalable digital products from a blank terminal. We move beyond toy tutorials into modern Next.js 16 architectures, reactive state engines, cross-platform Flutter/Dart engineering, and production AI integration pipelines.
+Format: Cohort Studio & Live Code Reviews | Duration: 12–16 Weeks per Track
+
+Programs in this Faculty:
+
+--------------------------------------------------------------------------------
+PROGRAM [SWE-101]: Full-Stack Web Systems & Cloud Architecture
+--------------------------------------------------------------------------------
+Tagline: Build modern, performant web platforms from database schema to global edge deployment.
+Duration: 16 Weeks | Level: Intermediate | Format: Live Studio & Collaborative Code Sprints
+Target Audience: Aspiring software engineers, frontend developers transitioning to full-stack, and product builders.
+Description: A comprehensive engineering program covering modern React 19 paradigms, Next.js 16 App Router architecture, serverless backend microservices, relational data modeling with PostgreSQL, and cloud edge deployment.
+
+Learning Outcomes:
+  * Architect and deploy full-stack web platforms capable of handling real concurrent users
+  * Implement secure, type-safe APIs with automated schema validation and role-based access
+  * Design optimized PostgreSQL schemas with efficient indexes and ACID transactional safety
+  * Configure automated CI/CD deployment pipelines with zero-downtime releases and observability
+
+Core Modules:
+  Module 01: Modern Frontend Architecture & Component Engines
+    Description: Server components, streaming layouts, client hydration boundaries, and design token integration.
+    Topics: React 19 Server Actions, Next.js 16 App Router, Tailwind CSS v4 Design Tokens, TypeScript Strict Mode
+
+  Module 02: Resilient API Engineering & Backend Services
+    Description: Architecting secure route handlers, RESTful microservices, and asynchronous background jobs.
+    Topics: Edge Route Handlers, Authentication (JWT & OAuth), Rate Limiting & Middleware, Webhook Ingestion
+
+  Module 03: Relational Data Modeling & Storage Layers
+    Description: Designing performant relational database schemas, transactions, and caching layers.
+    Topics: PostgreSQL & Prisma/Drizzle, Database Migrations & Indexes, Redis In-Memory Caching, Blob & Asset Storage
+
+  Module 04: Production Deployment, CI/CD & Telemetry
+    Description: Hardening web applications for commercial traffic with automated testing and continuous monitoring.
+    Topics: Vercel Edge & Cloudflare Workers, GitHub Actions CI/CD, Core Web Vitals Telemetry, Error Boundary Logging
+
+Capstone Defense Deliverables:
+  Project Title: Commercial Multi-Tenant SaaS Platform
+  Description: A fully functional software-as-a-service application complete with authentication, subscription billing, multi-tenant database isolation, dynamic dashboard analytics, and live edge deployment.
+  Required Defense Deliverable: Live Deployed URL & Public GitHub Repository with complete README and Architecture Decision Records (ADRs)
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–04) — Component Engines & React 19 Hydration Boundaries:
+    Sprint Goal: Server Components, dynamic route segments, streaming suspense layouts, and custom design token integration with Tailwind v4.
+    Deliverable: Multi-Tab High-Performance Workspace Layout with Suspense Streaming & Hydration telemetry
+    Tools: Next.js 16, React 19 Actions, TypeScript 5, Tailwind CSS v4
+
+  Phase Phase 02 (Weeks 05–08) — Resilient Edge APIs, Auth & Microservice Architecture:
+    Sprint Goal: Edge route handlers, session management, OAuth & JWT authentication, webhook listeners, and distributed rate-limiting middleware.
+    Deliverable: Type-Safe Microservice API with Automated Webhooks, Rate Limiting & OAuth Session Engine
+    Tools: Next.js Route Handlers, Jose / JWT, Upstash Redis, Zod Schemas
+
+  Phase Phase 03 (Weeks 09–12) — Relational Schemas, PostgreSQL & Data Pipeline Optimization:
+    Sprint Goal: ACID transactions, relational joins, index optimization, Prisma/Drizzle ORM, and high-concurrency Redis caching layers.
+    Deliverable: Multi-Tenant Relational Database Layer with Migration Sprints & Automated Seed Scripts
+    Tools: PostgreSQL, Drizzle ORM, Redis Cache, Neon Serverless
+
+  Phase Phase 04 (Weeks 13–16) — Hardening, CI/CD Pipeline & Live Capstone Defense:
+    Sprint Goal: Automated Playwright test suites, GitHub Actions deployment pipelines, performance budgeting, and live commercial capstone defense.
+    Deliverable: Commercial Multi-Tenant SaaS Platform live on Edge URL with Subscription Billing
+    Tools: Vercel Edge, GitHub Actions, Playwright, Core Web Vitals
+
+--------------------------------------------------------------------------------
+PROGRAM [SWE-102]: Cross-Platform Mobile Application Engineering
+--------------------------------------------------------------------------------
+Tagline: Engineer high-performance iOS and Android applications with clean architecture.
+Duration: 14 Weeks | Level: Intermediate | Format: Project Workshops & Device Emulation Labs
+Target Audience: Software builders wanting to ship fluid, native-feeling mobile applications across iOS and Android.
+Description: Master cross-platform mobile development using Flutter and Dart. Build responsive, tactile mobile user interfaces, implement robust reactive state management, interface directly with native hardware sensors, and architect offline-first data stores.
+
+Learning Outcomes:
+  * Develop fluid 60fps cross-platform mobile applications for iOS and Android from a single codebase
+  * Implement clean architecture with maintainable state separation and repository abstraction
+  * Integrate native device sensors, audio processing, and camera APIs safely across permissions
+  * Build resilient offline-first mobile applications with local database persistence and background sync
+
+Core Modules:
+  Module 01: Flutter UI Foundations & Declarative Layouts
+    Description: Composing custom widget trees, animations, theme systems, and responsive screen adaptation.
+    Topics: Flutter Widget Tree Lifecycle, Material 3 & Cupertino Theming, Custom Painters & Gestures, Adaptive Screen Ergonomics
+
+  Module 02: Reactive State Management & Clean Architecture
+    Description: Decoupling presentation, business logic, and repository data sources.
+    Topics: Riverpod & BLoC Patterns, Repository & Data Source Design, Immutable State Models, Dependency Injection
+
+  Module 03: Hardware Interop & Device APIs
+    Description: Harnessing device capabilities including camera, microphone, geolocation, and background sync.
+    Topics: Audio & Camera Hardware Interop, Geolocation & Permissions, Local Notifications Engine, Background Fetch
+
+  Module 04: Offline-First Architecture & Release Pipelines
+    Description: Structuring persistent local databases, background synchronization, and app store bundling.
+    Topics: SQLite & Drift ORM, Optimistic UI Updates, Data Conflict Resolution, Fastlane & App Store Distribution
+
+Capstone Defense Deliverables:
+  Project Title: Offline-First Field Utility Application
+  Description: A native-grade mobile utility application designed for field data collection, audio recording, offline caching with SQLite, and automated remote synchronization when connectivity resumes.
+  Required Defense Deliverable: Installable APK / TestFlight release and documented source code with widget test coverage
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–03) — Declarative Layouts & Custom Widget Ergonomics:
+    Sprint Goal: Widget tree lifecycle, custom painters, tactile gestural interactions, and fluid 60fps animations across iOS and Android.
+    Deliverable: Adaptive Cross-Platform Media Player UI with 60fps Gesture Animations
+    Tools: Flutter 3.x, Dart 3, Material 3, Cupertino Icons
+
+  Phase Phase 02 (Weeks 04–07) — Reactive State Architecture & Clean Domain Separation:
+    Sprint Goal: Riverpod and BLoC state containers, immutable models, domain repository patterns, and dependency injection trees.
+    Deliverable: Production State Container with Offline Cache Repositories & Immutable Entities
+    Tools: Riverpod 2, Freezed, Dartz, GetIt DI
+
+  Phase Phase 03 (Weeks 08–10) — Hardware Interop, Sensor APIs & Background Execution:
+    Sprint Goal: Microphone audio streaming, camera sensor capture, background geolocation tracking, and local notification scheduling.
+    Deliverable: Hardware Diagnostic Field Recorder with Audio Waveform Spectrum & Geo-Tagging
+    Tools: Record Audio API, Camera2 Plugin, Geolocator, Local Notifications
+
+  Phase Phase 04 (Weeks 11–14) — Offline-First SQLite Sync & App Store Deployment:
+    Sprint Goal: SQLite database persistence with Drift, optimistic UI reconciliation, sync conflict resolution, and Fastlane store bundling.
+    Deliverable: Offline-First Field Utility Application with Auto-Sync & Installable APK
+    Tools: SQLite, Drift ORM, Fastlane, TestFlight / Play Console
+
+--------------------------------------------------------------------------------
+PROGRAM [SWE-103]: Applied AI & Intelligent Systems Integration
+--------------------------------------------------------------------------------
+Tagline: Integrate foundation models, structured agentic loops, and semantic search into modern software.
+Duration: 12 Weeks | Level: Advanced | Format: Intensive Lab & Model Evaluation Sprints
+Target Audience: Developers and engineers seeking to leverage AI primitives for deterministic, production software products.
+Description: Go beyond shallow chat prompts. Learn to integrate state-of-the-art multimodal AI models into production software. Master structured JSON outputs, function calling, vector embeddings, retrieval-augmented generation (RAG), and agentic workflows.
+
+Learning Outcomes:
+  * Integrate leading multimodal foundation models into commercial web and mobile applications
+  * Enforce strict JSON schema guarantees from generative models for automated backend pipelines
+  * Design and deploy production-grade RAG systems with semantic chunking and vector indexing
+  * Build autonomous agent workflows with custom tool execution, audit logs, and cost controls
+
+Core Modules:
+  Module 01: Foundation Models & Multimodal Inference
+    Description: Understanding tokenization, context windows, model parameters, and multimodal audio/vision pipelines.
+    Topics: LLM Architectures & Context Windows, Multimodal Ingestion (Audio & Vision), Prompt Engineering & System Directives, API Optimization & Latency
+
+  Module 02: Structured Output Generation & Function Calling
+    Description: Compelling foundation models to produce deterministic, schema-validated JSON data structures.
+    Topics: JSON Schema & Zod/Pydantic Parsing, Function Calling & Tool Definition, Defensive Error Handling, Deterministic Output Guarantees
+
+  Module 03: Retrieval-Augmented Generation (RAG) & Vector Stores
+    Description: Building intelligent search systems over proprietary documentation and databases.
+    Topics: Vector Embeddings Generation, Semantic Chunking Strategies, Vector Databases & Similarity Search, Re-Ranking & Hybrid Search
+
+  Module 04: Autonomous Agents & Production Observability
+    Description: Engineering multi-step reasoning agents with tool usage, memory buffers, and cost telemetry.
+    Topics: Agentic Loops & Task Planning, Short-Term & Long-Term Memory, Cost & Token Telemetry Monitoring, Safety Guardrails & Evals
+
+Capstone Defense Deliverables:
+  Project Title: Enterprise AI Knowledge & Action Engine
+  Description: An intelligent systems service that ingests corporate documents, builds vector indexes, retrieves contextual evidence with citations, and executes automated multi-step operations via validated function calling.
+  Required Defense Deliverable: Deployed AI Service with benchmark evaluation report and interactive demo interface
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–03) — Foundation Model Inference & Strict Structured Outputs:
+    Sprint Goal: Token context windows, prompt instruction hierarchy, JSON schema enforcement, and temperature calibration across LLMs.
+    Deliverable: Deterministic Extraction & Semantic Classification Engine with JSON Schema Guarantees
+    Tools: Gemini 2.5/3, OpenAI API, Pydantic / Zod, Instructor
+
+  Phase Phase 02 (Weeks 04–06) — Vector Embeddings, Semantic Indexing & Hybrid RAG:
+    Sprint Goal: Vector chunking strategies, dense embeddings, hybrid keyword/vector search, and re-ranking pipelines with Reciprocal Rank Fusion.
+    Deliverable: Hybrid RAG Knowledge Retrieval System with Semantic Chunking & Citation Grounding
+    Tools: pgvector, Text-Embedding-004, Pinecone, LangChain Core
+
+  Phase Phase 03 (Weeks 07–09) — Multimodal Audio, Vision & Grounding Pipelines:
+    Sprint Goal: Audio transcription analysis, image OCR and spatial understanding, and automated rubric verification systems.
+    Deliverable: Multimodal Audio Lesson Verification Engine with Evidence Highlighting
+    Tools: Gemini Multimodal API, Whisper STT, Firebase Cloud Functions
+
+  Phase Phase 04 (Weeks 10–12) — Autonomous Tool-Calling Agents & Production Telemetry:
+    Sprint Goal: Multi-turn agent loops, sandboxed tool execution, safety guardrails, token latency tracing, and live capstone defense.
+    Deliverable: Autonomous Agentic Assistant with Sandboxed Tool Execution & Telemetry Tracing
+    Tools: LangGraph, OpenTelemetry, Vercel AI SDK, Helicone
+
+################################################################################
+FACULTY 02: COGNITIVE PERFORMANCE & MIND ARCHITECTURE
+################################################################################
+Subtitle: Attention Economics, Deep Work Habits & Personal Operating Infrastructure
+Tagline: Replace to-do list guilt and wishful thinking with quantified daily execution awareness.
+Description: Raw talent is useless without stamina and disciplined execution habits. This discipline trains builders to manage cognitive energy, log reality without self-deception, eliminate operational drag, and maintain a steady shipping cadence.
+Format: Daily Execution Telemetry & Weekly Systems Debriefs | Duration: 8 Weeks per Track
+
+Programs in this Faculty:
+
+--------------------------------------------------------------------------------
+PROGRAM [COG-201]: Deep Work, Attention Economics & Focus Engineering
+--------------------------------------------------------------------------------
+Tagline: Master the neurobiology of focus to reliably sustain 4+ hours of daily intellectual output.
+Duration: 8 Weeks | Level: All Levels | Format: Personal Audits & Structured Focus Sprints
+Target Audience: Software engineers, writers, founders, and knowledge workers struggling with cognitive fragmentation and digital distraction.
+Description: Attention is the scarcest cognitive resource in modern knowledge work. Study the neurobiology of attention, calculate the real costs of context-switching, engineer distraction-free environments, and implement structured deep-focus sprint protocols.
+
+Learning Outcomes:
+  * Eliminate chronic digital distraction and establish 4+ hours of daily uninterrupted deep work
+  * Deploy systematic pre-flight sprint rituals that induce focused mental flow states on demand
+  * Design an inviolable digital and physical environment shielded from attention theft
+  * Build long-term intellectual stamina without cognitive exhaustion or creative burnout
+
+Core Modules:
+  Module 01: Attention Economics & Cognitive Load Theory
+    Description: Analyzing dopamine baselines, continuous partial attention, and the neurochemistry of deep focus.
+    Topics: Dopamine Baseline Regulation, Context-Switching Switching Tax, Working Memory Constraints, Attention Residue Mitigation
+
+  Module 02: Focus Sprint Architecture & Session Design
+    Description: Designing 90-minute ultradian rhythm sprints with structured pre-flight rituals and clean exit states.
+    Topics: 90-Minute Focus Sprint Cycles, Pre-Session Friction Elimination, Cognitive Warmup Protocols, Intentional Rest Intervals
+
+  Module 03: Environmental & Digital Friction Firewalls
+    Description: Designing physical and digital boundaries that make distraction difficult and deep work effortless.
+    Topics: Notification Kill Switches, Hardware Device Segregation, Asynchronous Communication Guardrails, Workspace Ergonomics
+
+  Module 04: Physical Alignment & Mental Endurance
+    Description: Aligning sleep architecture, circadian cycles, and physical energy to support sustained cognitive stamina.
+    Topics: Circadian Cycle Synchronization, Nutrition & Brain Fog Prevention, Active Physical Recovery, Burnout Prevention Protocols
+
+Capstone Defense Deliverables:
+  Project Title: Personal Focus Architecture & 21-Day Execution Log
+  Description: A comprehensive focus system blueprint including workspace rules, notification firewalls, daily sprint schedules, and an audited 21-day telemetry log tracking focus hours and distraction friction.
+  Required Defense Deliverable: Audited 21-Day Focus Telemetry Dossier with retrospective performance analysis
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–02) — Attention Baselines & Environmental De-Frictioning:
+    Sprint Goal: Quantifying baseline attention span, auditing screen micro-interruptions, and configuring clean physical & digital workstations.
+    Deliverable: Personal Environmental Ergonomics & Notification De-Frictioning Audit
+    Tools: Workstation Configuration, Notification Filters, Audit Framework
+
+  Phase Phase 02 (Weeks 03–05) — Flow7 Reality Logging & Resistance Diagnostics:
+    Sprint Goal: Logging focus sessions daily without to-do list guilt, diagnosing friction vectors, and categorizing procrastination patterns.
+    Deliverable: 21-Day Flow7 Reality Log with Root-Cause Friction Diagnostics
+    Tools: Flow7 Protocol, Friction Categorization Matrix, Daily Telemetry
+
+  Phase Phase 03 (Weeks 06–08) — 90-Minute Monotask Sprint Conditioning:
+    Sprint Goal: Expanding deep cognitive stamina, mastering the physical transition into flow state, and managing dopamine depletion.
+    Deliverable: Stamina Expansion Sprint Dossier (50 Consecutive 90-Minute Unbroken Sprints)
+    Tools: Monotask Timers, Ultradian Rhythm Sync, Focus Logging
+
+  Phase Phase 04 (Weeks 09–10) — Cognitive Recovery & Long-Term Protocol Defense:
+    Sprint Goal: Active rest frameworks, neurological resets, preventing burnout cycles, and institutional defense of personal focus protocols.
+    Deliverable: Production-Grade Focus Operating Protocol with Emergency Friction Protocols
+    Tools: Recovery Matrix, Executive Operating Manual, Burnout Shields
+
+--------------------------------------------------------------------------------
+PROGRAM [COG-202]: Personal Operating Systems & Execution Telemetry
+--------------------------------------------------------------------------------
+Tagline: Replace wishful thinking with objective reality logging and automated personal infrastructure.
+Duration: 8 Weeks | Level: All Levels | Format: Systems Building & Weekly Operational Debriefs
+Target Audience: Solo founders, independent contractors, and leaders seeking systematic order in their daily logistics and output.
+Description: Build your personal operational infrastructure. Move beyond chaotic task lists to objective reality tracking, energy-based task scheduling, root-cause bottleneck diagnostics, and automated personal dashboards.
+
+Learning Outcomes:
+  * Track daily output with objective metrics, eliminating ungrounded wishful thinking
+  * Allocate high-leverage intellectual work strictly to peak biological energy windows
+  * Conduct weekly structured debriefs that diagnose operational bottlenecks and compound velocity
+  * Build and deploy a functional personal operating system for daily execution and project staging
+
+Core Modules:
+  Module 01: The Reality Audit & Habit Telemetry
+    Description: Discarding wishful thinking in favor of raw execution data, time auditing, and friction diagnostics.
+    Topics: Reality vs Plan Auditing, Friction Points Identification, Energy Cycle Mapping, Self-Deception Elimination
+
+  Module 02: Task Triage & Cognitive Energy Mapping
+    Description: Classifying tasks by leverage and matching high-friction demands to peak energy windows.
+    Topics: Leverage vs Shallow Work Matrix, Energy-Based Task Scheduling, Project Staging Architecture, Daily Inviolable Priority
+
+  Module 03: Weekly Retrospectives & Compounding Velocity
+    Description: Structuring weekly operational debriefs to evaluate progress, course-correct, and compound velocity.
+    Topics: The Weekly Debrief Cadence, Root-Cause Bottleneck Analysis, Pacing vs Unsustainable Sprinting, Course-Correction Protocols
+
+  Module 04: Personal Dashboard & Workflow Automation
+    Description: Building custom dashboards and automations that handle logistical friction and task routing.
+    Topics: Personal Builder OS Architecture, Automated Daily Check-ins, Knowledge & Resource Vaults, Review Cadence Reminders
+
+Capstone Defense Deliverables:
+  Project Title: Deployed Solo Builder OS & 30-Day Operational Audit
+  Description: A customized, operational personal dashboard integrating daily reality tracking, high-leverage task triage, weekly retrospective logging, and project velocity metrics.
+  Required Defense Deliverable: Live Personal OS Dashboard with 30-day verified execution telemetry and retrospective report
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–02) — Task Decoupling & Anti-To-Do Architecture:
+    Sprint Goal: Replacing overwhelming to-do lists with state containers, daily single-priority focus, and unambiguous execution cues.
+    Deliverable: Decoupled State Task Architecture & Daily Shipping Protocol
+    Tools: Markdown Systems, Obsidian / Plain Text, Priority Matrix
+
+  Phase Phase 02 (Weeks 03–05) — Personal Telemetry & Output Tracking Dashboard:
+    Sprint Goal: Automating weekly time tracking, output velocity metrics, and project shipping logs into a dashboard.
+    Deliverable: Personal Telemetry Dashboard with Real-Time Output Analytics
+    Tools: Notion API / Sheets, Local Dashboard Script, Metrics Engine
+
+  Phase Phase 03 (Weeks 06–08) — Async Studio Workflows & Peer Critique Routines:
+    Sprint Goal: Structuring clear asynchronous pull request requests, bug reports, and progress briefs without meeting fatigue.
+    Deliverable: Async Collaboration Manual & Structured Code Review Rhythm
+    Tools: Git PR Templates, Loom / Screen Recorders, Async Protocol
+
+  Phase Phase 04 (Weeks 09–10) — Sustainable Execution Cadence & System Defense:
+    Sprint Goal: Quarterly review sprints, annual roadmapping, cognitive debt retirement, and defending your personal OS.
+    Deliverable: Fully Integrated Builder Operating System with Automated Weekly Cadence
+    Tools: Builder OS Repository, Automation Cron, Review Template
+
+################################################################################
+FACULTY 03: PROFESSIONAL WRITING & THOUGHT LEADERSHIP
+################################################################################
+Subtitle: Technical Architecture Specs, Persuasive Essays & High-Conversion Copy
+Tagline: Clear writing is the sharpest indicator of structured thinking.
+Description: Writing is a foundational engineering primitive. The most impactful founders and technologists distinguish themselves through crisp, unambiguous prose. Learn to write technical architecture specifications, clear whitepapers, persuasive case studies, and high-converting product narratives.
+Format: Weekly Peer Critiques & Published Portfolios | Duration: 8–10 Weeks per Track
+
+Programs in this Faculty:
+
+--------------------------------------------------------------------------------
+PROGRAM [WRT-301]: Technical Writing & System Architecture Documentation
+--------------------------------------------------------------------------------
+Tagline: Author software documentation, architecture blueprints, and engineering specs that command authority.
+Duration: 10 Weeks | Level: All Levels | Format: Document Workshops & Rigorous Red-Line Critiques
+Target Audience: Software engineers, technical leads, architects, and founders who must communicate complex technical concepts clearly.
+Description: Software engineering fails without clarity. Learn to write authoritative system documentation: Architecture Decision Records (ADRs), RFCs (Request for Comments), clear OpenAPI specifications, incident postmortems, and developer quickstarts.
+
+Learning Outcomes:
+  * Author concise, authoritative Architecture Decision Records (ADRs) that justify design choices
+  * Write technical RFCs that build engineering consensus across distributed teams
+  * Produce clear, comprehensive API references and developer onboarding guides
+  * Document complex cloud and software architectures without ambiguity or redundant jargon
+
+Core Modules:
+  Module 01: The Mechanics of Precise Prose
+    Description: Eliminating jargon, reducing cognitive burden, and structuring technical arguments.
+    Topics: Active Voice & Sentence Deconstruction, Information Hierarchy, Precise Terminology Rules, Cognitive Load Reduction
+
+  Module 02: Architecture Decision Records (ADRs) & RFCs
+    Description: Authoring RFCs and design documents that persuade engineering teams and align stakeholders.
+    Topics: ADR Anatomy & Tradeoff Matrices, RFC Authoring & Consensus Building, Non-Functional Requirements Specs, Edge-Case Documentation
+
+  Module 03: API Reference & Developer Onboarding
+    Description: Writing developer documentation, quickstarts, and schema catalogs that engineers love using.
+    Topics: OpenAPI & Interactive Documentation, Quickstart Tutorial Engineering, Error Code Catalogs & Troubleshooting, Changelogs & Semantic Versioning
+
+  Module 04: Incident Postmortems & System Runbooks
+    Description: Documenting production incidents blamelessly with root-cause timelines and mitigation strategies.
+    Topics: Blameless Postmortem Frameworks, Timeline & Root-Cause Analysis (5 Whys), Operational Runbooks & SOPs, Disaster Recovery Documentation
+
+Capstone Defense Deliverables:
+  Project Title: Comprehensive Software Architecture & RFC Dossier
+  Description: A complete, published technical documentation suite for a production system, including 3 Architecture Decision Records (ADRs), an engineering RFC for a major feature, an interactive API spec, and an incident runbook.
+  Required Defense Deliverable: Published Documentation Site (e.g. Mintlify, Docusaurus, or GitBook) with full review artifact
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–02) — Architecture Decision Records (ADR) Engineering:
+    Sprint Goal: Context, decision drivers, considered options, trade-off matrices, and consequences documented for engineering teams.
+    Deliverable: Comprehensive Suite of 5 Architecture Decision Records for a Distributed System
+    Tools: Markdown ADR Spec, Trade-off Matrices, Git Documentation
+
+  Phase Phase 02 (Weeks 03–05) — Developer Experience (DX) & Interactive API Docs:
+    Sprint Goal: OpenAPI 3.1 specifications, code snippet generation across Python/TypeScript/Go, and error response dictionaries.
+    Deliverable: Interactive Production API Reference with Realistic Code Examples & Schemas
+    Tools: OpenAPI 3.1, Mintlify / Swagger, cURL / SDK Snippets
+
+  Phase Phase 03 (Weeks 06–08) — System Topology Diagrams & Incident Post-Mortems:
+    Sprint Goal: Mermaid and C4 model diagrams, data flow charts, and blameless post-mortem incident documentation.
+    Deliverable: Production Blameless Post-Mortem & Incident Recovery Architecture Dossier
+    Tools: Mermaid.js, C4 Architectural Modeling, Incident Frameworks
+
+  Phase Phase 04 (Weeks 09–10) — Enterprise Technical Dossier Synthesis & Defense:
+    Sprint Goal: Assembling complete system architecture dossiers that satisfy executive and engineering leadership, defended live.
+    Deliverable: Complete System Architecture Specification Dossier for an Enterprise Web Platform
+    Tools: Executive Summaries, Comprehensive Architecture Dossier, Live Defense
+
+--------------------------------------------------------------------------------
+PROGRAM [WRT-302]: Essay Craft, Rhetoric & Editorial Thought Leadership
+--------------------------------------------------------------------------------
+Tagline: Structure compelling long-form essays, intellectual arguments, and domain-defining perspectives.
+Duration: 10 Weeks | Level: All Levels | Format: Editorial Seminars & Public Publishing Sprints
+Target Audience: Thinkers, researchers, founders, and domain experts seeking to build an enduring public archive of ideas.
+Description: Move from passive consumer to authoritative public intellectual. Learn classical rhetoric, dialectical argumentation, synthesis of dense research, narrative rhythm, and essay architecture for digital publication.
+
+Learning Outcomes:
+  * Formulate and defend compelling intellectual theses with rigorous evidence and dialectic structure
+  * Write captivating long-form essays that retain reader attention from opening hook to conclusion
+  * Translate dense domain research and data into lucid, engaging public thought leadership
+  * Establish a persistent, authoritative public body of published work that builds professional credibility
+
+Core Modules:
+  Module 01: Classical Rhetoric & Thesis Architecture
+    Description: Formulating rigorous theses, structuring persuasive arguments, and addressing counter-arguments.
+    Topics: The Aristotelian Appeals (Logos/Ethos/Pathos), Thesis Formulation & Scope, Dialectical Argumentation, Steel-Manning Counter-Arguments
+
+  Module 02: Narrative Voice & Intellectual Style
+    Description: Developing an unmistakable, authoritative perspective with vivid cadence and rhythm.
+    Topics: Cadence, Metaphor & Sentence Rhythm, Personal Voice vs Academic Rigor, Hook Crafting & Opening Frames, Memorable Phrasing & Aphorisms
+
+  Module 03: Research Synthesis & Investigative Whitepapers
+    Description: Synthesizing dense primary literature and empirical data into lucid, accessible prose.
+    Topics: Primary Source Evaluation, Data Storytelling & Evidence Framing, Citation & Intellectual Integrity, Whitepaper Architecture
+
+  Module 04: Editorial Publication & Distribution Strategy
+    Description: Polishing essays for publication and building a compounding digital archive of domain ideas.
+    Topics: Substack & Long-Form Publishing, Editorial Self-Editing Checklists, Headline & Abstract Optimization, Distribution & Public Discussion
+
+Capstone Defense Deliverables:
+  Project Title: Published 3,500-Word Thesis Essay & Thought Leadership Archive
+  Description: A deeply researched, beautifully crafted long-form essay exploring a fundamental problem in technology, education, or philosophy, edited through peer red-lines and published to a public platform.
+  Required Defense Deliverable: Published Long-Form Essay with bibliography and accompanying executive summary abstract
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–03) — Logical Architecture & Thesis Framing:
+    Sprint Goal: Developing non-obvious contrarian theses, inductive and deductive argument mapping, and outline structuring.
+    Deliverable: Contrarian Technical Thesis Outline with Supporting Evidence Matrix
+    Tools: Argument Mapping, Source Verification, Thesis Frameworks
+
+  Phase Phase 02 (Weeks 04–06) — Rhetorical Devices, Sentence Rhythm & Voice:
+    Sprint Goal: Cadence, syntactic variation, concrete metaphors, ruthless editing of clichés, and developing an authoritative authorial voice.
+    Deliverable: 2,500-Word Published Longform Essay on Modern Technical Craft
+    Tools: Substack / Medium, Style Guides, Editorial Redlines
+
+  Phase Phase 03 (Weeks 07–09) — Deep Investigative Tech Case Studies:
+    Sprint Goal: Deconstructing industry shifts, architectural failures, or historic innovations with precision and journalistic integrity.
+    Deliverable: In-Depth Technical Case Study Dissecting Commercial Infrastructure Failures
+    Tools: Primary Research, Data Visualization, Interview Transcripts
+
+  Phase Phase 04 (Weeks 10–12) — Monograph Series Publishing & Platform Launch:
+    Sprint Goal: Distribution strategies, editorial pitch letters, newsletter syndication, and final publication of a thought leadership monograph.
+    Deliverable: 3-Part Published Thought Leadership Monograph Series with Distribution Plan
+    Tools: Platform Syndication, Editorial Monograph, Audience Growth
+
+--------------------------------------------------------------------------------
+PROGRAM [WRT-303]: High-Conversion Copywriting & Brand Messaging
+--------------------------------------------------------------------------------
+Tagline: Craft compelling value propositions, landing page copy, and commercial narratives that compel action.
+Duration: 8 Weeks | Level: All Levels | Format: Creative Studio & Conversion Teardowns
+Target Audience: Founders, marketers, product designers, and creators who need words that convert visitors into active customers.
+Description: Learn the behavioral psychology and linguistic architecture behind words that sell. Master value proposition articulation, landing page narrative hierarchy, product microcopy, and persuasive pitch presentations.
+
+Learning Outcomes:
+  * Author high-converting landing page copy that clearly communicates value and drives conversions
+  * Translate complex software features into tangible, emotion-driven customer benefits
+  * Write concise, user-friendly UI microcopy that reduces interface friction and drop-off
+  * Draft executive-grade pitch decks and commercial client proposals with undeniable clarity
+
+Core Modules:
+  Module 01: Customer Psychology & Value Proposition Design
+    Description: Unearthing acute customer pain points and framing solutions in irresistible terms.
+    Topics: Jobs-To-Be-Done (JTBD) Messaging, Pain Point vs Desired State Dynamics, Unique Value Proposition Formulas, Competitive Positioning Angles
+
+  Module 02: Landing Page Copy Architecture
+    Description: Structuring above-the-fold headers, social proof sections, objection counters, and calls to action.
+    Topics: Headline Formulas & Power Hooks, Feature-to-Benefit Translation, Objection Inoculation & FAQs, Call-to-Action (CTA) Psychology
+
+  Module 03: UX Writing & Product Microcopy
+    Description: Designing crisp microcopy for buttons, empty states, error messages, and user onboarding.
+    Topics: Form Helper Text & Microcopy, Error State Remediation, Onboarding Flow Dialogue, Clarity over Cleverness
+
+  Module 04: Commercial Proposals & Pitch Deck Storytelling
+    Description: Writing high-stakes proposals and investment decks that secure contracts and funding.
+    Topics: The Narrative Arc of a Pitch Deck, Commercial Proposal Architecture, Executive Summaries that Close, Pricing Presentation Framing
+
+Capstone Defense Deliverables:
+  Project Title: Complete Commercial Messaging & Launch Copy Blueprint
+  Description: A comprehensive brand and conversion copywriting package for a real product: landing page copy (hero, features, social proof, CTA), product onboarding microcopy, and a 10-slide executive pitch deck.
+  Required Defense Deliverable: Commercial Copy Deck & Figma/HTML Landing Page Prototype showcasing live copy implementation
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–02) — Customer Psychology, ICPs & Value Propositions:
+    Sprint Goal: Customer interviews, voice-of-customer mining, pain point extraction, and crafting high-resonance value propositions.
+    Deliverable: Voice-of-Customer Mining Matrix & Value Proposition Hierarchy
+    Tools: Customer Persona Mapping, JTBD Frameworks, Interview Synthesizer
+
+  Phase Phase 02 (Weeks 03–05) — Landing Page Information Architecture & Wireframing:
+    Sprint Goal: Above-the-fold hooks, feature-benefit translation, objection neutralization sequences, and social proof placement.
+    Deliverable: Full-Length SaaS Landing Page Copy Wireframe with Objection Handlers
+    Tools: Wireframe Copy Layouts, Conversion Frameworks, Headline Testing
+
+  Phase Phase 03 (Weeks 06–08) — Lifecycle Email Sequences & Onboarding Funnels:
+    Sprint Goal: Welcome series, activation drips, churn prevention triggers, and high-conversion transaction emails.
+    Deliverable: 5-Part Product Onboarding & Activation Email Sequence
+    Tools: Email Flow Mapping, Subject Line Optimization, ESP Integrations
+
+  Phase Phase 04 (Weeks 09–10) — Microcopy, CTA Tuning & A/B Testing Matrix:
+    Sprint Goal: Button microcopy, form labels, error state empathy, conversion rate optimization (CRO) testing hypotheses, and capstone defense.
+    Deliverable: Complete Go-To-Market Brand Messaging & Copy Dossier with A/B Testing Plan
+    Tools: CRO Testing Matrix, Brand Voice Guidelines, Final Copy Dossier
+
+################################################################################
+FACULTY 04: COMPUTER EDUCATION & DIGITAL FOUNDATIONS
+################################################################################
+Subtitle: Hardware Anatomy, Operating Systems, Office Productivity & Cyber Hygiene
+Tagline: Understand computing from physical hardware components to everyday digital productivity and security.
+Description: A true, grounded education in computing. Learn how computers actually work from the physical hardware (motherboard, CPU, memory, storage, peripherals) to operating system navigation (Windows, macOS, Linux), file management, command-line terminal essentials, modern productivity suites (Word, Excel, PowerPoint), internet safety, and computational problem-solving.
+Format: Laboratory Workshops & Hands-on Workstation Sprints | Duration: 8–12 Weeks per Track
+
+Programs in this Faculty:
+
+--------------------------------------------------------------------------------
+PROGRAM [CMP-401]: Computer Fundamentals & Operating System Mastery
+--------------------------------------------------------------------------------
+Tagline: Understand computing from physical hardware components to operating system navigation and terminal basics.
+Duration: 12 Weeks | Level: Beginner | Format: Hands-on Hardware Labs & Workstation Sprints
+Target Audience: Absolute beginners, students, career switchers, and anyone seeking complete mastery of modern personal computers.
+Description: Demystify the computer. Learn the physical anatomy of computer hardware (CPU, RAM, Motherboard, Storage drives, Power supply, and I/O devices). Gain confident fluency across modern operating systems (Windows, macOS, and Linux), understand file hierarchies, master storage navigation, and learn foundational command line terminal commands.
+
+Learning Outcomes:
+  * Identify, inspect, and troubleshoot physical computer hardware components with complete confidence
+  * Fluently navigate, configure, and maintain Windows, macOS, and Linux operating systems
+  * Maintain clean, organized file directory structures with automated backups and versioning habits
+  * Use the command line terminal comfortably to navigate directories and perform batch file operations
+
+Core Modules:
+  Module 01: Hardware Anatomy & System Components
+    Description: Dissecting the computer: how physical parts connect, process data, and communicate.
+    Topics: Motherboard, CPU & Socket Architecture, RAM vs Storage (SSD NVMe vs HDD), GPU, Power Supply & Thermal Cooling, Input/Output Peripherals & Ports (USB, HDMI, DisplayPort)
+
+  Module 02: Operating System Architecture & Navigation
+    Description: Mastering the core interface, settings, and administration across Windows, macOS, and Linux.
+    Topics: Windows 11 Administration & Shortcuts, macOS System Settings & Finder, Linux Desktop (Ubuntu/Debian) Basics, Device Drivers & Hardware Configuration
+
+  Module 03: File Systems, Storage & Directory Management
+    Description: Organizing digital workspaces with hierarchical folders, file extensions, and backup structures.
+    Topics: Hierarchical Directory Trees & Paths, File Extensions, Associations & Formats, Compression (.zip, .tar.gz) & Archival, External Storage & Partitioning Basics
+
+  Module 04: Command Line & Terminal Foundations
+    Description: Navigating and managing computer systems directly through PowerShell and Bash terminal prompts.
+    Topics: Terminal Basics (cd, ls, dir, mkdir, rm), File Permissions & Elevated Administrator Privileges, Environment Variables & System PATH, Simple Batch & Bash Automation Scripts
+
+Capstone Defense Deliverables:
+  Project Title: Workstation Setup, Maintenance & CLI Automation Project
+  Description: A complete hands-on project configuring a workstation from scratch: verifying hardware specifications, setting up user environments and permissions, configuring organized directory hierarchies, and writing a terminal script that performs automated file housekeeping.
+  Required Defense Deliverable: Documented Workstation Audit Report with functional automation script and demonstration video
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–03) — Hardware Architecture, Buses & Silicon Foundations:
+    Sprint Goal: CPU instruction cycles, ALU, RAM hierarchy, caching levels, storage controllers, motherboard buses, and power delivery.
+    Deliverable: Component Architecture Diagnostic Map & Custom Hardware Build Specification
+    Tools: Hardware Diagnostic Utilities, Motherboard Schematics, Component Specs
+
+  Phase Phase 02 (Weeks 04–06) — Operating System Internals & Process Scheduling:
+    Sprint Goal: Kernel architectures, memory paging, interrupt handling, process lifecycles, and disk partitioning formats (GPT/MBR, ext4, NTFS).
+    Deliverable: Dual-Boot System Configuration & Kernel Process Monitoring Suite
+    Tools: Disk Management, Kernel Tools, System Monitor / Task Manager
+
+  Phase Phase 03 (Weeks 07–09) — Command Line Fluency (Bash & PowerShell):
+    Sprint Goal: Filesystem navigation, piping, standard I/O redirection, environment variables, automation scripts, and permissions (chmod/chown/ACLs).
+    Deliverable: Cross-Platform Automation Script Suite for Automated Workspace Health Checks
+    Tools: Bash Shell, PowerShell 7, Environment Configuration
+
+  Phase Phase 04 (Weeks 10–12) — Hardware Diagnostics, Recovery & Systems Defense:
+    Sprint Goal: POST beep diagnostics, bootloader recovery, memory testing (MemTest86), thermal profiling, and defending your diagnostic manual.
+    Deliverable: Hardware & OS Troubleshooting Diagnostic Field Manual with Live Recovery Demo
+    Tools: MemTest86, UEFI/BIOS Config, Diagnostic Checklists
+
+--------------------------------------------------------------------------------
+PROGRAM [CMP-402]: Modern Productivity Suites & Cloud Workflows
+--------------------------------------------------------------------------------
+Tagline: Master professional document authoring, spreadsheet modeling, slide presentations, and cloud collaboration.
+Duration: 10 Weeks | Level: Beginner | Format: Hands-on Business Simulation & Office Labs
+Target Audience: Students, administrative professionals, founders, and knowledge workers who want to produce elite-level documents, spreadsheets, and presentations.
+Description: Become exceptionally productive with industry-standard productivity tools. Master Microsoft Word and Google Docs for structured institutional documents, harness Microsoft Excel and Google Sheets for data modeling and formulas, create polished presentations in PowerPoint, and manage cloud workspaces.
+
+Learning Outcomes:
+  * Format publish-ready institutional reports and manuals with automated styling and tables of contents
+  * Build dynamic financial, inventory, or operational spreadsheets with advanced formulas and Pivot Tables
+  * Design clean, persuasive corporate slide decks that communicate key metrics effectively
+  * Organize and administrate shared cloud workspaces across team members with secure permissions
+
+Core Modules:
+  Module 01: Advanced Document Engineering (Word & Docs)
+    Description: Formatting institutional reports, automated tables of contents, citations, and typography.
+    Topics: Styles & Paragraph Formatting Hierarchies, Automated Tables of Contents & Footnotes, Multi-Column Layouts & Table Formatting, Header/Footer Pagination & Section Breaks
+
+  Module 02: Spreadsheet Modeling & Data Analysis (Excel & Sheets)
+    Description: Formulas, dynamic functions, data sorting, Pivot Tables, and visual chart dashboards.
+    Topics: Core Formulas (SUM, AVERAGE, COUNTIF, IF), Lookup Functions (XLOOKUP, VLOOKUP, INDEX/MATCH), Pivot Tables & Dynamic Aggregations, Conditional Formatting & Chart Dashboards
+
+  Module 03: Visual Presentation Design (PowerPoint & Slides)
+    Description: Structuring compelling business presentations with clean typography, contrast, and layout rules.
+    Topics: Slide Master Templates & Layout Design, Information Density & Visual Hierarchy, Chart & Infographic Presentation, Presenter View & Slide Show Delivery
+
+  Module 04: Cloud Workspaces & Collaborative Hygiene
+    Description: Managing shared drives, permissions, real-time collaboration, and version control.
+    Topics: Google Workspace & Microsoft 365 Architecture, Drive Permissions, Sharing & File Protection, Version History & Restoring Past Revisions, Collaborative Commenting & Task Assignments
+
+Capstone Defense Deliverables:
+  Project Title: Institutional Operations & Analytics Dossier
+  Description: A complete organizational operations suite: an automated budget and inventory spreadsheet with interactive Pivot Charts, a professionally formatted 15-page operational report, and a 10-slide executive summary presentation deck.
+  Required Defense Deliverable: Complete Office Suite Bundle (.xlsx, .docx, .pptx) and shared cloud drive link
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–03) — Advanced Spreadsheet Engineering (Excel & Google Sheets):
+    Sprint Goal: INDEX/MATCH, XLOOKUP, dynamic arrays, nested logic, Pivot Tables, conditional modeling, and data validation rules.
+    Deliverable: Dynamic Financial Modeling & Budgeting Dashboard with Automated Aggregations
+    Tools: Microsoft Excel 365, Google Sheets, Pivot Tables & Dynamic Arrays
+
+  Phase Phase 02 (Weeks 04–06) — Cloud Workspaces & Structured Document Systems:
+    Sprint Goal: Standardized document styling, multi-user permissions, version history recovery, collaborative workflows, and shared cloud drives.
+    Deliverable: Standardized Corporate Document Template Suite with Multi-Author Permissions
+    Tools: Google Workspace, Microsoft 365, Shared Drive Governance
+
+  Phase Phase 03 (Weeks 07–08) — Data Visualizations & Executive Presentation Architecture:
+    Sprint Goal: Information hierarchy, charting best practices, presentation slide pacing, and converting raw metrics into boardroom decks.
+    Deliverable: High-Impact Executive Presentation Deck with Interactive Data Charts
+    Tools: PowerPoint / Google Slides, Chart Design Frameworks
+
+  Phase Phase 04 (Weeks 09–10) — Cross-App Automation & Automated Administrative Engines:
+    Sprint Goal: Connecting forms, spreadsheets, and notification pipelines using webhooks and native formulas, with final workflow defense.
+    Deliverable: Automated Multi-Step Administrative Workflow Engine connecting Forms & Sheets
+    Tools: Google Apps Script, Power Automate, Automated Office Engine
+
+--------------------------------------------------------------------------------
+PROGRAM [CMP-403]: Internet Literacy, Cyber Hygiene & Digital Safety
+--------------------------------------------------------------------------------
+Tagline: Navigate the modern web securely, protect sensitive personal data, and defend against cyber threats.
+Duration: 8 Weeks | Level: All Levels | Format: Security Audits & Defensive Simulation Workshops
+Target Audience: Everyone who uses a smartphone or computer connected to the internet and wants to be safe from fraud, account takeovers, and data leaks.
+Description: Understand how the internet operates and how to protect yourself on it. Learn networking fundamentals (browsers, URLs, DNS, IP addresses, Wi-Fi security), master password vaults, configure hardware and software Two-Factor Authentication (2FA), identify phishing attacks, and protect personal digital privacy.
+
+Learning Outcomes:
+  * Navigate the internet with clear comprehension of underlying networking and encryption protocols
+  * Deploy and manage an encrypted password manager with multi-factor authentication across all accounts
+  * Identify and neutralize sophisticated phishing scams, spoofed domains, and social engineering attacks
+  * Implement a verified 3-2-1 backup protocol to protect critical personal and work files from loss or ransomware
+
+Core Modules:
+  Module 01: How the Internet Works & Web Foundations
+    Description: Demystifying web browsers, HTTP/HTTPS encryption, DNS lookups, IP addresses, and Wi-Fi networks.
+    Topics: Browser Mechanics & Cache/Cookies, HTTP vs HTTPS & SSL/TLS Certificates, DNS & URL Anatomy (Domains, Subdomains), Wi-Fi Encryption (WPA2/WPA3) & Router Safety
+
+  Module 02: Password Management & Two-Factor Authentication (2FA)
+    Description: Eliminating weak, reused passwords and deploying encrypted password vaults with strong 2FA.
+    Topics: Password Entropy & Brute Force Economics, Password Managers (Bitwarden, 1Password), Time-Based OTP (Authenticator Apps), FIDO2 Hardware Security Keys & Passkeys
+
+  Module 03: Social Engineering, Phishing & Threat Defense
+    Description: Recognizing malicious emails, fraudulent websites, imposter scams, malware, and ransomware.
+    Topics: Phishing & Spear-Phishing Detection, Malicious Link Inspection & Domain Spoofing, Malware, Spyware & Ransomware Vectors, Safe Download Protocols & Antivirus Scanners
+
+  Module 04: Privacy Hygiene, Data Backups & Digital Footprint
+    Description: Protecting private communications, minimizing tracking, and executing 3-2-1 backup strategies.
+    Topics: Browser Privacy Extensions & Tracker Blocking, The 3-2-1 Backup Rule (Local & Cloud), Data Encryption & Secure File Deletion, Social Media Privacy Auditing & Exposure Control
+
+Capstone Defense Deliverables:
+  Project Title: Complete Personal & Household Cyber Hygiene Audit
+  Description: A comprehensive security hardening project: auditing all online accounts, migrating to an encrypted password vault with 2FA, securing home Wi-Fi configurations, and establishing a verified local and cloud backup routine.
+  Required Defense Deliverable: Personal Cybersecurity Audit Dossier with security score before and after implementation
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–02) — Threat Modeling, Phishing & Social Engineering Defenses:
+    Sprint Goal: Analyzing spear-phishing attack vectors, inspecting email headers, link sanitization, and cataloging personal attack surfaces.
+    Deliverable: Personal Digital Threat Model & Attack Surface Assessment Report
+    Tools: Email Header Analyzers, Threat Model Matrix, Link Verification Tools
+
+  Phase Phase 02 (Weeks 03–05) — Credential Architecture, Password Vaults & FIDO2 2FA:
+    Sprint Goal: Zero-knowledge password vaults, passkeys, hardware security keys (YubiKey), and eliminating single points of failure.
+    Deliverable: Zero-Trust Credential Architecture Setup with Hardware Key Enforcement
+    Tools: Bitwarden / 1Password, FIDO2 / WebAuthn, TOTP Authenticators
+
+  Phase Phase 03 (Weeks 06–08) — Encrypted Networking, VPNs & Endpoint Hardening:
+    Sprint Goal: Configuring DNS-over-HTTPS (DoH), router firewall hardening, VPN tunneling, Wi-Fi security protocols (WPA3), and device encryption (BitLocker/FileVault).
+    Deliverable: Hardened Home & Mobile Network Profile with Encrypted DNS & Full-Disk Encryption
+    Tools: NextDNS / Cloudflare DoH, WireGuard / VPN, BitLocker / FileVault
+
+  Phase Phase 04 (Weeks 09–10) — Backup Strategies, Ransomware Defenses & Incident Plan:
+    Sprint Goal: 3-2-1 backup methodology, immutable cloud backups, ransomware mitigation, account recovery drills, and plan defense.
+    Deliverable: Comprehensive Cyber Hygiene Defense & Disaster Recovery Playbook
+    Tools: 3-2-1 Backup Tools, Encrypted Cloud Storage, Disaster Recovery Checklists
+
+--------------------------------------------------------------------------------
+PROGRAM [CMP-404]: Computational Thinking & Practical Automation
+--------------------------------------------------------------------------------
+Tagline: Develop structured algorithmic problem-solving habits and automate repetitive computer tasks.
+Duration: 10 Weeks | Level: Beginner | Format: Logic Puzzles & Desktop Scripting Labs
+Target Audience: Beginners and non-programmers who want to learn how to think algorithmically and automate tedious computer chores.
+Description: Bridging computer literacy and computer programming. Learn computational thinking: breaking complex problems into sub-problems (decomposition), recognizing patterns, designing algorithm flowcharts, and writing simple, useful scripts to automate repetitive daily tasks on your computer.
+
+Learning Outcomes:
+  * Approach ambiguous, complex problems with systematic computational decomposition
+  * Draw precise algorithmic flowcharts representing decision logic and iterative loops
+  * Understand core programming primitives (variables, loops, conditions, functions) conceptually
+  * Create practical automation scripts that eliminate hours of repetitive manual computer tasks
+
+Core Modules:
+  Module 01: Decomposition & Pattern Recognition
+    Description: Breaking complex real-world workflows into discrete, solvable procedural steps.
+    Topics: Problem Decomposition Strategies, Pattern Recognition in Data Sets, Abstraction & Generalization, Edge-Case Identification
+
+  Module 02: Algorithm Flowcharts & Pseudocode
+    Description: Visualizing algorithmic decision logic before touching any computer code.
+    Topics: Flowchart Symbols & Logic Mapping, Conditional Logic (IF/THEN/ELSE), Looping Structures (WHILE/FOR), Pseudocode Writing Standards
+
+  Module 03: Core Computational Primitives
+    Description: Hands-on understanding of variables, data types, lists, conditions, and reusable functions.
+    Topics: Variables & Data Types (Strings, Numbers, Booleans), Lists & Arrays for Storing Collections, Functions & Modular Code Reusability, State Tracking & Execution Tracing
+
+  Module 04: Practical Desktop Task Automation
+    Description: Writing beginner-friendly scripts to automate real desktop chores like file renaming and data extraction.
+    Topics: Batch File Renaming & Organizing, Extracting Text & Data from Documents, Automated Email or Report Reminders, Scheduling Automated Computer Tasks
+
+Capstone Defense Deliverables:
+  Project Title: Automated Desktop File Organizer & Report Generator
+  Description: An automation project designed to monitor a downloads folder, categorize incoming files by extension and date into structured directories, and generate a daily summary log of organized files.
+  Required Defense Deliverable: Functional Automation Script with flowchart diagram, user guide, and execution demo
+
+Weekly Sprint Roadmap:
+  Phase Phase 01 (Weeks 01–03) — Problem Decomposition, Abstraction & Flowcharting:
+    Sprint Goal: Breaking messy commercial problems into sub-problems, flowchart notation, and pseudocode algorithms before touching code.
+    Deliverable: Visual Algorithm Flowchart & Pseudocode Blueprint for a Real-World Logistics Bottleneck
+    Tools: Flowcharting Software, Pseudocode Standards, Decomposition Matrix
+
+  Phase Phase 02 (Weeks 04–06) — Data Structures, Search & Sorting Fundamentals:
+    Sprint Goal: Arrays, hash maps, queues, stacks, binary search, Big-O algorithmic complexity analysis, and pattern matching.
+    Deliverable: Interactive Data Sorting & Search Tool with Algorithmic Big-O Comparison
+    Tools: Python 3, Data Structure Visualizers, Complexity Benchmark Scripts
+
+  Phase Phase 03 (Weeks 07–09) — Practical Python Automation & File Processing:
+    Sprint Goal: Reading CSV/JSON files, regular expression text parsing, directory cleanup, automated web requests, and scheduled script runs.
+    Deliverable: Automated Data Extraction & File Processing Script Suite with Error Logging
+    Tools: Python 3, BeautifulSoup / Requests, RegEx Engines, Cron / Task Scheduler
+
+  Phase Phase 04 (Weeks 10–12) — End-to-End Pipeline Optimization & Capstone Defense:
+    Sprint Goal: Packaging standalone CLI automation tools, writing documentation and error boundaries, and defending your automation pipeline.
+    Deliverable: Complete Algorithmic Automation Pipeline with Clean CLI & Documentation
+    Tools: Python CLI (Click/Argparse), Automated Test Suite, Comprehensive Documentation
+
+================================================================================
+ADMISSIONS & INTAKE PROCESS
+================================================================================
+Step 1: Track & Program Selection (via https://nit7er-academy.vercel.app/apply)
+Step 2: Candidate Diagnostic Assessment & Experience Profile
+Step 3: Verification & Admissions Queue Allocation
+Direct Inquiries & WhatsApp Admissions Hotline: +234 707 076 3135 (https://wa.me/2347070763135)

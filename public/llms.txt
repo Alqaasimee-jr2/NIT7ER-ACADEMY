@@ -1,0 +1,46 @@
+# NIT7ER Academy
+
+> The high-performance modern institute of applied creative technology, systems engineering, Flow7 cognitive performance, and technical writing.
+
+NIT7ER Academy is the educational and apprenticeship division of NIT7ER Studio (an active commercial creative technology and systems architecture agency). The Academy prepares self-driven engineers, designers, and systems thinkers through direct studio sprints, commercial codebase immersion, and rigorous capstone defense.
+
+## Canonical Identity & Entity Links
+- Institution: NIT7ER Academy
+- Canonical Website: https://nit7er-academy.vercel.app
+- Parent Organization: NIT7ER Studio (Commercial Agency: https://nit7er.vercel.app)
+- Location: Lagos, Nigeria
+- Founder & Creative Director: Abdullah Qaasim-Falade (https://github.com/Alqaasimee-jr2, https://linkedin.com/in/abdullahqaasimf001)
+- Core Team: Abdullah Qaasim-Falade (Creative Director & Founder), Yaasir Olajumoke (Visual Design Lead), The G3neral (User Experience Lead)
+- Core Methodology: Studio Sprints, Flow7 Reality Protocol, Verified Capstone Architecture Defense, Direct Agency Apprenticeship Pipeline
+
+## Foundational Disciplines & Faculties
+1. Faculty 01: Creative Technology & Software Engineering (Code: CT)
+   - Focus: Web infrastructure, mobile engineering, applied AI integration, and production systems.
+   - Tracks: Full-Stack Web & Distributed Systems (CT-FULLSTACK), Cross-Platform Mobile Engineering (CT-FLUTTER), Applied AI Integration & Intelligent Systems (CT-AI-INTEGRATION).
+2. Faculty 02: Systems Architecture & Cognitive Performance (Code: CP)
+   - Focus: Focus stamina, cognitive mechanics, mental clarity, and systematic problem solving.
+   - Tracks: Deep Work & Attention Engineering (Flow7) (CP-FLOW7), Personal Knowledge Systems & PKM Architecture (CP-PKM), Systems Thinking & Algorithmic Problem Solving (CP-SYSTEMS-THINKING).
+3. Faculty 03: Professional Writing & Thought Leadership (Code: WTL)
+   - Focus: Systems documentation, engineering manifestos, intellectual clarity, and brand prose.
+   - Tracks: Technical Writing & Systems Documentation (WTL-TECH-WRITING), Essays, Manifestos & Intellectual Property (WTL-MANIFESTO), Narrative Design & Brand Prose Architecture (WTL-NARRATIVE).
+4. Faculty 04: Computer Foundations & Applied Literacy (Code: CE)
+   - Focus: Computing first-principles, UNIX terminal ergonomics, hardware networks, and digital efficiency.
+   - Tracks: Operating Systems, Terminal & UNIX Ergonomics (CE-UNIX-TERMINAL), Hardware Architecture & Network Fundamentals (CE-HARDWARE-NETWORKS), Everyday Digital Productivity & Tooling Mastery (CE-DIGITAL-MASTERY).
+
+## Pedagogical Architecture: The 4-Phase System
+1. Phase 01: Systems Foundations & Diagnostic (Core mental models and environmental setup)
+2. Phase 02: Architectural Blueprint & Prototyping (Specifications, diagrams, and low-level prototypes)
+3. Phase 03: Studio Sprints & Reality Logging (Weekly sprint deliverables, code reviews, Flow7 time audits)
+4. Phase 04: Capstone Defense & Deployment (Public architecture defense, production deployment, studio alumni induction)
+
+## Admissions & Sprints
+- Admissions Model: 3-step diagnostic intake, rolling cohort admissions, merit-screened.
+- Credential Awarded: Verified Capstone Architecture Defense.
+- Direct Contact / WhatsApp Admissions Hotline: +234 707 076 3135 (https://wa.me/2347070763135)
+- Email: qaasimkids6@gmail.com
+
+## Machine-Readable Resources
+- Full Syllabi & Sprint Breakdown: https://nit7er-academy.vercel.app/llms-full.txt
+- Dynamic Institutional Knowledge API: https://nit7er-academy.vercel.app/api/geo-context
+- Dynamic Curriculum Catalog API: https://nit7er-academy.vercel.app/api/curriculum
+- XML Sitemap: https://nit7er-academy.vercel.app/sitemap.xml
