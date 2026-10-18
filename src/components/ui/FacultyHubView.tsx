@@ -200,17 +200,17 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
             <Link
               href={`/apply?track=${faculty.id}`}
-              className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm"
+              className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-mono font-bold rounded-full transition-colors shadow-sm"
             >
               <span>APPLY FOR FACULTY {faculty.number}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C] shrink-0" />
             </Link>
             <Link
               href="/programs"
-              className="btn-press inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border border-[#D9E6F0] hover:bg-[#EEF7FC] text-[#12345B] text-xs font-mono font-bold rounded-full transition-colors"
+              className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-white border border-[#D9E6F0] hover:bg-[#EEF7FC] text-[#12345B] text-xs font-mono font-bold rounded-full transition-colors"
             >
               <span>FULL CATALOG</span>
             </Link>
@@ -223,7 +223,7 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#D9E6F0] pb-3">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
-              <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
+              <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring shrink-0"></span>
               <span className="font-bold text-[#12345B]">TRACK SELECTOR</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-black text-[#12345B] tracking-tight mt-1.5">
@@ -239,12 +239,12 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
           </div>
         </div>
 
-        {/* Tab Pills */}
-        <div className="flex overflow-x-auto gap-2 pb-2 no-scrollbar">
+        {/* Tab Pills (Wrapped cleanly on mobile so all tracks are visible) */}
+        <div className="flex flex-wrap gap-2">
           <button
             type="button"
             onClick={() => handleTrackChange('all')}
-            className={`btn-press px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all shrink-0 ${
+            className={`btn-press px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
               selectedTrackId === 'all'
                 ? 'bg-[#12345B] text-white shadow-xs'
                 : 'bg-white text-[#64748B] border border-[#D9E6F0] hover:text-[#12345B] hover:bg-[#EEF7FC]'
@@ -259,14 +259,16 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
                 key={prog.id}
                 type="button"
                 onClick={() => handleTrackChange(prog.id)}
-                className={`btn-press px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all shrink-0 flex items-center gap-2 ${
+                className={`btn-press px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all flex items-center gap-2 max-w-full ${
                   isActive
                     ? 'bg-[#12345B] text-white shadow-xs'
                     : 'bg-white text-[#64748B] border border-[#D9E6F0] hover:text-[#12345B] hover:bg-[#EEF7FC]'
                 }`}
               >
-                <span className={isActive ? 'text-[#E6AD3C]' : 'text-[#1769AA]'}>{prog.code}</span>
-                <span className="truncate max-w-[180px]">{prog.title}</span>
+                <span className={`shrink-0 ${isActive ? 'text-[#E6AD3C]' : 'text-[#1769AA]'}`}>
+                  {prog.code}
+                </span>
+                <span className="truncate">{prog.title}</span>
               </button>
             );
           })}
@@ -291,7 +293,7 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
                       {program.level}
                     </span>
                     <span className="text-xs font-mono text-[#64748B] flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-[#1769AA]" />
+                      <Clock className="w-3.5 h-3.5 text-[#1769AA] shrink-0" />
                       <span>{program.duration}</span>
                     </span>
                     <span className="text-xs font-mono text-[#64748B]">
@@ -323,13 +325,13 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
                 </div>
 
                 {/* Header Action Buttons */}
-                <div className="shrink-0 flex flex-wrap items-center gap-2 pt-2 lg:pt-0">
+                <div className="shrink-0 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2 pt-2 lg:pt-0">
                   <button
                     type="button"
                     onClick={() => setActiveModalProgramId(program.id)}
                     className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-white border border-[#1769AA] hover:bg-[#EEF7FC] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors shadow-2xs"
                   >
-                    <Calendar className="w-3.5 h-3.5 text-[#1769AA]" />
+                    <Calendar className="w-3.5 h-3.5 text-[#1769AA] shrink-0" />
                     <span>QUICK ROADMAP</span>
                   </button>
 
@@ -338,7 +340,7 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
                     className="btn-press inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-[#EEF7FC] border border-[#D9E6F0] hover:border-[#1769AA] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors"
                   >
                     <span>FULL SYLLABUS PAGE</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#1769AA]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#1769AA] shrink-0" />
                   </Link>
 
                   <Link
@@ -346,7 +348,7 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
                     className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shadow-sm"
                   >
                     <span>APPLY FOR {program.code}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C] shrink-0" />
                   </Link>
                 </div>
               </div>

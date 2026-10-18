@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* ========================================================= */}
       {/* 1. HERO SECTION (OAUMods Architecture + Pure Essence Curves) */}
       {/* ========================================================= */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 lg:p-12 bg-white shadow-sm space-y-8 relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-5 sm:p-10 lg:p-12 bg-white shadow-sm space-y-8 relative overflow-hidden">
         {/* Subtle Decorative Background Contour */}
         <div
           className="absolute -top-10 -right-10 w-96 h-96 opacity-10 pointer-events-none bg-contain bg-no-repeat"
@@ -26,13 +26,13 @@ export default function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           <div className="lg:col-span-7 space-y-5">
             {/* Studio Badge with Pure Essence Pulse Ring */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
-              <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
-              <span className="font-bold text-[#12345B]">NIT7ER STUDIO // EDUCATIONAL INCUBATOR</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+              <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring shrink-0"></span>
+              <span className="font-bold text-[#12345B] truncate">NIT7ER STUDIO // EDUCATIONAL INCUBATOR</span>
             </div>
 
             {/* Main Headline with Shimmer Gradient */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#12345B] leading-[1.12] tracking-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#12345B] leading-[1.14] tracking-tight">
               <span className="shimmer-text">The Institute of Applied Creative Technology, Systems &amp; Mind.</span>
             </h1>
 
@@ -42,19 +42,19 @@ export default function HomePage() {
             </p>
 
             {/* Action Buttons with Pure Essence Pill Geometry & Button Press */}
-            <div className="pt-2 flex flex-wrap items-center gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
               <Link
                 href="/apply"
-                className="btn-press inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#12345B] hover:bg-[#1769AA] text-white font-mono font-bold text-xs sm:text-sm tracking-tight rounded-full transition-all shadow-md border border-[#12345B]"
+                className="btn-press inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-[#12345B] hover:bg-[#1769AA] text-white font-mono font-bold text-xs sm:text-sm tracking-tight rounded-full transition-all shadow-md border border-[#12345B]"
               >
                 <span>START DIAGNOSTIC INTAKE</span>
-                <ArrowRight className="w-4 h-4 text-[#E6AD3C]" />
+                <ArrowRight className="w-4 h-4 text-[#E6AD3C] shrink-0" />
               </Link>
               <Link
                 href="/programs"
-                className="btn-press inline-flex items-center gap-2 px-5 py-3.5 border border-[#D9E6F0] bg-[#EEF7FC]/70 hover:bg-[#EEF7FC] text-[#12345B] font-mono font-bold text-xs sm:text-sm rounded-full transition-colors"
+                className="btn-press inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-[#D9E6F0] bg-[#EEF7FC]/70 hover:bg-[#EEF7FC] text-[#12345B] font-mono font-bold text-xs sm:text-sm rounded-full transition-colors"
               >
-                <Compass className="w-4 h-4 text-[#1769AA]" />
+                <Compass className="w-4 h-4 text-[#1769AA] shrink-0" />
                 <span>EXPLORE 4 FACULTIES</span>
               </Link>
             </div>
@@ -62,22 +62,22 @@ export default function HomePage() {
 
           {/* Right Column: Studio Cohort Showcase */}
           <div className="lg:col-span-5">
-            <div className="curve-soft bg-gradient-to-b from-[#EEF7FC] to-white border border-[#D9E6F0] p-5 shadow-xs relative overflow-hidden group">
-              <div className="flex items-center justify-between pb-3 border-b border-[#D9E6F0]/80">
-                <div className="flex items-center gap-2">
-                  <N7BrandMark size="xs" variant="gold" />
-                  <span className="label-mono text-[#12345B] font-bold text-[10px]">
+            <div className="curve-soft bg-gradient-to-b from-[#EEF7FC] to-white border border-[#D9E6F0] p-4 sm:p-5 shadow-xs relative overflow-hidden group">
+              <div className="flex items-center justify-between gap-2 pb-3 border-b border-[#D9E6F0]/80">
+                <div className="flex items-center gap-2 min-w-0">
+                  <N7BrandMark size="xs" variant="gold" className="shrink-0" />
+                  <span className="label-mono text-[#12345B] font-bold text-[10px] truncate">
                     Lagos Studio Cohort
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#1769AA]">
+                <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#1769AA] shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#E6AD3C] pulse-ring"></span>
                   <span>Active Session</span>
                 </div>
               </div>
 
               {/* Official Illustration Vector Art */}
-              <div className="relative w-full h-48 sm:h-56 flex items-center justify-center py-2">
+              <div className="relative w-full h-44 sm:h-56 flex items-center justify-center py-2">
                 <Image
                   src="/brand/illustration-team-tight.png"
                   alt="NIT7ER Studio Team and Cohort"
@@ -88,7 +88,7 @@ export default function HomePage() {
                 />
               </div>
 
-              <div className="pt-2.5 border-t border-[#D9E6F0]/80 flex items-center justify-between text-[10px] font-mono text-[#64748B]">
+              <div className="pt-2.5 border-t border-[#D9E6F0]/80 flex items-center justify-between gap-2 text-[10px] font-mono text-[#64748B]">
                 <span>Systems • Mind • Code</span>
                 <span className="text-[#12345B] font-bold">2026/2027 Cohort</span>
               </div>
@@ -137,8 +137,8 @@ export default function HomePage() {
           style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
         />
         <div className="space-y-2 max-w-xl relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-white text-[11px] font-mono font-bold border border-white/20">
-            <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-white text-[10px] sm:text-[11px] font-mono font-bold border border-white/20">
+            <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring shrink-0"></span>
             <span>ADMISSIONS INTAKE ACTIVE</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
@@ -151,10 +151,10 @@ export default function HomePage() {
 
         <Link
           href="/apply"
-          className="btn-press inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-[#E6AD3C] hover:bg-[#F5C842] text-[#12345B] font-mono font-bold text-xs sm:text-sm rounded-full shadow-md transition-colors shrink-0"
+          className="btn-press inline-flex items-center justify-center gap-2.5 w-full md:w-auto px-6 py-3.5 bg-[#E6AD3C] hover:bg-[#F5C842] text-[#12345B] font-mono font-bold text-xs sm:text-sm rounded-full shadow-md transition-colors shrink-0 relative z-10"
         >
           <span>START DIAGNOSTIC INTAKE</span>
-          <ArrowRight className="w-4 h-4 text-[#12345B]" />
+          <ArrowRight className="w-4 h-4 text-[#12345B] shrink-0" />
         </Link>
       </section>
     </div>

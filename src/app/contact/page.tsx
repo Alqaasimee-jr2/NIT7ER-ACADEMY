@@ -93,15 +93,15 @@ function ContactFormContent() {
       <Breadcrumbs items={[{ label: 'Contact & Admissions Desk' }]} />
 
       {/* Header Banner */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-8 bg-white space-y-3.5 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-5 sm:p-8 bg-white space-y-3.5 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         <div
           className="absolute -right-8 -top-8 w-64 h-64 opacity-10 pointer-events-none bg-contain bg-no-repeat"
           style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
         />
         <div className="max-w-3xl space-y-2 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
-            <span className="font-bold text-[#12345B]">COMMUNICATIONS DESK // DIRECT CONSULTATIONS</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring shrink-0"></span>
+            <span className="font-bold text-[#12345B] truncate">COMMUNICATIONS DESK // DIRECT CONSULTATIONS</span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
@@ -112,7 +112,7 @@ function ContactFormContent() {
             Direct communication for prospective candidates, cohort admissions, and curriculum questions.
           </p>
 
-          <div className="pt-1 flex flex-wrap items-center gap-3 text-xs font-mono text-[#64748B]">
+          <div className="pt-1 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs font-mono text-[#64748B]">
             <span className="px-2.5 py-0.5 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
               [HOTLINE: +234 707 076 3135]
             </span>
@@ -374,16 +374,16 @@ function ContactFormContent() {
                   ></textarea>
                 </div>
 
-                <div className="pt-2 flex items-center justify-between">
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#1769AA]" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#1769AA] shrink-0" />
                     <span>Direct founder transmission</span>
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-press inline-flex items-center gap-2 px-6 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white font-bold rounded-full transition-colors shadow-sm disabled:opacity-50"
+                    className="btn-press inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 sm:py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white font-bold rounded-full transition-colors shadow-sm disabled:opacity-50"
                   >
                     <Send className="w-3.5 h-3.5 text-[#E6AD3C]" />
                     <span>{isSubmitting ? 'TRANSMITTING...' : 'DISPATCH INQUIRY'}</span>

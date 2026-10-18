@@ -55,11 +55,13 @@ export function ProgramSyllabusModal({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Header */}
-        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-[#D9E6F0] bg-[#FAFCFE]">
-          <div className="flex items-center gap-3">
-            <N7BrandMark size="sm" variant="gold" />
-            <div>
-              <div className="flex items-center gap-2">
+        <div className="flex items-start sm:items-center justify-between gap-3 p-4 sm:p-6 border-b border-[#D9E6F0] bg-[#FAFCFE]">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="shrink-0">
+              <N7BrandMark size="sm" variant="gold" />
+            </div>
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="label-mono px-2 py-0.5 bg-[#12345B] text-white rounded text-[10px] font-bold">
                   {program.code}
                 </span>
@@ -67,7 +69,7 @@ export function ProgramSyllabusModal({
                   {program.duration} • {program.level}
                 </span>
               </div>
-              <h3 className="text-base sm:text-lg font-black text-[#12345B] mt-0.5 tracking-tight">
+              <h3 className="text-base sm:text-lg font-black text-[#12345B] mt-0.5 tracking-tight truncate">
                 {program.title}
               </h3>
             </div>
@@ -76,7 +78,7 @@ export function ProgramSyllabusModal({
           <button
             type="button"
             onClick={onClose}
-            className="p-2 text-[#64748B] hover:text-[#12345B] hover:bg-[#EEF7FC] rounded-full transition-colors"
+            className="p-2 text-[#64748B] hover:text-[#12345B] hover:bg-[#EEF7FC] rounded-full transition-colors shrink-0"
             aria-label="Close syllabus roadmap modal"
           >
             <X className="w-5 h-5" />
@@ -249,7 +251,7 @@ export function ProgramSyllabusModal({
             ← Close Roadmap
           </button>
 
-          <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
             {facultyId && (
               <Link
                 href={`/programs/${facultyId}/${program.id}`}

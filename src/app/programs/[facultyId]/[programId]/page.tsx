@@ -129,14 +129,14 @@ export default async function ProgramDetailPage({
   };
 
   return (
-    <div className="pt-8 pb-24">
+    <div className="space-y-8 sm:space-y-12 pb-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
       />
 
       {/* Top Hero Banner */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-14">
+      <section>
         <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-[#12345B] text-white p-5 sm:p-10 lg:p-14 shadow-xl border border-[#1769AA]/30">
           <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[#1769AA]/25 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-[#E6AD3C]/15 blur-3xl" />
@@ -270,10 +270,10 @@ export default async function ProgramDetailPage({
       </section>
 
       {/* Main Content Grid */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left 8 Columns: Weekly Roadmap, Modules, Capstone */}
-          <div id="weekly-roadmap" className="lg:col-span-8 space-y-12 scroll-mt-24">
+          <div id="weekly-roadmap" className="lg:col-span-8 space-y-8 sm:space-y-12 scroll-mt-24">
             {/* 1. Weekly Execution Roadmap */}
             {program.weeklyPhases && program.weeklyPhases.length > 0 && (
               <div className="rounded-2xl sm:rounded-3xl border border-[#12345B]/12 bg-white p-5 sm:p-8 lg:p-10 shadow-sm">

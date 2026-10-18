@@ -49,7 +49,7 @@ export default function AboutPage() {
       <Breadcrumbs items={[{ label: 'Philosophy & Founder Story' }]} />
 
       {/* Header */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-6 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-5 sm:p-10 bg-white space-y-6 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         {/* Subtle Background Contour */}
         <div
           className="absolute -top-12 -right-12 w-96 h-96 opacity-10 pointer-events-none bg-contain bg-no-repeat"
@@ -69,9 +69,9 @@ export default function AboutPage() {
         </div>
 
         <div className="max-w-3xl space-y-3 relative z-10 pt-1">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring"></span>
-            <span className="font-bold text-[#12345B]">INSTITUTIONAL PHILOSOPHY // FOUNDER THESIS</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#1769AA] pulse-ring shrink-0"></span>
+            <span className="font-bold text-[#12345B] truncate">INSTITUTIONAL PHILOSOPHY // FOUNDER THESIS</span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">

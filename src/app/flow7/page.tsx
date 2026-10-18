@@ -40,15 +40,15 @@ export default function Flow7Page() {
       />
 
       {/* Header Banner */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-5 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         <div
           className="absolute -right-8 -top-8 w-64 h-64 opacity-10 pointer-events-none bg-contain bg-no-repeat"
           style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
         />
         <div className="max-w-3xl space-y-3 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
-            <span className="font-bold text-[#12345B]">COGNITIVE PERFORMANCE // LAB PROTOCOL</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring shrink-0"></span>
+            <span className="font-bold text-[#12345B] truncate">COGNITIVE PERFORMANCE // LAB PROTOCOL</span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
@@ -59,20 +59,26 @@ export default function Flow7Page() {
             The proprietary reality-tested focus protocol developed by Director Abdullah Qaasim-Falade. Run live deep-work sprints, measure focus velocity, and track friction with zero sugar-coating.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-mono text-[#64748B]">
-            <span className="px-2.5 py-0.5 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
-              [PROTOCOL 02 // LAB SYSTEM]
-            </span>
-            <span className="px-2.5 py-0.5 rounded-full bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] font-bold">
-              [CURRICULUM: CP-201 &amp; CP-202]
-            </span>
+          <div className="pt-2 flex flex-wrap items-center gap-2 text-xs font-mono text-[#64748B]">
+            <Link
+              href="/labs/flow7"
+              className="px-2.5 py-0.5 rounded-full bg-[#EEF7FC] hover:bg-[#D9E6F0] text-[#12345B] border border-[#D9E6F0] font-bold transition-colors"
+            >
+              [PROTOCOL 02 // LAB CASE STUDY]
+            </Link>
+            <Link
+              href="/programs/cognitive-performance/deep-work-attention"
+              className="px-2.5 py-0.5 rounded-full bg-[#EEF7FC] hover:bg-[#D9E6F0] text-[#1769AA] border border-[#D9E6F0] font-bold transition-colors"
+            >
+              [CURRICULUM: COG-201 &amp; COG-202]
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Interactive Simulator Card */}
       <section className="space-y-4">
-        <div className="flex items-center justify-between pb-2 border-b border-[#D9E6F0]">
+        <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-[#D9E6F0]">
           <div className="flex items-center gap-2">
             <Brain className="w-4 h-4 text-[#1769AA]" />
             <h2 className="text-sm font-bold font-mono text-[#12345B]">
@@ -124,18 +130,18 @@ export default function Flow7Page() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 shrink-0">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
           <Link
-            href="/programs/cognitive-performance"
-            className="btn-press px-4 py-2.5 bg-white border border-[#1769AA] hover:bg-[#EEF7FC] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors"
+            href="/programs/cognitive-performance/deep-work-attention"
+            className="btn-press inline-flex items-center justify-center px-4 py-2.5 bg-white border border-[#1769AA] hover:bg-[#EEF7FC] text-[#12345B] text-xs font-bold font-mono rounded-full transition-colors"
           >
-            VIEW FACULTY 02 SYLLABI
+            INSPECT COG-201 SYLLABUS
           </Link>
           <Link
             href="/apply?track=cognitive-performance&program=deep-work-attention"
-            className="btn-press inline-flex items-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shadow-sm"
+            className="btn-press inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#12345B] hover:bg-[#1769AA] text-white text-xs font-bold font-mono rounded-full transition-colors shadow-sm"
           >
-            <span>APPLY FOR CP-201</span>
+            <span>APPLY FOR COG-201</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
           </Link>
         </div>

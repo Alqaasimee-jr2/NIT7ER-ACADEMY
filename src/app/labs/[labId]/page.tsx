@@ -54,9 +54,9 @@ export default async function LabCaseStudyPage({
   const otherProjects = LAB_PROJECTS.filter((p) => p.id !== project.id);
 
   return (
-    <div className="pt-8 pb-24">
+    <div className="space-y-8 sm:space-y-12 pb-12">
       {/* Hero Banner */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-14">
+      <section>
         <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-[#12345B] text-white p-5 sm:p-10 lg:p-14 shadow-xl border border-[#1769AA]/30">
           <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[#1769AA]/25 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-[#E6AD3C]/15 blur-3xl" />
@@ -194,9 +194,9 @@ export default async function LabCaseStudyPage({
       </section>
 
       {/* Architectural Breakdown & Curriculum Bridge */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-16">
+      <section>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-8 space-y-8">
+          <div className="lg:col-span-8 space-y-6 sm:space-y-8">
             {/* Problem & System Architecture */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-2xl border border-[#12345B]/12 bg-white p-6 sm:p-8 shadow-sm">

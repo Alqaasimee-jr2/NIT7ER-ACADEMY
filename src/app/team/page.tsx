@@ -17,16 +17,16 @@ export default function TeamPage() {
       <Breadcrumbs items={[{ label: 'Studio Directors & Core Faculty' }]} />
 
       {/* Header Banner */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
+      <section className="technical-border curve-asymmetric p-5 sm:p-10 bg-white space-y-4 border border-[#D9E6F0] shadow-xs relative overflow-hidden">
         <div
           className="absolute -right-8 -top-8 w-64 h-64 opacity-10 pointer-events-none bg-contain bg-no-repeat"
           style={{ backgroundImage: `url('/brand/shapes-accent.png')` }}
         />
 
         <div className="max-w-3xl space-y-3 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
-            <span className="font-bold text-[#12345B]">STUDIO FACULTY // CORE DIRECTORS</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EEF7FC] border border-[#D9E6F0] rounded-full text-[10px] sm:text-xs font-mono max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring shrink-0"></span>
+            <span className="font-bold text-[#12345B] truncate">STUDIO FACULTY // CORE DIRECTORS</span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#12345B] tracking-tight leading-tight">
@@ -37,7 +37,7 @@ export default function TeamPage() {
             At NIT7ER Academy, faculty are not textbook instructors. They are active creative technologists, visual leads, and systems architects shipping commercial software every day.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-mono text-[#64748B]">
+          <div className="pt-2 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs font-mono text-[#64748B]">
             <span className="px-3 py-1 rounded-full bg-[#EEF7FC] text-[#12345B] border border-[#D9E6F0] font-bold">
               [100% ACTIVE PRACTITIONERS]
             </span>
@@ -55,7 +55,7 @@ export default function TeamPage() {
       <TeamShowcase />
 
       {/* Apprenticeship Pedagogy Banner */}
-      <section className="technical-border curve-asymmetric p-6 sm:p-8 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-6 shadow-xs">
+      <section className="technical-border curve-asymmetric p-5 sm:p-8 bg-[#FAFCFE] border border-[#D9E6F0] rounded-2xl space-y-6 shadow-xs">
         <div className="space-y-2 border-b border-[#D9E6F0] pb-3">
           <span className="label-mono text-xs text-[#1769AA] font-bold block">
             THE STUDIO DIFFERENCE
@@ -116,10 +116,10 @@ export default function TeamPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
             <Link
               href="/apply"
-              className="btn-press inline-flex items-center gap-2 px-6 py-3.5 bg-[#E6AD3C] hover:bg-[#F5C842] text-[#12345B] text-xs font-mono font-bold rounded-full transition-colors shadow-sm"
+              className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#E6AD3C] hover:bg-[#F5C842] text-[#12345B] text-xs font-mono font-bold rounded-full transition-colors shadow-sm"
             >
               <span>APPLY FOR ADMISSION</span>
               <ArrowRight className="w-4 h-4 text-[#12345B]" />
@@ -127,7 +127,7 @@ export default function TeamPage() {
 
             <Link
               href="/programs"
-              className="btn-press inline-flex items-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs font-mono font-bold rounded-full border border-white/20 transition-colors"
+              className="btn-press inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs font-mono font-bold rounded-full border border-white/20 transition-colors"
             >
               <Compass className="w-4 h-4 text-[#E6AD3C]" />
               <span>EXPLORE CURRICULUM</span>

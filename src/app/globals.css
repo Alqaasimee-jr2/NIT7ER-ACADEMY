@@ -36,19 +36,44 @@ body {
   overflow-x: clip;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ========================================================= */
 /* 1. PURE ESSENCE ORGANIC CURVES & SILHOUETTES             */
 /* ========================================================= */
 .curve-asymmetric {
-  border-radius: 2rem 0.625rem 2rem 0.625rem;
+  border-radius: 1.25rem 0.5rem 1.25rem 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .curve-asymmetric {
+    border-radius: 2rem 0.625rem 2rem 0.625rem;
+  }
 }
 
 .curve-pill-alt {
-  border-radius: 3rem 0.75rem 3rem 0.75rem;
+  border-radius: 2rem 0.5rem 2rem 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .curve-pill-alt {
+    border-radius: 3rem 0.75rem 3rem 0.75rem;
+  }
 }
 
 .curve-soft {
   border-radius: 1.25rem;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* ========================================================= */

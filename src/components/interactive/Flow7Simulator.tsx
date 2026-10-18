@@ -253,12 +253,12 @@ export function Flow7Simulator() {
           </div>
 
           {/* Log button */}
-          <div className="pt-2 flex items-center justify-between">
+          <div className="pt-2 flex flex-wrap items-center justify-between gap-2">
             <button
               onClick={logSession}
               className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#1769AA] hover:text-[#12345B] transition-colors"
             >
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#E6AD3C]" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#E6AD3C] shrink-0" />
               <span>LOG FOCUS SESSION TELEMETRY</span>
             </button>
             <span className="text-[11px] font-mono text-[#64748B]">
@@ -279,16 +279,16 @@ export function Flow7Simulator() {
               key={session.id}
               className="p-3.5 bg-[#EEF7FC]/50 border border-[#D9E6F0] rounded-xl text-xs space-y-1 shadow-2xs"
             >
-              <div className="flex items-center justify-between font-mono text-[10px] text-[#64748B]">
+              <div className="flex flex-wrap items-center justify-between gap-1 font-mono text-[10px] text-[#64748B]">
                 <span className="font-bold text-[#12345B]">{session.discipline}</span>
                 <span>{session.timestamp}</span>
               </div>
               <p className="font-medium text-[#1F2937] truncate text-xs">
                 {session.goal}
               </p>
-              <div className="flex items-center justify-between text-[10px] text-[#64748B]">
+              <div className="flex flex-wrap items-center justify-between gap-1 text-[10px] text-[#64748B]">
                 <span className="text-[#1769AA] font-mono font-bold">{session.durationMinutes}m block</span>
-                <span className="italic">{session.friction}</span>
+                <span className="italic truncate">{session.friction}</span>
               </div>
             </div>
           ))}
