@@ -30,26 +30,39 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Brand Mark & Title */}
-          <Link
-            href="/"
-            onClick={() => handleNavClick('/')}
-            className="flex items-center gap-3 shrink-0 group"
-          >
-            <N7BrandMark size="md" variant="gold" className="transition-transform group-hover:scale-105" />
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-base sm:text-lg font-black tracking-tight text-[#12345B]">
-                  NIT7ER
-                </span>
-                <span className="label-mono px-2 py-0.5 bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] rounded-full text-[10px]">
-                  Academy
-                </span>
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <Link
+              href="/"
+              onClick={() => handleNavClick('/')}
+              className="flex items-center gap-3 shrink-0 group"
+            >
+              <N7BrandMark size="md" variant="gold" className="transition-transform group-hover:scale-105" />
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-base sm:text-lg font-black tracking-tight text-[#12345B]">
+                    NIT7ER
+                  </span>
+                  <span className="label-mono px-2 py-0.5 bg-[#EEF7FC] text-[#1769AA] border border-[#D9E6F0] rounded-full text-[10px]">
+                    Academy
+                  </span>
+                </div>
+                <p className="label-mono text-[9px] text-[#64748B] hidden sm:block">
+                  Systems • Mind • Code
+                </p>
               </div>
-              <p className="label-mono text-[9px] text-[#64748B] hidden sm:block">
-                Systems • Mind • Code
-              </p>
-            </div>
-          </Link>
+            </Link>
+
+            <a
+              href="https://nit7er.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FAFCFE] hover:bg-[#EEF7FC] border border-[#D9E6F0] text-[10px] font-mono text-[#1769AA] hover:text-[#12345B] transition-colors"
+              title="A division of NIT7ER Studio Commercial Agency"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1769AA]"></span>
+              <span>STUDIO DIVISION ↗</span>
+            </a>
+          </div>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 p-1 bg-white/80 border border-[#D9E6F0] rounded-full shadow-xs">

@@ -126,6 +126,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/#faq" className="gold-link flex items-center gap-1 font-bold text-[#1769AA]">
+                  <span>Knowledge Base &amp; FAQ</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+                </Link>
+              </li>
+              <li>
                 <Link href="/apply" className="font-bold text-[#12345B] hover:text-[#1769AA] transition-colors">
                   Apply for Admission
                 </Link>
@@ -148,6 +154,30 @@ export function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* NIT7ER Franchise Ecosystem Section */}
+        <div className="pt-6 border-t border-[#D9E6F0] p-5 sm:p-6 rounded-2xl bg-[#FAFCFE] border border-[#D9E6F0]/80 space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#E6AD3C] pulse-ring"></span>
+              <span className="font-mono text-xs font-bold text-[#12345B]">
+                THE NIT7ER FRANCHISE ECOSYSTEM
+              </span>
+            </div>
+            <a
+              href={FOUNDER_INFO.studioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-[#1769AA] hover:text-[#12345B] transition-colors"
+            >
+              <span>Explore NIT7ER Studio Commercial Agency</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#E6AD3C]" />
+            </a>
+          </div>
+          <p className="text-xs text-[#64748B] leading-relaxed">
+            NIT7ER Academy operates as the talent incubation and systems research division of <strong className="text-[#12345B]">NIT7ER Studio</strong> — an active commercial creative technology and systems engineering agency. Academy candidates learn through production sprints and top graduates directly apprentice on client deliverables.
+          </p>
         </div>
 
         {/* Bottom Bar */}
