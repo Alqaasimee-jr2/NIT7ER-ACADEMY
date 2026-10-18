@@ -35,13 +35,23 @@ export function FacultyHubView({ faculty }: FacultyHubViewProps) {
   const [selectedTrackId, setSelectedTrackId] = useState<string>('all');
   const [activeModalProgramId, setActiveModalProgramId] = useState<string | null>(null);
 
-  // Sync with URL hash (e.g. /programs/creative-tech#ct-flutter) on mount and on hash change
+  // Sync with URL hash or query param (e.g. /programs/creative-tech#ct-flutter or ?program=ct-flutter) on mount and on hash change
   useEffect(() => {
     const syncHash = () => {
       if (typeof window === 'undefined') return;
       const hash = window.location.hash.replace('#', '');
-      if (hash && faculty.programs.some((p) => p.id === hash)) {
-        setSelectedTrackId(hash);
+      const searchParams = new URLSearchParams(window.location.search);
+      const queryTarget = searchParams.get('program') || searchParams.get('open');
+      const targetId = hash || queryTarget;
+
+      if (targetId && faculty.programs.some((p) => p.id === targetId)) {
+        setSelectedTrackId(targetId);
+        setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 150);
       }
     };
     syncHash();
